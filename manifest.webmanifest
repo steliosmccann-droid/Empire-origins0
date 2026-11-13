@@ -1,0 +1,37 @@
+{
+  "name": "Empire Origins",
+  "short_name": "Empire Origins",
+  "lang": "el",
+  "description": "Ισομετρικό kingdom builder. Χτίσε το βασίλειό σου, μάχεσαι τα Orc και ανέβα μέχρι το επίπεδο 20.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "fullscreen",
+  "display_override": [
+    "fullscreen",
+    "standalone"
+  ],
+  "orientation": "portrait",
+  "theme_color": "#2a8fe0",
+  "background_color": "#2a8fe0",
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

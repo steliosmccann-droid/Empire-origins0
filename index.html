@@ -1,4 +1,15 @@
-<!doctype html><html lang="el" class="ui-skin"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no,viewport-fit=cover"><meta name="theme-color" content="#2a8fe0"><link rel="icon" href="ui/icons/castle.webp" type="image/webp"><title>EMPIRE ORIGINS V87</title><style>
+<!doctype html><html lang="el" class="ui-skin"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"><meta name="theme-color" content="#2a8fe0">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Empire Origins">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="shortcut icon" href="icons/favicon.ico">
+<title>EMPIRE ORIGINS V88</title><style>
 :root{color-scheme:dark;font-family:ui-rounded,-apple-system,system-ui,sans-serif}*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;overscroll-behavior:none;background:#152432;color:#fff;touch-action:none}canvas{display:block;width:100vw;height:100dvh;touch-action:none}button{font:inherit;color:#fff;cursor:pointer;touch-action:manipulation}#title{position:fixed;top:calc(env(safe-area-inset-top) + 10px);left:12px;z-index:4;pointer-events:none;font-size:12px;font-weight:950;letter-spacing:1.5px;text-shadow:0 2px 8px #000}#title b{color:#ffd889}#title small{display:block;font-size:9px;color:#b9cbdb;letter-spacing:1.3px;margin-top:3px}#stats{position:fixed;top:calc(env(safe-area-inset-top) + 49px);left:8px;right:8px;display:grid;grid-template-columns:repeat(4,1fr);gap:5px;z-index:4;pointer-events:none}.stat{border:1px solid #76818b66;background:#142535e8;backdrop-filter:blur(12px);border-radius:12px;padding:9px 3px;text-align:center;font-size:12px;font-weight:850;box-shadow:0 3px 15px #0004}#tools{position:fixed;bottom:calc(env(safe-area-inset-bottom) + 10px);left:8px;right:8px;z-index:5;padding:9px 6px;display:grid;grid-template-columns:repeat(5,1fr);gap:5px;border:1px solid #d9bd8066;border-radius:19px;background:#152433ef;box-shadow:0 8px 35px #06121bd9;backdrop-filter:blur(12px)}#tools button{border:1px solid #5d7183;background:linear-gradient(#344758,#263747);border-radius:12px;min-height:56px;font-size:10px;font-weight:850;line-height:1.6;padding:5px 1px}#tools button span{font-size:20px;display:block}#tools button.active{border-color:#f4d589;background:linear-gradient(#7b714b,#3b594f);box-shadow:0 0 15px #f4d58933}#info{position:fixed;top:calc(env(safe-area-inset-top) + 101px);left:10px;right:10px;text-align:center;z-index:3;pointer-events:none;color:#e7eff2;font-size:11px;text-shadow:0 2px 6px #000;font-weight:700}#card{position:fixed;left:12px;right:12px;bottom:calc(env(safe-area-inset-bottom) + 89px);z-index:6;background:linear-gradient(165deg,#283e4ced,#172936f5);border:1px solid #b6a77b;border-radius:16px;padding:13px 14px;box-shadow:0 8px 25px #0008;display:none;max-height:48dvh;overflow:auto;touch-action:pan-y}#card.visible{display:block}#card .building-meta{font-size:11px;color:#eecb83;margin:6px 0}#card .building-actions{display:flex;flex-wrap:wrap;gap:5px}#card .building-actions button{flex:1 1 125px;min-height:43px}#card .building-actions .secondary{background:#263d4f;border-color:#697f8e}#card h3{margin:0 0 5px;color:#ffde9c;font-size:17px}#card p{margin:5px 0 12px;color:#cad8da;font-size:12px;line-height:1.5}#card button{border:1px solid #8c9c86;border-radius:10px;padding:10px 13px;background:#42675b;margin:3px 4px 3px 0;font-weight:800;font-size:12px}#toast{position:fixed;top:calc(env(safe-area-inset-top) + 140px);left:15%;right:15%;text-align:center;border-radius:12px;background:#122936ee;border:1px solid #a9bb9d;padding:10px;font-size:12px;z-index:9;opacity:0;transition:opacity .2s;pointer-events:none}#toast.show{opacity:1}#hint{position:fixed;bottom:calc(env(safe-area-inset-bottom) + 83px);left:8px;right:8px;pointer-events:none;text-align:center;color:#fff;text-shadow:0 2px 5px #000;font-size:10px;z-index:3} 
 /* Classic colorful kingdom UI — original assets drawn by Canvas */
 :root{color-scheme:light;font-family:Trebuchet MS,ui-rounded,-apple-system,system-ui,sans-serif}
@@ -987,6 +998,16 @@ html.ui-skin #v85-restarting .v84-load span{font-weight:700;font-size:14px;color
 html.ui-skin #v85-restarting .v84-load i{display:block;width:220px;height:18px;border:3px solid var(--ol);border-radius:10px;background:#c9d3e6;overflow:hidden}
 html.ui-skin #v85-restarting .v84-load u{display:block;height:100%;width:60%;background:linear-gradient(180deg,#c6f58f,#5cc435 55%,#3c9d22)}
 @media(min-width:760px){html.ui-skin body #eo-settings{right:8px;top:calc(env(safe-area-inset-top) + 64px)}html.ui-skin body #region-nav,html.ui-skin body #regions-open{top:calc(env(safe-area-inset-top) + 124px)!important}}
+
+/* ===== V88: PWA install row inside Settings (never a floating HUD overlay) ===== */
+html.ui-skin #card .v88-install{margin:0 0 2px;padding:9px;border:3px solid var(--ol);border-radius:16px;background:linear-gradient(180deg,#e8f8ff,#cfe9ff);display:flex;flex-direction:column;gap:9px;box-shadow:0 3px 0 var(--ol)}
+html.ui-skin #card .v88-install-head{display:flex;align-items:center;gap:10px;padding:0 2px}
+html.ui-skin #card .v88-install-head img{width:42px;height:42px;object-fit:contain;flex:0 0 42px;border-radius:10px;border:2.5px solid var(--ol);box-shadow:0 2px 0 var(--ol);background:#2a8fe0}
+html.ui-skin #card .v88-install-head span{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.25}
+html.ui-skin #card .v88-install-head b{font-family:'UIC Head';font-weight:400;font-size:14px;color:var(--ink)!important}
+html.ui-skin #card .v88-install-head small{font-size:11px;color:var(--ink)}
+html.ui-skin #card .v88-install-btn{min-height:46px!important;border-radius:15px!important;border:3px solid var(--ol)!important;background:linear-gradient(180deg,var(--orange1),var(--orange2))!important;box-shadow:inset 0 -4px 0 #c76a0c,inset 0 3px 0 #fff6,0 3px 0 var(--ol)!important;color:#fff!important;font-family:'UIC Head'!important;font-weight:400!important;font-size:14px!important;-webkit-text-stroke:3.5px var(--ol);paint-order:stroke fill}
+html.ui-skin #card .v88-ios-tip{background:linear-gradient(180deg,#fff8d8,#ffe27a)}
 
 </style></head><body>
 <canvas id="world"></canvas><div id="progress" role="button" tabindex="0" aria-label="Επίπεδο και εμπειρία"><div class="progress-head"><span id="lvLabel">👑 Επίπεδο 1</span><span id="xpLabel">0 / 260 XP</span></div><div class="progress-track"><div id="xpFill"></div></div></div><div id="capacity-bar"><button class="capacity-chip" id="capacity-pop" type="button" aria-label="Πληθυσμός"><span>👥</span><b id="capacity-pop-value">0/5</b></button><button class="capacity-chip" id="capacity-work" type="button" aria-label="Θέσεις εργατών"><span>👷</span><b id="capacity-work-value">0/0</b></button><button class="capacity-chip" id="capacity-stock" type="button" aria-label="Αποθήκες παραγωγής"><span>📦</span><b id="capacity-stock-value">0/0</b></button></div><div id="stats"><div class="stat" id="wood">🪵 420</div><div class="stat" id="stone">🪨 260</div><div class="stat" id="food">🌾 350</div><div class="stat" id="gold">🪙 140</div></div><div id="region-nav" aria-label="Περιοχές αυτοκρατορίας">
@@ -4715,6 +4736,69 @@ function showRestartConfirm(step){
 window.showSettings=showSettings;window.eoRestartGame=eoRestartGame;
 document.getElementById('eo-settings')?.addEventListener('click',()=>showSettings());
 
+// ===== V88: PWA install (settings button / iOS tip). SW is registered in a separate page script. =====
+function eoDisplayStandalone(){
+ return window.matchMedia('(display-mode: standalone)').matches
+  || window.matchMedia('(display-mode: fullscreen)').matches
+  || !!window.navigator.standalone;
+}
+function eoIsIOSDevice(){
+ const ua=navigator.userAgent||'';
+ return /iPad|iPhone|iPod/.test(ua) || (navigator.platform==='MacIntel' && navigator.maxTouchPoints>1);
+}
+window.__eoDeferredPrompt=null;
+window.addEventListener('beforeinstallprompt',e=>{
+ try{e.preventDefault()}catch(err){}
+ window.__eoDeferredPrompt=e;
+ const card=document.getElementById('card');
+ if(card&&card.classList.contains('visible')&&document.querySelector('#card .v85-set'))showSettings();
+});
+window.addEventListener('appinstalled',()=>{window.__eoDeferredPrompt=null;});
+
+function eoInstallBlock(){
+ if(eoDisplayStandalone())return '';
+ if(window.__eoDeferredPrompt){
+  return `<div class="v88-install" data-v88-install-wrap>
+   <div class="v88-install-head"><img src="icons/icon-192.png" alt=""><span><b>Εγκατάσταση</b><small>Βάλε το παιχνίδι στην αρχική οθόνη, δωρεάν και χωρίς κατάστημα</small></span></div>
+   <button type="button" class="v88-install-btn" data-v88-install>Εγκατάσταση στην οθόνη</button>
+  </div>`;
+ }
+ if(eoIsIOSDevice()){
+  return `<div class="v88-install v88-ios-tip" data-v88-ios-tip>
+   <div class="v88-install-head"><img src="icons/icon-192.png" alt=""><span><b>Εγκατάσταση</b><small>Πάτα Κοινοποίηση → Προσθήκη στην οικ. οθόνη</small></span></div>
+  </div>`;
+ }
+ return '';
+}
+async function eoPromptInstall(){
+ const ev=window.__eoDeferredPrompt;
+ if(!ev||typeof ev.prompt!=='function')return;
+ try{
+  ev.prompt();
+  const choice=await ev.userChoice.catch(()=>null);
+  if(choice&&choice.outcome==='accepted')window.__eoDeferredPrompt=null;
+ }catch(err){}
+ showSettings();
+}
+const _eoShowSettingsV88=showSettings;
+showSettings=function(){
+ _eoShowSettingsV88.apply(this,arguments);
+ const c=document.getElementById('card');if(!c)return;
+ const mount=c.querySelector('.v85-danger');
+ if(!mount||c.querySelector('.v88-install'))return;
+ const html=eoInstallBlock();
+ if(!html)return;
+ const wrap=document.createElement('div');wrap.innerHTML=html;
+ const node=wrap.firstElementChild;if(!node)return;
+ mount.parentNode.insertBefore(node,mount);
+ c.querySelector('[data-v88-install]')?.addEventListener('click',eoPromptInstall);
+};
+window.showSettings=showSettings;
+window.eoDisplayStandalone=eoDisplayStandalone;
+window.eoIsIOSDevice=eoIsIOSDevice;
+window.eoInstallBlock=eoInstallBlock;
+window.eoPromptInstall=eoPromptInstall;
+
 // ===== V84 UI layer (style C · Bright Cartoon) — painted icons, el-GR number formatting, HUD markup, panel button roles =====
 (function(){
 const IC='ui/icons/';
@@ -4828,5 +4912,13 @@ window.__eoTest={run:code=>eval(code)};toast(savedGame?'Καλώς επέστρ�
  document.addEventListener('keydown',e=>{if(e.key==='Escape'){const card=document.getElementById('card');card.classList.remove('visible');}});
  // Leave the interface available on first launch. Toggles don't touch game saves.
  setHud(false);setDock(false);setRegions(matchMedia('(max-width:759px)').matches);
+})();
+</script>
+<script>
+(()=>{if(!('serviceWorker' in navigator))return;
+if(location.protocol!=='http:'&&location.protocol!=='https:')return;
+const start=()=>navigator.serviceWorker.register('sw.js',{scope:'./'});
+if(document.readyState==='complete')start();
+else window.addEventListener('load',start);
 })();
 </script></body></html>
