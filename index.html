@@ -1,4 +1,4 @@
-<!doctype html><html lang="el"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no,viewport-fit=cover"><meta name="theme-color" content="#101c24"><title>EMPIRE ORIGINS V83 — Μάχες, Αγορά & πρόοδος έως το 20</title><style>
+<!doctype html><html lang="el" class="ui-skin"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no,viewport-fit=cover"><meta name="theme-color" content="#2a8fe0"><link rel="icon" href="ui/icons/castle.webp" type="image/webp"><title>EMPIRE ORIGINS V84 — Νέο UI</title><style>
 :root{color-scheme:dark;font-family:ui-rounded,-apple-system,system-ui,sans-serif}*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;overscroll-behavior:none;background:#152432;color:#fff;touch-action:none}canvas{display:block;width:100vw;height:100dvh;touch-action:none}button{font:inherit;color:#fff;cursor:pointer;touch-action:manipulation}#title{position:fixed;top:calc(env(safe-area-inset-top) + 10px);left:12px;z-index:4;pointer-events:none;font-size:12px;font-weight:950;letter-spacing:1.5px;text-shadow:0 2px 8px #000}#title b{color:#ffd889}#title small{display:block;font-size:9px;color:#b9cbdb;letter-spacing:1.3px;margin-top:3px}#stats{position:fixed;top:calc(env(safe-area-inset-top) + 49px);left:8px;right:8px;display:grid;grid-template-columns:repeat(4,1fr);gap:5px;z-index:4;pointer-events:none}.stat{border:1px solid #76818b66;background:#142535e8;backdrop-filter:blur(12px);border-radius:12px;padding:9px 3px;text-align:center;font-size:12px;font-weight:850;box-shadow:0 3px 15px #0004}#tools{position:fixed;bottom:calc(env(safe-area-inset-bottom) + 10px);left:8px;right:8px;z-index:5;padding:9px 6px;display:grid;grid-template-columns:repeat(5,1fr);gap:5px;border:1px solid #d9bd8066;border-radius:19px;background:#152433ef;box-shadow:0 8px 35px #06121bd9;backdrop-filter:blur(12px)}#tools button{border:1px solid #5d7183;background:linear-gradient(#344758,#263747);border-radius:12px;min-height:56px;font-size:10px;font-weight:850;line-height:1.6;padding:5px 1px}#tools button span{font-size:20px;display:block}#tools button.active{border-color:#f4d589;background:linear-gradient(#7b714b,#3b594f);box-shadow:0 0 15px #f4d58933}#info{position:fixed;top:calc(env(safe-area-inset-top) + 101px);left:10px;right:10px;text-align:center;z-index:3;pointer-events:none;color:#e7eff2;font-size:11px;text-shadow:0 2px 6px #000;font-weight:700}#card{position:fixed;left:12px;right:12px;bottom:calc(env(safe-area-inset-bottom) + 89px);z-index:6;background:linear-gradient(165deg,#283e4ced,#172936f5);border:1px solid #b6a77b;border-radius:16px;padding:13px 14px;box-shadow:0 8px 25px #0008;display:none;max-height:48dvh;overflow:auto;touch-action:pan-y}#card.visible{display:block}#card .building-meta{font-size:11px;color:#eecb83;margin:6px 0}#card .building-actions{display:flex;flex-wrap:wrap;gap:5px}#card .building-actions button{flex:1 1 125px;min-height:43px}#card .building-actions .secondary{background:#263d4f;border-color:#697f8e}#card h3{margin:0 0 5px;color:#ffde9c;font-size:17px}#card p{margin:5px 0 12px;color:#cad8da;font-size:12px;line-height:1.5}#card button{border:1px solid #8c9c86;border-radius:10px;padding:10px 13px;background:#42675b;margin:3px 4px 3px 0;font-weight:800;font-size:12px}#toast{position:fixed;top:calc(env(safe-area-inset-top) + 140px);left:15%;right:15%;text-align:center;border-radius:12px;background:#122936ee;border:1px solid #a9bb9d;padding:10px;font-size:12px;z-index:9;opacity:0;transition:opacity .2s;pointer-events:none}#toast.show{opacity:1}#hint{position:fixed;bottom:calc(env(safe-area-inset-bottom) + 83px);left:8px;right:8px;pointer-events:none;text-align:center;color:#fff;text-shadow:0 2px 5px #000;font-size:10px;z-index:3} 
 /* Classic colorful kingdom UI — original assets drawn by Canvas */
 :root{color-scheme:light;font-family:Trebuchet MS,ui-rounded,-apple-system,system-ui,sans-serif}
@@ -527,6 +527,425 @@ body.eo-dev #creator-trigger{display:grid!important;place-items:center}
 #card .v83-power>div{padding:8px;text-align:center;background:#192937;border:1px solid #a88659;border-radius:12px;font-size:11px;color:#e9dcc0}
 #card .v83-power strong{font-size:16px;color:#ffe6ae}
 #card .v83-epilogue{color:#ffd889}
+</style>
+<link rel="preload" href="ui/fonts/delagothic.woff" as="font" type="font/woff" crossorigin><link rel="preload" href="ui/fonts/comfortaa.woff" as="font" type="font/woff" crossorigin>
+<style id="eo-ui-c">
+/* ===== UI skin: shared layout (all three samples) ===== */
+html.ui-skin body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+html.ui-skin .ui-ic{display:block;object-fit:contain;pointer-events:none;-webkit-user-drag:none}
+html.ui-skin #card img.ui-inline,html.ui-skin #card .market-card img.ui-inline,html.ui-skin img.ui-inline{background:none!important;border:0!important;padding:0!important;box-shadow:none!important;border-radius:0!important;max-width:none!important;max-height:none!important;display:inline-block!important;width:1.25em!important;height:1.25em!important;vertical-align:-.28em;margin:0 .12em;object-fit:contain}
+html.ui-skin .ui-trend{font-style:normal;font-size:.8em;margin-left:4px}
+html.ui-skin .ui-trend.up{color:#5ed37a}html.ui-skin .ui-trend.down{color:#ff7a6b}html.ui-skin .ui-trend.flat{color:#a8a8a8}
+/* top bar: level + xp */
+html.ui-skin body #progress{position:fixed!important;top:calc(env(safe-area-inset-top) + 8px)!important;left:8px!important;right:64px!important;width:auto!important;max-width:none!important;height:46px!important;min-height:0!important;display:flex!important;align-items:center!important;padding:0 12px 0 0!important;margin:0!important;overflow:visible!important;z-index:6!important}
+html.ui-skin #progress .ui-lv{position:relative;flex:0 0 54px;width:54px;height:54px;margin:0 8px 0 -4px;display:grid;place-items:center}
+html.ui-skin #progress .ui-lv-crown{position:absolute;width:30px;height:30px;top:-12px;left:50%;transform:translateX(-50%);z-index:2;filter:drop-shadow(0 2px 2px #0008)}
+html.ui-skin #progress .ui-lv b{position:relative;z-index:1}
+html.ui-skin #progress .ui-xp{flex:1;min-width:0}
+html.ui-skin #progress .progress-head{display:flex!important;justify-content:space-between!important;align-items:baseline!important;gap:8px;margin:0 0 5px!important;white-space:nowrap}
+html.ui-skin #progress .progress-head span{overflow:hidden;text-overflow:ellipsis}
+html.ui-skin #progress .progress-track{margin:0!important;overflow:hidden!important}
+html.ui-skin #progress #xpFill{height:100%!important}
+html.ui-skin body #hud-toggle{position:fixed!important;top:calc(env(safe-area-inset-top) + 8px)!important;right:8px!important;left:auto!important;width:48px!important;height:48px!important;padding:0!important;display:grid!important;place-items:center!important;z-index:6!important}
+/* resource row */
+html.ui-skin body #stats{position:fixed!important;top:calc(env(safe-area-inset-top) + 64px)!important;left:8px!important;right:8px!important;width:auto!important;display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:6px!important;z-index:5!important;transform:none!important;pointer-events:none}
+html.ui-skin body #stats .stat{position:relative!important;display:flex!important;align-items:center!important;gap:5px!important;height:40px!important;min-height:0!important;padding:0 8px 0 4px!important;text-align:left!important;overflow:hidden!important;white-space:nowrap!important;margin:0!important;line-height:1!important}
+html.ui-skin #stats .stat .ui-ic{width:30px;height:30px;flex:0 0 30px;filter:drop-shadow(0 2px 2px #0007)}
+html.ui-skin #stats .ui-v{display:flex;flex-direction:column;min-width:0;line-height:1.05}
+html.ui-skin #stats .ui-v b{font-size:15px;letter-spacing:-.2px}
+html.ui-skin #stats .ui-v small{font-size:10px;font-weight:700;margin-top:1px}
+html.ui-skin #stats .ui-fill{position:absolute;left:38px;right:8px;bottom:5px;height:3px;border-radius:3px;max-width:calc(100% - 46px)}
+/* capacity row */
+html.ui-skin body #capacity-bar{position:fixed!important;top:calc(env(safe-area-inset-top) + 112px)!important;left:8px!important;right:8px!important;width:auto!important;display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:6px!important;z-index:5!important;transform:none!important}
+html.ui-skin body #capacity-bar .capacity-chip{display:flex!important;align-items:center!important;gap:6px!important;height:32px!important;min-height:0!important;padding:0 10px 0 4px!important;margin:0!important;white-space:nowrap!important;overflow:hidden!important;justify-content:flex-start!important}
+html.ui-skin .capacity-chip .ui-ic{width:26px;height:26px;flex:0 0 26px;filter:drop-shadow(0 2px 2px #0007)}
+html.ui-skin .capacity-chip .ui-cap-l{flex:1;min-width:0;text-align:left;overflow:hidden;text-overflow:ellipsis}
+html.ui-skin .capacity-chip b{flex:0 0 auto}
+/* quest hint, toast, side buttons */
+html.ui-skin body #v82-hint{position:fixed!important;top:calc(env(safe-area-inset-top) + 154px)!important;left:8px!important;max-width:calc(100vw - 80px)!important;z-index:5!important}
+html.ui-skin body #toast{max-width:min(420px,calc(100vw - 40px))!important;left:50%!important;transform:translateX(-50%)!important;right:auto!important;text-align:center}
+html.ui-skin body #toast:not(.v83-over-panel){top:calc(env(safe-area-inset-top) + 196px)!important}
+html.ui-skin body #region-nav{top:calc(env(safe-area-inset-top) + 154px)!important}
+html.ui-skin body #regions-open{top:calc(env(safe-area-inset-top) + 154px)!important;width:46px!important;height:46px!important;padding:0!important;place-items:center}
+html.ui-skin body #regions-open.is-visible{display:grid!important}
+html.ui-skin #regions-open .ui-ic{width:32px;height:32px}
+html.ui-skin body #dock-toggle{width:40px!important;height:34px!important;display:grid!important;place-items:center!important;padding:0!important}
+/* bottom nav */
+html.ui-skin body #tools{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:6px!important}
+html.ui-skin body #tools button{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:2px!important;min-height:58px!important;padding:4px 2px!important;line-height:1.1!important;white-space:nowrap}
+html.ui-skin body #tools button span{display:block!important;width:34px!important;height:34px!important;font-size:0!important}
+html.ui-skin #tools button span .ui-ic{width:34px;height:34px;filter:drop-shadow(0 2px 2px #0008)}
+/* panel generics */
+html.ui-skin #card .panel-icon img.ui-inline{width:40px!important;height:40px!important;margin:0!important;vertical-align:middle}
+html.ui-skin #card .pm-tab-icon img.ui-inline{width:28px!important;height:28px!important;margin:0!important}
+html.ui-skin #card .trade-row button img.ui-inline{width:30px!important;height:30px!important}
+html.ui-skin #card .v82-buy img.ui-inline,html.ui-skin #card .v82-sell img.ui-inline{width:1.15em!important;height:1.15em!important}
+
+html.ui-skin body #hud-toggle{font-size:0!important;color:transparent!important}
+html.ui-skin body #hud-toggle::before{content:'';width:22px;height:22px;background:var(--hud-ic,#fff);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round'%3E%3Cpath d='M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z'/%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round'%3E%3Cpath d='M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z'/%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3C/svg%3E") center/contain no-repeat}
+html.ui-skin #card .v82-sec-title{display:flex!important;align-items:center!important;justify-content:flex-start!important;gap:6px!important}
+html.ui-skin #card .v82-sec-title .v82-lots{margin-left:auto!important}
+html.ui-skin body #stats .stat{height:44px!important;padding-bottom:6px!important}
+html.ui-skin #stats .ui-fill{bottom:5px}
+html.ui-skin body #capacity-bar{grid-template-columns:1.05fr .9fr 1.2fr!important;top:calc(env(safe-area-inset-top) + 116px)!important}
+html.ui-skin body #v82-hint,html.ui-skin body #region-nav,html.ui-skin body #regions-open{top:calc(env(safe-area-inset-top) + 158px)!important}
+html.ui-skin body #toast:not(.v83-over-panel){top:calc(env(safe-area-inset-top) + 206px)!important}
+html.ui-skin #card .market-panel .market-card img:not(.ui-inline){background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;filter:drop-shadow(0 6px 6px #0006)}
+html.ui-skin #card .market-panel .market-card .pm-art{display:flex;align-items:center;justify-content:center;overflow:hidden}
+/* ===== STYLE C — Bright Cartoon (Social Empires-like): chunky outlines, candy buttons ===== */
+@font-face{font-family:'UIC Head';src:url(ui/fonts/delagothic.woff) format('woff');font-weight:400;font-display:block}
+@font-face{font-family:'UIC';src:url(ui/fonts/comfortaa.woff) format('woff');font-weight:300 700;font-display:block}
+html.ui-skin{--ol:#1d2747;--ink:#1d2747;--hud-ic:#1d2747;--sky1:#5fd0ff;--sky2:#2a8fe0;--cream:#fffdf3;--green1:#9be35a;--green2:#3fae2a;--orange1:#ffcf4a;--orange2:#f08a1c}
+html.ui-skin body,html.ui-skin button,html.ui-skin #card{font-family:'UIC',sans-serif!important;font-weight:700!important}
+html.ui-skin .ch{font-family:'UIC Head'}
+/* level star + xp */
+html.ui-skin body #progress{background:transparent!important;border:0!important;box-shadow:none!important;backdrop-filter:none!important;padding:0!important}
+html.ui-skin #progress .ui-lv{width:58px;height:58px;flex-basis:58px;margin:0 -14px 0 -2px;z-index:3;background:url(ui/icons/xp.webp) center/contain no-repeat;filter:drop-shadow(0 3px 0 var(--ol)) drop-shadow(0 -1px 0 var(--ol)) drop-shadow(1px 0 0 var(--ol)) drop-shadow(-1px 0 0 var(--ol))}
+html.ui-skin #progress .ui-lv-crown{display:none}
+html.ui-skin #progress .ui-lv b{font-family:'UIC Head';font-weight:400;font-size:19px;color:#fff;-webkit-text-stroke:4px var(--ol);paint-order:stroke fill;margin-top:4px}
+html.ui-skin #progress .ui-xp{position:relative;background:var(--cream);border:3px solid var(--ol);border-radius:14px;padding:4px 10px 6px 20px;box-shadow:0 4px 0 var(--ol),0 6px 10px #0006}
+html.ui-skin #progress .progress-head{margin-bottom:3px!important}
+html.ui-skin #progress .progress-head span:first-child{font-family:'UIC Head'!important;font-weight:400!important;font-size:14px!important;color:var(--ink)!important;text-shadow:none!important}
+html.ui-skin #progress .progress-head span:last-child{font-family:'UIC'!important;font-size:11.5px!important;color:var(--ink)!important;text-shadow:none!important;font-weight:700!important}
+html.ui-skin #progress .progress-head small{color:#5a6488}
+html.ui-skin #progress .progress-track{height:12px!important;background:#c9d3e6!important;border:2px solid var(--ol)!important;border-radius:8px!important;box-shadow:inset 0 2px 0 #0002!important}
+html.ui-skin #progress #xpFill{background:linear-gradient(180deg,#bdf4ff,#3bb8f0 55%,#1f8ad3)!important;border-radius:5px!important;box-shadow:inset 0 2px 0 #ffffff99}
+html.ui-skin body #hud-toggle{background:linear-gradient(180deg,#fff,#dfe8f7)!important;border:3px solid var(--ol)!important;border-radius:16px!important;box-shadow:0 4px 0 var(--ol)!important}
+/* resources: white chunky pills + green plus */
+html.ui-skin body #stats{gap:8px!important;left:10px!important;right:10px!important}
+html.ui-skin body #stats .stat{overflow:visible!important;height:40px!important;padding:0 20px 0 30px!important;margin-left:10px!important;background:var(--cream)!important;border:3px solid var(--ol)!important;border-radius:14px!important;box-shadow:0 4px 0 var(--ol),0 6px 10px #0005!important;color:var(--ink)!important;text-shadow:none!important;backdrop-filter:none!important}
+html.ui-skin #stats .stat .ui-ic{position:absolute;left:-16px;top:50%;transform:translateY(-50%);width:42px;height:42px;filter:drop-shadow(0 2px 0 var(--ol)) drop-shadow(0 -1px 0 var(--ol)) drop-shadow(1px 0 0 var(--ol)) drop-shadow(-1px 0 0 var(--ol))}
+html.ui-skin #stats .ui-v b{font-family:'UIC Head';font-weight:400;font-size:14px;color:var(--ink)}
+html.ui-skin #stats .ui-v small{font-size:9.5px;color:#5a6488}
+html.ui-skin #stats .ui-fill{left:28px;right:18px;bottom:4px;height:4px;max-width:none;background:#4cc23a;border-radius:3px}
+html.ui-skin #stats .stat::after{content:'+';position:absolute;right:-9px;top:50%;transform:translateY(-50%);width:20px;height:20px;border-radius:50%;background:linear-gradient(180deg,var(--green1),var(--green2));border:2.5px solid var(--ol);color:#fff;font-family:'UIC Head';font-size:15px;line-height:19px;text-align:center;-webkit-text-stroke:2px var(--ol);paint-order:stroke fill}
+html.ui-skin #stats .stat.full{background:#ffe9e4!important}html.ui-skin #stats .stat.full .ui-fill{background:#ef4b3a}
+/* capacity */
+html.ui-skin body #capacity-bar{gap:8px!important;top:calc(env(safe-area-inset-top) + 120px)!important}
+html.ui-skin body #capacity-bar .capacity-chip{height:32px!important;background:linear-gradient(180deg,#7ad8ff,#3a9fe8)!important;border:3px solid var(--ol)!important;border-radius:12px!important;box-shadow:0 3px 0 var(--ol)!important;color:#fff!important;backdrop-filter:none!important}
+html.ui-skin .capacity-chip .ui-ic{width:28px;height:28px;flex-basis:28px;filter:drop-shadow(0 2px 0 var(--ol))}
+html.ui-skin .capacity-chip .ui-cap-l{font-size:10.5px;color:#fff;-webkit-text-stroke:3px var(--ol);paint-order:stroke fill}
+html.ui-skin .capacity-chip b{font-family:'UIC Head';font-weight:400;font-size:12.5px;color:#fff;-webkit-text-stroke:3.5px var(--ol);paint-order:stroke fill}
+html.ui-skin .capacity-chip b small{font-size:10px}
+html.ui-skin body #capacity-bar .capacity-chip.full{background:linear-gradient(180deg,#ff9a7a,#e9533c)!important}
+/* hint, toast */
+html.ui-skin body #v82-hint,html.ui-skin body #region-nav,html.ui-skin body #regions-open{top:calc(env(safe-area-inset-top) + 164px)!important}
+html.ui-skin body #v82-hint{background:linear-gradient(180deg,#fff6c9,#ffe27a)!important;border:3px solid var(--ol)!important;border-radius:14px!important;color:var(--ink)!important;font-size:12px!important;padding:6px 12px 6px 8px!important;box-shadow:0 4px 0 var(--ol)!important;text-shadow:none!important}
+html.ui-skin body #toast:not(.v83-over-panel){top:calc(env(safe-area-inset-top) + 214px)!important}
+html.ui-skin body #toast{background:linear-gradient(180deg,#fff,#e8f4ff)!important;border:3px solid var(--ol)!important;border-radius:18px!important;color:var(--ink)!important;font-size:14px!important;padding:9px 18px!important;box-shadow:0 5px 0 var(--ol),0 10px 20px #0006!important;text-shadow:none!important}
+html.ui-skin body #regions-open,html.ui-skin body #dock-toggle{background:linear-gradient(180deg,#fff,#dfe8f7)!important;border:3px solid var(--ol)!important;color:var(--ol)!important;border-radius:14px!important;box-shadow:0 4px 0 var(--ol)!important}
+html.ui-skin body #region-nav{background:#eaf6ff!important;border:3px solid var(--ol)!important;border-radius:16px!important;color:var(--ink)!important}
+/* bottom nav: candy buttons */
+html.ui-skin body #tools{background:linear-gradient(180deg,#5fd0ff,#2a8fe0)!important;border:3px solid var(--ol)!important;border-radius:22px!important;padding:7px 7px 10px!important;gap:7px!important;box-shadow:inset 0 3px 0 #ffffff80,0 5px 0 var(--ol),0 10px 24px #0007!important;backdrop-filter:none!important}
+html.ui-skin body #tools button{background:linear-gradient(180deg,#ffffff,#d6e6fb)!important;border:3px solid var(--ol)!important;border-radius:16px!important;color:var(--ink)!important;font-size:10.5px!important;box-shadow:inset 0 -4px 0 #a9c1e4,0 3px 0 var(--ol)!important;text-shadow:none!important;min-height:62px!important}
+html.ui-skin #tools button span .ui-ic{width:36px;height:36px;filter:drop-shadow(0 2px 0 #1d274788)}
+html.ui-skin body #tools button span{width:36px!important;height:36px!important;margin-top:-6px}
+html.ui-skin body #tools button.active{background:linear-gradient(180deg,var(--orange1),var(--orange2))!important;color:#fff!important;-webkit-text-stroke:3px var(--ol);paint-order:stroke fill;box-shadow:inset 0 -4px 0 #c76a0c,inset 0 3px 0 #fff6,0 3px 0 var(--ol)!important;transform:translateY(-3px)}
+/* panel */
+html.ui-skin #card{background:transparent!important;border:none!important;box-shadow:none!important;padding:0!important}
+html.ui-skin #card .game-panel{background:#eaf6ff!important;border:4px solid var(--ol)!important;border-radius:24px!important;box-shadow:0 7px 0 var(--ol),0 20px 40px #000a!important;color:var(--ink)!important;overflow:hidden}
+html.ui-skin #card .game-panel:after{display:none!important}
+html.ui-skin #card .panel-head{background:linear-gradient(180deg,var(--sky1),var(--sky2))!important;border-bottom:4px solid var(--ol)!important;box-shadow:inset 0 3px 0 #ffffff80}
+html.ui-skin #card .panel-icon{background:#fff!important;border:3px solid var(--ol)!important;border-radius:16px!important;box-shadow:0 3px 0 var(--ol)!important}
+html.ui-skin #card .panel-eyebrow{color:#eaf9ff!important;font-size:11px!important;letter-spacing:.6px!important;-webkit-text-stroke:3px #1d4f8f;paint-order:stroke fill}
+html.ui-skin #card .panel-title{font-family:'UIC Head'!important;font-weight:400!important;font-size:22px!important;color:#fff!important;-webkit-text-stroke:6px var(--ol);paint-order:stroke fill;text-shadow:0 3px 0 var(--ol)!important;letter-spacing:0!important}
+html.ui-skin #card .panel-badge{background:var(--orange1)!important;border:2.5px solid var(--ol)!important;color:var(--ink)!important;border-radius:10px!important}
+html.ui-skin #card .panel-close{background:linear-gradient(180deg,#ff8a75,#e2362a)!important;border:3px solid var(--ol)!important;border-radius:14px!important;color:#fff!important;width:42px!important;height:42px!important;font-size:26px!important;font-family:'UIC Head'!important;-webkit-text-stroke:3px var(--ol);paint-order:stroke fill;box-shadow:inset 0 -3px 0 #a81f17,0 3px 0 var(--ol)!important}
+html.ui-skin #card .panel-content,html.ui-skin #card .panel-body{color:var(--ink)!important}
+html.ui-skin #card .pm-balance{background:#cfe6fb!important;border:3px solid var(--ol)!important;border-radius:16px!important;box-shadow:inset 0 3px 0 #0001!important}
+html.ui-skin #card .pm-balance span{background:#fff!important;border:2.5px solid var(--ol)!important;color:var(--ink)!important;border-radius:10px!important;font-family:'UIC Head'!important;font-weight:400!important}
+html.ui-skin #card .pm-balance span small{color:#5a6488!important;font-family:'UIC'!important}
+html.ui-skin #card .market-tab{background:#fff!important;border:3px solid var(--ol)!important;color:var(--ink)!important;border-radius:16px!important;box-shadow:inset 0 -4px 0 #c6d8f0,0 3px 0 var(--ol)!important}
+html.ui-skin #card .market-tab.chosen{background:linear-gradient(180deg,var(--orange1),var(--orange2))!important;color:#fff!important;-webkit-text-stroke:3px var(--ol);paint-order:stroke fill;box-shadow:inset 0 -4px 0 #c76a0c,0 3px 0 var(--ol)!important}
+html.ui-skin #card .pm-section-line,html.ui-skin #card .pm-section-line strong,html.ui-skin #card .v82-sec-title{font-family:'UIC Head'!important;font-weight:400!important;color:var(--ink)!important;font-size:15px!important;text-shadow:none!important}
+html.ui-skin #card .v82-sec-title small,html.ui-skin #card .pm-section-line span{color:#5a6488!important;font-family:'UIC'!important;font-size:12px!important}
+html.ui-skin #card .market-card,html.ui-skin #card .v82-price-row,html.ui-skin #card .trade-box{background:#fff!important;border:3px solid var(--ol)!important;border-radius:18px!important;box-shadow:0 4px 0 var(--ol)!important;color:var(--ink)!important}
+html.ui-skin #card .pm-art{background:radial-gradient(circle at 50% 45%,#d8f6c4,#8fd16a)!important;border:2.5px solid var(--ol)!important;border-radius:14px!important}
+html.ui-skin #card .pm-name,html.ui-skin #card .v82-res,html.ui-skin #card .trade-label,html.ui-skin #card .trade-preview{color:var(--ink)!important}
+html.ui-skin #card .pm-name,html.ui-skin #card .v82-res{font-family:'UIC Head'!important;font-weight:400!important}
+html.ui-skin #card .pm-price,html.ui-skin #card .pm-stock,html.ui-skin #card .v82-note,html.ui-skin #card .pm-footer,html.ui-skin #card .market-hint{color:#4a557a!important}
+html.ui-skin #card .v82-buy,html.ui-skin #card .m-buy,html.ui-skin #card .trade-go{background:linear-gradient(180deg,var(--green1),var(--green2))!important;border:3px solid var(--ol)!important;color:#fff!important;font-family:'UIC Head'!important;font-weight:400!important;-webkit-text-stroke:3.5px var(--ol);paint-order:stroke fill;text-shadow:none!important;border-radius:14px!important;box-shadow:inset 0 -4px 0 #2a8a1a,inset 0 3px 0 #ffffff7a,0 3px 0 var(--ol)!important}
+html.ui-skin #card .v82-sell,html.ui-skin #card .v82-donate{background:linear-gradient(180deg,var(--orange1),var(--orange2))!important;border:3px solid var(--ol)!important;color:#fff!important;font-family:'UIC Head'!important;font-weight:400!important;-webkit-text-stroke:3.5px var(--ol);paint-order:stroke fill;border-radius:14px!important;box-shadow:inset 0 -4px 0 #c76a0c,inset 0 3px 0 #fff7,0 3px 0 var(--ol)!important;text-shadow:none!important}
+html.ui-skin #card button:disabled{filter:grayscale(.85) brightness(1.05);opacity:.75}
+html.ui-skin #card .v82-lots button,html.ui-skin #card .trade-row button{background:#fff!important;border:3px solid var(--ol)!important;color:var(--ink)!important;border-radius:14px!important;box-shadow:inset 0 -3px 0 #c6d8f0,0 3px 0 var(--ol)!important}
+html.ui-skin #card .v82-lots button.chosen,html.ui-skin #card .trade-row button.chosen{background:linear-gradient(180deg,#fff2a8,var(--orange1))!important}
+html.ui-skin #card .pm-scroll-actions button{background:#fff!important;border:3px solid var(--ol)!important;color:var(--ink)!important;border-radius:12px!important;box-shadow:0 3px 0 var(--ol)!important}
+html.ui-skin #card .pm-info{background:var(--sky2)!important;color:#fff!important;border:2px solid var(--ol)}
+html.ui-skin #card .pm-price span:not(.pm-stock){background:#fff6c9!important;border:2px solid var(--ol)!important;color:var(--ink)!important;font-family:'UIC Head'!important;font-weight:400!important}
+html.ui-skin #card .v82-price-row button.v82-sell:not(:disabled),html.ui-skin #card .v82-price-row button.v82-sell{background:linear-gradient(180deg,var(--orange1),var(--orange2))!important;border:3px solid var(--ol)!important;box-shadow:inset 0 -4px 0 #c76a0c,inset 0 3px 0 #fff7,0 3px 0 var(--ol)!important}
+html.ui-skin #card .v82-price-row button:disabled,html.ui-skin #card.market-panel .market-card .m-buy:disabled{background:#c9d3e6!important;border:3px solid #7d89a8!important;color:#fff!important;-webkit-text-stroke:3px #7d89a8;box-shadow:0 3px 0 #7d89a8!important;opacity:1;filter:none}
+html.ui-skin .capacity-chip .ui-cap-l{display:none}
+html.ui-skin body #capacity-bar{grid-template-columns:repeat(3,1fr)!important}
+html.ui-skin body #capacity-bar .capacity-chip{justify-content:center!important;padding:0 10px!important}
+html.ui-skin #card .panel-eyebrow{-webkit-text-stroke:0!important;color:#fff!important;text-shadow:0 1.5px 0 #1d4f8f!important}
+html.ui-skin #progress .ui-xp{margin-left:2px}
+html.ui-skin body #stats .stat{height:42px!important;padding:0 14px 6px 28px!important}
+html.ui-skin #stats .ui-v small{font-family:'UIC';font-size:9px;color:#5a6488;font-weight:700}
+html.ui-skin #stats .ui-fill{left:26px;right:14px;bottom:4px;height:3px}
+html.ui-skin #stats .stat::after{width:18px;height:18px;right:-8px;font-size:13px;line-height:17px}
+html.ui-skin #card .pm-balance span{font-size:11.5px!important;padding:5px 5px!important;letter-spacing:-.2px}
+html.ui-skin #card .pm-balance span small{font-size:9px!important}
+html.ui-skin #card .pm-balance span small{display:none!important}
+@media(min-width:760px){
+ html.ui-skin body #progress{right:auto!important;width:330px!important}
+ html.ui-skin body #stats{left:50%!important;right:auto!important;margin:0!important;width:600px!important;transform:translateX(-50%)!important;top:calc(env(safe-area-inset-top) + 10px)!important}
+ html.ui-skin body #capacity-bar{left:auto!important;right:66px!important;width:auto!important;top:calc(env(safe-area-inset-top) + 15px)!important;grid-template-columns:repeat(3,auto)!important}
+ html.ui-skin body #capacity-bar .capacity-chip{min-width:96px}
+ html.ui-skin body #capacity-bar .ui-cap-l{display:none}
+ html.ui-skin body #v82-hint{top:calc(env(safe-area-inset-top) + 72px)!important}
+ html.ui-skin body #region-nav,html.ui-skin body #regions-open{top:calc(env(safe-area-inset-top) + 72px)!important}
+ html.ui-skin body #toast:not(.v83-over-panel){top:calc(env(safe-area-inset-top) + 72px)!important}
+ html.ui-skin body #tools{width:560px!important;left:50%!important;right:auto!important;transform:translateX(-50%)!important}
+}
+
+/* ================= V84 · Style C everywhere (panels, cards, menus) ================= */
+/* Dela Gothic draws the Greek χ like a Latin X; take only χ from M PLUS Rounded 1c Black */
+@font-face{font-family:'UIC Head';src:url(ui/fonts/delachi.woff) format('woff');font-weight:400;font-display:block;unicode-range:U+03C7}
+html.ui-skin{--sub:#5a6488;--card:#fff;--line:#c6d8f0;--blue1:#7ad8ff;--blue2:#2a8fe0;--red1:#ff8a75;--red2:#e2362a;--purple1:#c9a6ff;--purple2:#7c4fe0}
+html.ui-skin .ui-em{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;white-space:nowrap!important;font-size:1px!important}
+html.ui-skin #card{font-size:13px}
+/* ---------- panel body: light, readable ---------- */
+html.ui-skin #card .panel-body,html.ui-skin #card .panel-content{max-height:min(46dvh,430px)!important;font-size:13px;line-height:1.45;color:var(--ink)!important;scrollbar-width:thin;scrollbar-color:#7fa6d6 transparent}
+html.ui-skin #card.market-panel .panel-body,html.ui-skin #card.market-panel .panel-content{max-height:min(60dvh,560px)!important}
+html.ui-skin #card .panel-body :is(b,strong,span,div,li,p,em,label){color:inherit}
+html.ui-skin #card .panel-body strong{color:var(--ink)!important;font-weight:800}
+html.ui-skin #card .panel-body small{color:var(--sub)!important}
+html.ui-skin #card .game-panel{background:linear-gradient(180deg,#eaf6ff,#d7ebfb)!important}
+html.ui-skin #card .panel-icon{width:52px!important;height:52px!important;display:grid!important;place-items:center!important;font-size:28px}
+html.ui-skin #card .panel-icon img.ui-inline{width:42px!important;height:42px!important}
+html.ui-skin #card .panel-badge{font-family:'UIC Head'!important;font-weight:400!important;font-size:11px!important;padding:2px 8px!important}
+html.ui-skin #card .panel-eyebrow{font-size:10.5px!important;letter-spacing:.4px!important}
+/* white "sticker" boxes */
+html.ui-skin #card :is(.building-meta,.xp-note,.v82-upnext,.v82-upbar,.v82-intro>div,.v82-unlocks li,.v14stats>div,.v83-power>div,.v82-offer,.v82-ut-row){background:var(--card)!important;border:3px solid var(--ol)!important;border-radius:14px!important;box-shadow:0 3px 0 var(--ol)!important;color:var(--ink)!important;font-size:12.5px!important;line-height:1.45!important}
+html.ui-skin #card :is(.building-meta,.xp-note){padding:9px 11px!important;margin:9px 0!important}
+html.ui-skin #card .v82-upnext{padding:8px 10px!important;margin-top:9px!important}
+html.ui-skin #card .v83-perks{background:linear-gradient(180deg,#fff8d6,#ffe9a0)!important}
+html.ui-skin #card .v83-perks small{display:block;margin-top:2px}
+html.ui-skin #card .building-meta>strong:first-child,html.ui-skin #card .v82-offer-main strong{font-family:'UIC Head';font-weight:400!important;font-size:13.5px}
+html.ui-skin #card img.ui-inline{width:1.35em!important;height:1.35em!important;vertical-align:-.32em!important}
+/* portraits */
+html.ui-skin #card :is(.town-portrait,.compact-art){background:radial-gradient(ellipse at 50% 40%,#e6fbd2,#9fdc72 62%,#6fbf4a)!important;border:3px solid var(--ol)!important;border-radius:18px!important;box-shadow:inset 0 -6px 0 #0000001a,0 3px 0 var(--ol)!important}
+html.ui-skin #card .town-portrait{min-height:96px!important}
+html.ui-skin #card .town-portrait img,html.ui-skin #card .compact-art img{max-height:104px!important;height:100px!important;filter:drop-shadow(0 5px 4px #0005)!important}
+html.ui-skin #card .compact-art{height:110px!important}
+/* stat pills */
+html.ui-skin #card :is(.town-quick-stats>span,.compact-stats>span){background:var(--card)!important;border:2.5px solid var(--ol)!important;border-radius:12px!important;box-shadow:0 2px 0 var(--ol)!important;color:var(--ink)!important;font-family:'UIC Head';font-weight:400!important;font-size:12px!important;gap:4px;min-height:30px}
+html.ui-skin #card :is(.town-quick-stats,.compact-stats) img.ui-inline{width:20px!important;height:20px!important;margin:0 2px 0 0!important}
+/* progress bars */
+html.ui-skin #card :is(.quest-bar,.compact-track){height:12px!important;background:#c9d3e6!important;border:2.5px solid var(--ol)!important;border-radius:8px!important;box-shadow:inset 0 2px 0 #0002}
+html.ui-skin #card :is(.quest-bar,.compact-track) i{background:linear-gradient(180deg,#c6f58f,#5cc435 55%,#3c9d22)!important;border-radius:5px!important;box-shadow:inset 0 2px 0 #ffffff88}
+html.ui-skin #card .compact-building [style*="height:9px"]{height:12px!important;background:#c9d3e6!important;border:2.5px solid var(--ol)!important}
+/* section titles */
+html.ui-skin #card :is(.quest-section-title,.v82-sec-title){font-family:'UIC Head'!important;font-weight:400!important;letter-spacing:0!important;text-transform:none!important;color:var(--ink)!important;font-size:14px!important;margin:14px 2px 6px!important;line-height:1.3}
+html.ui-skin #card .quest-section-title:first-child{margin-top:2px!important}
+html.ui-skin #card .quest-section-title img.ui-inline,html.ui-skin #card .v82-sec-title img.ui-inline{width:22px!important;height:22px!important}
+/* quests & achievements */
+html.ui-skin #card .quest-list{display:flex;flex-direction:column;gap:2px}
+html.ui-skin #card .quest-list .building-meta,html.ui-skin #card [data-contract],html.ui-skin #card .v82-achv{margin:5px 0!important}
+html.ui-skin #card :is(.v82-story,.v82-achv,[data-daily],[data-contract]).ready{background:linear-gradient(180deg,#fff8d0,#ffe27a)!important;border-color:var(--ol)!important;box-shadow:0 3px 0 var(--ol),0 0 0 3px #ffcf4a99!important}
+html.ui-skin #card .v82-stars,html.ui-skin #card .v82-achv{color:var(--ink)}
+html.ui-skin #card .v82-stars{color:#f0a516!important;-webkit-text-stroke:.6px var(--ol);letter-spacing:1px}
+html.ui-skin #card .v82-achv.done,html.ui-skin #card .building-meta.done{background:#e3f7d4!important}
+html.ui-skin #card .v83-epilogue{color:#b46a00!important}
+/* ---------- panel buttons: candy ---------- */
+html.ui-skin #card .panel-actions:not(.visual-actions){display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:9px!important;padding:6px 14px 15px!important}
+html.ui-skin #card .panel-actions.ui-odd:not(.visual-actions)>button:last-child{grid-column:1/-1}
+html.ui-skin #card .panel-actions:not(.visual-actions)>button{min-height:46px!important;padding:6px 8px!important;margin:0!important;border-radius:15px!important;border:3px solid var(--ol)!important;font-family:'UIC Head'!important;font-weight:400!important;font-size:13px!important;line-height:1.15!important;color:#fff!important;-webkit-text-stroke:3.5px var(--ol);paint-order:stroke fill;text-shadow:none!important;display:flex!important;align-items:center;justify-content:center;gap:5px;text-align:center;white-space:normal}
+html.ui-skin #card .panel-actions>button img.ui-inline{width:24px!important;height:24px!important;margin:0!important;flex:0 0 24px;filter:drop-shadow(0 1.5px 0 #1d274799)}
+html.ui-skin #card .panel-actions>button.ui-b-go{background:linear-gradient(180deg,var(--green1),var(--green2))!important;box-shadow:inset 0 -4px 0 #2a8a1a,inset 0 3px 0 #ffffff7a,0 3px 0 var(--ol)!important}
+html.ui-skin #card .panel-actions>button.ui-b-alt{background:linear-gradient(180deg,var(--blue1),var(--blue2))!important;box-shadow:inset 0 -4px 0 #1f6fb5,inset 0 3px 0 #ffffff7a,0 3px 0 var(--ol)!important}
+html.ui-skin #card .panel-actions>button.ui-b-close{background:linear-gradient(180deg,#fff,#dfe8f7)!important;color:var(--ink)!important;-webkit-text-stroke:0;box-shadow:inset 0 -4px 0 #b6c8e4,0 3px 0 var(--ol)!important}
+html.ui-skin #card .panel-actions>button.ui-b-danger{background:linear-gradient(180deg,var(--red1),var(--red2))!important;box-shadow:inset 0 -4px 0 #a81f17,inset 0 3px 0 #fff6,0 3px 0 var(--ol)!important}
+html.ui-skin #card .panel-actions>button:disabled{background:#c9d3e6!important;border-color:#7d89a8!important;-webkit-text-stroke:3px #7d89a8;box-shadow:0 3px 0 #7d89a8!important;opacity:1;filter:none}
+/* Town Hall / building icon tiles */
+html.ui-skin #card .panel-actions.visual-actions{gap:9px!important;padding:8px 14px 15px!important}
+html.ui-skin #card .panel-actions.visual-actions button.visual-action{height:78px!important;min-height:74px!important;border:3px solid var(--ol)!important;border-radius:18px!important;background:linear-gradient(180deg,var(--blue1),var(--blue2))!important;box-shadow:inset 0 -5px 0 #1f6fb5,inset 0 3px 0 #ffffff80,0 4px 0 var(--ol)!important;gap:2px!important}
+html.ui-skin #card .visual-action[data-action-id='recruit'],html.ui-skin #card .visual-action[data-action-id^='collect'],html.ui-skin #card .visual-action[data-action-id^='train']{background:linear-gradient(180deg,var(--green1),var(--green2))!important;box-shadow:inset 0 -5px 0 #2a8a1a,inset 0 3px 0 #ffffff80,0 4px 0 var(--ol)!important}
+html.ui-skin #card .visual-action[data-action-id='upgrade']{background:linear-gradient(180deg,var(--orange1),var(--orange2))!important;box-shadow:inset 0 -5px 0 #c76a0c,inset 0 3px 0 #ffffff80,0 4px 0 var(--ol)!important}
+html.ui-skin #card .visual-action[data-action-id^='boost'],html.ui-skin #card .visual-action[data-action-id^='rush'],html.ui-skin #card .visual-action[data-action-id^='finish']{background:linear-gradient(180deg,var(--purple1),var(--purple2))!important;box-shadow:inset 0 -5px 0 #5a33b0,inset 0 3px 0 #ffffff80,0 4px 0 var(--ol)!important}
+html.ui-skin #card .visual-action[data-action-id='move'],html.ui-skin #card .visual-action[data-action-id='info']{background:linear-gradient(180deg,#fff,#d6e6fb)!important;box-shadow:inset 0 -5px 0 #a9c1e4,0 4px 0 var(--ol)!important}
+html.ui-skin #card .visual-action[data-action-id='close']{background:linear-gradient(180deg,var(--red1),var(--red2))!important;box-shadow:inset 0 -5px 0 #a81f17,inset 0 3px 0 #fff6,0 4px 0 var(--ol)!important}
+html.ui-skin #card .visual-action .visual-action-symbol{font-size:30px!important;line-height:1!important;filter:none!important}
+html.ui-skin #card .visual-action .visual-action-symbol img.ui-inline{width:40px!important;height:40px!important;margin:0!important;vertical-align:middle!important;filter:drop-shadow(0 2px 0 #1d274788)}
+html.ui-skin #card .visual-action[data-action-id='close'] .visual-action-symbol img.ui-inline{width:34px!important;height:34px!important}
+html.ui-skin #card .visual-action .visual-action-cost{font-family:'UIC Head'!important;font-weight:400!important;font-size:10.5px!important;color:#fff!important;-webkit-text-stroke:3px var(--ol);paint-order:stroke fill;letter-spacing:-.2px!important;white-space:nowrap}
+html.ui-skin #card .visual-action[data-action-id='move'] .visual-action-cost,html.ui-skin #card .visual-action[data-action-id='info'] .visual-action-cost{color:var(--ink)!important;-webkit-text-stroke:0}
+html.ui-skin #card .visual-action .visual-action-cost img.ui-inline{width:15px!important;height:15px!important;margin:0 1px!important;vertical-align:-3px!important}
+html.ui-skin #card .visual-action:disabled{background:#c9d3e6!important;box-shadow:0 4px 0 #7d89a8!important;border-color:#7d89a8!important;filter:none;opacity:1}
+/* ---------- level-up card ---------- */
+html.ui-skin #card .v82-levelup{text-align:center}
+html.ui-skin #card .v82-lv-badge{width:132px!important;height:126px!important;border:0!important;border-radius:0!important;background:url(ui/icons/xp.webp) center/contain no-repeat!important;box-shadow:none!important;filter:drop-shadow(0 4px 0 var(--ol)) drop-shadow(0 -2px 0 var(--ol)) drop-shadow(2px 0 0 var(--ol)) drop-shadow(-2px 0 0 var(--ol)) drop-shadow(0 0 16px #ffd34a);margin:0 auto 6px!important;animation:v84pop .5s cubic-bezier(.2,1.5,.4,1)}
+html.ui-skin #card .v82-lv-badge span{font-family:'UIC Head';font-weight:400;font-size:9.5px!important;color:#fff!important;-webkit-text-stroke:2.5px var(--ol);paint-order:stroke fill;margin-top:14px;letter-spacing:.06em}
+html.ui-skin #card .v82-lv-badge b{font-family:'UIC Head';font-weight:400;font-size:40px!important;color:#fff!important;-webkit-text-stroke:6px var(--ol);paint-order:stroke fill}
+@keyframes v84pop{0%{transform:scale(.4) rotate(-12deg)}100%{transform:none}}
+html.ui-skin #card .v82-lv-reward{display:inline-flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:3px;background:linear-gradient(180deg,#fff8d0,#ffe27a);border:3px solid var(--ol);border-radius:14px;box-shadow:0 3px 0 var(--ol);padding:6px 12px;font-family:'UIC Head';font-weight:400!important;font-size:13px;color:var(--ink)!important;margin:0 0 4px!important}
+html.ui-skin #card .v82-unlocks{gap:6px!important}
+html.ui-skin #card .v82-unlocks li{padding:6px 10px!important;font-weight:700!important;text-align:left}
+html.ui-skin #card .v82-next{background:#fff;border:2.5px dashed #7d89a8;border-radius:14px;padding:7px 10px;color:var(--ink)!important;font-size:12.5px!important}
+/* ---------- daily gift ---------- */
+html.ui-skin #card .v82-days{gap:5px!important}
+html.ui-skin #card .v82-day{background:#fff!important;border:2.5px solid var(--ol)!important;border-radius:12px!important;box-shadow:0 3px 0 var(--ol)!important;padding:5px 1px 6px!important;position:relative}
+html.ui-skin #card .v82-day b{font-family:'UIC Head';font-weight:400;font-size:8.5px!important;color:var(--ink)!important;white-space:nowrap}
+html.ui-skin #card .v82-day span img.ui-inline{width:30px!important;height:30px!important;margin:2px 0!important}
+html.ui-skin #card .v82-day small{font-size:8.5px!important;color:var(--sub)!important;font-weight:700}
+html.ui-skin #card .v82-day small img.ui-inline{width:12px!important;height:12px!important;margin:0!important;vertical-align:-2px!important}
+html.ui-skin #card .v82-day.today{background:linear-gradient(180deg,#fff8d0,#ffcf4a)!important;box-shadow:0 3px 0 var(--ol),0 0 0 3px #ffcf4a,0 0 14px #ffcf4a!important;transform:translateY(-3px)}
+html.ui-skin #card .v82-day.got{opacity:1!important;background:#e3f7d4!important}
+html.ui-skin #card .v82-day.got span::after{content:''!important;position:absolute;right:-5px;top:-7px;width:20px;height:20px;background:url(ui/icons/check.webp) center/contain no-repeat}
+@media(max-width:520px){html.ui-skin #card .v82-days{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:7px!important}html.ui-skin #card .v82-day:last-child{grid-column:span 4;flex-direction:row;justify-content:center;gap:8px}}
+/* ---------- intro / welcome ---------- */
+html.ui-skin #card .v82-intro{gap:8px!important}
+html.ui-skin #card .v82-intro>div{padding:8px 10px!important}
+html.ui-skin #card .v82-intro b{font-family:'UIC Head';font-weight:400}
+/* ---------- offers / boosts ---------- */
+html.ui-skin #card .v82-offer{grid-template-columns:44px 1fr auto!important;padding:8px!important}
+html.ui-skin #card .v82-offer-icon img.ui-inline{width:40px!important;height:40px!important;margin:0!important}
+html.ui-skin #card .v82-offer-main small{font-size:11px!important}
+html.ui-skin #card .v82-offer-deal{color:#2a8a1a!important;font-weight:800}
+html.ui-skin #card .v82-offer button,html.ui-skin #card .v82-wide{background:linear-gradient(180deg,var(--green1),var(--green2))!important;border:3px solid var(--ol)!important;border-radius:14px!important;color:#fff!important;font-family:'UIC Head'!important;font-weight:400!important;-webkit-text-stroke:3.5px var(--ol);paint-order:stroke fill;box-shadow:inset 0 -4px 0 #2a8a1a,inset 0 3px 0 #ffffff7a,0 3px 0 var(--ol)!important;text-shadow:none!important}
+html.ui-skin #card .v82-wide{background:linear-gradient(180deg,var(--purple1),var(--purple2))!important;box-shadow:inset 0 -4px 0 #5a33b0,inset 0 3px 0 #ffffff7a,0 3px 0 var(--ol)!important;min-height:44px}
+html.ui-skin #card .v82-offer button:disabled,html.ui-skin #card .v82-wide:disabled{background:#c9d3e6!important;border-color:#7d89a8!important;-webkit-text-stroke:3px #7d89a8;box-shadow:0 3px 0 #7d89a8!important}
+/* ---------- army / stronghold power ---------- */
+html.ui-skin #card .v83-power>div{padding:8px!important;text-align:center;font-size:11.5px!important}
+html.ui-skin #card .v83-power>div:first-child{background:linear-gradient(180deg,#e9f7ff,#bfe6ff)!important}
+html.ui-skin #card .v83-power>div:last-child{background:linear-gradient(180deg,#fff2e6,#ffd2b0)!important}
+html.ui-skin #card .v83-power strong{display:block;font-family:'UIC Head';font-weight:400!important;font-size:20px!important;color:var(--ink)!important}
+html.ui-skin #card .v84-armystats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin:0 0 4px}
+html.ui-skin #card .v84-armystats>div{display:flex;align-items:center;gap:8px;background:#fff;border:3px solid var(--ol);border-radius:14px;box-shadow:0 3px 0 var(--ol);padding:6px 8px;min-width:0}
+html.ui-skin #card .v84-armystats img{width:30px;height:30px;flex:0 0 30px;object-fit:contain}
+html.ui-skin #card .v84-armystats span{display:flex;flex-direction:column;line-height:1.15;font-size:10.5px;color:var(--sub)!important;min-width:0}
+html.ui-skin #card .v84-armystats b{font-family:'UIC Head';font-weight:400;font-size:16px;color:var(--ink)!important}
+html.ui-skin #card .v84-armystats .v84-wide{grid-column:1/-1}
+html.ui-skin #card .v84-meter{display:block;height:14px;border:2.5px solid var(--ol);border-radius:9px;background:#c9d3e6;overflow:hidden;margin-top:3px;width:100%}
+html.ui-skin #card .v84-meter i{display:block;height:100%;border-radius:6px;box-shadow:inset 0 2px 0 #fff8}
+/* unlock table */
+html.ui-skin #card .v82-ut{gap:5px!important}
+html.ui-skin #card .v82-ut-row{grid-template-columns:50px 1fr!important;padding:6px 8px!important;font-size:11.5px!important;box-shadow:0 2px 0 var(--ol)!important;border-width:2.5px!important}
+html.ui-skin #card .v82-ut-row b{font-family:'UIC Head';font-weight:400;color:var(--blue2)!important}
+html.ui-skin #card .v82-ut-row.cur{background:linear-gradient(180deg,#fff8d0,#ffe27a)!important}
+html.ui-skin #card .v82-ut-row.done{opacity:.6}
+/* jobs */
+html.ui-skin #card .v14stats>div strong{color:var(--ink)!important;font-family:'UIC Head';font-weight:400!important}
+/* ---------- market fixes: bigger icons ---------- */
+html.ui-skin #card .market-tab{min-height:64px!important;font-size:10px!important}
+html.ui-skin #card .pm-tab-icon img.ui-inline{width:34px!important;height:34px!important}
+html.ui-skin #card .pm-balance span img.ui-inline{width:20px!important;height:20px!important;margin:0 2px 0 0!important}
+html.ui-skin #card.market-panel .market-card .pm-art{height:118px!important}
+html.ui-skin #card .pm-price img.ui-inline{width:18px!important;height:18px!important}
+html.ui-skin #card .v82-res img.ui-inline{width:24px!important;height:24px!important}
+html.ui-skin #card .v82-buy img.ui-inline,html.ui-skin #card .v82-sell img.ui-inline{width:17px!important;height:17px!important;vertical-align:-3px!important}
+html.ui-skin #card .trade-row button img.ui-inline{width:30px!important;height:30px!important}
+html.ui-skin #card .trade-label{font-family:'UIC Head';font-weight:400;font-size:11px!important;letter-spacing:.3px;color:var(--sub)!important;text-transform:none!important}
+html.ui-skin #card .pm-section-line img.ui-inline,html.ui-skin #card .v82-sec-title img.ui-inline{width:22px!important;height:22px!important}
+html.ui-skin #card .pm-footer{font-size:11px!important}
+html.ui-skin #card .pm-scroll-actions button{width:34px!important;height:32px!important;font-size:18px!important;font-family:'UIC Head'!important}
+/* ---------- HUD: quest chip ---------- */
+html.ui-skin body #v82-hint{max-width:min(300px,calc(100vw - 80px))!important;font-family:'UIC'!important;font-weight:700!important;gap:3px!important}
+html.ui-skin #v82-hint img.ui-inline{width:18px!important;height:18px!important;vertical-align:-4px!important;margin:0 2px 0 0!important}
+html.ui-skin #v82-hint .v82-hint-extra{display:inline-flex!important;align-items:center;gap:4px;font-family:'UIC Head';font-weight:400;font-size:11px!important;color:var(--ink)!important;background:#fff;border:2px solid var(--ol);border-radius:9px;padding:1px 7px 1px 3px;line-height:20px}
+html.ui-skin #v82-hint .v82-hint-extra img.ui-inline{width:20px!important;height:20px!important;vertical-align:-5px!important}
+html.ui-skin body #v82-hint.ready{background:linear-gradient(180deg,#e9ffd6,#9be35a)!important}
+/* hint button (dock toggle / eye) */
+html.ui-skin body #dock-toggle{color:var(--ink)!important}
+/* ---------- region menu ---------- */
+html.ui-skin body #region-nav{width:132px!important;padding:8px!important;background:linear-gradient(180deg,#eaf6ff,#cfe6fb)!important;box-shadow:0 4px 0 var(--ol),0 10px 20px #0006!important;font-family:'UIC'}
+html.ui-skin #region-nav .region-nav-title{font-family:'UIC Head';font-weight:400;font-size:11px;color:var(--ink);margin-bottom:7px}
+html.ui-skin #region-nav #regions-count{color:var(--blue2)}
+html.ui-skin #region-nav #regions-close{width:26px!important;height:26px!important;flex-basis:26px!important;background:linear-gradient(180deg,var(--red1),var(--red2))!important;border:2.5px solid var(--ol)!important;border-radius:9px!important;box-shadow:0 2px 0 var(--ol)!important;display:grid;place-items:center;padding:0!important}
+html.ui-skin #region-nav #regions-close img.ui-inline{width:22px!important;height:22px!important;margin:0!important}
+html.ui-skin .region-grid{gap:5px!important}
+html.ui-skin .region-grid button{height:34px!important;border:2.5px solid var(--ol)!important;border-radius:9px!important;background:linear-gradient(180deg,#d7deea,#a9b4c8)!important;box-shadow:inset 0 -3px 0 #8893a8,0 2px 0 var(--ol)!important;display:grid;place-items:center;padding:0!important}
+html.ui-skin .region-grid button img.ui-inline{width:22px!important;height:22px!important;margin:0!important;filter:drop-shadow(0 1px 0 #1d274788)}
+html.ui-skin .region-grid button.zone-unlocked{background:linear-gradient(180deg,var(--green1),var(--green2))!important;box-shadow:inset 0 -3px 0 #2a8a1a,0 2px 0 var(--ol)!important}
+html.ui-skin .region-grid button.zone-available{background:linear-gradient(180deg,var(--orange1),var(--orange2))!important;box-shadow:inset 0 -3px 0 #c76a0c,0 2px 0 var(--ol),0 0 10px #ffcf4a!important;animation:v84pulse 1.4s ease-in-out infinite}
+html.ui-skin .region-grid button.zone-active{outline:3px solid #fff!important;outline-offset:-6px}
+@keyframes v84pulse{50%{transform:scale(1.07)}}
+html.ui-skin #region-nav #return-capital{background:linear-gradient(180deg,var(--blue1),var(--blue2))!important;border:2.5px solid var(--ol)!important;border-radius:10px!important;color:#fff!important;font-family:'UIC Head';font-weight:400;font-size:10.5px!important;-webkit-text-stroke:2.5px var(--ol);paint-order:stroke fill;box-shadow:0 2px 0 var(--ol)!important;padding:6px 0!important;margin-top:7px!important}
+html.ui-skin #region-nav #return-capital img.ui-inline{width:16px!important;height:16px!important}
+html.ui-skin body #orc-timer{background:#fff!important;border:2.5px solid var(--ol)!important;border-radius:10px!important;color:var(--ink)!important;box-shadow:0 2px 0 var(--ol)!important;font-family:'UIC'!important;font-weight:700!important;text-shadow:none!important}
+html.ui-skin #orc-timer img.ui-inline{width:16px!important;height:16px!important}
+/* battle chip */
+html.ui-skin body #battle-chip{background:linear-gradient(180deg,#fff2e6,#ffd2b0)!important;border:3px solid var(--ol)!important;border-radius:14px!important;color:var(--ink)!important;font-family:'UIC Head'!important;font-weight:400!important;font-size:11.5px!important;box-shadow:0 3px 0 var(--ol)!important}
+html.ui-skin #battle-chip img.ui-inline{width:18px!important;height:18px!important}
+/* ---------- toasts ---------- */
+html.ui-skin body #toast{font-family:'UIC'!important;font-weight:700!important;z-index:40!important}
+html.ui-skin #toast img.ui-inline{width:22px!important;height:22px!important;vertical-align:-5px!important}
+html.ui-skin body #toast.v83-over-panel{font-size:12.5px!important;padding:7px 14px!important;box-shadow:0 4px 0 var(--ol),0 8px 16px #0006!important}
+/* ---------- loading veil ---------- */
+html.ui-skin #v83-veil{z-index:60!important;background:radial-gradient(circle at 50% 40%,#9fe3ff,#2a8fe0 60%,#1b5fb0)!important}
+html.ui-skin #v83-veil .v84-load{display:flex;flex-direction:column;align-items:center;gap:10px;text-shadow:none;letter-spacing:0}
+html.ui-skin #v83-veil .v84-load img{width:150px;height:150px;object-fit:contain;filter:drop-shadow(0 6px 0 #1d274766);animation:v84bob 1.6s ease-in-out infinite}
+html.ui-skin #v83-veil .v84-load b{font-family:'UIC Head';font-weight:400;font-size:30px;color:#fff;-webkit-text-stroke:7px var(--ol);paint-order:stroke fill;text-shadow:0 4px 0 var(--ol)}
+html.ui-skin #v83-veil .v84-load span{font-family:'UIC';font-weight:700;font-size:14px;color:#fff;text-shadow:0 2px 0 var(--ol)}
+html.ui-skin #v83-veil .v84-load i{display:block;width:220px;height:18px;border:3px solid var(--ol);border-radius:10px;background:#c9d3e6;overflow:hidden;box-shadow:0 3px 0 var(--ol)}
+html.ui-skin #v83-veil .v84-load u{display:block;height:100%;width:40%;border-radius:6px;background:linear-gradient(180deg,#c6f58f,#5cc435 55%,#3c9d22);animation:v84load 1.1s ease-in-out infinite alternate}
+@keyframes v84load{from{width:12%}to{width:96%}}
+@keyframes v84bob{50%{transform:translateY(-8px)}}
+/* ---------- tutorial guide ---------- */
+html.ui-skin body #tutorial-guide{background:linear-gradient(180deg,#fff8d0,#ffe27a)!important;border:3px solid var(--ol)!important;border-radius:16px!important;color:var(--ink)!important;box-shadow:0 4px 0 var(--ol),0 10px 20px #0006!important;font-family:'UIC'!important;font-weight:700!important;text-shadow:none!important}
+html.ui-skin #tutorial-guide :is(b,strong,span,div,small){color:var(--ink)!important}
+html.ui-skin #tutorial-guide button{background:linear-gradient(180deg,var(--green1),var(--green2))!important;border:3px solid var(--ol)!important;border-radius:12px!important;color:#fff!important;font-family:'UIC Head'!important;font-weight:400!important;-webkit-text-stroke:3px var(--ol);paint-order:stroke fill;box-shadow:0 3px 0 var(--ol)!important}
+html.ui-skin #tutorial-guide img.ui-inline{width:22px!important;height:22px!important}
+/* build controls */
+html.ui-skin body #build-controls button{border:3px solid var(--ol)!important;border-radius:14px!important;box-shadow:0 3px 0 var(--ol)!important;font-family:'UIC Head'!important;font-weight:400!important}
+html.ui-skin body #build-confirm{background:linear-gradient(180deg,var(--green1),var(--green2))!important;color:#fff!important}
+html.ui-skin body #build-cancel{background:linear-gradient(180deg,var(--red1),var(--red2))!important;color:#fff!important}
+html.ui-skin body #build-tip{background:#fff!important;border:3px solid var(--ol)!important;border-radius:12px!important;color:var(--ink)!important;box-shadow:0 3px 0 var(--ol)!important;text-shadow:none!important}
+/* ---------- desktop: roomier panels ---------- */
+@media(min-width:760px){
+ html.ui-skin #card{max-width:600px!important}
+ html.ui-skin #card .panel-body,html.ui-skin #card .panel-content{max-height:min(52dvh,520px)!important}
+ html.ui-skin body #region-nav{top:calc(env(safe-area-inset-top) + 72px)!important}
+}
+/* text that sits directly on the light panel */
+html.ui-skin #card .game-panel p,html.ui-skin #card .game-panel .v78-unlocks{color:var(--ink)!important}
+html.ui-skin #card .game-panel p{margin:8px 2px!important;line-height:1.45}
+html.ui-skin #card .game-panel p strong{color:var(--ink)!important}
+html.ui-skin #card .v82-offer-main strong{color:var(--ink)!important}
+html.ui-skin #card .v82-offer-main :is(small,span){color:var(--sub)!important}
+html.ui-skin #card .v78-unlocks{background:#fff!important;border:3px solid var(--ol)!important;border-radius:14px!important;box-shadow:0 3px 0 var(--ol)!important;font-size:12px!important}
+html.ui-skin #card .v78-unlocks strong{font-family:'UIC Head';font-weight:400!important}
+html.ui-skin #card .town-quick-stats>span{display:flex}
+html.ui-skin #card :is(.town-quick-stats,.compact-stats) span span{all:unset;display:inline}
+html.ui-skin #card .visual-action .visual-action-cost{white-space:normal!important;line-height:1.15!important;max-width:100%;text-align:center}
+html.ui-skin #card .v84-armystats .v84-wide span{display:block;width:100%}
+html.ui-skin #card .v84-armystats .v84-wide b{font-size:15px}
+html.ui-skin #card .v84-ov-xp{display:flex;align-items:center;gap:10px;background:linear-gradient(180deg,#fff,#e9f5ff);border:3px solid var(--ol);border-radius:14px;box-shadow:0 3px 0 var(--ol);padding:7px 10px;margin:0 0 8px}
+html.ui-skin #card .v84-ov-xp img{width:40px;height:40px;object-fit:contain}
+html.ui-skin #card .v84-ov-xp span{flex:1;min-width:0;font-family:'UIC Head';font-size:13px}
+html.ui-skin #card .v84-ov-xp b{color:var(--blue2)!important;margin-right:4px}
+/* sound toggle */
+html.ui-skin #card .panel-actions>button.ui-b-sound-on{background:linear-gradient(180deg,var(--green1),var(--green2))!important;box-shadow:inset 0 -4px 0 #2a8a1a,inset 0 3px 0 #ffffff7a,0 3px 0 var(--ol)!important}
+html.ui-skin #card .panel-actions>button.ui-b-sound-off{background:linear-gradient(180deg,#d7deea,#a9b4c8)!important;box-shadow:inset 0 -4px 0 #8893a8,0 3px 0 var(--ol)!important}
+html.ui-skin #card .panel-actions>button:is(.ui-b-sound-on,.ui-b-sound-off)::after{content:'';width:34px;height:20px;border-radius:12px;border:2.5px solid var(--ol);background:#fff;margin-left:4px;flex:0 0 34px;box-sizing:border-box;background:radial-gradient(circle at 70% 50%,var(--ol) 0 5px,#fff 6px)}
+html.ui-skin #card .panel-actions>button.ui-b-sound-off::after{background:radial-gradient(circle at 30% 50%,#7d89a8 0 5px,#fff 6px)}
+/* ---------- layout: panels sit above the dock, dock toggle never on top of the dock ---------- */
+html.ui-skin body:not(.hud-hidden):not(.dock-hidden) #card{bottom:calc(env(safe-area-inset-bottom) + 104px)!important}
+html.ui-skin body:not(.hud-hidden):not(.dock-hidden) #dock-toggle{bottom:calc(env(safe-area-inset-bottom) + 106px)!important}
+html.ui-skin body:has(#card.visible) #dock-toggle{display:none!important}
+html.ui-skin body #toast:not(.v83-over-panel){top:calc(env(safe-area-inset-top) + 230px)!important}
+html.ui-skin body:has(#region-nav:not(.is-collapsed)) #v82-hint{max-width:calc(100vw - 166px)!important}
+@media(max-width:520px){html.ui-skin #card .panel-actions:not(.visual-actions)>button{font-size:12px!important;padding:5px 6px!important}}
+@media(min-width:760px){html.ui-skin body #toast:not(.v83-over-panel){top:calc(env(safe-area-inset-top) + 78px)!important}}
+html.ui-skin #card .pm-balance span span{all:unset;display:inline}
+html.ui-skin #card.market-panel .market-card{flex-basis:196px!important}
+html.ui-skin #card.market-panel .market-card .pm-art{height:128px!important}
+html.ui-skin #card .pm-name{font-size:13px!important}
+/* ---------- round 2: buttons, Orc timer ---------- */
+html.ui-skin #card .panel-actions:not(.visual-actions)>button{flex-direction:column!important;gap:1px!important}
+html.ui-skin #card .panel-actions>button .ui-b-label{display:flex;align-items:center;justify-content:center;gap:5px;white-space:nowrap;max-width:100%}
+html.ui-skin #card .panel-actions>button .ui-b-cost{display:flex;align-items:center;justify-content:center;gap:2px;font-family:'UIC'!important;font-weight:700;font-size:10.5px;-webkit-text-stroke:0;color:#fff;background:#1d274766;border-radius:8px;padding:0 7px;line-height:17px;white-space:nowrap}
+html.ui-skin #card .panel-actions>button.ui-b-close .ui-b-cost{color:var(--ink);background:#1d27471a}
+html.ui-skin #card .panel-actions>button .ui-b-cost img.ui-inline{width:14px!important;height:14px!important;flex:0 0 14px;filter:none}
+html.ui-skin #card .panel-actions>button .ui-b-badge{display:inline-grid;place-items:center;min-width:22px;height:22px;padding:0 5px;border-radius:11px;background:linear-gradient(180deg,#ff8a75,#e2362a);border:2px solid var(--ol);font-style:normal;font-size:12px;color:#fff;-webkit-text-stroke:2.5px var(--ol);paint-order:stroke fill;margin-left:2px}
+@media(max-width:520px){html.ui-skin #card .panel-actions:not(.visual-actions)>button.ui-b-long{grid-column:1/-1}}
+html.ui-skin body #orc-timer{display:flex!important;flex-direction:column;align-items:center;gap:1px;padding:5px 4px!important;margin:7px 0 0!important;line-height:1.2}
+html.ui-skin #orc-timer b{font-family:'UIC Head';font-weight:400;font-size:10.5px;white-space:nowrap;display:flex;align-items:center;gap:3px}
+html.ui-skin #orc-timer .v84-orc-state{font-size:11.5px;font-weight:700;color:var(--sub)}
+html.ui-skin #orc-timer .v84-orc-state.ready{color:#2a8a1a;font-family:'UIC Head';font-weight:400}
+html.ui-skin #card .panel-actions>button:is(.ui-b-sound-on,.ui-b-sound-off){flex-direction:row!important}
+@media(min-width:760px){html.ui-skin #card.market-panel{left:0!important;right:0!important;margin-inline:auto!important;transform:none!important;width:auto!important;max-width:640px!important}}
+
 </style></head><body>
 <canvas id="world"></canvas><div id="progress" role="button" tabindex="0" aria-label="Επίπεδο και εμπειρία"><div class="progress-head"><span id="lvLabel">👑 Επίπεδο 1</span><span id="xpLabel">0 / 260 XP</span></div><div class="progress-track"><div id="xpFill"></div></div></div><div id="capacity-bar"><button class="capacity-chip" id="capacity-pop" type="button" aria-label="Πληθυσμός"><span>👥</span><b id="capacity-pop-value">0/5</b></button><button class="capacity-chip" id="capacity-work" type="button" aria-label="Θέσεις εργατών"><span>👷</span><b id="capacity-work-value">0/0</b></button><button class="capacity-chip" id="capacity-stock" type="button" aria-label="Αποθήκες παραγωγής"><span>📦</span><b id="capacity-stock-value">0/0</b></button></div><div id="stats"><div class="stat" id="wood">🪵 420</div><div class="stat" id="stone">🪨 260</div><div class="stat" id="food">🌾 350</div><div class="stat" id="gold">🪙 140</div></div><div id="region-nav" aria-label="Περιοχές αυτοκρατορίας">
  <div class="region-nav-title"><span>ΠΕΡΙΟΧΕΣ <span id="regions-count">1/9</span></span><button id="regions-close" type="button" title="Κλείσιμο περιοχών" aria-label="Κλείσιμο μενού περιοχών">✕</button></div>
@@ -534,7 +953,7 @@ body.eo-dev #creator-trigger{display:grid!important;place-items:center}
  <button data-zone="0">🔒</button><button data-zone="1">🔒</button><button data-zone="2">🔒</button>
  <button data-zone="3">🔒</button><button data-zone="4">🏰</button><button data-zone="5">🔒</button>
  <button data-zone="6">🔒</button><button data-zone="7">🔒</button><button data-zone="8">🔒</button>
- </div><div id="orc-timer" aria-live="off" style="font-size:12px;text-align:center;color:#f5dc9a;margin:8px 0;padding:7px;border:1px solid #9c795b;border-radius:9px;background:#211a24e8">🏕️ Orc Camp: Έτοιμο</div><button id="return-capital" type="button">⌖ Δημαρχείο</button>
+ </div><div id="orc-timer" aria-live="off" style="font-size:12px;text-align:center;color:#f5dc9a;margin:8px 0;padding:7px;border:1px solid #9c795b;border-radius:9px;background:#211a24e8">⚔️ Οχυρό Orc: Έτοιμο</div><button id="return-capital" type="button">⌖ Δημαρχείο</button>
 </div><button id="regions-open" type="button" aria-label="Άνοιγμα περιοχών" title="Άνοιγμα περιοχών">🗺️</button><div id="tools"><button data-mode="inspect" class="active"><span>👆</span>Επιλογή</button><button data-mode="worker"><span>👷</span>Εργάτες</button><button data-mode="army"><span>⚔️</span>Στρατός</button><button data-mode="build"><span>🛒</span>Αγορά</button><button data-mode="quests"><span>📜</span>Αποστολές</button></div><button id="creator-trigger" type="button" aria-label="Creator Mode" title="Creator Mode">👑</button><button id="hud-toggle" aria-label="Απόκρυψη διεπαφής" title="Απόκρυψη διεπαφής">◉</button><button id="dock-toggle" aria-label="Σύμπτυξη εργαλείων" title="Εμφάνιση ή απόκρυψη εργαλείων">⌄</button><div id="build-tip" hidden>Άγγιξε τον χάρτη για προεπισκόπηση</div><div id="build-controls" hidden>
 <button id="build-rotate-0" type="button">⌂ Αρχική 0°</button><button id="build-rotate-180" type="button">↻ Αντίθετη 180°</button><span class="rotation-angle" id="rotation-angle">0°</span>
 <button id="build-confirm" type="button">✓ Χτίσιμο</button><button id="build-cancel" type="button">✕</button>
@@ -772,11 +1191,11 @@ function showRegionInfo(idx){
  const levelReady=availableRegionPermits()>0;
  const parent=adjacentUnlockedRegion(idx);
  const cooldown=parent===null?0:campCooldown(parent);
- const state=camp.defeated?'✅ Το στρατόπεδο καταστράφηκε':site?(levelReady?'⚔️ Ένα ενεργό οχυρό Orks':'🔒 Απαιτείται επίπεδο '+requiredRegionLevel()):
+ const state=camp.defeated?'✅ Το στρατόπεδο καταστράφηκε':site?(levelReady?'⚔️ Ένα ενεργό οχυρό Orcs':'🔒 Απαιτείται επίπεδο '+requiredRegionLevel()):
   parent===null?'🔒 Πρέπει πρώτα να κατακτήσεις γειτονική περιοχή':
   cooldown>0?'⏱ Νέο οχυρό σε '+campClock(cooldown):'🏕️ Ένα οχυρό ανά περιοχή — εξουδετέρωσε πρώτα το ενεργό';
  card('🏴 '+regionNames[idx],
- `<div class="building-meta">${state}</div><p>Για να αποκτήσεις αυτή την περιοχή, χρειάζεσαι το κατάλληλο επίπεδο, να νικήσεις τον Αρχηγό Ork και τους φρουρούς και να καταστρέψεις το οχυρό.</p><p>🪙 Λάφυρα κατάκτησης: 250 χρυσός, 150 ξύλο, 100 πέτρα και 80 XP.</p>`,
+ `<div class="building-meta">${state}</div><p>Για να αποκτήσεις αυτή την περιοχή, χρειάζεσαι το κατάλληλο επίπεδο, να νικήσεις τον Αρχηγό Orc και τους φρουρούς και να καταστρέψεις το οχυρό.</p><p>🪙 Λάφυρα κατάκτησης: 250 χρυσός, 150 ξύλο, 100 πέτρα και 80 XP.</p>`,
  [...(site&&!camp.defeated?[{label:'🏕️ Δες το στρατόπεδο',fn:()=>{focusWorld(site.x,site.y);close();showCampaignCamp(idx)}}]:[]),
  ...(camp.defeated&&canUnlockRegion(idx)?[{label:'🏆 Κατάκτηση περιοχής',fn:()=>{close();unlockRegion(idx)}}]:[]),{label:'✕ Κλείσιμο',fn:close}]);
 }
@@ -1045,10 +1464,11 @@ function createSoldier(b,type){if(!canRecruit())return;const cost=type==='archer
  markQuest('train');refresh();addXP(9,'Εκπαίδευση στρατιώτη');persist();showBuilding(b);
 }
 function showArmy(){const soldiers=units.filter(u=>u.type!=='worker');
- card('⚔️ Σκοτεινή Φρουρά',`Ξιφομάχοι και τοξότες: <strong>${soldiers.length}</strong><br>Εχθροί στο πεδίο: ${enemies.length}<br>Κύματα που απωθήθηκαν: ${attacksWon}<br>Δύναμη στρατού: <strong>${armyRating()}</strong> · προτεινόμενη <strong>${recommendedRating(waveLevel())}</strong><br>Επόμενο κύμα: ${waveSpec().length} εχθροί (δύναμη Επ. ${waveLevel()})<div class="building-meta">Οι στρατιώτες επιτίθενται αυτόματα όταν πλησιάσουν εχθροί. Ξεκίνα κύμα από το στρατιωτικό μενού ή από το εχθρικό στρατόπεδο.</div>`,[
- {label:'👹 Έναρξη εχθρικού κύματος',fn:spawnWave},
- {label:'📍 Συγκέντρωση στρατού',fn:()=>{for(let i=0;i<soldiers.length;i++){soldiers[i].tx=12+(i%4)*.6;soldiers[i].ty=10+Math.floor(i/4)*.6}close();toast('Ο στρατός συγκεντρώνεται')}},
- {label:'❤️ Θεραπεία τραυματιών',fn:healSquad},
+ const __mine=armyRating(),__rec=recommendedRating(waveLevel()),__r=__rec?__mine/__rec:0,__col=__r>=1.15?'#4cc23a':__r>=.9?'#ffb020':'#ef4b3a';
+ card('⚔️ Σκοτεινή Φρουρά',`<div class="v84-armystats"><div><img src="ui/icons/army.webp" alt=""><span>Ξιφομάχοι και τοξότες<b>${soldiers.filter(u=>u.type!=='archer').length} + ${soldiers.filter(u=>u.type==='archer').length} = ${soldiers.length}</b></span></div><div><img src="ui/icons/orc.webp" alt=""><span>Εχθροί στο πεδίο<b>${enemies.length}</b></span></div><div><img src="ui/icons/shield.webp" alt=""><span>Κύματα που απωθήθηκαν<b>${attacksWon}</b></span></div><div><img src="ui/icons/time.webp" alt=""><span>Επόμενο κύμα<b>${waveSpec().length} εχθροί · Επ. ${waveLevel()}</b></span></div><div class="v84-wide"><img src="ui/icons/trophy.webp" alt=""><span>Δύναμη στρατού: <b style="display:inline">${__mine}</b> · προτεινόμενη <b style="display:inline">${__rec}</b><i class="v84-meter"><i style="width:${Math.min(100,Math.round(__r*80))}%;background:${__col}"></i></i></span></div></div><div class="building-meta">Οι στρατιώτες επιτίθενται αυτόματα όταν πλησιάσουν εχθροί. Ξεκίνα κύμα από το στρατιωτικό μενού ή από το εχθρικό στρατόπεδο.</div>`,[
+ {label:'👹 Νέο κύμα',fn:spawnWave},
+ {label:'📍 Συγκέντρωση',fn:()=>{for(let i=0;i<soldiers.length;i++){soldiers[i].tx=12+(i%4)*.6;soldiers[i].ty=10+Math.floor(i/4)*.6}close();toast('Ο στρατός συγκεντρώνεται')}},
+ {label:'❤️ Θεραπεία',fn:healSquad},
  {label:'🏰 Άμυνα Δημαρχείου',fn:showCitadel},
  {label:'📜 Αποστολές',fn:showQuests},
  {label:'✕ Κλείσιμο',fn:close}
@@ -1088,7 +1508,7 @@ function showCitadel(){
    resources.wood-=45;resources.stone-=30;citadelHP=Math.min(citadelMaxHP,citadelHP+180);
    markQuest('repair');refresh();persist();toast('🔧 Το Δημαρχείο επισκευάστηκε');showCitadel();
   }},
-  {label:'⚔️ Προετοιμασία στρατού',fn:showArmy},
+  {label:'⚔️ Στρατός',fn:showArmy},
   {label:'✕ Κλείσιμο',fn:close}
  ]);
 }
@@ -1325,13 +1745,13 @@ function showCreatorMenu(){if(!DEV_MODE)return;
  ]);
 }
 $('#creator-trigger').onclick=showCreatorMenu;
-function showLevelOverview(){const n=xpNeeded(level),next=Object.values(types).filter(v=>v.unlock>level).sort((a,b)=>a.unlock-b.unlock)[0];let unlocked=Object.values(types).filter(v=>v.unlock===level).map(v=>v.label).join(', ');card('👑 Επίπεδο '+level,`<strong>Εμπειρία:</strong> ${Math.floor(xp)} / ${n} XP<br><strong>Επόμενα επίπεδα:</strong> ${[1,2,3].map(i=>'Επ. '+(level+i)+': '+xpNeeded(level+i-1).toLocaleString('el-GR')+' XP').join(' · ')}<br><strong>Μέγιστο επίπεδο κτιρίων:</strong> ${maxBuildingLevel()} · <strong>Οικοδόμοι:</strong> ${builderCount()} · <strong>Αποθήκες:</strong> ${items.filter(b=>b.type==='storage').length}/${storageLimit()}<br><strong>Συνολικές αναβαθμίσεις:</strong> ${achievements}<br><strong>Ανταμοιβή επιπέδου:</strong> επιπλέον ξύλο, πέτρα, τροφή και χρυσός.<br>${unlocksAt(level).length?'<strong>Νέο ξεκλείδωμα:</strong> '+unlocksAt(level).join(', ')+'<br>':''}<div class="v78-unlocks"><strong>Ξεκλειδώματα επόμενων επιπέδων</strong><br>${[1,2,3].map(i=>level+i).filter(l=>unlocksAt(l).length).map(l=>'Επ. '+l+': '+unlocksAt(l).join(', ')).join('<br>')||'👑 Μέγιστο επίπεδο 20 — Βασιλικό σεντούκι κάθε 10.000 XP.'}</div><div class="xp-note">Ξεκινάς με ένα Δημαρχείο. Χτίζεις όλα τα υπόλοιπα από την Αγορά. Οι απαιτήσεις XP αυξάνονται ανά επίπεδο. Κάθε επίπεδο έως το 20 ξεκλειδώνει κάτι νέο: κτίρια, θέσεις, περιοχές, ενισχύσεις. Οι διακοσμήσεις δεν δίνουν XP.</div>`,[
+function showLevelOverview(){const n=xpNeeded(level),next=Object.values(types).filter(v=>v.unlock>level).sort((a,b)=>a.unlock-b.unlock)[0];let unlocked=Object.values(types).filter(v=>v.unlock===level).map(v=>v.label).join(', ');card('👑 Επίπεδο '+level,`<div class="v84-ov-xp"><img src="ui/icons/xp.webp" alt=""><span><b>Εμπειρία</b> ${Math.floor(xp)} / ${n} XP<i class="v84-meter"><i style="width:${Math.min(100,100*xp/n).toFixed(1)}%;background:linear-gradient(180deg,#bdf4ff,#3bb8f0 55%,#1f8ad3)"></i></i></span></div><div class="v84-armystats"><div><img src="ui/icons/up.webp" alt=""><span>Μέγιστο επίπεδο κτιρίων<b>${maxBuildingLevel()}</b></span></div><div><img src="ui/icons/production.webp" alt=""><span>Οικοδόμοι<b>${builderCount()}</b></span></div><div><img src="ui/icons/storage.webp" alt=""><span>Αποθήκες<b>${items.filter(b=>b.type==='storage').length}/${storageLimit()}</b></span></div><div><img src="ui/icons/trophy.webp" alt=""><span>Συνολικές αναβαθμίσεις<b>${achievements}</b></span></div></div><div class="building-meta"><strong>Επόμενα επίπεδα:</strong> ${[1,2,3].map(i=>'Επ. '+(level+i)+': '+xpNeeded(level+i-1).toLocaleString('el-GR')+' XP').join(' · ')}<br><strong>Ανταμοιβή επιπέδου:</strong> επιπλέον ξύλο, πέτρα, τροφή και χρυσός.${unlocksAt(level).length?'<br><strong>Νέο ξεκλείδωμα:</strong> '+unlocksAt(level).join(', '):''}</div><div class="v78-unlocks"><strong>Ξεκλειδώματα επόμενων επιπέδων</strong><br>${[1,2,3].map(i=>level+i).filter(l=>unlocksAt(l).length).map(l=>'Επ. '+l+': '+unlocksAt(l).join(', ')).join('<br>')||'👑 Μέγιστο επίπεδο 20 — Βασιλικό σεντούκι κάθε 10.000 XP.'}</div><div class="xp-note">Ξεκινάς με ένα Δημαρχείο. Χτίζεις όλα τα υπόλοιπα από την Αγορά. Οι απαιτήσεις XP αυξάνονται ανά επίπεδο. Κάθε επίπεδο έως το 20 ξεκλειδώνει κάτι νέο: κτίρια, θέσεις, περιοχές, ενισχύσεις. Οι διακοσμήσεις δεν δίνουν XP.</div>`,[
  {label:'✅ Συνέχεια',fn:close},
  {label:'📋 Ξεκλειδώματα 1–20',fn:showUnlockTable},
  {label:'🏆 Επιτεύγματα',fn:showAchievements},
  {label:'🎁 Καθημερινό δώρο',fn:()=>showLoginGift()},
  {label:(v82&&v82.sound?'🔊 Ήχος: ενεργός':'🔇 Ήχος: σίγαση'),fn:()=>{toggleSound();showLevelOverview()}},
- {label:'🏰 Νέα αυτοκρατορία από την αρχή',fn:()=>{
+ {label:'🏰 Νέα αυτοκρατορία',fn:()=>{
   if(!confirm('Νέα αυτοκρατορία; Η τωρινή πρόοδος θα αντικατασταθεί.'))return;
   items.length=0;units.length=0;enemies.length=0;projectiles.length=0;battleEffects.length=0;
   nextId=1;level=1;xp=0;achievements=0;tutorialStep=0;unlockedRegions=new Set([4]);regionCampReadyAt.fill(0);resources={wood:220,stone:90,food:150,gold:55};
@@ -2082,7 +2502,7 @@ function campaignRewardV82(idx){
  const camp=campaignCamp(idx);if(camp.defeated)return;
  camp.defeated=true;camp.hp=0;
  gainBundle({gold:250,wood:150,stone:100});
- addXP(80,'Κατάκτηση στρατοπέδου Orks');
+ addXP(80,'Κατάκτηση στρατοπέδου Orcs');
  const site=campSite(idx);if(site){regionCampReadyAt[site.parent]=nowMs()+CAMP_RESPAWN_MS;emitWorldFx(site.x,site.y,'gold',18);}
  for(const u of units)if(u.campTargetIdx===idx)delete u.campTargetIdx;
  persist();refresh();refreshRegionNav();
@@ -2111,11 +2531,11 @@ function showCampaignCampV82(idx){
  const boss=campaignGuards.find(g=>g.campIdx===idx&&g.boss);
  card('🏰 Orc Stronghold · '+regionNames[idx],
  `<div class="building-meta">🏴 Περιοχή: ${regionNames[idx]} · ❤️ Στρατόπεδο: ${Math.ceil(camp.hp)}/${camp.maxHp}</div>
- <p>👑 Ένας Αρχηγός Ork ανά οχυρό: <strong>${boss?.hp>0?Math.ceil(boss.hp)+'/'+boss.maxHp+' HP':'Νικήθηκε'}</strong>.</p>
+ <p>👑 Ένας Αρχηγός των Orc ανά οχυρό: <strong>${boss?.hp>0?Math.ceil(boss.hp)+'/'+boss.maxHp+' HP':'Νικήθηκε'}</strong>.</p>
  <p>Νίκησε τον μοναδικό αρχηγό, μετά κατάστρεψε το οχυρό. Το επόμενο στρατόπεδο εμφανίζεται μετά από 30 λεπτά.</p>
  <p>🎖️ Για κατάκτηση απαιτείται επίπεδο ${requiredRegionLevel()} και μία διαθέσιμη άδεια.</p>
  <div class="building-meta">🏆 Λάφυρα: 250 🪙 · 150 🪵 · 100 🪨 · 80 XP</div>`,
- [{label:camp.defeated?'🏆 Κατάκτηση περιοχής':'⚔️ Επίθεση στο στρατόπεδο',fn:()=>attackCampaignCamp(idx)},
+ [{label:camp.defeated?'🏆 Κατάκτηση περιοχής':'⚔️ Επίθεση',fn:()=>attackCampaignCamp(idx)},
  {label:'✕ Κλείσιμο',fn:close}]);
 }
 function updateCampaignCampsV82(dt){
@@ -2132,7 +2552,7 @@ function updateCampaignCampsV82(dt){
   u.campAttackAt=tick;
   const damage=(u.type==='archer'?18:22)*armyPower();
   if(nearest){nearest.hp=Math.max(0,nearest.hp-damage);battleFX(nearest.x,nearest.y,'#e9d3a2');
-   if(nearest.hp<=0){gainResource('gold',nearest.boss?80:10);addXP(nearest.boss?35:8,nearest.boss?'Νίκη εναντίον Orc Chieftain':'Νίκη εναντίον φρουρού Ork');if(nearest.boss)toast('👑 Έπεσε ο Orc Chieftain!');persist();}}
+   if(nearest.hp<=0){gainResource('gold',nearest.boss?80:10);addXP(nearest.boss?35:8,nearest.boss?'Νίκη εναντίον Orc Chieftain':'Νίκη εναντίον φρουρού Orc');if(nearest.boss)toast('👑 Έπεσε ο Orc Chieftain!');persist();}}
   else{camp.hp=Math.max(0,camp.hp-damage);battleFX(site.x,site.y,'#ffd36f');
    if(camp.hp<=0){campaignReward(idx);break;}}
   if(u.type==='archer')startProjectile(u.x,u.y,target.x,target.y,'#e9d79e');
@@ -2230,7 +2650,7 @@ function defeatOrc(orc){
  if(rand(orc.id,Math.floor(tick),49)<.2)gainResource('wood',6);
  if(rand(orc.id,Math.floor(tick),50)<.2)gainResource('stone',4);
  addXP(12,'Νίκη εναντίον ork');
- refresh();persist();toast('⚔️ Ork νικήθηκε! +18 🪙 · +12 XP');
+ refresh();persist();toast('⚔️ Orc νικήθηκε! +18 🪙 · +12 XP');
 }
 function updateOrcs(dt){
  for(const u of units.filter(u=>u.type==='worker')){
@@ -2309,7 +2729,7 @@ function updateOrcs(dt){
      u.orcAttackAt=tick;o.hp-=(u.type==='archer'?19:18)*armyPower();
      if(u.type==='archer')startProjectile(u.x,u.y,o.x,o.y,'#bedfa4');
      battleFX(o.x,o.y,'#eabc70');
-     if(o.hp<=0){if(o.campIdx!==undefined){o.hp=0;gainResource('gold',o.boss?80:10);addXP(o.boss?35:8,o.boss?'Orc Chieftain':'Φρουρός Ork');if(o.boss)toast('👑 Ο Αρχηγός Ork ηττήθηκε!');persist();}else defeatOrc(o);break;}
+     if(o.hp<=0){if(o.campIdx!==undefined){o.hp=0;gainResource('gold',o.boss?80:10);addXP(o.boss?35:8,o.boss?'Orc Chieftain':'Φρουρός Orc');if(o.boss)toast('👑 Ο Αρχηγός των Orc ηττήθηκε!');persist();}else defeatOrc(o);break;}
     }
    }
   }
@@ -2390,7 +2810,7 @@ function drawOrcRaider(orc,t){
 }
 function showOrcRaider(orc){
  if(orc.hp<=0)return;
- card(orc.boss?'👑 Orc Chieftain':'🪓 Ork Raider',
+ card(orc.boss?'👑 Orc Chieftain':'🪓 Orc Raider',
  `<div class="building-meta">${orc.boss?'Αρχηγός στρατοπέδου':'Εχθρική μονάδα'} · ❤️ ${Math.ceil(orc.hp)}/${orc.maxHp} · ⚔️ ${orc.damage||(orc.boss?11:6)} ζημιά</div>
  <p>Επιτίθεται σε εργάτες και στρατιώτες που πλησιάζουν. Δεν μπορεί να μπει στην ασφαλή περιοχή του Δημαρχείου.</p>
  <div class="building-meta">🏆 Ανταμοιβή: +12 XP · +18 🪙 · πιθανό ξύλο ή πέτρα</div>`,
@@ -2398,7 +2818,7 @@ function showOrcRaider(orc){
   const soldiers=units.filter(u=>u.type!=='worker'&&soldierHP(u)>0);
   if(!soldiers.length){toast('Πρώτα εκπαίδευσε στρατιώτες στον Στρατώνα');return;}
   for(const u of soldiers){u.orcTargetId=orc.id;u.tx=orc.x;u.ty=orc.y;}
-  close();toast('⚔️ Ο στρατός επιτίθεται στο Ork');
+  close();toast('⚔️ Ο στρατός επιτίθεται στο Orc');
  }},{label:'✕ Κλείσιμο',fn:close}]);
 }
 function draw(t){const grad=ctx.createLinearGradient(0,0,0,innerHeight);grad.addColorStop(0,'#28283a');grad.addColorStop(1,'#101521');ctx.fillStyle=grad;ctx.fillRect(0,0,innerWidth,innerHeight);let order=[];const vb=visibleTileBounds();for(let y=vb.y0;y<=vb.y1;y++)for(let x=vb.x0;x<=vb.x1;x++){const p=pos(x,y);if(p.x < -80||p.x>innerWidth+80||p.y< -110||p.y>innerHeight+90)continue;tile(x,y,terrain[y][x]);}for(let y=Math.max(4,vb.y0);y<=Math.min(H-5,vb.y1);y++)for(let x=Math.max(4,vb.x0);x<=Math.min(W-5,vb.x1);x++){const sp=pos(x,y);if(sp.x< -100||sp.x>innerWidth+100||sp.y< -140||sp.y>innerHeight+100)continue;let n=rand(x,y,59);if(n>.977&&!harvestedNodes.has(x+','+y)&&!items.some(b=>footprintCells(b.type,b.x,b.y).some(c=>c.x===x&&c.y===y))&&!obstacles.some(b=>Math.hypot(b.x-x,b.y-y)<.8)){let p=pos(x,y);order.push({depth:x+y,x:p.x,y:p.y,kind:'decor',o:{type:n>.991?'bush':'flower',x,y}})}}for(let o of obstacles){if(items.some(b=>footprintCells(b.type,b.x,b.y).some(c=>c.x===o.x&&c.y===o.y)))continue;let p=pos(o.x,o.y);if(p.x < -100||p.x>innerWidth+100||p.y < -130||p.y>innerHeight+105)continue;order.push({depth:o.x+o.y,x:p.x,y:p.y,kind:'object',o})}for(let b of items){let p=buildingScreenPoint(b),bp=buildingTilePoint(b);order.push({depth:bp.x+bp.y+.2,x:p.x,y:p.y,kind:'building',b})}if(level>=2||items.some(b=>b.type==='barracks')){let cp=pos(enemyCamp.x,enemyCamp.y);order.push({depth:enemyCamp.x+enemyCamp.y+.1,x:cp.x,y:cp.y,kind:'camp'})}for(let u of units){if(u.type==='worker'&&u.assignedBuildingId&&items.some(b=>b.id===u.assignedBuildingId&&workerInside(b)))continue;let p=pos(u.x,u.y);order.push({depth:u.x+u.y+.3,x:p.x,y:p.y,kind:'unit',u})}for(let e of enemies){let p=pos(e.x,e.y);order.push({depth:e.x+e.y+.31,x:p.x,y:p.y,kind:'enemy',e})}for(const orc of [...raiderOrcs,...campaignGuards]){if(orc.hp<=0||orc.campIdx!==undefined&&!activeCamp(orc.campIdx))continue;const p=pos(orc.x,orc.y);order.push({depth:orc.x+orc.y+.33,x:p.x,y:p.y,kind:'orc',orc});}
@@ -2415,7 +2835,7 @@ function draw(t){const grad=ctx.createLinearGradient(0,0,0,innerHeight);grad.add
  for(const o of order)if(entityInOpenRegion(o))renderEntity(o,t);
  if(buildDraft)drawBuildGhost();drawWorkAnimation();drawBattleFX();drawWorldFx(); }
 function toastV82(msg){let el=$('#toast');el.textContent=msg;el.classList.add('show');clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.classList.remove('show'),2000)}function panelMeta(head,isMarket=false){
- let icon=isMarket?'🏪':'🏰',title=head||'EMPIRE ORIGINS',badge='';
+ let icon=isMarket?'🏪':'🏰',title=head||'Βασίλειο',badge='';
  const parts=String(head||'').split(' · ');
  const first=(parts.shift()||'').trim();
  badge=parts.join(' · ');
@@ -2425,7 +2845,7 @@ function toastV82(msg){let el=$('#toast');el.textContent=msg;el.classList.add('s
 }
 function panelFrame(head,content,isMarket=false){
  const meta=panelMeta(head,isMarket);
- const eyebrow=isMarket?'Αγορά βασιλείου':'EMPIRE ORIGINS';
+ const eyebrow=isMarket?'Εμπόριο & κατασκευές':'Βασίλειο';
  return `<section class="game-panel ${isMarket?'market-panel':''}"><header class="panel-head"><div class="panel-head-main"><div class="panel-icon">${meta.icon}</div><div class="panel-title-wrap"><div class="panel-eyebrow">${eyebrow}</div><div class="panel-title">${meta.title}</div>${meta.badge?`<div class="panel-badge">${meta.badge}</div>`:''}</div></div><button class="panel-close" type="button" aria-label="Κλείσιμο">×</button></header>${content}</section>`;
 }
 function card(head,body,buttons=[]){
@@ -2604,7 +3024,7 @@ function showBuilding(b){
    if(count)actions.push({label:'➖ Απομάκρυνση 1 εργάτη',tutorialTarget:'remove-worker',
       fn:()=>removeProductionWorker(b)});
  }
- if(b.type==='house'&&TUTORIAL_ENABLED&&tutorialStep===5)actions.push({label:'🏰 Μετάβαση στο Δημαρχείο',tutorialTarget:'goto-town',fn:()=>{
+ if(b.type==='house'&&TUTORIAL_ENABLED&&tutorialStep===5)actions.push({label:'🏰 Στο Δημαρχείο',tutorialTarget:'goto-town',fn:()=>{
    const town=items.find(i=>i.type==='town');
    if(!town){toast('Δεν βρέθηκε το Δημαρχείο');return}
    mode='inspect';document.querySelectorAll('#tools button').forEach(btn=>btn.classList.toggle('active',btn.dataset.mode==='inspect'));
@@ -2938,7 +3358,9 @@ function focusRegion(idx){const p=regionCenter(idx);focusWorld(p.x,p.y)}
 function updateOrcCampTimer(){
  const el=document.getElementById('orc-timer');if(!el)return;
  const remain=nextCampCountdown();
- el.textContent=remain===null?'🏆 Δεν υπάρχουν άλλα διαθέσιμα οχυρά':remain>0?'⏱ Επόμενο Orc Camp: '+campClock(remain):'⚔️ Orc Camp: Έτοιμο';
+ const [ic,a,b]=remain===null?['🏆','Οχυρά Orc','Όλα κατακτήθηκαν']:remain>0?['⏱','Επόμενο οχυρό',campClock(remain)]:['⚔️','Οχυρό Orc','Έτοιμο!'];
+ const html='<b>'+ic+' '+a+'</b><span class="v84-orc-state'+(remain===0?' ready':'')+'">'+b+'</span>';
+ if(el.dataset.h!==html){el.dataset.h=html;el.innerHTML=html;el.setAttribute('aria-label',a+': '+b)}
 }
 function refreshRegionNav(){
  updateOrcCampTimer();
@@ -2947,7 +3369,7 @@ function refreshRegionNav(){
  document.querySelectorAll('#region-nav [data-zone]').forEach(b=>{
   const idx=Number(b.dataset.zone),unlocked=isRegionUnlocked(idx);
   b.textContent=idx===4?'🏰':unlocked?'✓':campaignCamp(idx).defeated?'🏆':activeCamp(idx)?'⚔️':canUnlockRegion(idx)?'⏱':'🔒';
-  b.title=regionNames[idx]+(unlocked?' (ανοιχτή)':canUnlockRegion(idx)?' (στρατόπεδο Orks)':' (απαιτεί επίπεδο)');
+  b.title=regionNames[idx]+(unlocked?' (ανοιχτή)':canUnlockRegion(idx)?' (στρατόπεδο Orcs)':' (απαιτεί επίπεδο)');
   b.classList.toggle('zone-unlocked',unlocked);b.classList.toggle('zone-available',canUnlockRegion(idx));b.classList.toggle('zone-active',idx===active);
  });
 }
@@ -3626,7 +4048,7 @@ function showLevelUp(gained){
  <div class="v82-lv-reward">🎁 Ανταμοιβή: ${rewardText(rw)}</div>
  <div class="v82-sec-title">🔓 Ξεκλειδώθηκαν</div><ul class="v82-unlocks">${un.length?un.map(u=>'<li>'+u+'</li>').join(''):'<li>Περισσότεροι πόροι</li>'}</ul>
  ${lv<maxPlayerLevel()?`<div class="v82-sec-title">⏭ Στο επίπεδο ${lv+1}</div><div class="v82-next">${next.join(' · ')||'—'}</div>`:'<div class="v82-next">👑 Έφτασες στην κορυφή! Κάθε 10.000 XP παίρνεις Βασιλικό σεντούκι.</div>'}</div>`,
- [{label:'🛒 Στην Αγορά',fn:()=>{close();newMode('build')}},{label:'📋 Όλα τα ξεκλειδώματα',fn:showUnlockTable},{label:'✅ Συνέχεια',fn:close}]);
+ [{label:'🛒 Στην Αγορά',fn:()=>{close();newMode('build')}},{label:'📋 Ξεκλειδώματα',fn:showUnlockTable},{label:'✅ Συνέχεια',fn:close}]);
 }
 function showUnlockTable(){
  const rows=[];for(let l=1;l<=maxPlayerLevel();l++){const u=l===1?['🏠 Σπίτι','🌾 Αγρόκτημα','🔥 Πυρσός','🔨 1 Οικοδόμος']:unlocksAt(l);
@@ -3663,7 +4085,7 @@ function updateHint(){
  else{const nl=storyNextLevel();text=nl?'⭐ Νέες αποστολές στο επίπεδο '+nl:'👑 Ολοκλήρωσες την ιστορία!'}
  const boosts=Object.entries(BOOSTS).filter(([k])=>boostActive(k)).map(([k,d])=>d.icon+' '+fmtDur(boostLeft(k)));
  const ups=activeUpgrades().length;
- const extra=[...boosts,...(ups?['🔨 '+ups+'/'+builderCount()]:[])].join(' · ');
+ const extra=[...boosts,...(ups?['🔨 Οικοδόμοι '+ups+'/'+builderCount()]:[])].join(' · ');
  const html=`<span class="v82-hint-text">${text}</span>${extra?`<span class="v82-hint-extra">${extra}</span>`:''}`;
  if(html!==__hintText){el.innerHTML=html;__hintText=html}
  el.classList.toggle('ready',ready);
@@ -3920,7 +4342,7 @@ function campaignReward(idx){
  const st=strongholdStats();
  camp.defeated=true;camp.hp=0;
  gainBundle(st.reward);
- addXP(st.xp,'Κατάκτηση στρατοπέδου Orks');
+ addXP(st.xp,'Κατάκτηση στρατοπέδου Orcs');
  const site=campSite(idx);if(site){regionCampReadyAt[site.parent]=nowMs()+CAMP_RESPAWN_MS;emitWorldFx(site.x,site.y,'gold',18)}
  for(const u of units)if(u.campTargetIdx===idx)delete u.campTargetIdx;
  persist();refresh();refreshRegionNav();
@@ -3935,12 +4357,12 @@ function showCampaignCamp(idx){
  const ratio=rec?mine/rec:0,verdict=ratio>=1.15?'🟢 Ο στρατός σου είναι έτοιμος':ratio>=.9?'🟡 Δύσκολη μάχη':'🔴 Ο στρατός σου είναι πολύ αδύναμος';
  card('🏰 Οχυρό των Orc · '+regionNames[idx],
  `<div class="building-meta">🏴 Περιοχή: ${regionNames[idx]} · Δύναμη οχυρού: Επ. ${st.tier} · ❤️ Οχυρό ${Math.ceil(camp.hp)}/${camp.maxHp}</div>
- <p>👑 Αρχηγός Ork: <strong>${boss?.hp>0?Math.ceil(boss.hp)+'/'+boss.maxHp+' HP':'Νικήθηκε'}</strong> · ⚔️ ${st.bossDmg} ζημιά (χτυπά και διπλανούς) · 🏹 τα τείχη ρίχνουν βέλη ${st.arrow}.</p>
+ <p>👑 Αρχηγός των Orc: <strong>${boss?.hp>0?Math.ceil(boss.hp)+'/'+boss.maxHp+' HP':'Νικήθηκε'}</strong> · ⚔️ ${st.bossDmg} ζημιά (χτυπά και διπλανούς) · 🏹 τα τείχη ρίχνουν βέλη ${st.arrow}.</p>
  <div class="v83-power"><div>⚔️ Ο στρατός σου<br><strong>${mine}</strong></div><div>🎯 Προτεινόμενο<br><strong>${rec}</strong></div></div>
  <p>${verdict}. Πρόταση: ${ref.n} στρατιώτες και Στρατώνας Επ. ${ref.barracks}. Αν υποχωρήσεις, ο αρχηγός και το οχυρό αναρρώνουν σιγά σιγά.</p>
  <p>🎖️ Για κατάκτηση απαιτείται επίπεδο ${requiredRegionLevel()} και μία διαθέσιμη άδεια.</p>
  <div class="building-meta">🏆 Λάφυρα: ${st.reward.gold} 🪙 · ${st.reward.wood} 🪵 · ${st.reward.stone} 🪨 · ${st.xp} XP</div>`,
- [{label:camp.defeated?'🏆 Κατάκτηση περιοχής':'⚔️ Επίθεση στο στρατόπεδο',fn:()=>attackCampaignCamp(idx)},
+ [{label:camp.defeated?'🏆 Κατάκτηση περιοχής':'⚔️ Επίθεση',fn:()=>attackCampaignCamp(idx)},
  {label:'✕ Κλείσιμο',fn:close}]);
 }
 function updateCampaignCamps(dt){
@@ -3973,7 +4395,7 @@ function updateCampaignCamps(dt){
   u.campAttackAt=tick;
   const damage=(u.type==='archer'?19:18)*armyPower();
   if(nearest){nearest.hp=Math.max(0,nearest.hp-damage);battleFX(nearest.x,nearest.y,'#e9d3a2');
-   if(nearest.hp<=0){gainResource('gold',nearest.boss?80:10);addXP(nearest.boss?35:8,nearest.boss?'Νίκη εναντίον Orc Chieftain':'Νίκη εναντίον φρουρού Ork');if(nearest.boss)toast('👑 Έπεσε ο Orc Chieftain!');persist()}}
+   if(nearest.hp<=0){gainResource('gold',nearest.boss?80:10);addXP(nearest.boss?35:8,nearest.boss?'Νίκη εναντίον Orc Chieftain':'Νίκη εναντίον φρουρού Orc');if(nearest.boss)toast('👑 Έπεσε ο Orc Chieftain!');persist()}}
   else{camp.hp=Math.max(0,camp.hp-damage);battleFX(site.x,site.y,'#ffd36f');
    if(camp.hp<=0){campaignReward(idx);break}}
   if(u.type==='archer')startProjectile(u.x,u.y,target.x,target.y,'#e9d79e');
@@ -4042,7 +4464,7 @@ function v83Preload(){
 function v83Startup(){
  if(!DEV_MODE){$('#creator-trigger')?.remove()}else document.body.classList.add('eo-dev');
  syncCitadel();
- const veil=document.createElement('div');veil.id='v83-veil';veil.innerHTML='<div>🏰 Φόρτωση βασιλείου…</div>';
+ const veil=document.createElement('div');veil.id='v83-veil';veil.innerHTML='<div class="v84-load"><img src="ui/icons/castle.webp" alt=""><b>EMPIRE ORIGINS</b><span>Φόρτωση βασιλείου…</span><i><u></u></i></div>';
  v83Preload();
  window.__eoVeilDone=null;
  if(!v83ArtPending().length)window.__eoVeilDone={ms:0,exact:true};
@@ -4052,7 +4474,97 @@ function v83Startup(){
  addEventListener('resize',placeToast);
 }
 
-const savedGame=restore();ensureDaily();ensureContract();synchronizeCampGuards();updateBattleChip();let __off=null,__elapsed=0,__finished=0;if(savedGame){__elapsed=Date.now()-lastIncome;__finished=items.filter(b=>b.upgradeEndsAt&&b.upgradeEndsAt<=nowMs()).length;if(__elapsed>=10000)__off=passiveIncome(__elapsed,true)}v82Tick();v82Startup(savedGame,__elapsed,__off,__finished);v83Startup();normalizeJobs();refresh();renderTutorial();refreshRegionNav();$('#progress').addEventListener('click',showLevelOverview);$('#progress').addEventListener('keydown',e=>{if(e.key==='Enter')showLevelOverview()});setInterval(persist,12000);document.addEventListener('visibilitychange',()=>{if(document.hidden)persist()});window.addEventListener('pagehide',persist);requestAnimationFrame(frame);window.__eoTest={run:code=>eval(code)};toast(savedGame?'Καλώς επέστρεψες! Η παραγωγή συνεχίζεται.':'🏰 Ξεκινάς με Δημαρχείο επιπέδου 1. Ακολούθησε την Ιστορία πάνω αριστερά!');})();
+const savedGame=restore();ensureDaily();ensureContract();synchronizeCampGuards();updateBattleChip();let __off=null,__elapsed=0,__finished=0;if(savedGame){__elapsed=Date.now()-lastIncome;__finished=items.filter(b=>b.upgradeEndsAt&&b.upgradeEndsAt<=nowMs()).length;if(__elapsed>=10000)__off=passiveIncome(__elapsed,true)}v82Tick();v82Startup(savedGame,__elapsed,__off,__finished);v83Startup();normalizeJobs();refresh();renderTutorial();refreshRegionNav();$('#progress').addEventListener('click',showLevelOverview);$('#progress').addEventListener('keydown',e=>{if(e.key==='Enter')showLevelOverview()});setInterval(persist,12000);document.addEventListener('visibilitychange',()=>{if(document.hidden)persist()});window.addEventListener('pagehide',persist);requestAnimationFrame(frame);// ===== V84 UI layer (style C · Bright Cartoon) — painted icons, el-GR number formatting, HUD markup, panel button roles =====
+(function(){
+const IC='ui/icons/';
+const src=n=>n.includes('/')?n:IC+n+'.webp';
+const icon=(n,c='')=>`<img class="ui-ic ${c}" src="${src(n)}" alt="" draggable="false">`;
+const nf=new Intl.NumberFormat('el-GR');
+const fmt=v=>nf.format(Math.floor(v));
+window.uiIcon=icon;window.uiFmt=fmt;
+const EMO=[['🪵','wood'],['🪨','stone'],['🌾','food'],['🪙','gold'],['👥','pop'],['👷','worker'],['📦','storage'],['👑','crown'],['👆','select'],['⚔','army'],['🛒','market'],['🏪','market'],['📜','quests'],['📖','quests'],['🗺','map'],['⭐','xp'],['🎁','gift'],['⏱','time'],['⏳','time'],['⌛','time'],['🏠','homes'],['⚒','production'],['🔨','production'],['✨','decor'],['⚡','boost'],['⚖','trade'],['🏛','temple'],['🏆','trophy'],['🔒','lock'],['🏰','castle'],['🛡','shield'],['🔊','sound'],['✅','check'],['🏕','orc'],['💰','chest'],['⬆','up'],['↔','move'],['ℹ','info'],['✕','close'],['❤','heart'],['🧱','bricks'],['🏴','flag'],['🚩','flag'],['📥','collect'],['🔧','production'],['📋','list'],['➕','plus'],['🌙','moon'],['☀','sun'],['🏗','production'],['🚶','worker'],['⛏','production'],['🏹','army'],['🎯','target'],['🎖','trophy'],['🎉','party'],['🔓','unlock'],['⏭','next'],['🔄','refresh'],['🔁','refresh'],['📅','time'],['👹','orc'],['📍','map'],['🪓','wood'],['🔥','art/forge_t1.webp'],['🗿','decor'],['🚪','castle'],['💎','boost'],['⛲','decor'],['🌬','art/windmill_t1.webp'],['🌷','art/flowers_pink.webp'],['🌳','art/tree_oak.webp'],['🗼','temple'],['🔨','production'],['🪖','army'],['🗡','army'],['🐎','army'],['🌲','art/tree_pine.webp'],['🏞','map'],['🧭','map'],['🍞','food'],['🥇','trophy'],['🔔','sound'],['🔇','sound'],['🔈','sound'],['⚙','gear'],['🏘','homes'],['🏡','homes'],['🏚','homes'],['🧑','pop'],['👤','pop'],['🪚','production'],['🧙','pop'],['💪','army'],['🛠','production'],];
+const TREND={'📈':'<i class="ui-trend up">▲</i>','📉':'<i class="ui-trend down">▼</i>','➖':'<i class="ui-trend flat">–</i>'};
+const MAP=new Map(EMO);
+const RX=new RegExp('('+[...EMO.map(e=>e[0]),...Object.keys(TREND)].join('|')+')\\uFE0F?|\\d{4,}','gu');
+function swapText(root){
+ if(!root)return;
+ const w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode:n=>{const p=n.parentNode;if(!p||p.closest('script,style,textarea,input,.ui-keep,.ui-em'))return NodeFilter.FILTER_REJECT;RX.lastIndex=0;return RX.test(n.nodeValue)?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_REJECT}});
+ const list=[];while(w.nextNode())list.push(w.currentNode);
+ for(const n of list){
+  const html=n.nodeValue.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])).replace(RX,m=>{
+   if(/^\d+$/.test(m))return fmt(+m);
+   const k=m.replace('\uFE0F','');if(TREND[k])return n.parentNode.closest('small')?TREND[k]:'';return icon(MAP.get(k),'ui-inline').replace('<img ','<img data-emoji="'+m+'" aria-hidden="true" ')});
+  const t=document.createElement('template');t.innerHTML=html;n.parentNode.replaceChild(t.content,n);
+ }
+}
+window.uiSwap=swapText;
+// text of an element with its icons read back as the original emoji (tests, copy, debugging)
+window.uiText=el=>{if(!el)return '';const c=el.cloneNode(true);for(const i of c.querySelectorAll('img[data-emoji]'))i.replaceWith(i.dataset.emoji);return c.textContent};
+// --- HUD: level / XP
+const prog=document.getElementById('progress');
+prog.innerHTML=`<div class="ui-lv">${icon('crown','ui-lv-crown')}<b id="ui-lvnum">1</b></div><div class="ui-xp"><div class="progress-head"><span id="lvLabel">Επίπεδο 1</span><span id="xpLabel">0 / 0 XP</span></div><div class="progress-track"><div id="xpFill"></div></div></div>`;
+const _up=updateProgress;
+updateProgress=function(){_up.apply(this,arguments);
+ const need=xpNeeded(level);document.getElementById('ui-lvnum').textContent=level;prog.style.setProperty('--xp',Math.min(100,100*xp/need).toFixed(1)+'%');
+ document.getElementById('lvLabel').textContent='Επίπεδο '+level;
+ document.getElementById('xpLabel').innerHTML=level>=maxPlayerLevel()?fmt(xp)+' / '+fmt(need)+' <small>σεντούκι</small>':fmt(xp)+' <small>/ '+fmt(need)+' XP</small>';};
+// --- HUD: resources
+const RN={wood:'Ξύλο',stone:'Πέτρα',food:'Τροφή',gold:'Χρυσός'};
+for(const r of ['wood','stone','food','gold']){const el=document.getElementById(r);el.innerHTML=`${icon(r)}<span class="ui-v"><b>0</b><small>/0</small></span><i class="ui-fill"></i>`;el.setAttribute('aria-label',RN[r])}
+const _rf=refresh;
+refresh=function(){_rf.apply(this,arguments);
+ for(const r of ['wood','stone','food','gold']){const el=document.getElementById(r);if(!el.querySelector('.ui-v'))el.innerHTML=`${icon(r)}<span class="ui-v"><b>0</b><small>/0</small></span><i class="ui-fill"></i>`;
+  const cap=resourceCap(r),v=Math.floor(resources[r]);el.querySelector('.ui-v b').textContent=fmt(v);el.querySelector('.ui-v small').textContent='/'+fmt(cap);
+  el.querySelector('.ui-fill').style.width=Math.min(100,100*v/Math.max(1,cap))+'%';el.classList.toggle('full',v>=cap)}
+ };
+// --- HUD: capacity chips
+const CAPS=[['capacity-pop','pop','Πληθυσμός'],['capacity-work','worker','Εργάτες'],['capacity-stock','storage','Απόθεμα']];
+for(const [id,ic,lab] of CAPS){const el=document.getElementById(id);const b=el.querySelector('b');el.innerHTML=icon(ic)+`<span class="ui-cap-l">${lab}</span>`;el.appendChild(b)}
+const _uc=updateCapacityHud;
+updateCapacityHud=function(){_uc.apply(this,arguments);for(const [id] of CAPS){const b=document.querySelector('#'+id+' b');const [x,y]=b.textContent.split('/');if(y!==undefined)b.innerHTML=fmt(+x)+'<small>/'+fmt(+y)+'</small>'}};
+// --- bottom nav
+const NAV={inspect:'select',worker:'worker',army:'army',build:'market',quests:'quests'};
+for(const btn of document.querySelectorAll('#tools button')){const sp=btn.querySelector('span');if(sp)sp.innerHTML=icon(NAV[btn.dataset.mode]||'select');}
+const ro=document.getElementById('regions-open');if(ro)ro.innerHTML=icon('map');
+const ht=document.getElementById('hud-toggle');if(ht)ht.innerHTML='<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>';
+const dt=document.getElementById('dock-toggle');if(dt)dt.innerHTML='<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>';
+// --- panel buttons get a role (green = main action, blue = other, white = close/later, red = destructive)
+const CLOSE_RX=/Κλείσιμο|Αργότερα|Άκυρο|Πίσω|Όχι τώρα/,DANGER_RX=/Νέα αυτοκρατορία|Διαγραφή|Επαναφορά/;
+function tagButtons(root){
+ for(const box of root.querySelectorAll('.panel-actions:not(.visual-actions)')){let i=0;
+  for(const b of box.querySelectorAll(':scope>button')){const t=b.textContent;b.classList.remove('ui-b-go','ui-b-alt','ui-b-close','ui-b-danger','ui-b-sound-on','ui-b-sound-off');if(/Ήχος/.test(t)){b.classList.add(/σίγαση/.test(t)?'ui-b-sound-off':'ui-b-sound-on');i++;continue}
+   b.classList.add(CLOSE_RX.test(t)||b.classList.contains('secondary')?'ui-b-close':DANGER_RX.test(t)?'ui-b-danger':i===0?'ui-b-go':'ui-b-alt');i++}
+  for(const b of box.querySelectorAll(':scope>button:not([data-ui-fix])'))fixLabel(b);
+  const all=[...box.querySelectorAll(':scope>button')];
+  // long labels get a full row on phones instead of wrapping into a cramped 2-line pill
+  for(const b of all){const lab=uiText(b.querySelector('.ui-b-label')||b).replace(/\p{Extended_Pictographic}|\uFE0F/gu,'').trim();b.classList.toggle('ui-b-long',lab.length>17)}
+  box.classList.toggle('ui-odd',all.filter(b=>!b.classList.contains('ui-b-long')||!matchMedia('(max-width:520px)').matches).length%2===1)}
+ const pi=root.querySelector('.panel-icon');if(pi&&!pi.querySelector('img')&&pi.textContent.trim())pi.classList.add('ui-emoji-icon');
+}
+// "Επισκευή · 45 ξύλο / 30 πέτρα" → label + small cost line; "(2 έτοιμα)" → round badge
+function fixLabel(b){b.dataset.uiFix='1';
+ const nodes=[...b.childNodes];let cut=-1,pos=-1;
+ for(let i=0;i<nodes.length;i++){const n=nodes[i];if(n.nodeType===3){const k=n.nodeValue.indexOf(' · ');if(k>=0){cut=i;pos=k;break}}}
+ const lab=document.createElement('span');lab.className='ui-b-label';
+ if(cut>=0){const n=nodes[cut];const tail=n.nodeValue.slice(pos+3);n.nodeValue=n.nodeValue.slice(0,pos);
+  const cost=document.createElement('small');cost.className='ui-b-cost';cost.append(tail,...nodes.slice(cut+1));
+  lab.append(...nodes.slice(0,cut+1));b.append(lab,cost)}
+ else{lab.append(...nodes);b.append(lab)}
+ for(const t of [...lab.childNodes].filter(n=>n.nodeType===3)){const m=t.nodeValue.match(/\s*\((\d+) έτοιμ[αοη]\)/);if(m){t.nodeValue=t.nodeValue.replace(m[0],'');const i=document.createElement('i');i.className='ui-b-badge';i.textContent=m[1];i.title=m[1]+' έτοιμα';lab.append(i)}}
+}
+window.uiTagButtons=tagButtons;
+// --- live swapping of emoji in dynamic UI
+const targets=['card','toast','v82-hint','region-nav','battle-chip','build-controls','tutorial-guide','build-tip','orc-timer','v83-veil'];
+const mo=new MutationObserver(muts=>{const seen=new Set();for(const m of muts){let t=m.target.nodeType===3?m.target.parentNode:m.target;const root=t&&t.closest&&t.closest(targets.map(i=>'#'+i).join(','));if(root&&!seen.has(root)){seen.add(root);swapText(root);if(root.id==='card')tagButtons(root)}}});
+for(const id of targets){const el=document.getElementById(id);if(el){swapText(el);if(id==='card')tagButtons(el);mo.observe(el,{childList:true,subtree:true,characterData:true})}}
+// --- toast: swap icons synchronously, then re-measure so the bigger cartoon toast never covers a panel title
+const _toast=toast;
+toast=function(msg){_toast.apply(this,arguments);const el=document.getElementById('toast');swapText(el);if(typeof placeToast==='function')placeToast()};
+document.documentElement.classList.add('ui-skin');
+try{updateProgress();refresh();updateCapacityHud()}catch(e){console.warn('ui-skin',e)}
+})();
+
+window.__eoTest={run:code=>eval(code)};toast(savedGame?'Καλώς επέστρεψες! Η παραγωγή συνεχίζεται.':'🏰 Ξεκινάς με Δημαρχείο επιπέδου 1. Ακολούθησε την Ιστορία πάνω αριστερά!');})();
 </script><script>
 (()=>{'use strict';
  const hud=document.getElementById('hud-toggle'),dock=document.getElementById('dock-toggle');
@@ -4074,6 +4586,6 @@ const savedGame=restore();ensureDaily();ensureContract();synchronizeCampGuards()
  dock.addEventListener('click',()=>setDock(!document.body.classList.contains('dock-hidden')));
  document.addEventListener('keydown',e=>{if(e.key==='Escape'){const card=document.getElementById('card');card.classList.remove('visible');}});
  // Leave the interface available on first launch. Toggles don't touch game saves.
- setHud(false);setDock(false);setRegions(false);
+ setHud(false);setDock(false);setRegions(matchMedia('(max-width:759px)').matches);
 })();
 </script></body></html>
