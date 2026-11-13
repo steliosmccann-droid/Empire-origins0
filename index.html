@@ -1,4 +1,4 @@
-<!doctype html><html lang="el"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no,viewport-fit=cover"><meta name="theme-color" content="#101c24"><title>EMPIRE ORIGINS V80 — Νέα γραφικά</title><style>
+<!doctype html><html lang="el"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no,viewport-fit=cover"><meta name="theme-color" content="#101c24"><title>EMPIRE ORIGINS V83 — Μάχες, Αγορά & πρόοδος έως το 20</title><style>
 :root{color-scheme:dark;font-family:ui-rounded,-apple-system,system-ui,sans-serif}*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;overscroll-behavior:none;background:#152432;color:#fff;touch-action:none}canvas{display:block;width:100vw;height:100dvh;touch-action:none}button{font:inherit;color:#fff;cursor:pointer;touch-action:manipulation}#title{position:fixed;top:calc(env(safe-area-inset-top) + 10px);left:12px;z-index:4;pointer-events:none;font-size:12px;font-weight:950;letter-spacing:1.5px;text-shadow:0 2px 8px #000}#title b{color:#ffd889}#title small{display:block;font-size:9px;color:#b9cbdb;letter-spacing:1.3px;margin-top:3px}#stats{position:fixed;top:calc(env(safe-area-inset-top) + 49px);left:8px;right:8px;display:grid;grid-template-columns:repeat(4,1fr);gap:5px;z-index:4;pointer-events:none}.stat{border:1px solid #76818b66;background:#142535e8;backdrop-filter:blur(12px);border-radius:12px;padding:9px 3px;text-align:center;font-size:12px;font-weight:850;box-shadow:0 3px 15px #0004}#tools{position:fixed;bottom:calc(env(safe-area-inset-bottom) + 10px);left:8px;right:8px;z-index:5;padding:9px 6px;display:grid;grid-template-columns:repeat(5,1fr);gap:5px;border:1px solid #d9bd8066;border-radius:19px;background:#152433ef;box-shadow:0 8px 35px #06121bd9;backdrop-filter:blur(12px)}#tools button{border:1px solid #5d7183;background:linear-gradient(#344758,#263747);border-radius:12px;min-height:56px;font-size:10px;font-weight:850;line-height:1.6;padding:5px 1px}#tools button span{font-size:20px;display:block}#tools button.active{border-color:#f4d589;background:linear-gradient(#7b714b,#3b594f);box-shadow:0 0 15px #f4d58933}#info{position:fixed;top:calc(env(safe-area-inset-top) + 101px);left:10px;right:10px;text-align:center;z-index:3;pointer-events:none;color:#e7eff2;font-size:11px;text-shadow:0 2px 6px #000;font-weight:700}#card{position:fixed;left:12px;right:12px;bottom:calc(env(safe-area-inset-bottom) + 89px);z-index:6;background:linear-gradient(165deg,#283e4ced,#172936f5);border:1px solid #b6a77b;border-radius:16px;padding:13px 14px;box-shadow:0 8px 25px #0008;display:none;max-height:48dvh;overflow:auto;touch-action:pan-y}#card.visible{display:block}#card .building-meta{font-size:11px;color:#eecb83;margin:6px 0}#card .building-actions{display:flex;flex-wrap:wrap;gap:5px}#card .building-actions button{flex:1 1 125px;min-height:43px}#card .building-actions .secondary{background:#263d4f;border-color:#697f8e}#card h3{margin:0 0 5px;color:#ffde9c;font-size:17px}#card p{margin:5px 0 12px;color:#cad8da;font-size:12px;line-height:1.5}#card button{border:1px solid #8c9c86;border-radius:10px;padding:10px 13px;background:#42675b;margin:3px 4px 3px 0;font-weight:800;font-size:12px}#toast{position:fixed;top:calc(env(safe-area-inset-top) + 140px);left:15%;right:15%;text-align:center;border-radius:12px;background:#122936ee;border:1px solid #a9bb9d;padding:10px;font-size:12px;z-index:9;opacity:0;transition:opacity .2s;pointer-events:none}#toast.show{opacity:1}#hint{position:fixed;bottom:calc(env(safe-area-inset-bottom) + 83px);left:8px;right:8px;pointer-events:none;text-align:center;color:#fff;text-shadow:0 2px 5px #000;font-size:10px;z-index:3} 
 /* Classic colorful kingdom UI — original assets drawn by Canvas */
 :root{color-scheme:light;font-family:Trebuchet MS,ui-rounded,-apple-system,system-ui,sans-serif}
@@ -449,6 +449,84 @@ body.dock-hidden #creator-trigger{bottom:calc(env(safe-area-inset-bottom) + 64px
 .trade-preview{padding:10px;border-radius:12px;background:#0b1420;border:1px solid #6d5640;text-align:center;font-weight:800;color:#ffe7b5}
 .trade-go{min-height:46px;border-radius:12px;border:1px solid #7daa92;background:#376d54;color:#f5f7e9;font-weight:900;font-size:13px}
 .trade-go:disabled{background:#293542;border-color:#53606b;color:#aab8c3}
+/* V82: progression, market, story, gifts, achievements */
+#v82-hint{position:fixed;z-index:6;left:8px;top:calc(env(safe-area-inset-top) + 126px);max-width:min(330px,calc(100vw - 70px));display:flex;flex-direction:column;align-items:flex-start;gap:2px;padding:6px 10px;border-radius:12px;border:1px solid #b88d55;background:linear-gradient(160deg,#2a2232f0,#171522f2);color:#f7e7c4;font:700 11.5px/1.3 system-ui;text-align:left;box-shadow:0 3px 10px #0008;cursor:pointer;touch-action:manipulation}
+#v82-hint .v82-hint-text{display:block;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+#v82-hint .v82-hint-extra{font-size:10.5px;color:#bfe3a8}
+#v82-hint.ready{border-color:#ffd36f;animation:v82glow 1.6s ease-in-out infinite}
+@keyframes v82glow{0%,100%{box-shadow:0 0 0 0 #ffd36f00}50%{box-shadow:0 0 12px 2px #ffd36faa}}
+body.hud-hidden #v82-hint{display:none}
+#card .v82-balance{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px;padding:7px!important}
+#card .v82-balance span{text-align:center;font-weight:850;font-size:12px;color:#ffe7b5;background:#0b1420;border:1px solid #6d5640;border-radius:9px;padding:5px 2px;white-space:nowrap}
+#card .v82-balance span small{opacity:.65;font-size:.8em}
+#card .v82-balance span.full{border-color:#ff7f6e;color:#ffc9bd}
+#card .v82-special{display:flex;flex-direction:column;gap:7px;max-height:min(52vh,430px);overflow-y:auto;padding-right:2px}
+#card .v82-sec-title{display:flex;align-items:center;justify-content:space-between;gap:6px;margin:6px 0 2px;font-size:12px;font-weight:900;letter-spacing:.04em;color:#f3c98b}
+#card .v82-sec-title small{font-weight:700;color:#c9b38b;letter-spacing:0}
+#card .v82-lots{display:flex;gap:4px}
+#card .v82-lots button{min-height:30px!important;padding:0 10px!important;border-radius:9px!important;border:1px solid #5d6f80!important;background:#1d2a36!important;color:#f4e6cc!important;box-shadow:none!important;font-weight:800;font-size:12px}
+#card .v82-lots button.chosen,#card .trade-row button.chosen{background:linear-gradient(180deg,#d9a857,#a8783a)!important;color:#1f140b!important;border-color:#ffd392!important}
+#card .trade-row button{min-height:40px!important;padding:4px!important;background:#1d2a36!important;border:1px solid #5d6f80!important;box-shadow:none!important;font-size:18px!important}
+#card .v82-prices{display:flex;flex-direction:column;gap:6px}
+#card .v82-price-row{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:6px;align-items:center;padding:6px;border-radius:12px;background:#0b1420b8;border:1px solid #4d5a66}
+#card .v82-res{font-weight:850;color:#f4e6cc;font-size:13px}
+#card .v82-price-row button{min-height:44px!important;padding:4px 6px!important;border-radius:11px!important;font-size:11px!important;line-height:1.25!important}
+#card .v82-price-row button.v82-sell:not(:disabled){background:linear-gradient(180deg,#c99a55,#8a6230)!important;border-color:#e8c07a!important;box-shadow:inset 0 1px 0 #fff4,0 3px 0 #5a3f1c!important}
+#card .v82-price-row button:disabled,#card .v82-offer button:disabled,#card .v82-wide:disabled{background:#293542!important;border-color:#53606b!important;color:#aab8c3!important}
+#card .v82-offers{display:flex;flex-direction:column;gap:6px}
+#card .v82-offer{display:grid;grid-template-columns:40px 1fr auto;gap:8px;align-items:center;padding:8px;border-radius:13px;background:linear-gradient(160deg,#1b2633,#121a24);border:1px solid #6d5640}
+#card .v82-offer.bought{opacity:.6}
+#card .v82-offer.locked{opacity:.55}
+#card .v82-offer-icon{font-size:26px;text-align:center}
+#card .v82-offer-main{display:flex;flex-direction:column;gap:2px;min-width:0}
+#card .v82-offer-main strong{font-size:13px;color:#ffe7b5}
+#card .v82-offer-main small{font-size:11px;color:#c9b9a0}
+#card .v82-offer-deal{font-size:11.5px;font-weight:800;color:#bfe3a8}
+#card .v82-offer button{min-height:42px!important;min-width:82px;padding:4px 9px!important;border-radius:11px!important;font-size:12px!important}
+#card .v82-wide{min-height:42px!important;border-radius:11px!important;border:1px solid #a596c8!important;background:linear-gradient(180deg,#6b5a96,#45386a)!important;box-shadow:inset 0 1px 0 #fff3,0 3px 0 #2c2346!important;color:#f1e6ff!important}
+#card .v82-note{font-size:11px;color:#b8a98f;text-align:center}
+#card .v82-locked{padding:12px;border-radius:12px;background:#0b1420;border:1px dashed #6d5640;text-align:center;font-weight:800;color:#d8c39b}
+#card .v82-decor-bonus{font-size:10.5px;font-weight:800;color:#bfe3a8;margin:2px 0 4px}
+#card .v82-upbar,#card .v82-upnext{margin-top:8px;padding:8px 10px;border-radius:12px;background:#0b1420c8;border:1px solid #8a6c45;font-size:12px;color:#f4e6cc;line-height:1.45}
+#card .v82-upbar small{display:block;margin-top:4px;color:#ffd892}
+#card .v82-story.ready,#card .v82-achv.ready{border-color:#ffd36f!important;box-shadow:0 0 0 1px #ffd36f55 inset}
+#card .v82-stars{color:#ffd36f;letter-spacing:1px}
+#card .v82-days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px}
+#card .v82-day{display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 2px;border-radius:10px;background:#0b1420;border:1px solid #4d5a66;text-align:center}
+#card .v82-day b{font-size:9px;color:#d8c39b}
+#card .v82-day span{font-size:20px}
+#card .v82-day small{font-size:8.5px;color:#c9b9a0;line-height:1.2;word-break:break-word}
+#card .v82-day.got{opacity:.5;border-color:#6eba79}
+#card .v82-day.got span::after{content:' ✓';font-size:11px;color:#9bd36a}
+#card .v82-day.today{border-color:#ffd36f;background:#3a2c14;box-shadow:0 0 10px #ffd36f66}
+#card .v82-levelup{text-align:center}
+#card .v82-lv-badge{margin:4px auto 8px;width:104px;height:104px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(circle at 35% 30%,#ffe7a3,#c98d2e 60%,#7a4f14);border:3px solid #fff0c4;box-shadow:0 0 24px #ffcc6699;color:#3a2207}
+#card .v82-lv-badge span{font-size:10px;font-weight:900;letter-spacing:.12em}
+#card .v82-lv-badge b{font-size:44px;line-height:1}
+#card .v82-lv-reward{font-weight:850;color:#ffe7b5;margin-bottom:4px}
+#card .v82-unlocks{list-style:none;margin:4px 0;padding:0;display:flex;flex-direction:column;gap:4px;text-align:left}
+#card .v82-unlocks li{padding:6px 9px;border-radius:9px;background:#0b1420c8;border:1px solid #6d5640;font-size:12.5px;font-weight:750;color:#f4e6cc}
+#card .v82-next{font-size:12px;color:#c9b9a0;text-align:left}
+#card .v82-ut{display:flex;flex-direction:column;gap:3px;max-height:56vh;overflow-y:auto}
+#card .v82-ut-row{display:grid;grid-template-columns:52px 1fr;gap:6px;padding:5px 7px;border-radius:8px;background:#0b1420a8;font-size:11.5px;color:#e9dcc2}
+#card .v82-ut-row b{color:#f3c98b}
+#card .v82-ut-row.done{opacity:.55}
+#card .v82-ut-row.cur{border:1px solid #ffd36f;background:#3a2c14}
+#card .v82-intro{display:flex;flex-direction:column;gap:7px;font-size:12.5px;line-height:1.45}
+#card .v82-intro>div{padding:7px 9px;border-radius:10px;background:#0b1420c8;border:1px solid #6d5640}
+#card .v82-donations{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px}
+#card .v82-donate{min-height:40px!important;padding:4px!important;border-radius:10px!important;font-size:11.5px!important;background:linear-gradient(180deg,#8a74b8,#5a4688)!important;border-color:#c3b0ee!important;box-shadow:inset 0 1px 0 #fff3,0 3px 0 #33285a!important}
+/* V83 */
+#toast.v83-over-panel{left:10%!important;right:10%!important;padding:7px 10px!important;font-size:11.5px!important;box-shadow:0 6px 18px #000a!important;z-index:30!important}
+#creator-trigger{display:none!important}
+body.eo-dev #creator-trigger{display:grid!important;place-items:center}
+#v83-veil{position:fixed;inset:0;z-index:3;display:grid;place-items:center;background:radial-gradient(circle at 50% 45%,#2a3b4a,#101721);transition:opacity .25s;pointer-events:none}
+#v83-veil div{font-weight:900;letter-spacing:1px;color:#ffe2a6;text-shadow:0 2px 8px #000;font-size:14px}
+#v83-veil.gone{opacity:0}
+#card .v83-power{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin:8px 0}
+#card .v83-power>div{padding:8px;text-align:center;background:#192937;border:1px solid #a88659;border-radius:12px;font-size:11px;color:#e9dcc0}
+#card .v83-power strong{font-size:16px;color:#ffe6ae}
+#card .v83-epilogue{color:#ffd889}
 </style></head><body>
 <canvas id="world"></canvas><div id="progress" role="button" tabindex="0" aria-label="Επίπεδο και εμπειρία"><div class="progress-head"><span id="lvLabel">👑 Επίπεδο 1</span><span id="xpLabel">0 / 260 XP</span></div><div class="progress-track"><div id="xpFill"></div></div></div><div id="capacity-bar"><button class="capacity-chip" id="capacity-pop" type="button" aria-label="Πληθυσμός"><span>👥</span><b id="capacity-pop-value">0/5</b></button><button class="capacity-chip" id="capacity-work" type="button" aria-label="Θέσεις εργατών"><span>👷</span><b id="capacity-work-value">0/0</b></button><button class="capacity-chip" id="capacity-stock" type="button" aria-label="Αποθήκες παραγωγής"><span>📦</span><b id="capacity-stock-value">0/0</b></button></div><div id="stats"><div class="stat" id="wood">🪵 420</div><div class="stat" id="stone">🪨 260</div><div class="stat" id="food">🌾 350</div><div class="stat" id="gold">🪙 140</div></div><div id="region-nav" aria-label="Περιοχές αυτοκρατορίας">
  <div class="region-nav-title"><span>ΠΕΡΙΟΧΕΣ <span id="regions-count">1/9</span></span><button id="regions-close" type="button" title="Κλείσιμο περιοχών" aria-label="Κλείσιμο μενού περιοχών">✕</button></div>
@@ -608,8 +686,8 @@ let gatheringTasks=[];
 const regionNames=['Βορειοδυτική','Βόρεια','Βορειοανατολική','Δυτική','Πρωτεύουσα','Ανατολική','Νοτιοδυτική','Νότια','Νοτιοανατολική'];
 function regionAt(x,y){if(x<0||y<0||x>=W||y>=H)return -1;return Math.floor(y/REGION_SIZE)*3+Math.floor(x/REGION_SIZE)}
 function isRegionUnlocked(idx){return unlockedRegions.has(idx)}
-function availableRegionPermits(){return Math.max(0,Math.min(8,Math.floor(level/10))-(unlockedRegions.size-1))}
-function requiredRegionLevel(){return Math.min(80,10*unlockedRegions.size)}
+function availableRegionPermitsV81(){return Math.max(0,Math.min(8,Math.floor(level/10))-(unlockedRegions.size-1))}
+function requiredRegionLevelV81(){return Math.min(80,10*unlockedRegions.size)}
 function regionCenter(idx){const row=Math.floor(idx/3),col=idx%3;return {x:col*REGION_SIZE+REGION_SIZE/2,y:row*REGION_SIZE+REGION_SIZE/2}}
 function adjacentUnlockedRegion(idx){
  const row=Math.floor(idx/3),col=idx%3;
@@ -644,7 +722,7 @@ const campaignGuards=[];
 const CAMP_RESPAWN_MS=30*60*1000;
 const regionCampReadyAt=Array(9).fill(0);
 let campAttackClock=0;
-function campCooldown(parent){return Math.max(0,(regionCampReadyAt[parent]||0)-Date.now());}
+function campCooldown(parent){return Math.max(0,(regionCampReadyAt[parent]||0)-nowMs());}
 function campClock(ms){
  const sec=Math.max(0,Math.ceil(ms/1000));
  return String(Math.floor(sec/60)).padStart(2,'0')+':'+String(sec%60).padStart(2,'0');
@@ -732,7 +810,7 @@ const DAILY_POOL=[
 const CONTRACT_CYCLE=['collect','nature','upgrade','gather','harvest'];
 const DAILY_COUNT=3;
 let dailyQuests=null,contract=null;
-function todayKey(){const d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
+function todayKeyV81(){const d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
 function questScaleLevel(){return Math.min(level,30)}
 function dailyGoal(def,lv){return Math.max(1,Math.round(def.base+def.step*(Math.min(lv,30)-1)))}
 function dailyReward(lv){lv=Math.min(lv,30);return {xp:40+8*lv,res:{wood:60+10*lv,food:50+8*lv,gold:10+3*lv}}}
@@ -764,7 +842,7 @@ const productionTypes={
  mine:{resource:'gold',label:'Χρυσός',icon:'🪙',rate:2,intervalMs:60000},
  windmill:{resource:'food',label:'Τροφή',icon:'🌾',rate:6,intervalMs:15000}
 };
-function productionInterval(b){return productionTypes[b.type]?.intervalMs||10000}
+function productionIntervalV81(b){return productionTypes[b.type]?.intervalMs||10000}
 function productionIntervalLabel(b){return Math.round(productionInterval(b)/1000)+' δευτ.'}
 function productionRemaining(b){
  const active=insideWorkers(b).length;
@@ -776,13 +854,13 @@ const BASE_STORAGE={farm:60,sawmill:60,quarry:60,mine:40,windmill:90};
 function productionCapacity(b){return (BASE_STORAGE[b.type]||60)*Math.max(1,Math.min(HARD_MAX_BUILDING_LEVEL,b.level||1))}
 function workerCapacity(b){return Math.max(1,Math.min(HARD_MAX_BUILDING_LEVEL,b.level||1))+forgeBonus()}
 // ===== V78 progression: level perks, building caps, per-resource storage =====
-const HARD_MAX_BUILDING_LEVEL=8;
-function maxBuildingLevel(){return level>=10?8:level>=8?7:level>=6?6:5}
-function nextCapLevel(){return level<6?6:level<8?8:level<10?10:null}
-function storageLimit(){return 1+(level>=4?1:0)+(level>=8?1:0)}
-function buildingLimit(type){return type==='storage'?storageLimit():type==='forge'?1:Infinity}
+const HARD_MAX_BUILDING_LEVEL=12;
+function maxBuildingLevelV81(){return level>=10?8:level>=8?7:level>=6?6:5}
+function nextCapLevelV81(){return level<6?6:level<8?8:level<10?10:null}
+function storageLimitV81(){return 1+(level>=4?1:0)+(level>=8?1:0)}
+function buildingLimitV81(type){return type==='storage'?storageLimit():type==='forge'?1:Infinity}
 function forgeBonus(){const f=items.filter(b=>b.type==='forge');if(!f.length)return 0;return Math.max(...f.map(b=>b.level||1))>=4?2:1}
-function tradeUnlocked(){return level>=9}
+function tradeUnlockedV81(){return level>=9}
 const LEVEL_PERKS={
  4:['📦 Δεύτερη Αποθήκη'],
  6:['⬆️ Μέγιστο επίπεδο κτιρίων: 6'],
@@ -790,7 +868,7 @@ const LEVEL_PERKS={
  9:['⚖️ Ανταλλαγή πόρων στην Αγορά'],
  10:['⬆️ Μέγιστο επίπεδο κτιρίων: 8','🏴 Άδεια για νέα περιοχή']
 };
-function unlocksAt(lv){return [...Object.values(types).filter(t=>t.unlock===lv&&lv>1).map(t=>t.icon+' '+t.label),...(LEVEL_PERKS[lv]||[])]}
+function unlocksAtV81(lv){return [...Object.values(types).filter(t=>t.unlock===lv&&lv>1).map(t=>t.icon+' '+t.label),...(LEVEL_PERKS[lv]||[])]}
 // Each resource has its own independent capacity: Town Hall base + every Storage and its level.
 const STORAGE_RULES={
  wood:{base:400,perTown:50,perStorage:150},
@@ -867,13 +945,13 @@ function collectBuilding(b){
  const taken=Math.min(room,amount);
  b.pendingCollect=amount-taken;
  resources[prod.resource]+=taken;
- emitWorldFx(b.x,b.y,prod.resource,12);
+ emitWorldFx(b.x,b.y,prod.resource,12);sfx('collect');
  if(prod.resource==='food')markQuest('harvest',taken);
  if(prod.resource==='wood'||prod.resource==='stone')markQuest('gather',taken);
  markQuest('collect');
  refresh();persist();
  toast(prod.icon+' Συλλέχθηκαν '+taken+' '+prod.label.toLowerCase()+'!'+(taken<amount?' · Η αποθήκη γέμισε, '+(amount-taken)+' έμειναν στο κτίριο':''));
- addXP(Math.min(25,Math.max(2,Math.floor(taken/5))),'Συλλογή παραγωγής');
+ addXP(collectXp(taken),'Συλλογή παραγωγής');
  if($('#card').classList.contains('visible')&&selected?.kind==='building'&&selected.id===b.id)showBuilding(b);
 }
 function drawCollectBubble(x,y,b){
@@ -895,14 +973,14 @@ function productionRates(){
  for(const b of items){
   const prod=productionTypes[b.type];
   if(prod&&productionStored(b)<productionCapacity(b)&&!resourceFull(prod.resource))
-   rates[prod.resource]+=(prod.rate*insideWorkers(b).length)*60000/prod.intervalMs;
+   rates[prod.resource]+=(prod.rate*insideWorkers(b).length)*60000/productionInterval(b);
  }
  return rates;
 }
 function passiveIncome(elapsed,quiet=false){
- const ms=Math.max(0,Math.min(Math.floor(elapsed),4*60*60*1000));
- if(ms<=0)return;
- let total=0;
+ const ms=Math.max(0,Math.min(Math.floor(elapsed),offlineCapMs()));
+ if(ms<=0)return {total:0,byRes:{}};
+ let total=0;const byRes={};
  for(const b of items){
   const prod=productionTypes[b.type];if(!prod)continue;
   const active=insideWorkers(b).length,cap=productionCapacity(b),stored=productionStored(b);
@@ -910,16 +988,17 @@ function passiveIncome(elapsed,quiet=false){
    // A stopped factory (or a full kingdom storage for this resource) doesn't stockpile completed cycles for when a worker returns.
    b.productionMs=0;continue;
   }
-  const interval=prod.intervalMs;
+  const interval=productionInterval(b);
   const elapsedWithProgress=Math.max(0,Math.min(interval-1,Number(b.productionMs)||0))+ms;
   const cycles=Math.floor(elapsedWithProgress/interval);
   const amount=Math.max(0,Math.min(cap-stored,cycles*prod.rate*active));
   b.pendingCollect=stored+amount;
   if(amount>0)productionFlashes.set(b.id,tick);
   b.productionMs=b.pendingCollect>=cap?0:elapsedWithProgress%interval;
-  total+=amount;
+  total+=amount;if(amount>0)byRes[prod.resource]=(byRes[prod.resource]||0)+amount;
  }
  if(!quiet&&total>0)toast('📦 Παραγωγή έτοιμη — πάτησε το εικονίδιο συλλογής');
+ return {total,byRes};
 }
 function showJobs(){
  normalizeJobs();
@@ -942,7 +1021,7 @@ function showJobs(){
  <div class="building-meta">Για ανάθεση ή απομάκρυνση άγγιξε το συγκεκριμένο κτίριο.</div>`,
  [{label:'✕ Κλείσιμο',fn:close}]);
 }
-function showQuests(){ensureDaily();ensureContract();const buttons=[];let body='<div class="quest-section-title">☀️ Καθημερινές αποστολές · ανανέωση τα μεσάνυχτα</div><div class="quest-list">';
+function showQuestsV81(){ensureDaily();ensureContract();const buttons=[];let body='<div class="quest-section-title">☀️ Καθημερινές αποστολές · ανανέωση τα μεσάνυχτα</div><div class="quest-list">';
  for(const q of dailyQuests.list){const def=DAILY_POOL.find(d=>d.key===q.key);if(!def)continue;const rw=dailyReward(dailyQuests.level),ready=!q.claimed&&q.progress>=q.goal;
  body+=`<div class="building-meta" data-daily="${q.key}"><strong>${q.claimed?'✅ ':ready?'🎁 ':def.icon+' '}${def.name}</strong><br>${def.text(q.goal)}<br><strong>${Math.floor(q.progress)} / ${q.goal}</strong> · ⭐ ${rw.xp} XP · ${rewardText(rw.res)}<div class="quest-bar"><i style="width:${Math.min(100,100*q.progress/q.goal)}%"></i></div></div>`;
  if(ready)buttons.push({label:'🎁 Ημερήσια: '+def.name,fn:()=>{if(q.claimed||q.progress<q.goal)return;q.claimed=true;gainBundle(rw.res);refresh();addXP(rw.xp,'Καθημερινή αποστολή');persist();showQuests()}});}
@@ -962,11 +1041,11 @@ function canRecruit(){if(units.length>=unitLimit()){toast('Χρειάζεσαι 
 function createSoldier(b,type){if(!canRecruit())return;const cost=type==='archer'?{food:30,gold:32}:{food:35,gold:20};
  if(resources.food<cost.food||resources.gold<cost.gold){toast('Χρειάζεσαι '+cost.food+' τροφή και '+cost.gold+' χρυσό');return}
  resources.food-=cost.food;resources.gold-=cost.gold;
- units.push({id:nextId++,type,x:b.x+.8,y:b.y+1,tx:b.x+.8,ty:b.y+1,speed:type==='archer'?1.25:1.35,phase:0,hp:type==='archer'?65:100,attackAt:0});
+ units.push({id:nextId++,type,x:b.x+.8,y:b.y+1,tx:b.x+.8,ty:b.y+1,speed:type==='archer'?1.25:1.35,phase:0,hp:soldierMaxHP({type}),mhp:soldierMaxHP({type}),attackAt:0});
  markQuest('train');refresh();addXP(9,'Εκπαίδευση στρατιώτη');persist();showBuilding(b);
 }
 function showArmy(){const soldiers=units.filter(u=>u.type!=='worker');
- card('⚔️ Σκοτεινή Φρουρά',`Ξιφομάχοι και τοξότες: <strong>${soldiers.length}</strong><br>Εχθροί στο πεδίο: ${enemies.length}<br>Κύματα που απωθήθηκαν: ${attacksWon}<div class="building-meta">Οι στρατιώτες επιτίθενται αυτόματα όταν πλησιάσουν εχθροί. Ξεκίνα κύμα από το στρατιωτικό μενού ή από το εχθρικό στρατόπεδο.</div>`,[
+ card('⚔️ Σκοτεινή Φρουρά',`Ξιφομάχοι και τοξότες: <strong>${soldiers.length}</strong><br>Εχθροί στο πεδίο: ${enemies.length}<br>Κύματα που απωθήθηκαν: ${attacksWon}<br>Δύναμη στρατού: <strong>${armyRating()}</strong> · προτεινόμενη <strong>${recommendedRating(waveLevel())}</strong><br>Επόμενο κύμα: ${waveSpec().length} εχθροί (δύναμη Επ. ${waveLevel()})<div class="building-meta">Οι στρατιώτες επιτίθενται αυτόματα όταν πλησιάσουν εχθροί. Ξεκίνα κύμα από το στρατιωτικό μενού ή από το εχθρικό στρατόπεδο.</div>`,[
  {label:'👹 Έναρξη εχθρικού κύματος',fn:spawnWave},
  {label:'📍 Συγκέντρωση στρατού',fn:()=>{for(let i=0;i<soldiers.length;i++){soldiers[i].tx=12+(i%4)*.6;soldiers[i].ty=10+Math.floor(i/4)*.6}close();toast('Ο στρατός συγκεντρώνεται')}},
  {label:'❤️ Θεραπεία τραυματιών',fn:healSquad},
@@ -974,7 +1053,7 @@ function showArmy(){const soldiers=units.filter(u=>u.type!=='worker');
  {label:'📜 Αποστολές',fn:showQuests},
  {label:'✕ Κλείσιμο',fn:close}
  ])}
-function spawnWave(){if(!items.some(b=>b.type==='barracks')){toast('Χτίσε πρώτα Στρατώνα για να αντιμετωπίσεις επιδρομές');return}if(enemies.length){toast('Ένα κύμα βρίσκεται ήδη στον χάρτη');return}
+function spawnWaveV82(){if(!items.some(b=>b.type==='barracks')){toast('Χτίσε πρώτα Στρατώνα για να αντιμετωπίσεις επιδρομές');return}if(enemies.length){toast('Ένα κύμα βρίσκεται ήδη στον χάρτη');return}
  if(citadelHP<=0){toast('Επισκεύασε πρώτα το Δημαρχείο!');showCitadel();return}
  battleOutcome='active';waveStartedAt=tick;
  wave++;const count=Math.min(3+wave,9);const town=items.find(b=>b.type==='town')||{x:CENTER_X,y:CENTER_Y};
@@ -987,7 +1066,7 @@ function updateBattleChip(){
 }
 function defenseStructures(){return items.filter(b=>b.type==='wall'||b.type==='gate')}
 function maxFortHP(b){return (b.type==='gate'?180:100)*Math.max(1,b.level||1)}
-function soldierMaxHP(u){return u.type==='archer'?65:100}
+function soldierMaxHPV82(u){return u.type==='archer'?65:100}
 function soldierHP(u){return Number.isFinite(u.hp)?u.hp:soldierMaxHP(u)}
 function healSquad(){
  const army=units.filter(u=>u.type!=='worker'),wounded=army.filter(u=>soldierHP(u)<soldierMaxHP(u));
@@ -1024,7 +1103,7 @@ function enemyTarget(e,fighters){
  if(fort&&dFort<3.5)return {kind:'fort',target:fort,d:dFort};
  return {kind:'citadel',target:items.find(b=>b.type==='town')||{x:CENTER_X,y:CENTER_Y},d:Math.hypot((items.find(b=>b.type==='town')?.x??CENTER_X)-e.x,(items.find(b=>b.type==='town')?.y??CENTER_Y)-e.y)}
 }
-function endWave(victory){
+function endWaveV82(victory){
  if(battleOutcome!=='active')return;
  battleOutcome=victory?'victory':'defeat';
  enemies=[];
@@ -1032,7 +1111,7 @@ function endWave(victory){
  else {const loss=Math.min(Math.floor(resources.gold),30+wave*5);resources.gold-=loss;toast('💀 Το Δημαρχείο έπεσε · -'+loss+' χρυσός. Επισκεύασέ το!')}
  refresh();persist();updateBattleChip();
 }
-function combatUpdate(dt){
+function combatUpdateV82(dt){
  for(let i=projectiles.length-1;i>=0;i--){projectiles[i].t+=dt*2.6;if(projectiles[i].t>=1)projectiles.splice(i,1)}
  for(let i=battleEffects.length-1;i>=0;i--){battleEffects[i].t+=dt;if(battleEffects[i].t>.6)battleEffects.splice(i,1)}
  if(!enemies.length)return;
@@ -1064,7 +1143,7 @@ function combatUpdate(dt){
   if(d<6.5){
    if(d>range*.8){u.tx=e.x;u.ty=e.y}
    if(d<=range&&tick-(u.attackAt||-99)>(u.type==='archer'?1.35:.95)){
-    e.hp-=u.type==='archer'?19:18;u.attackAt=tick;
+    e.hp-=(u.type==='archer'?19:18)*armyPower();u.attackAt=tick;
     if(u.type==='archer')startProjectile(u.x,u.y,e.x,e.y,'#bedfa4');
     battleFX(e.x,e.y,'#ef8476')
    }
@@ -1080,7 +1159,7 @@ function combatUpdate(dt){
 }
 function drawEnemy(e){
  const p=pos(e.x,e.y);
- figure(p.x,p.y,{...e,tx:e.x,ty:e.y,phase:0},tick);
+ if(e.kind==='brute'){ctx.save();ctx.translate(p.x,p.y);ctx.scale(1.3,1.3);ctx.translate(-p.x,-p.y);figure(p.x,p.y,{...e,tx:e.x,ty:e.y,phase:0},tick);ctx.restore()}else figure(p.x,p.y,{...e,tx:e.x,ty:e.y,phase:0},tick);
  ctx.save();ctx.strokeStyle='#ff536e';ctx.lineWidth=Math.max(1,cam.z*2);
  ctx.beginPath();ctx.ellipse(p.x,p.y+3*cam.z,14*cam.z,6*cam.z,0,0,Math.PI*2);ctx.stroke();
  ctx.fillStyle='#25131be8';ctx.fillRect(p.x-16*cam.z,p.y-47*cam.z,32*cam.z,5*cam.z);
@@ -1101,17 +1180,30 @@ function drawBattleFX(){
  ctx.restore();
 }
 function drawEnemyCamp(x,y){
- ctx.save();ctx.translate(x,y);ctx.scale(cam.z,cam.z);
- // Original stylized enemy encampment: stones, spiked palisade and crimson portal
- ellipse(0,8,47,15,'#100d18b8');
- for(let i=-2;i<=2;i++){const xx=i*15;line(xx,0,xx,-26-Math.abs(i)*2,'#55414a',6);path([[xx-5,-24],[xx,-36],[xx+5,-24]],'#8b5b6e','#271625',1)}
- ellipse(0,0,30,9,'#342232');
- path([[-32,0],[0,-40],[32,0]],'#2a2436','#5b4a62',2);
- path([[0,-40],[30,0],[0,-12]],'#71344b','#3e1d34',1.5);
- const r=8+Math.sin(tick*3)*2;ellipse(0,-12,r,16,'#e15e7a');
- ellipse(0,-13,r*.55,10,'#f2b0b8');
- ctx.font='bold 11px system-ui';ctx.textAlign='center';ctx.fillStyle='#ffe2e4';ctx.shadowColor='#160811';ctx.shadowBlur=6;ctx.fillText('ΕΧΘΡΟΙ',0,-49);
- ctx.restore();
+  ctx.save();ctx.translate(x,y);ctx.scale(cam.z,cam.z);
+  const im=worldArtSprite('enemy_camp');
+  if(im){
+    const P=worldArtPlacePlate('enemy_camp',120);
+    ctx.drawImage(im,P.dx,P.dy,P.dw,P.dh);
+    ctx.font='bold 11px system-ui';ctx.textAlign='center';ctx.fillStyle='#ffe2e4';
+    ctx.shadowColor='#160811';ctx.shadowBlur=6;ctx.fillText('ΕΧΘΡΟΙ',0,P.dy-6);
+    ctx.restore();return;
+  }
+  ellipse(0,8,47,15,'#100d18b8');
+  for(let i=-2;i<=2;i++){
+   const xx=i*15;
+   line(xx,0,xx,-26-Math.abs(i)*2,'#55414a',6);
+   path([[xx-5,-24],[xx,-36],[xx+5,-24]],'#8b5b6e','#271625',1)
+  }
+  ellipse(0,0,30,9,'#342232');
+  path([[-32,0],[0,-40],[32,0]],'#2a2436','#5b4a62',2);
+  path([[0,-40],[30,0],[0,-12]],'#71344b','#3e1d34',1.5);
+  const r=8+Math.sin(tick*3)*2;
+  ellipse(0,-12,r,16,'#e15e7a');
+  ellipse(0,-13,r*.55,10,'#f2b0b8');
+  ctx.font='bold 11px system-ui';ctx.textAlign='center';ctx.fillStyle='#ffe2e4';
+  ctx.shadowColor='#160811';ctx.shadowBlur=6;ctx.fillText('ΕΧΘΡΟΙ',0,-49);
+  ctx.restore();
 }
 function drawFort(x,y,b){
  ctx.save();ctx.translate(x,y);ctx.scale(cam.z,cam.z);
@@ -1208,38 +1300,42 @@ function updateTutorialPointer(){
 }
 
 // V78 curve: 300 XP for level 2, +60 per level up to 10 (4.860 XP total), then a steeper long-term curve.
-function xpNeeded(lv){const n=Math.max(0,lv-1);return Math.floor(300+60*n+(n>8?60*(n-8)*(n-8):0))}
+function xpNeededV81(lv){const n=Math.max(0,lv-1);return Math.floor(300+60*n+(n>8?60*(n-8)*(n-8):0))}
 function xpNeededV77(lv){const n=Math.max(0,lv-1);return Math.floor(260+270*n+50*n*n)}
 function levelReward(lv){return {wood:30+lv*10,stone:18+lv*6,food:30+lv*8,gold:8+lv*5}}
-function updateProgress(){if(document.querySelector('#region-nav'))refreshRegionNav();const need=xpNeeded(level);$('#lvLabel').textContent='👑 Επίπεδο '+level;$('#xpLabel').textContent=Math.floor(xp)+' / '+need+' XP';$('#xpFill').style.width=Math.min(100,(xp/need)*100)+'%'}
-function addXP(value,reason){if(!Number.isFinite(value)||value<=0){persist();return}xp+=value;let gained=[];while(xp>=xpNeeded(level)){xp-=xpNeeded(level);level++;gained.push(level);gainBundle(levelReward(level))}updateProgress();refresh();if(gained.length){const un=gained.flatMap(unlocksAt);toast('🎉 Νέο επίπεδο '+level+'!'+(un.length?' Ξεκλείδωμα: '+un.join(', '):' Πήρες πόρους.'));setTimeout(()=>showLevelOverview(),250)}else toast('⭐ +'+value+' XP · '+reason);persist()}
-// LOCAL DEVELOPMENT CHEAT: intentionally visible only in the developer HTML build.
+function updateProgress(){if(document.querySelector('#region-nav'))refreshRegionNav();const need=xpNeeded(level);$('#lvLabel').textContent='👑 Επίπεδο '+level;$('#xpLabel').textContent=level>=maxPlayerLevel()?'👑 '+Math.floor(xp)+' / '+need+' σεντούκι':Math.floor(xp)+' / '+need+' XP';$('#xpFill').style.width=Math.min(100,(xp/need)*100)+'%'}
+function addXP(value,reason){if(!Number.isFinite(value)||value<=0){persist();return}value=Math.max(1,Math.round(value*xpMult()));xp+=value;let gained=[];while(level<maxPlayerLevel()&&xp>=xpNeeded(level)){xp-=xpNeeded(level);level++;gained.push(level);gainBundle(levelReward(level))}while(level>=maxPlayerLevel()&&xp>=xpNeeded(level)){xp-=xpNeeded(level);royalChest()}updateProgress();refresh();if(gained.length){sfx('levelup');toast('🎉 Νέο επίπεδο '+level+'!');if(!window.__eoNoPopups)setTimeout(()=>showLevelUp(gained),250)}else toast('⭐ +'+value+' XP · '+reason);persist()}
+// DEVELOPER CHEAT: hidden for players; only available with ?dev=1 (V83).
 // Remove #creator-trigger and the related functions before publishing a player build.
 const CREATOR_MAX_LEVEL=999,CREATOR_MAX_RESOURCES=999999;
-function giveCreatorMax(){
+function giveCreatorMax(){if(!DEV_MODE)return;
  level=CREATOR_MAX_LEVEL;
  xp=0;
  for(const resource of ['wood','stone','food','gold'])resources[resource]=CREATOR_MAX_RESOURCES;
  refresh();refreshRegionNav();persist();close();
  toast('👑 Creator MAX! Επ. 999 · 999.999 από κάθε υλικό');
 }
-function showCreatorMenu(){
+function showCreatorMenu(){if(!DEV_MODE)return;
  const html=`<div class="creator-intro"><span style="font-size:28px">👑</span><div><strong>Developer Tools</strong><div style="font-size:11px;opacity:.8">Μόνο για δοκιμές της αυτοκρατορίας</div></div></div>
  <div class="creator-max-values"><div>⭐ Επίπεδο 999</div><div>🪵 999.999</div><div>🪨 999.999</div><div>🌾 999.999</div><div>🪙 999.999</div></div>
- <div class="building-meta">Θα ξεκλειδωθούν τα κτίρια και θα έχεις διαθέσιμα ξεκλειδώματα περιοχών ανά 10 επίπεδα. Οι περιοχές δεν ανοίγουν αυτόματα.</div>`;
+ <div class="building-meta">Θα ξεκλειδωθούν τα κτίρια και όλες οι άδειες περιοχών. Οι περιοχές δεν ανοίγουν αυτόματα.</div>`;
  card('👑 Creator Mode',html,[
   {label:'⚡ MAX LEVEL + ΥΛΙΚΑ',fn:giveCreatorMax},
   {label:'✕ Κλείσιμο',secondary:true,fn:close}
  ]);
 }
 $('#creator-trigger').onclick=showCreatorMenu;
-function showLevelOverview(){const n=xpNeeded(level),next=Object.values(types).filter(v=>v.unlock>level).sort((a,b)=>a.unlock-b.unlock)[0];let unlocked=Object.values(types).filter(v=>v.unlock===level).map(v=>v.label).join(', ');card('👑 Επίπεδο '+level,`<strong>Εμπειρία:</strong> ${Math.floor(xp)} / ${n} XP<br><strong>Επόμενα επίπεδα:</strong> ${[1,2,3].map(i=>'Επ. '+(level+i)+': '+xpNeeded(level+i-1).toLocaleString('el-GR')+' XP').join(' · ')}<br><strong>Μέγιστο επίπεδο κτιρίων:</strong> ${maxBuildingLevel()} · <strong>Αποθήκες:</strong> ${items.filter(b=>b.type==='storage').length}/${storageLimit()}<br><strong>Συνολικές αναβαθμίσεις:</strong> ${achievements}<br><strong>Ανταμοιβή επιπέδου:</strong> επιπλέον ξύλο, πέτρα, τροφή και χρυσός.<br>${unlocksAt(level).length?'<strong>Νέο ξεκλείδωμα:</strong> '+unlocksAt(level).join(', ')+'<br>':''}<div class="v78-unlocks"><strong>Ξεκλειδώματα επόμενων επιπέδων</strong><br>${[1,2,3].map(i=>level+i).filter(l=>unlocksAt(l).length).map(l=>'Επ. '+l+': '+unlocksAt(l).join(', ')).join('<br>')||'Νέες περιοχές κάθε 10 επίπεδα.'}</div><div class="xp-note">Ξεκινάς με ένα Δημαρχείο. Χτίζεις όλα τα υπόλοιπα από την Αγορά. Οι απαιτήσεις XP αυξάνονται ανά επίπεδο. Κάθε επίπεδο από το 4 έως το 10 ξεκλειδώνει κάτι νέο. Οι διακοσμήσεις δεν δίνουν XP.</div>`,[
+function showLevelOverview(){const n=xpNeeded(level),next=Object.values(types).filter(v=>v.unlock>level).sort((a,b)=>a.unlock-b.unlock)[0];let unlocked=Object.values(types).filter(v=>v.unlock===level).map(v=>v.label).join(', ');card('👑 Επίπεδο '+level,`<strong>Εμπειρία:</strong> ${Math.floor(xp)} / ${n} XP<br><strong>Επόμενα επίπεδα:</strong> ${[1,2,3].map(i=>'Επ. '+(level+i)+': '+xpNeeded(level+i-1).toLocaleString('el-GR')+' XP').join(' · ')}<br><strong>Μέγιστο επίπεδο κτιρίων:</strong> ${maxBuildingLevel()} · <strong>Οικοδόμοι:</strong> ${builderCount()} · <strong>Αποθήκες:</strong> ${items.filter(b=>b.type==='storage').length}/${storageLimit()}<br><strong>Συνολικές αναβαθμίσεις:</strong> ${achievements}<br><strong>Ανταμοιβή επιπέδου:</strong> επιπλέον ξύλο, πέτρα, τροφή και χρυσός.<br>${unlocksAt(level).length?'<strong>Νέο ξεκλείδωμα:</strong> '+unlocksAt(level).join(', ')+'<br>':''}<div class="v78-unlocks"><strong>Ξεκλειδώματα επόμενων επιπέδων</strong><br>${[1,2,3].map(i=>level+i).filter(l=>unlocksAt(l).length).map(l=>'Επ. '+l+': '+unlocksAt(l).join(', ')).join('<br>')||'👑 Μέγιστο επίπεδο 20 — Βασιλικό σεντούκι κάθε 10.000 XP.'}</div><div class="xp-note">Ξεκινάς με ένα Δημαρχείο. Χτίζεις όλα τα υπόλοιπα από την Αγορά. Οι απαιτήσεις XP αυξάνονται ανά επίπεδο. Κάθε επίπεδο έως το 20 ξεκλειδώνει κάτι νέο: κτίρια, θέσεις, περιοχές, ενισχύσεις. Οι διακοσμήσεις δεν δίνουν XP.</div>`,[
  {label:'✅ Συνέχεια',fn:close},
+ {label:'📋 Ξεκλειδώματα 1–20',fn:showUnlockTable},
+ {label:'🏆 Επιτεύγματα',fn:showAchievements},
+ {label:'🎁 Καθημερινό δώρο',fn:()=>showLoginGift()},
+ {label:(v82&&v82.sound?'🔊 Ήχος: ενεργός':'🔇 Ήχος: σίγαση'),fn:()=>{toggleSound();showLevelOverview()}},
  {label:'🏰 Νέα αυτοκρατορία από την αρχή',fn:()=>{
   if(!confirm('Νέα αυτοκρατορία; Η τωρινή πρόοδος θα αντικατασταθεί.'))return;
   items.length=0;units.length=0;enemies.length=0;projectiles.length=0;battleEffects.length=0;
   nextId=1;level=1;xp=0;achievements=0;tutorialStep=0;unlockedRegions=new Set([4]);regionCampReadyAt.fill(0);resources={wood:220,stone:90,food:150,gold:55};
-  questCounts={};questClaimed={};dailyQuests=null;contract=null;workerJobs={wood:0,stone:0,food:0,gold:0};harvestedNodes.clear();gatheringTasks=[];
+  questCounts={};questClaimed={};dailyQuests=null;contract=null;v82=v82Default();workerJobs={wood:0,stone:0,food:0,gold:0};harvestedNodes.clear();gatheringTasks=[];
   wave=0;attacksWon=0;citadelHP=citadelMaxHP;lastIncome=Date.now();
   defenseMode='guard';battleOutcome='idle';selected=null;repositionId=null;mode='inspect';
   place('town',CENTER_X,CENTER_Y);persist();refresh();refreshRegionNav();updateBattleChip();close();renderTutorial();focusWorld(CENTER_X,CENTER_Y);
@@ -1251,7 +1347,7 @@ function showLevelOverview(){const n=xpNeeded(level),next=Object.values(types).f
 function persist(){
  try{
   localStorage.setItem(SAVE_KEY,JSON.stringify({
-   version:50,level,xp,dailyQuests,contract,achievements,resources,items,units,nextId,
+   version:52,v82,level,xp,dailyQuests,contract,achievements,resources,items,units,nextId,
    questCounts,questClaimed,wave,lastIncome:Date.now(),citadelHP,
    attacksWon,defenseMode,tutorialStep,unlockedRegions:[...unlockedRegions],harvestedNodes:[...harvestedNodes],gatheringTasks,campaignCamps:campaignCamps.map(c=>({hp:c.hp,defeated:c.defeated})),
    regionCampReadyAt:regionCampReadyAt.slice(),campaignGuards:campaignGuards.filter(g=>g.slot===2).map(g=>({campIdx:g.campIdx,slot:g.slot,hp:g.hp}))
@@ -1263,11 +1359,11 @@ function restore(){
   const raw=localStorage.getItem(SAVE_KEY);
   if(!raw)return false;
   const d=JSON.parse(raw);
-  if(![43,49,50].includes(d.version)||!Array.isArray(d.items)||!Array.isArray(d.units))return false;
+  if(![43,49,50,51,52].includes(d.version)||!Array.isArray(d.items)||!Array.isArray(d.units))return false;
   level=Math.max(1,Math.min(999,Math.floor(+d.level||1)));
   xp=Math.max(0,+d.xp||0);
   // V78 migration: keep the level, convert XP into the same fraction of the new (shorter) level requirement.
-  if((+d.version||0)<50&&level<CREATOR_MAX_LEVEL){const frac=Math.min(.999,xp/xpNeededV77(level));xp=Math.floor(frac*xpNeeded(level))}
+  const ver=+d.version||0;if(ver<52&&level<CREATOR_MAX_LEVEL){const oldNeed=ver<50?xpNeededV77(level):xpNeededV81(level);const frac=Math.min(.999,xp/Math.max(1,oldNeed));xp=Math.floor(frac*xpNeeded(level))}
   else xp=Math.min(xp,Math.max(0,xpNeeded(level)-1));
   if(d.dailyQuests&&typeof d.dailyQuests.day==='string'&&Array.isArray(d.dailyQuests.list))dailyQuests={day:d.dailyQuests.day,level:Math.max(1,+d.dailyQuests.level||1),list:d.dailyQuests.list.filter(q=>q&&DAILY_POOL.some(p=>p.key===q.key)).map(q=>({key:q.key,goal:Math.max(1,+q.goal||1),progress:Math.max(0,+q.progress||0),claimed:!!q.claimed}))};
   if(d.contract&&CONTRACT_CYCLE.includes(d.contract.key))contract={n:Math.max(0,+d.contract.n||0),key:d.contract.key,goal:Math.max(1,+d.contract.goal||1),progress:Math.max(0,+d.contract.progress||0)};
@@ -1304,6 +1400,7 @@ function restore(){
   attacksWon=Math.max(0,+d.attacksWon||0);
   defenseMode=d.defenseMode||'guard';battleOutcome='idle';
   lastIncome=Math.min(Date.now(),+d.lastIncome||Date.now());
+  v82Restore(d);
   return true;
  }catch(e){console.warn('Αποτυχία φόρτωσης',e);return false}
 }
@@ -1351,21 +1448,32 @@ function tile(x,y,kind){
  ctx.restore();
 }
 function tree(x,y,seed){
- const name=seed>.79?'blossom_purple':seed>.66?'blossom_pink':seed>.3?'pine_large':'pine_small';
- const w=(name==='pine_small'?62:name.startsWith('blossom')?83:76)*cam.z;
- const im=natureImage(name);
- ctx.save();ctx.translate(x,y);
- // Pivot around the roots, not around the foliage.
- ctx.rotate(Math.sin(tick*1.0+x*.019+y*.012)*.0065);
- if(im){const h=w*im.naturalHeight/im.naturalWidth;ctx.drawImage(im,-w*.5,-h+8*cam.z,w,h)}
- else{ellipse(0,0,13*cam.z,5*cam.z,'#26381d');}
- ctx.restore();
+  const name=seed>.75?'tree_autumn':seed>.55?'tree_blossom':seed>.3?'tree_oak':'tree_pine';
+  const old=seed>.79?'blossom_purple':seed>.66?'blossom_pink':seed>.3?'pine_large':'pine_small';
+  const w=(name==='tree_pine'?68:name==='tree_blossom'?88:82)*cam.z;
+  const im=worldArtSprite(name)||natureImage(old);
+  ctx.save();ctx.translate(x,y);
+  ctx.rotate(Math.sin(tick*1.0+x*.019+y*.012)*.0065);
+  if(im){
+    const m=WORLD_ART_MANIFEST[name],foot=(im===worldArtSprite(name)&&m)?m.footY/m.h:1;
+    const h=w*im.naturalHeight/im.naturalWidth;
+    ctx.drawImage(im,-w*.5,-h*foot+6*cam.z,w,h)
+  }
+  else{ellipse(0,0,13*cam.z,5*cam.z,'#26381d');}
+  ctx.restore();
 }
 function rock(x,y,gold){
- const name=gold?'rock_cluster':'rock_small',im=natureImage(name),w=(gold?54:42)*cam.z;
- if(im){const h=w*im.naturalHeight/im.naturalWidth;ctx.drawImage(im,x-w/2,y-h+7*cam.z,w,h)}
- else{ellipse(x,y,15*cam.z,7*cam.z,gold?'#b39869':'#8b8a83')}
- if(gold){ctx.save();ctx.fillStyle='#e4bd63';ctx.globalAlpha=.85;ellipse(x+7*cam.z,y-8*cam.z,3*cam.z,2*cam.z,'#e7bb57');ctx.restore()}
+  const name=gold?'gold_pile':'rocks';
+  const old=gold?'rock_cluster':'rock_small';
+  const im=worldArtSprite(name)||natureImage(old);
+  const w=(gold?54:48)*cam.z;
+  if(im){
+    const m=WORLD_ART_MANIFEST[name],foot=(im===worldArtSprite(name)&&m)?m.footY/m.h:1;
+    const h=w*im.naturalHeight/im.naturalWidth;
+    ctx.drawImage(im,x-w/2,y-h*foot+6*cam.z,w,h)
+  }
+  else{ellipse(x,y,15*cam.z,7*cam.z,gold?'#b39869':'#8b8a83')}
+  if(gold&&!worldArtSprite('gold_pile')){ctx.save();ctx.fillStyle='#e4bd63';ctx.globalAlpha=.85;ellipse(x+7*cam.z,y-8*cam.z,3*cam.z,2*cam.z,'#e7bb57');ctx.restore()}
 }
 function flameTorch(x,y,t){ctx.save();ctx.translate(x,y);ctx.scale(cam.z,cam.z);
  ellipse(0,3,9,4,'#0c0d18aa');line(0,-3,0,-32,'#60474b',3);
@@ -1408,7 +1516,7 @@ function drawDecoration(x,y,b){
   ellipse(0,-28,9,4,'#c4b2d7');
   line(0,-30,0,-42-wave*2,'#b795ed',2.5);
   line(-1,-24,-13,-12,'#8b83df',2);line(1,-24,14,-12,'#8b83df',2);
- }
+ }else drawDecorV82(b,wave);
  ctx.restore();
 }
 // V62: Animated production workshops. Decorative only; resource ticks still belong to passiveIncome.
@@ -1538,6 +1646,33 @@ function artPlacement(type,key){
  return {s,dx:-cx*s,dy:-cyMid*s,dw:m.w*s,dh:m.h*s};
 }
 function artSrcFor(b){return b&&hasBuildingArt(b.type)?artSrc(b.type,visualTier(b.level)):null}
+
+// ===== V81 — Painterly world art: workers, orcs, camps, trees (art/<name>.webp) =====
+const WORLD_ART_MANIFEST={"worker_idle":{"w":278,"h":512,"footY":510.0},"worker_walk1":{"w":352,"h":512,"footY":510.0},"worker_walk2":{"w":343,"h":512,"footY":510.0},"orc_idle":{"w":410,"h":560,"footY":558.0},"orc_walk1":{"w":507,"h":560,"footY":558.0},"orc_boss":{"w":637,"h":640,"footY":638.0},"orc_camp":{"w":768,"h":579,"footY":577.0,"lx":2.0,"rx":766.0,"cy":388.9},"enemy_camp":{"w":638,"h":568,"footY":566.0,"lx":1.0,"rx":636.0,"cy":409.7},"tree_oak":{"w":460,"h":512,"footY":510.0},"tree_pine":{"w":324,"h":560,"footY":558.0},"tree_blossom":{"w":414,"h":512,"footY":510.0},"tree_autumn":{"w":475,"h":512,"footY":510.0},"bush":{"w":384,"h":356,"footY":354.0},"rocks":{"w":118,"h":107,"footY":104.0},"gold_pile":{"w":82,"h":85,"footY":82.0},"flowers_pink":{"w":82,"h":73,"footY":72.0},"flowers_blue":{"w":84,"h":90,"footY":87.0}};
+const WORLD_ART_KEYS=["worker_idle", "worker_walk1", "worker_walk2", "orc_idle", "orc_walk1", "orc_boss", "orc_camp", "enemy_camp", "tree_oak", "tree_pine", "tree_blossom", "tree_autumn", "bush", "rocks", "gold_pile", "flowers_pink", "flowers_blue"];
+const worldArtCache={};
+function worldArtSrc(key){if(!WORLD_ART_MANIFEST[key])return null;return 'art/'+key+'.webp'}
+function worldArtImage(key){
+ if(!WORLD_ART_MANIFEST[key])return null;
+ let im=worldArtCache[key];
+ if(!im){im=new Image();im.decoding='async';im.onerror=()=>{im._failed=true};im.src=worldArtSrc(key);worldArtCache[key]=im}
+ return im;
+}
+function worldArtReady(im){return !!(im&&im.complete&&im.naturalWidth>0&&!im._failed)}
+function hasWorldArt(key){return worldArtReady(worldArtImage(key))}
+function worldArtPlaceUnit(key,targetH){
+ const m=WORLD_ART_MANIFEST[key];if(!m)return null;
+ const s=targetH/m.h,foot=m.footY??m.h;
+ return {s,dx:-m.w*s/2,dy:-foot*s,dw:m.w*s,dh:m.h*s,key};
+}
+function worldArtPlacePlate(key,targetW){
+ const m=WORLD_ART_MANIFEST[key];if(!m||m.rx==null)return null;
+ const s=targetW/(m.rx-m.lx),cx=(m.lx+m.rx)/2;
+ return {s,dx:-cx*s,dy:-m.cy*s,dw:m.w*s,dh:m.h*s,key};
+}
+function worldArtSprite(key){const im=worldArtImage(key);return worldArtReady(im)?im:null}
+for(const k of WORLD_ART_KEYS)worldArtImage(k);
+
 // Preload tier 1 of every building so the Market and new buildings show the new art at once.
 for(const type of BUILDING_ART_TYPES)artImage(type,1);
 function building(x,y,b){
@@ -1620,79 +1755,122 @@ function building(x,y,b){
  ctx.restore();
 }
 function figure(x,y,u,seconds){
- ctx.save();ctx.translate(x,y);ctx.scale(cam.z,cam.z);
- const worker=u.type==='worker',archer=u.type==='archer',job=worker?gatheringTasks.find(j=>j.workerId===u.id&&j.phase==='working'):null,moving=Math.hypot(u.tx-u.x,u.ty-u.y)>.08;
- const stride=moving?Math.sin(seconds*10+(u.phase||0))*2.4:0;
- const bob=moving?Math.abs(Math.sin(seconds*10+(u.phase||0)))*1.2:job?Math.abs(Math.sin(seconds*11))*.9:Math.sin(seconds*2+(u.phase||0))*.35;
- // ambient shadow & subtle class-specific aura
- ellipse(1,4,13,4,'#0b101ab0');
- if(!worker){const g=ctx.createRadialGradient(0,-14,1,0,-14,25);g.addColorStop(0,archer?'#6da07b28':'#cf607628');g.addColorStop(1,'#3a222500');ctx.fillStyle=g;ctx.fillRect(-27,-46,54,50)}
- ctx.translate(0,bob);
- // cape and legs, feet move with cadence
- if(!worker)path([[-8,-21],[-14,-8],[-11,3],[0,-8],[8,-21]],archer?'#384b42':'#563449','#241e2c',1.5);
- line(-4,-9,-5+stride,2,'#171b28',5);line(4,-9,5-stride,2,'#171b28',5);
- path([[-8+stride,1],[-2+stride,1],[-1+stride,5],[-9+stride,5]],'#292a36','#090d15',1);
- path([[3-stride,1],[9-stride,1],[10-stride,5],[2-stride,5]],'#292a36','#090d15',1);
- // tunic with dimensional side panels
- path([[-8,-23],[-1,-26],[8,-23],[9,-10],[0,-7],[-9,-10]],worker?'#74614b':archer?'#375344':'#434b5a','#171d27',1.8);
- path([[-8,-22],[0,-19],[0,-8],[-9,-11]],worker?'#98724f':archer?'#426d54':'#657083','#242330',1);
- path([[0,-19],[8,-23],[9,-10],[0,-8]],worker?'#584536':archer?'#284438':'#333848','#242330',1);
- rr(-8,-12,17,3,1,'#32262a','#a17d5f');rr(-1,-12,4,4,1,worker?'#c2a36b':'#b27881','#332632');
- // arms and hands
- line(-8,-22,-12,-11,worker?'#8b7056':'#555766',5);
- line(8,-22,12,-12,worker?'#856c59':'#616575',5);
- ellipse(-12,-10,2.5,3,'#b38d70');ellipse(12,-11,2.5,3,'#b38d70');
- if(worker){
-  // face, hood and square leather satchel
-  ellipse(0,-29,7,8,'#c49a79');
-  path([[-10,-30],[-7,-39],[2,-43],[9,-36],[10,-29]],'#524238','#342d32',1.7);
-  path([[-9,-34],[0,-40],[9,-34],[8,-31],[-8,-31]],'#9c7652','#4a3433',1.4);
-  line(-2,-29,1,-29,'#523e35',1.2);
-  rr(-12,-18,7,11,2,'#7c5639','#c69b5d');line(-12,-15,-5,-15,'#bd9358',1);
-  // Real tool swing: the same worker visibly chops/mines while assigned to a natural resource.
-  ctx.save();ctx.translate(12,-11);
-  if(job)ctx.rotate(-.38+Math.sin(seconds*11)*.67);
-  line(0,0,7,-24,'#6b4c35',3.1);
-  if(job?.type==='tree'){
-   path([[-4,-25],[6,-32],[20,-28],[19,-21],[7,-22]],'#b9bec1','#4b5862',1.15);
-   line(4,-27,17,-26,'#e1d4ac',1.1);
-  }else{
-   path([[-5,-23],[6,-29],[19,-26],[18,-22],[8,-25],[1,-20]],'#b5bec4','#414f65',1.1);
-   line(2,-25,15,-26,'#dddac7',1);
+  ctx.save();
+  ctx.translate(x,y);
+  ctx.scale(cam.z,cam.z);
+  const worker=u.type==='worker',archer=u.type==='archer',job=worker?gatheringTasks.find(j=>j.workerId===u.id&&j.phase==='working'):null,moving=Math.hypot(u.tx-u.x,u.ty-u.y)>.08;
+  const stride=moving?Math.sin(seconds*10+(u.phase||0))*2.4:0;
+  const bob=moving?Math.abs(Math.sin(seconds*10+(u.phase||0)))*1.2:job?Math.abs(Math.sin(seconds*11))*.9:Math.sin(seconds*2+(u.phase||0))*.35;
+  if(worker){
+    let key='worker_idle';
+    if(moving) key=((Math.floor(seconds*8+(u.phase||0))&1)?'worker_walk2':'worker_walk1');
+    const useKey=worldArtSprite(key)?key:(worldArtSprite('worker_idle')?'worker_idle':null);
+    const im=useKey&&worldArtSprite(useKey);
+    if(im){
+      ellipse(1,4,13,4,'#0b101ab0');
+      ctx.translate(0,bob);
+      const facing=Math.sign((u.tx-u.x)-(u.ty-u.y));
+      if(facing<0)ctx.scale(-1,1);
+      const P=worldArtPlaceUnit(useKey,46);
+      ctx.drawImage(im,P.dx,P.dy,P.dw,P.dh);
+      ctx.restore();
+      return;
+    }
   }
-  ctx.restore();
- } else if(archer){
-  ellipse(0,-29,7,7,'#c29b79');
-  path([[-10,-28],[-9,-36],[-2,-44],[7,-41],[11,-29],[6,-25]],'#263c36','#142b2b',1.5);
-  path([[-8,-32],[0,-39],[8,-32]],'#6d8468','#385b4b',1);
-  path([[-3,-29],[3,-29]],null,'#302b31',1);
-  // quiver behind shoulder + three arrow tips
-  path([[-12,-30],[-16,-26],[-14,-12],[-9,-16]],'#614635','#29272d',1.3);
-  for(let i=0;i<3;i++){line(-16+i*2,-31+i*.7,-16+i*2,-39+i*.5,'#c2a377',1);path([[-18+i*2,-38],[-16+i*2,-42],[-14+i*2,-38]],'#b5bdab')}
-  // string bow and arrow
-  ctx.strokeStyle='#bb966c';ctx.lineWidth=2.7;ctx.beginPath();ctx.arc(16,-20,15,-1.25,1.25);ctx.stroke();
-  line(20,-34,20,-6,'#d8c5ac',1);
-  line(4,-20,27,-22,'#b9b8a5',1.4);path([[27,-22],[23,-25],[23,-19]],'#c9c8be','#576773',1);
- } else {
-  // engraved greaves, steel armor and helm
-  path([[-9,-24],[0,-27],[9,-24],[10,-13],[0,-9],[-10,-13]],'#72818a','#28313d',1.8);
-  path([[-7,-23],[0,-19],[0,-12],[-7,-14]],'#a6aab2','#485365',1);
-  line(-3,-18,3,-18,'#b88578',1.4);
-  path([[-12,-22],[-7,-26],[-4,-21],[-9,-16]],'#8895a5','#333e52',1.4);
-  path([[9,-26],[14,-22],[11,-16],[5,-21]],'#8895a5','#333e52',1.4);
-  ellipse(0,-29,6,6,'#8d8e9e');
-  path([[-9,-28],[-7,-39],[0,-43],[7,-39],[9,-28]],'#6f7c91','#283747',1.7);
-  path([[-6,-30],[6,-30],[5,-26],[-5,-26]],'#232a36','#8992aa',1);
-  line(0,-42,0,-47,'#b85a67',2.8);
-  // kite shield at left, rim and crimson sigil
-  path([[-17,-22],[-7,-20],[-8,-7],[-13,1],[-20,-7]],'#5c2947','#d6abb1',2.1);
-  path([[-15,-18],[-9,-17],[-10,-8],[-13,-3],[-17,-9]],'#963950','#351e36',1);
-  line(-13,-17,-13,-5,'#e0a0a0',1.3);
-  // longsword with guard and bright edge
-  line(12,-15,19,-40,'#dbe5df',2.8);line(14,-15,21,-40,'#879ead',1.4);
-  line(10,-19,20,-16,'#d2ae83',3.1);ellipse(11,-12,2.1,2.1,'#d7a5a2');
+  // ambient shadow & subtle class-specific aura
+  ellipse(1,4,13,4,'#0b101ab0');
+  if(!worker){
+   const g=ctx.createRadialGradient(0,-14,1,0,-14,25);
+   g.addColorStop(0,archer?'#6da07b28':'#cf607628');
+   g.addColorStop(1,'#3a222500');
+   ctx.fillStyle=g;
+   ctx.fillRect(-27,-46,54,50)
+  }
+  ctx.translate(0,bob);
+  // cape and legs, feet move with cadence
+  if(!worker)path([[-8,-21],[-14,-8],[-11,3],[0,-8],[8,-21]],archer?'#384b42':'#563449','#241e2c',1.5);
+  line(-4,-9,-5+stride,2,'#171b28',5);
+ line(4,-9,5-stride,2,'#171b28',5);
+  path([[-8+stride,1],[-2+stride,1],[-1+stride,5],[-9+stride,5]],'#292a36','#090d15',1);
+  path([[3-stride,1],[9-stride,1],[10-stride,5],[2-stride,5]],'#292a36','#090d15',1);
+  // tunic with dimensional side panels
+  path([[-8,-23],[-1,-26],[8,-23],[9,-10],[0,-7],[-9,-10]],worker?'#74614b':archer?'#375344':'#434b5a','#171d27',1.8);
+  path([[-8,-22],[0,-19],[0,-8],[-9,-11]],worker?'#98724f':archer?'#426d54':'#657083','#242330',1);
+  path([[0,-19],[8,-23],[9,-10],[0,-8]],worker?'#584536':archer?'#284438':'#333848','#242330',1);
+  rr(-8,-12,17,3,1,'#32262a','#a17d5f');
+ rr(-1,-12,4,4,1,worker?'#c2a36b':'#b27881','#332632');
+  // arms and hands
+  line(-8,-22,-12,-11,worker?'#8b7056':'#555766',5);
+  line(8,-22,12,-12,worker?'#856c59':'#616575',5);
+  ellipse(-12,-10,2.5,3,'#b38d70');
+ ellipse(12,-11,2.5,3,'#b38d70');
+  if(worker){
+     // face, hood and square leather satchel
+     ellipse(0,-29,7,8,'#c49a79');
+     path([[-10,-30],[-7,-39],[2,-43],[9,-36],[10,-29]],'#524238','#342d32',1.7);
+     path([[-9,-34],[0,-40],[9,-34],[8,-31],[-8,-31]],'#9c7652','#4a3433',1.4);
+     line(-2,-29,1,-29,'#523e35',1.2);
+     rr(-12,-18,7,11,2,'#7c5639','#c69b5d');
+   line(-12,-15,-5,-15,'#bd9358',1);
+     // Real tool swing: the same worker visibly chops/mines while assigned to a natural resource.
+     ctx.save();
+   ctx.translate(12,-11);
+     if(job)ctx.rotate(-.38+Math.sin(seconds*11)*.67);
+     line(0,0,7,-24,'#6b4c35',3.1);
+     if(job?.type==='tree'){
+        path([[-4,-25],[6,-32],[20,-28],[19,-21],[7,-22]],'#b9bec1','#4b5862',1.15);
+        line(4,-27,17,-26,'#e1d4ac',1.1);
+   }
+   else{
+        path([[-5,-23],[6,-29],[19,-26],[18,-22],[8,-25],[1,-20]],'#b5bec4','#414f65',1.1);
+        line(2,-25,15,-26,'#dddac7',1);
+   }
+     ctx.restore();
  }
- ctx.restore();}
+  else if(archer){
+     ellipse(0,-29,7,7,'#c29b79');
+     path([[-10,-28],[-9,-36],[-2,-44],[7,-41],[11,-29],[6,-25]],'#263c36','#142b2b',1.5);
+     path([[-8,-32],[0,-39],[8,-32]],'#6d8468','#385b4b',1);
+     path([[-3,-29],[3,-29]],null,'#302b31',1);
+     // quiver behind shoulder + three arrow tips
+     path([[-12,-30],[-16,-26],[-14,-12],[-9,-16]],'#614635','#29272d',1.3);
+     for(let i=0;i<3;i++){
+     line(-16+i*2,-31+i*.7,-16+i*2,-39+i*.5,'#c2a377',1);
+     path([[-18+i*2,-38],[-16+i*2,-42],[-14+i*2,-38]],'#b5bdab')
+   }
+     // string bow and arrow
+     ctx.strokeStyle='#bb966c';
+   ctx.lineWidth=2.7;
+   ctx.beginPath();
+   ctx.arc(16,-20,15,-1.25,1.25);
+   ctx.stroke();
+     line(20,-34,20,-6,'#d8c5ac',1);
+     line(4,-20,27,-22,'#b9b8a5',1.4);
+   path([[27,-22],[23,-25],[23,-19]],'#c9c8be','#576773',1);
+ }
+  else {
+     // engraved greaves, steel armor and helm
+     path([[-9,-24],[0,-27],[9,-24],[10,-13],[0,-9],[-10,-13]],'#72818a','#28313d',1.8);
+     path([[-7,-23],[0,-19],[0,-12],[-7,-14]],'#a6aab2','#485365',1);
+     line(-3,-18,3,-18,'#b88578',1.4);
+     path([[-12,-22],[-7,-26],[-4,-21],[-9,-16]],'#8895a5','#333e52',1.4);
+     path([[9,-26],[14,-22],[11,-16],[5,-21]],'#8895a5','#333e52',1.4);
+     ellipse(0,-29,6,6,'#8d8e9e');
+     path([[-9,-28],[-7,-39],[0,-43],[7,-39],[9,-28]],'#6f7c91','#283747',1.7);
+     path([[-6,-30],[6,-30],[5,-26],[-5,-26]],'#232a36','#8992aa',1);
+     line(0,-42,0,-47,'#b85a67',2.8);
+     // kite shield at left, rim and crimson sigil
+     path([[-17,-22],[-7,-20],[-8,-7],[-13,1],[-20,-7]],'#5c2947','#d6abb1',2.1);
+     path([[-15,-18],[-9,-17],[-10,-8],[-13,-3],[-17,-9]],'#963950','#351e36',1);
+     line(-13,-17,-13,-5,'#e0a0a0',1.3);
+     // longsword with guard and bright edge
+     line(12,-15,19,-40,'#dbe5df',2.8);
+   line(14,-15,21,-40,'#879ead',1.4);
+     line(10,-19,20,-16,'#d2ae83',3.1);
+   ellipse(11,-12,2.1,2.1,'#d7a5a2');
+ }
+  ctx.restore();
+}
 function marker(x,y){ctx.save();ctx.translate(x,y+6*cam.z);ctx.scale(cam.z,cam.z);ctx.beginPath();ctx.ellipse(0,0,17,6,0,0,7);ctx.lineWidth=2.8;ctx.strokeStyle='#ffe29b';ctx.shadowColor='#ffe29b';ctx.shadowBlur=13;ctx.stroke();ctx.restore()}
 function drawRegionOverlay(){
  for(let idx=0;idx<9;idx++){
@@ -1871,17 +2049,18 @@ function entityInOpenRegion(o){
 }
 function renderEntity(o,t){
 if(o.x< -90||o.x>innerWidth+90||o.y< -110||o.y>innerHeight+95)return;if(o.kind==='conquestCamp'){drawConquestCamp(o.campIdx,o.site)}else if(o.kind==='orc'){drawOrcRaider(o.orc,t)}else if(o.kind==='camp'){drawEnemyCamp(o.x,o.y)}else if(o.kind==='torch'){flameTorch(o.x,o.y,t)}else if(o.kind==='decor'){
- const name=o.o.type==='bush'?(rand(o.o.x,o.o.y,73)>.5?'bush_berries':'bush_white'):
+ const neu=o.o.type==='bush'?'bush':(rand(o.o.x,o.o.y,73)>.5?'flowers_pink':'flowers_blue');
+ const old=o.o.type==='bush'?(rand(o.o.x,o.o.y,73)>.5?'bush_berries':'bush_white'):
  (rand(o.o.x,o.o.y,73)>.7?'bush_purple':'wildflower');
- const im=natureImage(name),w=(o.o.type==='bush'?29:24)*cam.z;
- if(im){const h=w*im.naturalHeight/im.naturalWidth;ctx.drawImage(im,o.x-w/2,o.y-h+5*cam.z,w,h)}
+ const im=worldArtSprite(neu)||natureImage(old),w=(o.o.type==='bush'?32:26)*cam.z;
+ if(im){const m=WORLD_ART_MANIFEST[neu],foot=(im===worldArtSprite(neu)&&m)?m.footY/m.h:1;const h=w*im.naturalHeight/im.naturalWidth;ctx.drawImage(im,o.x-w/2,o.y-h*foot+5*cam.z,w,h)}
  if(selected?.kind==='natural'&&selected.x===o.o.x&&selected.y===o.o.y)marker(o.x,o.y)
- }else if(o.kind==='object'){if(o.o.type==='tree')tree(o.x,o.y,rand(o.o.x,o.o.y));else rock(o.x,o.y,o.o.type==='gold');if(selected?.kind==='natural'&&selected.x===o.o.x&&selected.y===o.o.y)marker(o.x,o.y)}else if(o.kind==='building'){building(o.x,o.y,o.b);drawLivingBuildingFX(o.b);if(collectReady(o.b))drawCollectBubble(o.x,o.y,o.b)}else if(o.kind==='enemy')drawEnemy(o.e);else figure(o.x,o.y,o.u,t);if(selected&&((o.kind==='unit'&&selected.kind==='unit'&&selected.id===o.u.id)||(o.kind==='building'&&selected.kind==='building'&&selected.id===o.b.id)))marker(o.x,o.y)
+ }else if(o.kind==='object'){if(o.o.type==='tree')tree(o.x,o.y,rand(o.o.x,o.o.y));else rock(o.x,o.y,o.o.type==='gold');if(selected?.kind==='natural'&&selected.x===o.o.x&&selected.y===o.o.y)marker(o.x,o.y)}else if(o.kind==='building'){building(o.x,o.y,o.b);drawLivingBuildingFX(o.b);if(o.b.upgradeEndsAt)drawUpgradeBadge(o.x,o.y,o.b);if(collectReady(o.b))drawCollectBubble(o.x,o.y,o.b)}else if(o.kind==='enemy')drawEnemy(o.e);else figure(o.x,o.y,o.u,t);if(selected&&((o.kind==='unit'&&selected.kind==='unit'&&selected.id===o.u.id)||(o.kind==='building'&&selected.kind==='building'&&selected.id===o.b.id)))marker(o.x,o.y)
 }
 
 
 // V74 — persistent province sieges. Camps are visually accessible from friendly territory.
-function synchronizeCampGuards(){
+function synchronizeCampGuardsV82(){
  for(let idx=0;idx<9;idx++){
   const site=activeCamp(idx);
   if(!site||campaignCamp(idx).defeated)continue;
@@ -1899,12 +2078,12 @@ function synchronizeCampGuards(){
   guard.homeX=hx;guard.homeY=hy;
  }
 }
-function campaignReward(idx){
+function campaignRewardV82(idx){
  const camp=campaignCamp(idx);if(camp.defeated)return;
  camp.defeated=true;camp.hp=0;
  gainBundle({gold:250,wood:150,stone:100});
  addXP(80,'Κατάκτηση στρατοπέδου Orks');
- const site=campSite(idx);if(site){regionCampReadyAt[site.parent]=Date.now()+CAMP_RESPAWN_MS;emitWorldFx(site.x,site.y,'gold',18);}
+ const site=campSite(idx);if(site){regionCampReadyAt[site.parent]=nowMs()+CAMP_RESPAWN_MS;emitWorldFx(site.x,site.y,'gold',18);}
  for(const u of units)if(u.campTargetIdx===idx)delete u.campTargetIdx;
  persist();refresh();refreshRegionNav();
  toast('🏆 Οχυρό κατακτήθηκε! Νέο οχυρό σε 30:00');
@@ -1925,7 +2104,7 @@ function attackCampaignCamp(idx){
  for(const u of army){delete u.orcTargetId;u.campTargetIdx=idx;u.tx=site.x;u.ty=site.y;}
  close();toast('⚔️ Ο στρατός πολιορκεί το στρατόπεδο!');
 }
-function showCampaignCamp(idx){
+function showCampaignCampV82(idx){
  const site=activeCamp(idx),camp=campaignCamp(idx);
  if(!site){showRegionInfo(idx);return;}
  const defenders=campGuards(idx);
@@ -1939,7 +2118,7 @@ function showCampaignCamp(idx){
  [{label:camp.defeated?'🏆 Κατάκτηση περιοχής':'⚔️ Επίθεση στο στρατόπεδο',fn:()=>attackCampaignCamp(idx)},
  {label:'✕ Κλείσιμο',fn:close}]);
 }
-function updateCampaignCamps(dt){
+function updateCampaignCampsV82(dt){
  synchronizeCampGuards();
  for(const u of units){
   if(u.type==='worker'||u.campTargetIdx===undefined)continue;
@@ -1951,7 +2130,7 @@ function updateCampaignCamps(dt){
   if(dist>range*.8){u.tx=target.x;u.ty=target.y;continue;}
   if(tick-(u.campAttackAt??-100)<(u.type==='archer'?1.2:.9))continue;
   u.campAttackAt=tick;
-  const damage=u.type==='archer'?18:22;
+  const damage=(u.type==='archer'?18:22)*armyPower();
   if(nearest){nearest.hp=Math.max(0,nearest.hp-damage);battleFX(nearest.x,nearest.y,'#e9d3a2');
    if(nearest.hp<=0){gainResource('gold',nearest.boss?80:10);addXP(nearest.boss?35:8,nearest.boss?'Νίκη εναντίον Orc Chieftain':'Νίκη εναντίον φρουρού Ork');if(nearest.boss)toast('👑 Έπεσε ο Orc Chieftain!');persist();}}
   else{camp.hp=Math.max(0,camp.hp-damage);battleFX(site.x,site.y,'#ffd36f');
@@ -1960,48 +2139,55 @@ function updateCampaignCamps(dt){
  }
 }
 function drawConquestCamp(idx,site){
- const camp=campaignCamp(idx),p=pos(site.x,site.y),z=cam.z;
- ctx.save();ctx.translate(p.x,p.y);ctx.scale(z,z);
- const stroke=(points,color,width=1)=>{ctx.beginPath();ctx.moveTo(points[0][0],points[0][1]);for(let i=1;i<points.length;i++)ctx.lineTo(points[i][0],points[i][1]);ctx.strokeStyle=color;ctx.lineWidth=width;ctx.stroke();};
- const poly=(points,fill,line)=>{ctx.beginPath();ctx.moveTo(points[0][0],points[0][1]);for(let i=1;i<points.length;i++)ctx.lineTo(points[i][0],points[i][1]);ctx.closePath();ctx.fillStyle=fill;ctx.fill();if(line){ctx.strokeStyle=line;ctx.lineWidth=1.4;ctx.stroke();}};
- // Stone-and-earth perimeter, a compact 3x3 visual footprint.
- poly([[0,-2],[82,-42],[0,-81],[-82,-42]],'#584b37','#8f7952');
- poly([[0,1],[82,-42],[82,-35],[0,7]],'#312c26');
- poly([[0,1],[-82,-42],[-82,-35],[0,7]],'#433a2c');
- // Far palisades: tall stakes and beams.
- for(let side of [-1,1]){
-  for(let i=0;i<10;i++){
-   const xx=side*(7+i*7.1), yy=-77+i*3.4;
-   const h=23+(i%3)*3;
-   poly([[xx-3,yy+3],[xx+3,yy+3],[xx+3,yy-h],[xx,yy-h-7],[xx-3,yy-h]],i%2?'#61412b':'#7c5330','#35281d');
+  const camp=campaignCamp(idx),p=pos(site.x,site.y),z=cam.z;
+  ctx.save();ctx.translate(p.x,p.y);ctx.scale(z,z);
+  const im=worldArtSprite('orc_camp');
+  if(im){
+    const P=worldArtPlacePlate('orc_camp',190);
+    ctx.drawImage(im,P.dx,P.dy,P.dw,P.dh);
+    const boss=campaignGuards.find(g=>g.campIdx===idx&&g.boss);
+    const top=P.dy-4;
+    ctx.fillStyle='#1d1819ee';ctx.fillRect(-41,top-12,82,8);
+    ctx.fillStyle='#e6a15c';ctx.fillRect(-40,top-11,80*Math.max(0,camp.hp/camp.maxHp),6);
+    ctx.font='bold 10px system-ui';ctx.fillStyle='#f5e6c9';ctx.textAlign='center';
+    ctx.fillText('ΟΧΥΡΟ ORC · Επ. '+strongholdTier(),0,top-16);
+    if(boss?.hp>0){ctx.fillStyle='#ffe09b';ctx.font='bold 11px system-ui';ctx.fillText('👑 '+Math.ceil(boss.hp)+' HP',0,top-28);}
+    ctx.restore();return;
   }
- }
- // Two corner towers built of stacked timber.
- for(const [tx,ty] of [[-61,-53],[61,-53]]){
-  poly([[tx-12,ty],[tx,ty-5],[tx+12,ty],[tx+12,ty-29],[tx,ty-35],[tx-12,ty-29]],'#62422c','#271f1a');
-  poly([[tx-18,ty-28],[tx,ty-44],[tx+18,ty-28],[tx,ty-22]],'#47352d','#ad8053');
-  stroke([[tx-5,ty-21],[tx+5,ty-21]],'#f6c07d',2);
- }
- // Interior main command tent and heavy crimson canopy.
- poly([[-34,-28],[0,-60],[34,-28],[0,-6]],'#342b2a','#a76b48');
- poly([[-34,-28],[0,-74],[0,-14]],'#852d2c','#be7643');
- poly([[0,-74],[34,-28],[0,-14]],'#642a2a','#c36a41');
- for(let k=0;k<4;k++)stroke([[k*8-24,-32],[k*8-18,-47]],'#d1a06388',1.8);
- // War banners with icon, plus animated torch.
- ctx.fillStyle='#3b241f';ctx.fillRect(37,-96,4,70);
- poly([[41,-96],[72,-90],[62,-75],[41,-78]],'#a6322d','#e3a657');
- ctx.font='bold 18px system-ui';ctx.fillStyle='#edce97';ctx.textAlign='center';ctx.fillText('☠',52,-80);
- ctx.fillStyle='#efab4d';ctx.beginPath();ctx.ellipse(-25,-16,6,4,0,0,Math.PI*2);ctx.fill();
- const flicker=Math.sin(tick*13+idx)*3;
- poly([[-31,-18],[-27,-36-flicker],[-22,-23],[-18,-18]],'#ffab47');
- poly([[-28,-18],[-25,-29-flicker],[-23,-18]],'#ffe9a0');
- // Boss marker and guards; explicit HP rather than decorative UI.
- const boss=campaignGuards.find(g=>g.campIdx===idx&&g.boss);
- ctx.fillStyle='#1d1819ee';ctx.fillRect(-41,-116,82,8);
- ctx.fillStyle='#e6a15c';ctx.fillRect(-40,-115,80*Math.max(0,camp.hp/camp.maxHp),6);
- ctx.font='bold 10px system-ui';ctx.fillStyle='#f5e6c9';ctx.fillText('ORC STRONGHOLD',0,-120);
- if(boss?.hp>0){ctx.fillStyle='#ffe09b';ctx.font='bold 11px system-ui';ctx.fillText('👑 '+Math.ceil(boss.hp)+' HP',0,-135);}
- ctx.restore();
+  const stroke=(points,color,width=1)=>{ctx.beginPath();ctx.moveTo(points[0][0],points[0][1]);for(let i=1;i<points.length;i++)ctx.lineTo(points[i][0],points[i][1]);ctx.strokeStyle=color;ctx.lineWidth=width;ctx.stroke();};
+  const poly=(points,fill,line)=>{ctx.beginPath();ctx.moveTo(points[0][0],points[0][1]);for(let i=1;i<points.length;i++)ctx.lineTo(points[i][0],points[i][1]);ctx.closePath();ctx.fillStyle=fill;ctx.fill();if(line){ctx.strokeStyle=line;ctx.lineWidth=1.4;ctx.stroke();}};
+  poly([[0,-2],[82,-42],[0,-81],[-82,-42]],'#584b37','#8f7952');
+  poly([[0,1],[82,-42],[82,-35],[0,7]],'#312c26');
+  poly([[0,1],[-82,-42],[-82,-35],[0,7]],'#433a2c');
+  for(let side of [-1,1]){
+   for(let i=0;i<10;i++){
+    const xx=side*(7+i*7.1), yy=-77+i*3.4;
+    const h=23+(i%3)*3;
+    poly([[xx-3,yy+3],[xx+3,yy+3],[xx+3,yy-h],[xx,yy-h-7],[xx-3,yy-h]],i%2?'#61412b':'#7c5330','#35281d');
+   }
+  }
+  for(const [tx,ty] of [[-61,-53],[61,-53]]){
+   poly([[tx-12,ty],[tx,ty-5],[tx+12,ty],[tx+12,ty-29],[tx,ty-35],[tx-12,ty-29]],'#62422c','#271f1a');
+   poly([[tx-18,ty-28],[tx,ty-44],[tx+18,ty-28],[tx,ty-22]],'#47352d','#ad8053');
+   stroke([[tx-5,ty-21],[tx+5,ty-21]],'#f6c07d',2);
+  }
+  poly([[-34,-28],[0,-60],[34,-28],[0,-6]],'#342b2a','#a76b48');
+  poly([[-34,-28],[0,-74],[0,-14]],'#852d2c','#be7643');
+  poly([[0,-74],[34,-28],[0,-14]],'#642a2a','#c36a41');
+  for(let k=0;k<4;k++)stroke([[k*8-24,-32],[k*8-18,-47]],'#d1a06388',1.8);
+  ctx.fillStyle='#3b241f';ctx.fillRect(37,-96,4,70);
+  poly([[41,-96],[72,-90],[62,-75],[41,-78]],'#a6322d','#e3a657');
+  ctx.font='bold 18px system-ui';ctx.fillStyle='#edce97';ctx.textAlign='center';ctx.fillText('☠',52,-80);
+  ctx.fillStyle='#efab4d';ctx.beginPath();ctx.ellipse(-25,-16,6,4,0,0,Math.PI*2);ctx.fill();
+  const flicker=Math.sin(tick*13+idx)*3;
+  poly([[-31,-18],[-27,-36-flicker],[-22,-23],[-18,-18]],'#ffab47');
+  poly([[-28,-18],[-25,-29-flicker],[-23,-18]],'#ffe9a0');
+  const boss=campaignGuards.find(g=>g.campIdx===idx&&g.boss);
+  ctx.fillStyle='#1d1819ee';ctx.fillRect(-41,-116,82,8);
+  ctx.fillStyle='#e6a15c';ctx.fillRect(-40,-115,80*Math.max(0,camp.hp/camp.maxHp),6);
+  ctx.font='bold 10px system-ui';ctx.fillStyle='#f5e6c9';ctx.fillText('ΟΧΥΡΟ ORC · Επ. '+strongholdTier(),0,-120);
+  if(boss?.hp>0){ctx.fillStyle='#ffe09b';ctx.font='bold 11px system-ui';ctx.fillText('👑 '+Math.ceil(boss.hp)+' HP',0,-135);}
+  ctx.restore();
 }
 // V72 — independent proximity-threat system. Existing siege-wave mechanics unaffected.
 const RAIDER_SPAWNS=[]; // V76: no stray raiders or packs around the capital
@@ -2016,6 +2202,7 @@ function raiderSafe(x,y){
  return town&&Math.hypot(x-town.x,y-town.y)<4.6;
 }
 function orcTarget(orc){
+ if(orc.campIdx!==undefined){let best=null,bd=3.6;for(const u of units){if(u.type==='worker'||soldierHP(u)<=0)continue;const d=Math.hypot(orc.x-u.x,orc.y-u.y);if(d<bd){bd=d;best=u}}if(best)return best}
  const candidates=units.filter(u=>u.type==='worker'?
    !u.orcRecoverAt||tick>=u.orcRecoverAt:soldierHP(u)>0);
  let result=null,dmin=3.05;
@@ -2026,13 +2213,15 @@ function orcTarget(orc){
  return result;
 }
 function moveOrc(orc,x,y,step){
- const d=Math.hypot(x-orc.x,y-orc.y);
- if(d<.02)return;
- const n=Math.min(step,d);
- const nx=orc.x+(x-orc.x)/d*n,ny=orc.y+(y-orc.y)/d*n;
- if(!raiderSafe(nx,ny)&&isRegionUnlocked(regionAt(nx,ny))){
-  orc.x=nx;orc.y=ny;
- }
+  const d=Math.hypot(x-orc.x,y-orc.y);
+  if(d<.02)return;
+  const n=Math.min(step,d);
+  const nx=orc.x+(x-orc.x)/d*n,ny=orc.y+(y-orc.y)/d*n;
+  if(!raiderSafe(nx,ny)&&isRegionUnlocked(regionAt(nx,ny))){
+    const face=Math.sign((nx-orc.x)-(ny-orc.y));
+    if(face)orc.facing=face;
+    orc.x=nx;orc.y=ny;
+  }
 }
 function defeatOrc(orc){
  orc.hp=0;orc.state='defeated';orc.respawnAt=tick+25+((orc.id*7)%16);
@@ -2071,7 +2260,7 @@ function updateOrcs(dt){
    else if(tick-o.attackAt>=1.2){
     o.attackAt=tick;
     if(target.type==='worker'){
-     target.hp=(Number.isFinite(target.hp)?target.hp:20)-(o.boss?11:6);
+     target.hp=(Number.isFinite(target.hp)?target.hp:20)-(o.damage||(o.boss?11:6));
      battleFX(target.x,target.y,'#ed735c');
      if(target.hp<=0){
       // Worker never dies permanently: cancel gathering / production and rest at town.
@@ -2085,7 +2274,7 @@ function updateOrcs(dt){
       persist();
      }
     }else{
-     target.hp=soldierHP(target)-(o.boss?11:6);
+     target.hp=soldierHP(target)-(o.damage||(o.boss?11:6));orcCleave(o,target);
      battleFX(target.x,target.y,'#f38c68');
      if(target.hp<=0){
       units.splice(units.indexOf(target),1);
@@ -2114,10 +2303,10 @@ function updateOrcs(dt){
   for(const u of units.filter(u=>u.type!=='worker'&&soldierHP(u)>0)){
    const d=Math.hypot(u.x-o.x,u.y-o.y);
    const range=u.type==='archer'?3.15:1.15;
-   if(d<5.0&&(u.orcTargetId===o.id||d<range+1)){
+   if(d<5.0&&(u.orcTargetId===o.id||d<range+1)&&!(o.campIdx!==undefined&&u.campTargetIdx===o.campIdx)){
     if(d>range*.9){u.tx=o.x;u.ty=o.y;}
     else if(tick-(u.orcAttackAt||-100)>(u.type==='archer'?1.35:.95)){
-     u.orcAttackAt=tick;o.hp-=u.type==='archer'?19:18;
+     u.orcAttackAt=tick;o.hp-=(u.type==='archer'?19:18)*armyPower();
      if(u.type==='archer')startProjectile(u.x,u.y,o.x,o.y,'#bedfa4');
      battleFX(o.x,o.y,'#eabc70');
      if(o.hp<=0){if(o.campIdx!==undefined){o.hp=0;gainResource('gold',o.boss?80:10);addXP(o.boss?35:8,o.boss?'Orc Chieftain':'Φρουρός Ork');if(o.boss)toast('👑 Ο Αρχηγός Ork ηττήθηκε!');persist();}else defeatOrc(o);break;}
@@ -2127,61 +2316,82 @@ function updateOrcs(dt){
  }
 }
 function drawOrcRaider(orc,t){
- const p=pos(orc.x,orc.y),z=cam.z;
- ctx.save();ctx.translate(p.x,p.y);ctx.scale(z*(orc.boss?1.33:1),z*(orc.boss?1.33:1));
- const moving=orc.state==='chase'||orc.state==='return'||orc.state==='patrol';
- const swing=orc.state==='attack'?Math.sin(t*12)*.7:Math.sin(t*2+orc.id)*.12;
- const bob=moving?Math.abs(Math.sin(t*8+orc.id))*2:Math.sin(t*2+orc.id)*.7;
- ctx.translate(0,-bob);
- ctx.globalAlpha=.85;
- ctx.beginPath();ctx.ellipse(0,3,12,4,0,0,Math.PI*2);ctx.fillStyle='#13201890';ctx.fill();
- ctx.globalAlpha=1;
- // Original orc silhouette with heavy shoulders, olive skin, leather gear.
- ctx.lineWidth=5;ctx.strokeStyle='#455b35';ctx.lineCap='round';
- ctx.beginPath();ctx.moveTo(-5,-13);ctx.lineTo(-6+Math.sin(t*7)*1.5,2);
- ctx.moveTo(5,-13);ctx.lineTo(6-Math.sin(t*7)*1.5,2);ctx.stroke();
- ctx.fillStyle='#496335';ctx.beginPath();
- ctx.moveTo(-13,-31);ctx.lineTo(12,-31);ctx.lineTo(11,-12);ctx.lineTo(-10,-12);ctx.closePath();ctx.fill();
- ctx.fillStyle='#654333';ctx.fillRect(-11,-18,22,7);
- ctx.fillStyle='#927447';ctx.fillRect(-3,-18,6,7);
- ctx.fillStyle='#5c743d';ctx.beginPath();ctx.ellipse(0,-38,12,12,0,0,Math.PI*2);ctx.fill();
- // Ears, tusks, bright eyes and iron helmet.
- ctx.fillStyle='#647b45';
- ctx.beginPath();ctx.moveTo(-9,-42);ctx.lineTo(-18,-46);ctx.lineTo(-12,-35);
- ctx.moveTo(9,-42);ctx.lineTo(18,-46);ctx.lineTo(12,-35);ctx.fill();
- ctx.fillStyle='#252b22';ctx.fillRect(-7,-40,4,2.8);ctx.fillRect(3,-40,4,2.8);
- ctx.fillStyle='#f3d5a7';
- ctx.beginPath();ctx.moveTo(-7,-32);ctx.lineTo(-6,-38);ctx.lineTo(-3,-33);
- ctx.moveTo(7,-32);ctx.lineTo(6,-38);ctx.lineTo(3,-33);ctx.fill();
- ctx.fillStyle=orc.boss?'#5f3430':'#343b3b';ctx.beginPath();
- ctx.moveTo(-13,-44);ctx.lineTo(-7,-53);ctx.lineTo(7,-53);ctx.lineTo(13,-44);ctx.closePath();ctx.fill();
- if(orc.boss){
-  // Chieftain's horned helm and crimson shoulder armor.
-  ctx.fillStyle='#c6aa65';
-  ctx.beginPath();ctx.moveTo(-10,-49);ctx.lineTo(-18,-63);ctx.lineTo(-8,-55);
-  ctx.moveTo(10,-49);ctx.lineTo(18,-63);ctx.lineTo(8,-55);ctx.fill();
-  ctx.strokeStyle='#a36d4d';ctx.lineWidth=5;ctx.beginPath();ctx.moveTo(-12,-31);ctx.lineTo(-17,-25);ctx.moveTo(12,-31);ctx.lineTo(17,-25);ctx.stroke();
-  ctx.fillStyle='#e9c56f';ctx.fillRect(-5,-51,10,3);
- }
- ctx.strokeStyle='#374c34';ctx.lineWidth=6;
- ctx.beginPath();ctx.moveTo(-11,-30);ctx.lineTo(-16,-18);ctx.stroke();
- ctx.save();ctx.translate(13,-29);ctx.rotate(swing);
- ctx.strokeStyle='#554632';ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(0,0);ctx.lineTo(10,-17);ctx.stroke();
- ctx.fillStyle='#8d9695';ctx.beginPath();ctx.moveTo(5,-22);ctx.lineTo(17,-26);ctx.lineTo(20,-18);ctx.lineTo(10,-12);ctx.closePath();ctx.fill();ctx.restore();
- // HP and aggro warning.
- ctx.fillStyle='#231b20e6';ctx.fillRect(-17,-66,34,5);
- ctx.fillStyle=orc.boss?'#f7bd56':'#e75e5d';ctx.fillRect(-16,-65,32*Math.max(0,orc.hp/orc.maxHp),3);
- if(orc.boss){ctx.font='bold 9px system-ui';ctx.textAlign='center';ctx.fillStyle='#ffd58c';ctx.fillText('👑 CHIEFTAIN',0,-76);}
- if(orc.state==='chase'||orc.state==='attack'){
-  ctx.font='bold 14px system-ui';ctx.fillStyle='#ff6665';
-  ctx.textAlign='center';ctx.fillText('!',0,-71);
- }
- ctx.restore();
+  const p=pos(orc.x,orc.y),z=cam.z;
+  const moving=orc.state==='chase'||orc.state==='return'||orc.state==='patrol';
+  const bob=moving?Math.abs(Math.sin(t*8+orc.id))*2:Math.sin(t*2+orc.id)*.7;
+  const bossKey=worldArtSprite('orc_boss')?'orc_boss':null;
+  const walkKey=worldArtSprite('orc_walk1')?'orc_walk1':null;
+  const idleKey=worldArtSprite('orc_idle')?'orc_idle':null;
+  let key=orc.boss&&bossKey?bossKey:(moving&&walkKey?walkKey:idleKey);
+  const im=key&&worldArtSprite(key);
+  if(im){
+    ctx.save();
+    ctx.translate(p.x,p.y);
+    const scale=z*(orc.boss&&key!=='orc_boss'?1.33:1);
+    ctx.scale(scale,scale);
+    ctx.translate(0,-bob);
+    const facing=orc.facing||1;
+    if(facing<0)ctx.scale(-1,1);
+    const P=worldArtPlaceUnit(key, orc.boss&&key==='orc_boss'?64:50);
+    ctx.drawImage(im,P.dx,P.dy,P.dw,P.dh);
+    if(facing<0)ctx.scale(-1,1);
+    ctx.fillStyle='#231b20e6';ctx.fillRect(-17,P.dy-8,34,5);
+    ctx.fillStyle=orc.boss?'#f7bd56':'#e75e5d';ctx.fillRect(-16,P.dy-7,32*Math.max(0,orc.hp/orc.maxHp),3);
+    ctx.textAlign='center';
+    if(orc.boss){ctx.font='bold 9px system-ui';ctx.fillStyle='#ffd58c';ctx.fillText('👑 ΑΡΧΗΓΟΣ',0,P.dy-16);}
+    if(orc.state==='chase'||orc.state==='attack'){
+      ctx.font='bold 14px system-ui';ctx.fillStyle='#ff6665';ctx.fillText('!',0,P.dy-(orc.boss?28:16));
+    }
+    ctx.restore();
+    return;
+  }
+  ctx.save();ctx.translate(p.x,p.y);ctx.scale(z*(orc.boss?1.33:1),z*(orc.boss?1.33:1));
+  const swing=orc.state==='attack'?Math.sin(t*12)*.7:Math.sin(t*2+orc.id)*.12;
+  ctx.translate(0,-bob);
+  ctx.globalAlpha=.85;
+  ctx.beginPath();ctx.ellipse(0,3,12,4,0,0,Math.PI*2);ctx.fillStyle='#13201890';ctx.fill();
+  ctx.globalAlpha=1;
+  ctx.lineWidth=5;ctx.strokeStyle='#455b35';ctx.lineCap='round';
+  ctx.beginPath();ctx.moveTo(-5,-13);ctx.lineTo(-6+Math.sin(t*7)*1.5,2);
+  ctx.moveTo(5,-13);ctx.lineTo(6-Math.sin(t*7)*1.5,2);ctx.stroke();
+  ctx.fillStyle='#496335';ctx.beginPath();ctx.moveTo(-13,-31);ctx.lineTo(12,-31);ctx.lineTo(11,-12);ctx.lineTo(-10,-12);ctx.closePath();ctx.fill();
+  ctx.fillStyle='#654333';ctx.fillRect(-11,-18,22,7);
+  ctx.fillStyle='#927447';ctx.fillRect(-3,-18,6,7);
+  ctx.fillStyle='#5c743d';ctx.beginPath();ctx.ellipse(0,-38,12,12,0,0,Math.PI*2);ctx.fill();
+  ctx.fillStyle='#647b45';
+  ctx.beginPath();ctx.moveTo(-9,-42);ctx.lineTo(-18,-46);ctx.lineTo(-12,-35);
+  ctx.moveTo(9,-42);ctx.lineTo(18,-46);ctx.lineTo(12,-35);ctx.fill();
+  ctx.fillStyle='#252b22';ctx.fillRect(-7,-40,4,2.8);ctx.fillRect(3,-40,4,2.8);
+  ctx.fillStyle='#f3d5a7';
+  ctx.beginPath();ctx.moveTo(-7,-32);ctx.lineTo(-6,-38);ctx.lineTo(-3,-33);
+  ctx.moveTo(7,-32);ctx.lineTo(6,-38);ctx.lineTo(3,-33);ctx.fill();
+  ctx.fillStyle=orc.boss?'#5f3430':'#343b3b';
+  ctx.beginPath();ctx.moveTo(-13,-44);ctx.lineTo(-7,-53);ctx.lineTo(7,-53);ctx.lineTo(13,-44);ctx.closePath();ctx.fill();
+  if(orc.boss){
+   ctx.fillStyle='#c6aa65';
+   ctx.beginPath();ctx.moveTo(-10,-49);ctx.lineTo(-18,-63);ctx.lineTo(-8,-55);
+   ctx.moveTo(10,-49);ctx.lineTo(18,-63);ctx.lineTo(8,-55);ctx.fill();
+   ctx.strokeStyle='#a36d4d';ctx.lineWidth=5;ctx.beginPath();ctx.moveTo(-12,-31);ctx.lineTo(-17,-25);ctx.moveTo(12,-31);ctx.lineTo(17,-25);ctx.stroke();
+   ctx.fillStyle='#e9c56f';ctx.fillRect(-5,-51,10,3);
+  }
+  ctx.strokeStyle='#374c34';ctx.lineWidth=6;
+  ctx.beginPath();ctx.moveTo(-11,-30);ctx.lineTo(-16,-18);ctx.stroke();
+  ctx.save();ctx.translate(13,-29);ctx.rotate(swing);
+  ctx.strokeStyle='#554632';ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(0,0);ctx.lineTo(10,-17);ctx.stroke();
+  ctx.fillStyle='#8d9695';ctx.beginPath();ctx.moveTo(5,-22);ctx.lineTo(17,-26);ctx.lineTo(20,-18);ctx.lineTo(10,-12);ctx.closePath();ctx.fill();ctx.restore();
+  ctx.fillStyle='#231b20e6';ctx.fillRect(-17,-66,34,5);
+  ctx.fillStyle=orc.boss?'#f7bd56':'#e75e5d';ctx.fillRect(-16,-65,32*Math.max(0,orc.hp/orc.maxHp),3);
+  if(orc.boss){ctx.font='bold 9px system-ui';ctx.textAlign='center';ctx.fillStyle='#ffd58c';ctx.fillText('👑 ΑΡΧΗΓΟΣ',0,-76);}
+  if(orc.state==='chase'||orc.state==='attack'){
+   ctx.font='bold 14px system-ui';ctx.fillStyle='#ff6665';
+   ctx.textAlign='center';ctx.fillText('!',0,-71);
+  }
+  ctx.restore();
 }
 function showOrcRaider(orc){
  if(orc.hp<=0)return;
  card(orc.boss?'👑 Orc Chieftain':'🪓 Ork Raider',
- `<div class="building-meta">${orc.boss?'Αρχηγός στρατοπέδου':'Εχθρική μονάδα'} · ❤️ ${Math.ceil(orc.hp)}/${orc.maxHp} · ⚔️ ${orc.boss?11:6} ζημιά</div>
+ `<div class="building-meta">${orc.boss?'Αρχηγός στρατοπέδου':'Εχθρική μονάδα'} · ❤️ ${Math.ceil(orc.hp)}/${orc.maxHp} · ⚔️ ${orc.damage||(orc.boss?11:6)} ζημιά</div>
  <p>Επιτίθεται σε εργάτες και στρατιώτες που πλησιάζουν. Δεν μπορεί να μπει στην ασφαλή περιοχή του Δημαρχείου.</p>
  <div class="building-meta">🏆 Ανταμοιβή: +12 XP · +18 🪙 · πιθανό ξύλο ή πέτρα</div>`,
  [{label:'⚔️ Επίθεση με στρατιώτες',fn:()=>{
@@ -2204,7 +2414,7 @@ function draw(t){const grad=ctx.createLinearGradient(0,0,0,innerHeight);grad.add
  // Layer 3: unlocked region entities render *above* fog, even tall roof sections.
  for(const o of order)if(entityInOpenRegion(o))renderEntity(o,t);
  if(buildDraft)drawBuildGhost();drawWorkAnimation();drawBattleFX();drawWorldFx(); }
-function toast(msg){let el=$('#toast');el.textContent=msg;el.classList.add('show');clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.classList.remove('show'),2000)}function panelMeta(head,isMarket=false){
+function toastV82(msg){let el=$('#toast');el.textContent=msg;el.classList.add('show');clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.classList.remove('show'),2000)}function panelMeta(head,isMarket=false){
  let icon=isMarket?'🏪':'🏰',title=head||'EMPIRE ORIGINS',badge='';
  const parts=String(head||'').split(' · ');
  const first=(parts.shift()||'').trim();
@@ -2283,7 +2493,7 @@ function showKingdomCapacities(){
 }
 for(const id of ['#capacity-pop','#capacity-work','#capacity-stock'])$(id).onclick=showKingdomCapacities;
 
-function marketCardMarkup(type){
+function marketCardMarkupV81(type){
  const t=types[type],locked=level<t.unlock,short=resources.wood<t.cost,limit=buildingLimit(type),atLimit=!locked&&items.filter(b=>b.type===type).length>=limit;
  const status=locked?'🔒 Επίπεδο '+t.unlock:atLimit?'Όριο '+limit+(type==='storage'&&level<8?' · περισσότερες σε Επ. '+(level<4?4:8):''):short?'Λείπει ξύλο':'Χτίσιμο';
  return `<article class="market-card ${locked?'locked':''}" data-item-card="${type}">
@@ -2294,7 +2504,7 @@ function marketCardMarkup(type){
  <button class="m-buy ${short?'short':''}" data-build-item="${type}" ${locked||short||atLimit?'disabled':''}>${status}</button>
  </article>`;
 }
-function showMarket(section='homes'){
+function showMarketV81(section='homes'){
  const categories={
   homes:{label:'Κατοικίες',short:'Κατοικίες',icon:'🏠',items:['house']},
   training:{label:'Εκπαιδευτήρια μονάδων',short:'Στρατός',icon:'⚔️',items:['barracks','tower','wall','gate']},
@@ -2346,8 +2556,8 @@ function showMarket(section='homes'){
 // V78: level-9 resource exchange (40% loss) inside the Market.
 const TRADE_VALUE={wood:1,stone:1.25,food:1,gold:5},TRADE_LOT={wood:100,stone:100,food:100,gold:20};
 let tradeGive='food',tradeGet='wood';
-function tradeQuote(){return Math.floor(TRADE_LOT[tradeGive]*TRADE_VALUE[tradeGive]/TRADE_VALUE[tradeGet]*.6)}
-function tradeMarkup(){
+function tradeQuoteV81(){return Math.floor(TRADE_LOT[tradeGive]*TRADE_VALUE[tradeGive]/TRADE_VALUE[tradeGet]*.6)}
+function tradeMarkupV81(){
  if(!tradeUnlocked())return `<div class="trade-box"><div class="trade-preview">🔒 Η Ανταλλαγή πόρων ξεκλειδώνει στο επίπεδο 9</div></div>`;
  const ic={wood:'🪵',stone:'🪨',food:'🌾',gold:'🪙'};
  const row=(kind,sel)=>Object.keys(ic).map(k=>`<button type="button" data-trade-${kind}="${k}" class="${sel===k?'chosen':''}">${ic[k]}</button>`).join('');
@@ -2358,7 +2568,7 @@ function tradeMarkup(){
  <div class="trade-preview">${same?'Διάλεξε διαφορετικούς πόρους':`${ic[tradeGive]} ${lot} ➜ ${ic[tradeGet]} ${q}`}${!same&&room<q?'<br>📦 Γεμάτη αποθήκη για αυτόν τον πόρο':''}</div>
  <button type="button" class="trade-go" data-trade-go ${ok?'':'disabled'}>⚖️ Ανταλλαγή</button></div>`;
 }
-function bindTrade(c){
+function bindTradeV81(c){
  c.querySelectorAll('[data-trade-give]').forEach(b=>b.onclick=()=>{tradeGive=b.dataset.tradeGive;showMarket('trade')});
  c.querySelectorAll('[data-trade-get]').forEach(b=>b.onclick=()=>{tradeGet=b.dataset.tradeGet;showMarket('trade')});
  const go=c.querySelector('[data-trade-go]');
@@ -2369,8 +2579,8 @@ function bindTrade(c){
 }
 function showBuilding(b){
  const t=types[b.type];if(!t)return;
- const capLv=maxBuildingLevel(),max=b.level>=capLv,wood=90*b.level,stone=25*b.level;
- const upgrades=max?'Μέγιστο επίπεδο':`${wood} ξύλο · ${stone} πέτρα`;
+ const capLv=maxBuildingLevel(),max=b.level>=capLv,uc=upgradeCost(b),wood=uc.wood,stone=uc.stone,busy=!!b.upgradeEndsAt;
+ const upgrades=max?'Μέγιστο επίπεδο':costLabel(uc);
  const population=unitLimit();
  const extra=b.type==='town'?`<div class="building-meta">Πληθυσμός: ${units.length} / ${population} · Εργάτες: ${units.filter(u=>u.type==='worker').length} · Κτίρια: ${items.length}<br>Οι εργάτες προσλαμβάνονται εδώ με τροφή.</div>`:
  producing(b)?`<div class="building-meta">
@@ -2408,9 +2618,9 @@ function showBuilding(b){
  if(b.type==='barracks'){actions.push({label:'⚔️ Ξιφομάχος · 35 🌾 / 20 🪙',fn:()=>createSoldier(b,'knight')});actions.push({label:'🏹 Τοξότης · 30 🌾 / 32 🪙',fn:()=>createSoldier(b,'archer')});}
  if(b.type==='tower')actions.push({label:'🏹 Εμβέλεια & άμυνα',fn:()=>{card('🏹 Αμυντικός Πύργος',`Αυτόματη επίθεση σε εχθρούς εντός ακτίνας ${Math.round(4.3+(b.level-1)*.3)} πλακιδίων.<br>Ζημιά ανά βολή: ${11+4*b.level}<br>Βολή κάθε 1,6 δευτερόλεπτα.`,[{label:'🏰 Άμυνα βασιλείου',fn:showCitadel},{label:'⬅ Πίσω',fn:()=>showBuilding(b)}])}});
  if(b.type==='town')actions.push({label:'🏰 Άμυνα & επισκευές',fn:showCitadel});if(b.type==='town')actions.push({label:'📜 Αποστολές',fn:showQuests});if(b.type==='town')actions.push({label:'📜 Στοιχεία βασιλείου',fn:()=>{card('📜 Στοιχεία βασιλείου',`Επίπεδο παίκτη: ${level} · Κτίρια: ${items.length} · Εργάτες: ${units.filter(u=>u.type==='worker').length} · Στρατιώτες: ${units.filter(u=>u.type!=='worker').length} · Όριο πληθυσμού: ${population}.`,[{label:'👑 Εμπειρία και επίπεδα',fn:showLevelOverview},{label:'⬅ Πίσω',fn:()=>showBuilding(b)}])}});
- if(b.type==='town')actions.unshift({label:'👷 Πρόσληψη εργάτη · 30 🌾',tutorialTarget:'hire-worker',fn:()=>{if(resources.food<30){toast('Χρειάζεσαι 30 τροφή');return}if(!canRecruit())return;resources.food-=30;units.push({id:nextId++,type:'worker',x:b.x+.5,y:b.y+.5,tx:b.x+.5,ty:b.y+.5,speed:1.05,phase:0});markQuest('hire');refresh();if(TUTORIAL_ENABLED&&tutorialStep===6)advanceTutorial(6);addXP(5,'Πρόσληψη εργάτη');persist();showBuilding(b)}});
+ if(b.type==='town')actions.unshift({label:'👷 Πρόσληψη εργάτη · 30 🌾',tutorialTarget:'hire-worker',fn:()=>{if(hireWorker(b))showBuilding(b)}});
  if(b.type==='wall'||b.type==='gate')actions.push({label:'🔧 Επισκευή οχύρωσης · 15 🪨',fn:()=>{if((b.hp??maxFortHP(b))>=maxFortHP(b)){toast('Η οχύρωση είναι ακέραια');return}if(resources.stone<15){toast('Χρειάζεσαι 15 πέτρα');return}resources.stone-=15;b.hp=Math.min(maxFortHP(b),(b.hp??maxFortHP(b))+65);refresh();persist();showBuilding(b)}});if(b.type==='sawmill'||b.type==='quarry'||b.type==='mine')actions.push({label:'📦 Παραγωγή πόρων',fn:showJobs});if(b.type==='storage')actions.push({label:'📦 Έλεγχος αποθεμάτων',fn:()=>{card('📦 Αποθήκη',`🪵 Ξύλο: ${Math.floor(resources.wood)} / ${resourceCap('wood')}<br>🪨 Πέτρα: ${Math.floor(resources.stone)} / ${resourceCap('stone')}<br>🌾 Τροφή: ${Math.floor(resources.food)} / ${resourceCap('food')}<br>🪙 Χρυσός: ${Math.floor(resources.gold)} / ${resourceCap('gold')}<div class="building-meta">Κάθε πόρος έχει δικό του όριο. Αναβάθμισε την Αποθήκη ή χτίσε νέα (${items.filter(q=>q.type==='storage').length}/${storageLimit()}) για να το αυξήσεις.</div>`,[{label:'⬅ Πίσω',fn:()=>showBuilding(b)}])}});
- if(!t.decor)actions.push({label:max?'⭐ Μέγιστο επίπεδο':`⬆️ Αναβάθμιση · ${upgrades}`,fn:()=>{if(max){toast(nextCapLevel()&&b.level<HARD_MAX_BUILDING_LEVEL?'Μέγιστο επίπεδο '+capLv+' · Ανέβα στο επίπεδο '+nextCapLevel()+' για περισσότερα':'Το κτίριο είναι στο μέγιστο επίπεδο');return}if(resources.wood<wood||resources.stone<stone){toast('Δεν έχεις αρκετό ξύλο ή πέτρα');return}resources.wood-=wood;resources.stone-=stone;const prevTier=visualTier(b.level);b.level++;emitWorldFx(b.x,b.y,'spark',13);const newLook=hasBuildingArt(b.type)&&visualTier(b.level)>prevTier;if(newLook){artImage(b.type,visualTier(b.level));emitWorldFx(b.x,b.y,'spark',30);}if(b.type==='wall'||b.type==='gate')b.hp=maxFortHP(b);achievements++;markQuest('upgrade');refresh();addXP(20+8*b.level,'Αναβάθμιση κτιρίου');showBuilding(b);if(newLook)setTimeout(()=>toast('✨ Νέα εμφάνιση! '+t.label+' · '+BUILDING_ART_TIER_NAMES[visualTier(b.level)]),60)}});
+ if(!t.decor){if(busy)actions.push({label:'⚡ Άμεση ολοκλήρωση · '+speedUpCost(b)+' χρυσός',price:'🪙 '+speedUpCost(b),fn:()=>speedUpUpgrade(b)});else actions.push({label:max?'⭐ Μέγιστο επίπεδο':`⬆️ Αναβάθμιση · ${upgrades}`,fn:()=>startUpgrade(b)});}
  actions.push({label:'↔️ Μετακίνηση / περιστροφή',fn:()=>startBuild(b.type,b.id)});
  actions.push({label:'⌂ Αρχική κατεύθυνση 0°',fn:()=>{b.rotation=0;persist();showBuilding(b);toast('Αρχική κατεύθυνση')}});
  actions.push({label:'↻ Περιστροφή 180°',fn:()=>{b.rotation=2;persist();showBuilding(b);toast('Περιστροφή 180°')}});
@@ -2420,7 +2630,8 @@ function showBuilding(b){
   const allowed=[
    {needle:'Πρόσληψη εργάτη',glyph:'👷',price:'🌾 30',actionId:'recruit'},
    {needle:'Άμυνα & επισκευές',glyph:'🛡️',actionId:'defend'},
-   {needle:'Αναβάθμιση',glyph:'⬆️',price:max?'★':`🪵 ${wood}　🪨 ${stone}`,actionId:'upgrade'},
+   {needle:'Άμεση ολοκλήρωση',glyph:'⚡',actionId:'speedup'},
+   {needle:'Αναβάθμιση',glyph:'⬆️',price:max?'★':costShort(uc),actionId:'upgrade'},
    {needle:'Μέγιστο επίπεδο',glyph:'⬆️',price:'★',actionId:'upgrade'},
    {needle:'Μετακίνηση / περιστροφή',glyph:'↔️',actionId:'move'},
    {needle:'Πληροφορίες',glyph:'ℹ️',actionId:'info'},
@@ -2428,7 +2639,7 @@ function showBuilding(b){
   ];
   const visual=allowed.map(config=>{
     const a=actions.find(act=>act.label.includes(config.needle));
-    return a?{...a,iconOnly:true,glyph:config.glyph,price:config.price,actionId:config.actionId,secondary:config.actionId==='close'}:null;
+    return a?{...a,iconOnly:true,glyph:config.glyph,price:config.price??a.price,actionId:config.actionId,secondary:config.actionId==='close'}:null;
   }).filter(Boolean);
   const townWorkers=units.filter(u=>u.type==='worker').length;
   const preview=artSrcFor(b)||marketImageFor('town');
@@ -2449,6 +2660,7 @@ function showBuilding(b){
    ['Εμβέλεια','🎯','defense'],
    ['Επισκευή','🔧','repair'],
    ['Έλεγχος αποθεμάτων','📦','stock'],
+   ['Άμεση ολοκλήρωση','⚡','speedup'],
    ['Αναβάθμιση','⬆️','upgrade'],
    ['Μέγιστο επίπεδο','⭐','upgrade'],
    ['Μετακίνηση','↔️','move'],
@@ -2460,9 +2672,9 @@ function showBuilding(b){
    const match=pictograms.find(([part])=>a.label.includes(part));
    if(!match)return {...a,iconOnly:true,glyph:'✦'};
    const id=match[2];
-   const price=id==='upgrade'?(max?'★':`🪵 ${wood} · 🪨 ${stone}`)
+   const price=a.price??(id==='upgrade'?(max?'★':costShort(uc))
     :id==='knight'?'🌾 35 · 🪙 20':id==='archer'?'🌾 30 · 🪙 32'
-    :id==='repair'?'🪨 15':undefined;
+    :id==='repair'?'🪨 15':undefined);
    return {...a,iconOnly:true,glyph:match[1],price,actionId:id,secondary:id==='close'};
   });
   const prod=productionTypes[b.type],stored=producing(b)?productionStored(b):0,
@@ -2480,7 +2692,7 @@ function showBuilding(b){
   const body=`<div class="compact-building"><div class="compact-art"><img src="${(hasBuildingArt(b.type)&&artImage(b.type,visualTier((b.level||1)+1)),artSrcFor(b))||(b.type==='town'?(b.rotation===2?townHallOppositeImage.src:townHallFrontImage.src):signatureImages[b.type]?.[Math.min(5,Math.max(1,b.level||1))-1]?.src)||marketImageFor(b.type)}" alt="${t.label}"></div>${info}</div>`;
   card(`${t.icon} ${t.label} · Επίπεδο ${b.level}`,body,visual);
  }
- const btns=$('#card').querySelectorAll('button');btns[btns.length-1]?.classList.add('secondary');
+ v82DecorateBuildingCard(b);v83DecorateBuildingCard(b);const btns=$('#card').querySelectorAll('button');btns[btns.length-1]?.classList.add('secondary');
 }
 const WILD_RESOURCES={
  tree:{name:'Δέντρο',icon:'🌲',action:'🪓 Υλοτομία',resource:'wood',yield:22,xp:5,seconds:5},
@@ -2685,7 +2897,7 @@ function confirmBuild(){
   buildDraft=null;mode='inspect';updateBuildControls();
   document.querySelectorAll('#tools button').forEach(btn=>btn.classList.toggle('active',btn.dataset.mode==='inspect'));
   refresh();addXP(types[d.type].decor?0:['wall','gate'].includes(d.type)?2:20,'Κατασκευή '+types[d.type].label);
-  toast('🏠 Το κτίριο κατασκευάστηκε!');
+  toast('🏠 Το κτίριο κατασκευάστηκε!');sfx('build');
  }
 }
 function drawBuildGhost(){
@@ -2816,14 +3028,1031 @@ canvas.addEventListener('pointercancel',e=>{
  if(e.pointerType==='touch')return;
  pointers.delete(e.pointerId);beginGesture(pointerPoints());
 });
-function frame(now){let dt=Math.max(0,Math.min(.05,(now-last)/1000));last=now;tick+=dt;combatUpdate(dt);updateOrcs(dt);updateCampaignCamps(dt);updateNaturalGathering(dt);updateWorldFx(dt);for(let u of units){if(u.type==='worker'&&u.assignedBuildingId){const b=items.find(b=>b.id===u.assignedBuildingId);if(b){const destination=buildingWorkPoint(b);u.tx=destination.x;u.ty=destination.y}}let dx=u.tx-u.x,dy=u.ty-u.y,d=Math.hypot(dx,dy);if(d>.015){let amt=Math.min(d,dt*u.speed);u.x+=dx/d*amt;u.y+=dy/d*amt}}if((tick|0)%4===0&&Math.floor((tick-dt)/4)!==Math.floor(tick/4)){let w=idleWorkers();if(w.length){let u=w[Math.max(0,Math.floor(tick/4))%w.length];if(Math.hypot(u.x-u.tx,u.y-u.ty)<.2){u.tx=clamp(u.x+(rand(tick|0,11)-.5)*3,3,W-4);u.ty=clamp(u.y+(rand(tick|0,12)-.5)*3,3,H-4)}}}if(tick-incomeTicks>=1){
+function frame(now){let dt=Math.max(0,Math.min(.05,(now-last)/1000));last=now;worldStep(dt);if((tick|0)%4===0&&Math.floor((tick-dt)/4)!==Math.floor(tick/4)){let w=idleWorkers();if(w.length){let u=w[Math.max(0,Math.floor(tick/4))%w.length];if(Math.hypot(u.x-u.tx,u.y-u.ty)<.2){u.tx=clamp(u.x+(rand(tick|0,11)-.5)*3,3,W-4);u.ty=clamp(u.y+(rand(tick|0,12)-.5)*3,3,H-4)}}}if(tick-incomeTicks>=1){v82Tick();
  let n=Math.floor(tick-incomeTicks);
  passiveIncome(n*1000,true);incomeTicks+=n;
  // Repaint only when output changes; timers updated in place.
  const timer=$('#card [data-production-countdown]');
  if(timer){const b=items.find(q=>String(q.id)===timer.dataset.productionCountdown);if(b)timer.textContent=productionRemaining(b)??'—'}
  if(n>0){updateOrcCampTimer();updateCapacityHud();if(Math.floor(incomeTicks)%10===0){refresh();persist()}}
-}draw(tick);updateTutorialPointer();requestAnimationFrame(frame)}const savedGame=restore();ensureDaily();ensureContract();synchronizeCampGuards();updateBattleChip();if(savedGame){const elapsed=Date.now()-lastIncome;if(elapsed>=10000)passiveIncome(elapsed,true)}normalizeJobs();refresh();renderTutorial();refreshRegionNav();$('#progress').addEventListener('click',showLevelOverview);$('#progress').addEventListener('keydown',e=>{if(e.key==='Enter')showLevelOverview()});setInterval(persist,12000);document.addEventListener('visibilitychange',()=>{if(document.hidden)persist()});window.addEventListener('pagehide',persist);requestAnimationFrame(frame);window.__eoTest={run:code=>eval(code)};toast(savedGame?'Καλώς επέστρεψες! Η παραγωγή συνεχίζεται.':'🏰 Ξεκινάς με Δημαρχείο επιπέδου 1. Ακολούθησε τον οδηγό!');})();
+}draw(tick);updateTutorialPointer();requestAnimationFrame(frame)}// ===================== V82 — Progression 1-20, real Market, story, gifts, achievements =====================
+// All state that V82 adds lives in `v82` (saved as part of the normal save, version 52).
+// `var` on purpose: functions below can be reached by persist()/refresh() before this block runs.
+var __clockOffset=0;
+function nowMs(){return Date.now()+__clockOffset}
+function maxPlayerLevel(){return 20}
+var RES_IC={wood:'🪵',stone:'🪨',food:'🌾',gold:'🪙'};
+var v82=v82Default();
+function v82Default(){return {boosts:{},offers:{day:'',salt:0,bought:[]},login:{last:'',streak:0,total:0},story:{},achv:{},sound:true,introSeen:false,migratedFrom:0,chests:0}}
+function v82Restore(d){
+ const s=d&&d.v82&&typeof d.v82==='object'?d.v82:null,base=v82Default(),ver=+d?.version||0;
+ v82=base;
+ if(s){
+  if(s.boosts&&typeof s.boosts==='object')for(const [k,v] of Object.entries(s.boosts))if(Number.isFinite(+v))v82.boosts[k]=+v;
+  if(s.offers&&typeof s.offers.day==='string')v82.offers={day:s.offers.day,salt:Math.max(0,+s.offers.salt||0),bought:Array.isArray(s.offers.bought)?s.offers.bought.filter(Number.isInteger):[],donations:Math.max(0,+s.offers.donations||0)};
+  if(s.login&&typeof s.login.last==='string')v82.login={last:s.login.last,streak:Math.max(0,Math.min(7,+s.login.streak||0)),total:Math.max(0,+s.login.total||0)};
+  if(s.story&&typeof s.story==='object')for(const k of Object.keys(s.story))v82.story[k]=1;
+  if(s.achv&&typeof s.achv==='object')for(const [k,v] of Object.entries(s.achv))v82.achv[k]=Math.max(0,Math.min(3,+v||0));
+  v82.sound=s.sound!==false;v82.introSeen=!!s.introSeen;v82.migratedFrom=+s.migratedFrom||0;v82.chests=Math.max(0,+s.chests||0);
+ }
+ if(ver<52){
+  // Older save: keep everything, skip story chapters below the current level (no reward flood), no intro.
+  v82.migratedFrom=ver;v82.introSeen=true;
+  for(const q of STORY)if(q.lv<level)v82.story[q.id]=1;
+ }
+ // Buildings saved mid-upgrade keep their timer; drop broken values.
+ for(const b of items){if(b.upgradeEndsAt!=null&&!Number.isFinite(+b.upgradeEndsAt)){delete b.upgradeEndsAt;delete b.upgradeTotal}}
+}
+
+// ---------- XP curve, level cap 20, royal chest after 20 ----------
+function xpNeeded(lv){if(lv>=maxPlayerLevel())return 10000;const n=Math.max(0,lv-1);return Math.floor(300+130*n+18*n*n)}
+function xpMult(){let m=1;if(boostActive('wisdom'))m+=BOOSTS.wisdom.xp;m+=decorBonus('xp');return m}
+function royalChest(){
+ const lv=Math.min(level,30),bundle={wood:300+20*lv,stone:200+15*lv,food:300+20*lv,gold:80+5*lv};
+ const got=gainBundle(bundle);if(v82)v82.chests++;
+ toast('👑 Βασιλικό σεντούκι! '+rewardText(got));sfx('levelup');
+}
+
+// ---------- Building caps, slots, builders ----------
+function maxBuildingLevel(){return level>=18?12:level>=16?11:level>=14?10:level>=12?9:level>=10?8:level>=8?7:level>=6?6:5}
+function maxBuildingLevelAt(lv){const k=level;level=lv;const r=maxBuildingLevel();level=k;return r}
+function nextCapLevel(){for(const l of [6,8,10,12,14,16,18])if(level<l)return l;return null}
+function buildingLimitAt(type,lv){
+ if(types[type]?.decor)return Infinity;
+ switch(type){
+  case 'town':return 1;
+  case 'house':return 2+Math.floor(lv/2);
+  case 'farm':return 2+Math.floor(lv/4);
+  case 'sawmill':return 1+Math.floor(lv/5);
+  case 'quarry':return 1+Math.floor(lv/6);
+  case 'mine':return 1+Math.floor(lv/7);
+  case 'windmill':return 1+Math.floor(lv/8);
+  case 'barracks':return 1+(lv>=10)+(lv>=17);
+  case 'tower':return Math.max(1,Math.floor(lv/3));
+  case 'storage':return 1+(lv>=4)+(lv>=8)+(lv>=13)+(lv>=18);
+  case 'forge':return 1;
+  case 'wall':return 6+2*lv;
+  case 'gate':return 1+Math.floor(lv/4);
+ }
+ return Infinity;
+}
+function buildingLimit(type){return buildingLimitAt(type,level)}
+function storageLimit(){return buildingLimit('storage')}
+function nextLimitLevel(type){const now=buildingLimit(type);for(let l=level+1;l<=maxPlayerLevel();l++)if(buildingLimitAt(type,l)>now)return l;return null}
+function builderCountAt(lv){return 1+(lv>=6)+(lv>=14)+(lv>=19)}
+function builderCount(){return builderCountAt(level)}
+function activeUpgrades(){return items.filter(b=>b.upgradeEndsAt)}
+function tradeUnlocked(){return level>=9}
+function exchangeLoss(){return level>=17?.2:level>=11?.3:.4}
+function offlineCapMs(){return (level>=11?8:4)*3600*1000}
+function regionPermitLevels(){return [4,7,10,13,16,19,20,20]}
+function regionPermitsFor(lv){return regionPermitLevels().filter(l=>lv>=l).length}
+function availableRegionPermits(){return Math.max(0,Math.min(8,regionPermitsFor(level))-(unlockedRegions.size-1))}
+function requiredRegionLevel(){return regionPermitLevels()[Math.min(7,unlockedRegions.size-1)]||20}
+function armyPower(){const bl=Math.max(1,...items.filter(b=>b.type==='barracks').map(b=>b.level||1));return 1+.06*(bl-1)}
+
+// Per-level perks besides building unlocks and automatic slot increases.
+var V82_PERKS={
+ 2:['⚖️ Αγορά: αγορά/πώληση πόρων με χρυσό','🏛️ Δωρεές στον Ναό για XP'],
+ 3:['🎁 Αγορά: Προσφορές ημέρας (2 θέσεις)'],
+ 4:['🏴 1η άδεια κατάκτησης περιοχής'],
+ 6:['⬆️ Μέγιστο επίπεδο κτιρίων: 6','🔨 2ος Οικοδόμος (2 αναβαθμίσεις μαζί)'],
+ 7:['⚡ Αγορά: Ενισχύσεις παραγωγής','🏴 2η άδεια περιοχής'],
+ 8:['⬆️ Μέγιστο επίπεδο κτιρίων: 7','🎁 3η Προσφορά ημέρας','⚖️ Συναλλαγές ×500'],
+ 9:['⚖️ Ανταλλαγή πόρων (απώλεια 40%)'],
+ 10:['⬆️ Μέγιστο επίπεδο κτιρίων: 8','🏴 3η άδεια περιοχής','📖 Ενίσχυση XP «Σοφία Γερόντων»'],
+ 11:['⚖️ Καλύτερη ανταλλαγή (απώλεια 30%)','🌙 Παραγωγή εκτός παιχνιδιού έως 8 ώρες'],
+ 12:['⬆️ Μέγιστο επίπεδο κτιρίων: 9'],
+ 13:['🏴 4η άδεια περιοχής','👑 Ενίσχυση «Βασιλικό Διάταγμα»'],
+ 14:['⬆️ Μέγιστο επίπεδο κτιρίων: 10','🔨 3ος Οικοδόμος'],
+ 15:['🎁 4η Προσφορά ημέρας'],
+ 16:['⬆️ Μέγιστο επίπεδο κτιρίων: 11','🏴 5η άδεια περιοχής'],
+ 17:['⚖️ Κορυφαία ανταλλαγή (απώλεια 20%)'],
+ 18:['⬆️ Μέγιστο επίπεδο κτιρίων: 12'],
+ 19:['🏴 6η άδεια περιοχής','🔨 4ος Οικοδόμος'],
+ 20:['👑 Τίτλος Αυτοκράτορα','🏴 Όλες οι περιοχές (7η & 8η άδεια)','🎁 Βασιλικό σεντούκι κάθε 10.000 XP']
+};
+var SLOT_TYPES=['house','farm','sawmill','quarry','mine','windmill','barracks','tower','storage','gate'];
+function unlocksAt(lv){
+ if(lv<2)return [];
+ const out=Object.values(types).filter(t=>t.unlock===lv).map(t=>t.icon+' '+t.label);
+ for(const type of SLOT_TYPES){if(types[type].unlock>=lv)continue;const a=buildingLimitAt(type,lv-1),b=buildingLimitAt(type,lv);if(b>a)out.push('➕ '+types[type].label+' '+b+'η θέση')}
+ return [...out,...(lv<=maxPlayerLevel()?(V82_PERKS[lv]||[]):[])];
+}
+
+// ---------- Upgrade costs & timers ----------
+function upgradeMult(type){return ({town:1.4,house:.8,farm:.7,sawmill:.8,quarry:.9,mine:1,storage:.9,barracks:1,tower:.9,windmill:1.1,forge:1.3,wall:.45,gate:.55})[type]||1}
+function upgradeCost(b){
+ const L=Math.max(1,b.level||1),m=upgradeMult(b.type),g=Math.pow(1.06,Math.max(0,L-6)),r10=v=>Math.max(10,Math.round(v/10)*10);
+ const c={wood:r10(70*Math.pow(L,1.6)*m*g),stone:r10(24*Math.pow(L,1.6)*m*g*(L>=3?1:.6)),gold:L>=5?Math.max(5,Math.round(10*Math.pow(L-4,1.4)*m*g/5)*5):0};
+ // Never let a Storage upgrade cost more than one Storage of that level (+ a level-1 Town Hall) can hold: no storage deadlock.
+ if(b.type==='storage')for(const k of Object.keys(c)){const r=STORAGE_RULES[k],one=r.base+r.perStorage*(1+L);c[k]=Math.min(c[k],Math.floor(one*.8/10)*10)}
+ return c;
+}
+function upgradeSeconds(b){const L=b.level||1;if(L<3)return 0;const m=b.type==='town'?1.5:['wall','gate'].includes(b.type)?.4:1;return Math.round(30*Math.pow(L-2,1.8)*m)}
+function upgradeXp(newLevel){return Math.round(15+4*Math.pow(newLevel,1.5))}
+function collectXp(taken){return Math.min(5,Math.max(1,Math.floor(taken/40)))}
+function upgradeRemaining(b){return Math.max(0,(+b.upgradeEndsAt||0)-nowMs())}
+function speedUpCost(b){return Math.max(1,Math.ceil(upgradeRemaining(b)/1000/6)+3)}
+function costLabel(c){return Object.entries(c).filter(([,v])=>v>0).map(([k,v])=>RES_IC[k]+' '+v).join(' · ')}
+function costShort(c){return Object.entries(c).filter(([,v])=>v>0).map(([k,v])=>RES_IC[k]+v).join(' ')}
+function fmtDur(ms){const s=Math.max(0,Math.ceil(ms/1000)),h=Math.floor(s/3600),m=Math.floor(s%3600/60),x=s%60;return h?h+':'+String(m).padStart(2,'0')+':'+String(x).padStart(2,'0'):m+':'+String(x).padStart(2,'0')}
+function upgradeBlocker(b){
+ const cap=maxBuildingLevel();
+ if(b.upgradeEndsAt)return 'busy';
+ if((b.level||1)>=cap)return 'cap';
+ const c=upgradeCost(b);
+ for(const [k,v] of Object.entries(c))if(v>resourceCap(k))return 'storage:'+k;
+ for(const [k,v] of Object.entries(c))if(resources[k]<v)return 'res:'+k;
+ if(upgradeSeconds(b)>0&&activeUpgrades().length>=builderCount())return 'builders';
+ return null;
+}
+function startUpgrade(b,quiet=false){
+ const t=types[b.type];if(!t||t.decor)return false;
+ if(b.upgradeEndsAt){speedUpUpgrade(b);return false}
+ const why=upgradeBlocker(b),c=upgradeCost(b);
+ if(why){
+  if(!quiet){
+   if(why==='cap')toast(b.level<HARD_MAX_BUILDING_LEVEL&&nextCapLevel()?'Μέγιστο επίπεδο '+maxBuildingLevel()+' · Ανέβα στο επίπεδο '+nextCapLevel()+' για περισσότερα':'Το κτίριο είναι στο μέγιστο επίπεδο');
+   else if(why.startsWith('storage:')){const k=why.slice(8);toast('📦 Χρειάζεσαι χωρητικότητα '+c[k]+' '+resourceNames[k]+' · αναβάθμισε Αποθήκη ή Δημαρχείο')}
+   else if(why.startsWith('res:'))toast('Λείπουν: '+Object.entries(c).filter(([k,v])=>resources[k]<v).map(([k,v])=>RES_IC[k]+' '+Math.ceil(v-resources[k])).join(' · '));
+   else if(why==='builders')toast('🔨 Όλοι οι οικοδόμοι δουλεύουν ('+builderCount()+'). Περίμενε ή ολοκλήρωσε άμεσα με χρυσό.');
+  }
+  return false;
+ }
+ for(const [k,v] of Object.entries(c))resources[k]-=v;
+ const sec=upgradeSeconds(b);
+ if(sec<=0){finishUpgrade(b);if(!quiet)showBuilding(b);return true}
+ b.upgradeEndsAt=nowMs()+sec*1000;b.upgradeTotal=sec*1000;
+ emitWorldFx(b.x,b.y,'spark',10);sfx('build');
+ refresh();persist();
+ if(!quiet){toast('🔨 Ξεκίνησε η αναβάθμιση '+t.label+' · '+fmtDur(sec*1000));showBuilding(b)}
+ return true;
+}
+function finishUpgrade(b){
+ const t=types[b.type];delete b.upgradeEndsAt;delete b.upgradeTotal;
+ const prevTier=visualTier(b.level);b.level=(b.level||1)+1;
+ emitWorldFx(b.x,b.y,'spark',13);
+ const newLook=hasBuildingArt(b.type)&&visualTier(b.level)>prevTier;
+ if(newLook){artImage(b.type,visualTier(b.level));emitWorldFx(b.x,b.y,'spark',30)}
+ if(b.type==='wall'||b.type==='gate')b.hp=maxFortHP(b);
+ achievements++;markQuest('upgrade');refresh();
+ addXP(upgradeXp(b.level),'Αναβάθμιση κτιρίου');
+ if($('#card').classList.contains('visible')&&selected?.kind==='building'&&selected.id===b.id)showBuilding(b);
+ if(newLook)setTimeout(()=>toast('✨ Νέα εμφάνιση! '+t.label+' · '+BUILDING_ART_TIER_NAMES[visualTier(b.level)]),60);
+ persist();
+}
+function speedUpUpgrade(b){
+ if(!b.upgradeEndsAt)return false;
+ const c=speedUpCost(b);
+ if(resources.gold<c){toast('Χρειάζεσαι '+c+' 🪙 για άμεση ολοκλήρωση');return false}
+ resources.gold-=c;markQuest('speedup');sfx('coin');
+ finishUpgrade(b);toast('⚡ Ολοκληρώθηκε αμέσως · -'+c+' 🪙');
+ if(selected?.kind==='building'&&selected.id===b.id&&$('#card').classList.contains('visible'))showBuilding(b);
+ return true;
+}
+function drawUpgradeBadge(x,y,b){
+ const total=Math.max(1,+b.upgradeTotal||1),left=upgradeRemaining(b),p=clamp(1-left/total,0,1);
+ ctx.save();ctx.translate(x,y);ctx.scale(cam.z,cam.z);
+ const w=74,h=9,yy=-34;
+ rr(-w/2-16,yy-12,w+32,26,10,'#1a1420e6','#e5b766');
+ ctx.font='15px "Apple Color Emoji","Segoe UI Emoji",system-ui';ctx.textAlign='center';ctx.textBaseline='middle';
+ ctx.fillText('🔨',-w/2-5,yy+1);
+ rr(-w/2+8,yy-4,w-4,h,4,'#2c2a38',null);rr(-w/2+8,yy-4,(w-4)*p,h,4,'#8fd07a',null);
+ ctx.font='bold 9px system-ui';ctx.fillStyle='#fff3d6';ctx.fillText(fmtDur(left),6,yy-9+18+3);
+ ctx.restore();
+}
+
+// ---------- Boosts (Market) & decoration bonuses ----------
+var BOOSTS={
+ harvest:{name:'Γιορτή Σοδειάς',icon:'🌾',res:['food'],pct:.5,min:15,lv:7,cost:l=>30+3*l,desc:'+50% ταχύτητα παραγωγής τροφής για 15 λεπτά'},
+ lumber:{name:'Τραγούδι Ξυλοκόπων',icon:'🪵',res:['wood'],pct:.5,min:15,lv:7,cost:l=>30+3*l,desc:'+50% ταχύτητα παραγωγής ξύλου για 15 λεπτά'},
+ miners:{name:'Ατσάλινες Αξίνες',icon:'⛏️',res:['stone','gold'],pct:.5,min:15,lv:7,cost:l=>40+4*l,desc:'+50% πέτρα και χρυσός για 15 λεπτά'},
+ wisdom:{name:'Σοφία Γερόντων',icon:'📖',res:[],xp:.3,min:20,lv:10,cost:l=>50+5*l,desc:'+30% XP από όλες τις πηγές για 20 λεπτά'},
+ royal:{name:'Βασιλικό Διάταγμα',icon:'👑',res:['wood','stone','food','gold'],pct:.35,min:30,lv:13,cost:l=>90+6*l,desc:'+35% σε όλη την παραγωγή για 30 λεπτά'}
+};
+function boostActive(k){return !!(v82&&(v82.boosts[k]||0)>nowMs())}
+function boostLeft(k){return Math.max(0,((v82&&v82.boosts[k])||0)-nowMs())}
+function activateBoost(k,minutes){const now=nowMs(),cur=Math.max(now,v82.boosts[k]||0);v82.boosts[k]=Math.min(now+2*3600e3,cur+minutes*60000);markQuest('boost')}
+var DECOR_BONUS={
+ torch_decor:{xp:.01},statue_decor:{gold:.02},crystal_decor:{xp:.02},fountain_decor:{food:.03},
+ banner_decor:{wood:.03},garden_decor:{food:.04},oak_decor:{wood:.04,stone:.02},treasure_decor:{gold:.05},obelisk_decor:{xp:.04},golden_statue_decor:{wood:.05,stone:.05,food:.05,gold:.05}
+};
+var DECOR_MAX_COUNTED=3;
+function decorBonus(kind){
+ let m=0;if(typeof items==='undefined')return 0;
+ const counts={};for(const b of items)if(DECOR_BONUS[b.type])counts[b.type]=(counts[b.type]||0)+1;
+ for(const [t,n] of Object.entries(counts))m+=(DECOR_BONUS[t][kind]||0)*Math.min(DECOR_MAX_COUNTED,n);
+ return m;
+}
+function decorBonusText(type){const d=DECOR_BONUS[type];if(!d)return '';const names={wood:'ξύλο',stone:'πέτρα',food:'τροφή',gold:'χρυσός',xp:'XP'};
+ const parts=Object.entries(d);if(parts.length===4)return '✨ +'+Math.round(parts[0][1]*100)+'% σε όλη την παραγωγή';
+ return '✨ '+parts.map(([k,v])=>'+'+Math.round(v*100)+'% '+names[k]).join(', ')}
+function productionMult(res){let m=1;for(const [k,d] of Object.entries(BOOSTS))if(d.res.includes(res)&&boostActive(k))m+=d.pct;return m+decorBonus(res)+townProdBonus()}
+function productionInterval(b){const p=productionTypes[b.type];return (p?.intervalMs||10000)/productionMult(p?.resource)}
+
+// ---------- Market: daily prices, offers, trade ----------
+function v82Seed(str){let s=7;for(const ch of String(str))s=(s*31+ch.charCodeAt(0))>>>0;return s}
+function rng(seed){let s=seed>>>0||1;return ()=>{s=(s*1664525+1013904223)>>>0;return s/4294967296}}
+function todayKey(){const d=new Date(nowMs());return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
+function marketPrices(){
+ const r=rng(v82Seed('prices'+todayKey())),base={wood:20,stone:26,food:18},out={};
+ for(const k of ['wood','stone','food']){const f=.8+r()*.4;out[k]={buy:Math.max(5,Math.round(base[k]*f)),sell:Math.max(2,Math.round(base[k]*f*.3)),f}}
+ return out;
+}
+function tradeLots(){return level>=8?[100,500]:[100]}
+var v82Lot=100;
+function offerSlots(){return level>=15?4:level>=8?3:level>=3?2:0}
+function syncOffersDay(){const d=todayKey();if(v82.offers.day!==d)v82.offers={day:d,salt:0,bought:[],donations:0}}
+// Temple donations: a daily resource sink that always turns full storage into XP (no dead ends).
+function donationLimit(){return 3}
+function donationsToday(){syncOffersDay();return v82.offers.donations||0}
+function donationLot(k){return Math.max(100,Math.floor(resourceCap(k)*.15/50)*50)}
+function donationXp(){return 30+6*Math.min(level,20)}
+function donate(k){
+ if(level<2){toast('Οι δωρεές ξεκλειδώνουν στο επίπεδο 2');return false}
+ if(donationsToday()>=donationLimit()){toast('🏛️ Ο Ναός δέχτηκε ήδη '+donationLimit()+' δωρεές σήμερα');return false}
+ const lot=donationLot(k);if(resources[k]<lot){toast('Χρειάζεσαι '+lot+' '+resourceNames[k]);return false}
+ resources[k]-=lot;v82.offers.donations=donationsToday()+1;markQuest('donate');sfx('coin');refresh();
+ toast('🏛️ Δωρεά '+lot+' '+resourceNames[k]+' στον Ναό');addXP(donationXp(),'Δωρεά στον Ναό');persist();return true;
+}
+function dailyOffers(){
+ syncOffersDay();
+ const lv=Math.min(level,20),r=rng(v82Seed('offers'+v82.offers.day+':'+v82.offers.salt+':'+lv)),P=marketPrices(),out=[];
+ const roomFor=k=>Math.max(50,Math.floor(resourceCap(k)*.5/10)*10);
+ const names={wood:'Φορτίο ξυλείας',stone:'Κάρο πέτρας',food:'Σακιά με σιτάρι'};
+ for(let i=0;i<offerSlots();i++){
+  const roll=r();
+  if(roll<.45){const k=['wood','stone','food'][Math.floor(r()*3)],amt=Math.min(roomFor(k),Math.round((150+40*lv)/10)*10),price=Math.max(5,Math.round(P[k].buy*amt/100*.6));
+   out.push({id:i,kind:'bundle',icon:RES_IC[k],name:names[k],desc:'−40% από την τιμή αγοράς',give:{gold:price},get:{[k]:amt}});}
+  else if(roll<.7){const ks=['wood','stone','food','gold'],a=ks[Math.floor(r()*3)];let b=ks[Math.floor(r()*4)];if(b===a)b='gold';
+   const ga=Math.round((120+30*lv)/10)*10,val={wood:1,stone:1.25,food:1,gold:5},gb=Math.max(5,Math.round(ga*val[a]/val[b]*.95/(b==='gold'?1:10))*(b==='gold'?1:10));
+   out.push({id:i,kind:'swap',icon:'🔄',name:'Ανταλλαγή εμπόρου',desc:'Σχεδόν χωρίς απώλεια',give:{[a]:ga},get:{[b]:Math.min(gb,roomFor(b))}});}
+  else if(roll<.85&&level>=7){const ks=Object.keys(BOOSTS).filter(k=>level>=BOOSTS[k].lv),k=ks[Math.floor(r()*ks.length)],d=BOOSTS[k];
+   out.push({id:i,kind:'boost',icon:d.icon,name:d.name+' −50%',desc:d.desc,give:{gold:Math.ceil(d.cost(lv)/2)},boost:k});}
+  else{const amt=Math.round((60+20*lv)/10)*10,price=Math.round((amt*(P.wood.buy+P.stone.buy+P.food.buy)/100)*.55);
+   out.push({id:i,kind:'crate',icon:'📦',name:'Κιβώτιο προμηθειών',desc:'Ξύλο, πέτρα και τροφή μαζί',give:{gold:price},get:{wood:Math.min(amt,roomFor('wood')),stone:Math.min(amt,roomFor('stone')),food:Math.min(amt,roomFor('food'))}});}
+ }
+ return out;
+}
+function canAfford(c){return Object.entries(c||{}).every(([k,v])=>resources[k]>=v)}
+function roomCheck(get){for(const [k,v] of Object.entries(get||{}))if(resourceCap(k)-resources[k]<v)return k;return null}
+function buyOffer(id){
+ const o=dailyOffers().find(x=>x.id===id);if(!o)return false;
+ if(v82.offers.bought.includes(id)){toast('Αυτή η προσφορά αγοράστηκε σήμερα');return false}
+ if(!canAfford(o.give)){toast('Δεν επαρκούν οι πόροι: '+costLabel(o.give));return false}
+ const full=roomCheck(o.get);if(full){toast('📦 Δεν χωράει: '+resourceNames[full]+' · αναβάθμισε Αποθήκη');return false}
+ for(const [k,v] of Object.entries(o.give))resources[k]-=v;
+ if(o.get)gainBundle(o.get);if(o.boost)activateBoost(o.boost,BOOSTS[o.boost].min);
+ v82.offers.bought.push(id);markQuest('offer');markQuest('trade');sfx('coin');refresh();persist();
+ toast('🎁 '+o.name+(o.get?' · +'+costLabel(o.get):' · ενεργή!'));return true;
+}
+function rerollCost(){return 5+level}
+function rerollOffers(){const c=rerollCost();if(resources.gold<c){toast('Χρειάζεσαι '+c+' 🪙');return false}resources.gold-=c;syncOffersDay();v82.offers.salt++;v82.offers.bought=[];refresh();persist();toast('🔄 Νέες προσφορές!');return true}
+function marketBuy(k,lot){
+ if(level<2){toast('Το εμπόριο ξεκλειδώνει στο επίπεδο 2');return false}
+ const price=Math.ceil(marketPrices()[k].buy*lot/100);
+ if(resources.gold<price){toast('Χρειάζεσαι '+price+' 🪙');return false}
+ if(resourceCap(k)-resources[k]<lot){toast('📦 Δεν χωράνε '+lot+' '+resourceNames[k]+' · αναβάθμισε Αποθήκη');return false}
+ resources.gold-=price;gainResource(k,lot);markQuest('trade');sfx('coin');refresh();persist();
+ toast('🛒 +'+lot+' '+resourceNames[k]+' · -'+price+' 🪙');return true;
+}
+function marketSell(k,lot){
+ if(level<2){toast('Το εμπόριο ξεκλειδώνει στο επίπεδο 2');return false}
+ const price=Math.floor(marketPrices()[k].sell*lot/100);
+ if(resources[k]<lot){toast('Δεν έχεις '+lot+' '+resourceNames[k]);return false}
+ if(resourceCap('gold')-resources.gold<price){toast('📦 Η αποθήκη χρυσού είναι γεμάτη');return false}
+ resources[k]-=lot;gainResource('gold',price);markQuest('trade');sfx('coin');refresh();persist();
+ toast('💰 Πώληση '+lot+' '+resourceNames[k]+' · +'+price+' 🪙');return true;
+}
+function tradeQuote(){return Math.floor(TRADE_LOT[tradeGive]*TRADE_VALUE[tradeGive]/TRADE_VALUE[tradeGet]*(1-exchangeLoss()))}
+function doExchange(){
+ const lot=TRADE_LOT[tradeGive],q=tradeQuote();
+ if(!tradeUnlocked()||tradeGive===tradeGet||resources[tradeGive]<lot){toast('Δεν επαρκούν οι πόροι');return false}
+ if(resourceCap(tradeGet)-resources[tradeGet]<q){toast('📦 Η αποθήκη είναι γεμάτη');return false}
+ resources[tradeGive]-=lot;gainResource(tradeGet,q);markQuest('trade');sfx('coin');refresh();persist();
+ toast('⚖️ Ανταλλαγή: -'+lot+' '+resourceNames[tradeGive]+' · +'+q+' '+resourceNames[tradeGet]);return true;
+}
+function buyBoost(k){
+ const d=BOOSTS[k];if(!d)return false;
+ if(level<d.lv){toast('Ξεκλειδώνει στο επίπεδο '+d.lv);return false}
+ const c=d.cost(Math.min(level,20));if(resources.gold<c){toast('Χρειάζεσαι '+c+' 🪙');return false}
+ resources.gold-=c;activateBoost(k,d.min);sfx('coin');refresh();persist();toast(d.icon+' '+d.name+' ενεργή · '+fmtDur(boostLeft(k)));return true;
+}
+function lockedBox(text){return `<div class="v82-locked">🔒 ${text}</div>`}
+function tradeSectionMarkup(){
+ if(level<2)return lockedBox('Το Εμπόριο ξεκλειδώνει στο επίπεδο 2');
+ const P=marketPrices(),lots=tradeLots();if(!lots.includes(v82Lot))v82Lot=100;
+ const lotBtns=lots.map(l=>`<button type="button" data-v82-lot="${l}" class="${l===v82Lot?'chosen':''}">×${l}</button>`).join('');
+ const rows=['wood','stone','food'].map(k=>{const buy=Math.ceil(P[k].buy*v82Lot/100),sell=Math.floor(P[k].sell*v82Lot/100),trend=P[k].f>1.08?'📈':P[k].f<.92?'📉':'➖';
+  const canBuy=resources.gold>=buy&&resourceCap(k)-resources[k]>=v82Lot,canSell=resources[k]>=v82Lot&&resourceCap('gold')-resources.gold>=sell;
+  return `<div class="v82-price-row"><span class="v82-res">${RES_IC[k]} ${resourceNames[k]} <small>${trend}</small></span>
+  <button type="button" class="v82-buy" data-v82-buy="${k}" ${canBuy?'':'disabled'}>Αγορά<br><b>🪙 ${buy}</b></button>
+  <button type="button" class="v82-sell" data-v82-sell="${k}" ${canSell?'':'disabled'}>Πώληση<br><b>🪙 ${sell}</b></button></div>`}).join('');
+ let ex='';
+ if(!tradeUnlocked())ex=lockedBox('Η Ανταλλαγή πόρων ξεκλειδώνει στο επίπεδο 9');
+ else{const row=(kind,sel)=>Object.keys(RES_IC).map(k=>`<button type="button" data-trade-${kind}="${k}" class="${sel===k?'chosen':''}">${RES_IC[k]}</button>`).join('');
+  const lot=TRADE_LOT[tradeGive],q=tradeQuote(),same=tradeGive===tradeGet,room=resourceCap(tradeGet)-resources[tradeGet],ok=!same&&resources[tradeGive]>=lot&&room>=q;
+  ex=`<div class="trade-box"><div class="trade-label">Δίνεις</div><div class="trade-row">${row('give',tradeGive)}</div><div class="trade-label">Παίρνεις</div><div class="trade-row">${row('get',tradeGet)}</div>
+  <div class="trade-preview">${same?'Διάλεξε διαφορετικούς πόρους':`${RES_IC[tradeGive]} ${lot} ➜ ${RES_IC[tradeGet]} ${q}`}${!same&&room<q?'<br>📦 Γεμάτη αποθήκη για αυτόν τον πόρο':''}<br><small>Απώλεια ${Math.round(exchangeLoss()*100)}%</small></div>
+  <button type="button" class="trade-go" data-trade-go ${ok?'':'disabled'}>⚖️ Ανταλλαγή</button></div>`}
+ const left=donationLimit()-donationsToday();
+ const don=Object.keys(RES_IC).map(k=>{const lot=donationLot(k);return `<button type="button" class="v82-donate" data-v82-donate="${k}" ${left>0&&resources[k]>=lot?'':'disabled'}>${RES_IC[k]} ${lot}</button>`}).join('');
+ return `<div class="v82-sec-title">📈 Τιμές ημέρας <span class="v82-lots">${lotBtns}</span></div><div class="v82-prices">${rows}</div><div class="v82-sec-title">⚖️ Ανταλλαγή πόρων</div>${ex}
+ <div class="v82-sec-title">🏛️ Δωρεά στον Ναό <small>σήμερα ${donationsToday()}/${donationLimit()}</small></div><div class="v82-donations">${don}</div><div class="v82-note">Κάθε δωρεά δίνει ⭐ ${donationXp()} XP · ιδανικό όταν οι αποθήκες είναι γεμάτες.</div>`;
+}
+function offersSectionMarkup(){
+ if(offerSlots()<1)return lockedBox('Οι Προσφορές ημέρας ξεκλειδώνουν στο επίπεδο 3');
+ const list=dailyOffers();
+ const cards=list.map(o=>{const bought=v82.offers.bought.includes(o.id),afford=canAfford(o.give),full=roomCheck(o.get);
+  return `<div class="v82-offer ${bought?'bought':''}"><div class="v82-offer-icon">${o.icon}</div><div class="v82-offer-main"><strong>${o.name}</strong><small>${o.desc}</small>
+  <div class="v82-offer-deal">${costLabel(o.give)} ➜ ${o.get?costLabel(o.get):fmtDur(BOOSTS[o.boost].min*60000)+' ενίσχυση'}</div></div>
+  <button type="button" data-v82-offer="${o.id}" ${bought||!afford||full?'disabled':''}>${bought?'✅ Αγοράστηκε':full?'📦 Γεμάτο':afford?'Αγορά':'Λείπουν'}</button></div>`}).join('');
+ const next=level<3?3:level<8?8:level<15?15:null;
+ return `<div class="v82-sec-title">🎁 Προσφορές ημέρας · ${list.length} θέσεις${next?` <small>(+1 στο Επ. ${next})</small>`:''}</div><div class="v82-offers">${cards}</div>
+ <button type="button" class="v82-wide" data-v82-reroll>🔄 Νέες προσφορές · 🪙 ${rerollCost()}</button><div class="v82-note">Οι προσφορές αλλάζουν κάθε μεσάνυχτα.</div>`;
+}
+function boostsSectionMarkup(){
+ const ups=activeUpgrades();
+ const work=`<div class="v82-sec-title">🔨 Εργοτάξιο · Οικοδόμοι ${ups.length}/${builderCount()}</div>`+(ups.length?ups.map(b=>`<div class="v82-offer"><div class="v82-offer-icon">${types[b.type].icon}</div><div class="v82-offer-main"><strong>${types[b.type].label} → Επ. ${b.level+1}</strong><small>⏳ <span data-upgrade-countdown="${b.id}">${fmtDur(upgradeRemaining(b))}</span></small></div><button type="button" data-v82-speed="${b.id}" ${resources.gold>=speedUpCost(b)?'':'disabled'}>⚡ 🪙 ${speedUpCost(b)}</button></div>`).join(''):'<div class="v82-note">Κανένα κτίριο σε αναβάθμιση. Οι αναβαθμίσεις από το Επ. 3 και μετά χρειάζονται χρόνο.</div>');
+ if(level<7)return work+lockedBox('Οι Ενισχύσεις παραγωγής ξεκλειδώνουν στο επίπεδο 7');
+ const lv=Math.min(level,20);
+ const cards=Object.entries(BOOSTS).map(([k,d])=>{const locked=level<d.lv,on=boostActive(k),c=d.cost(lv);
+  return `<div class="v82-offer ${locked?'locked':''}"><div class="v82-offer-icon">${d.icon}</div><div class="v82-offer-main"><strong>${d.name}</strong><small>${d.desc}</small>${on?`<div class="v82-offer-deal">⏳ Ενεργή: ${fmtDur(boostLeft(k))}</div>`:''}</div>
+  <button type="button" data-v82-boost="${k}" ${locked||resources.gold<c?'disabled':''}>${locked?'🔒 Επ. '+d.lv:(on?'+':'')+'🪙 '+c}</button></div>`}).join('');
+ return work+`<div class="v82-sec-title">⚡ Ενισχύσεις</div><div class="v82-offers">${cards}</div><div class="v82-note">Αν αγοράσεις ξανά ενεργή ενίσχυση, ο χρόνος της προστίθεται (έως 2 ώρες).</div>`;
+}
+function marketCardMarkup(type){
+ const t=types[type],locked=level<t.unlock,short=resources.wood<t.cost,limit=buildingLimit(type),have=items.filter(b=>b.type===type).length,atLimit=!locked&&have>=limit;
+ const nl=atLimit?nextLimitLevel(type):null;
+ const status=locked?'🔒 Επίπεδο '+t.unlock:atLimit?(nl?'Όριο · +1 στο Επ. '+nl:'Όριο '+limit):short?'Λείπει ξύλο':'Χτίσιμο';
+ const countTxt=limit===Infinity?'':` · ${have}/${limit}`;
+ return `<article class="market-card ${locked?'locked':''}" data-item-card="${type}">
+ <div class="pm-art"><img loading="lazy" src="${marketImageFor(type)}" alt="${t.label}">${locked?`<span class="pm-lock">ΕΠ. ${t.unlock}</span>`:''}</div>
+ <div class="pm-name"><span>${t.label}</span><span class="pm-info" role="button" tabindex="0" data-item-info="${type}" aria-label="Πληροφορίες: ${t.label}">i</span></div>
+ <div class="pm-price ${short?'short':''}"><span>🪵 ${t.cost}</span><span class="pm-stock">${locked?'Κλειδωμένο':atLimit?'Όριο':short?'Ανεπαρκές':'Διαθέσιμο'}${countTxt}</span></div>
+ ${t.decor&&DECOR_BONUS[type]?`<div class="v82-decor-bonus">${decorBonusText(type)} <small>(έως ${DECOR_MAX_COUNTED})</small></div>`:''}
+ <div class="pm-details" hidden data-item-details="${type}">${t.desc}</div>
+ <button class="m-buy ${short?'short':''}" data-build-item="${type}" ${locked||short||atLimit?'disabled':''}>${status}</button>
+ </article>`;
+}
+var V82_SPECIAL_SECTIONS={offers:offersSectionMarkup,boosts:boostsSectionMarkup,trade:tradeSectionMarkup};
+function showMarket(section='homes'){
+ const categories={
+  homes:{label:'Κατοικίες',short:'Κατοικίες',icon:'🏠',items:['house']},
+  production:{label:'Παραγωγικά κτίρια',short:'Παραγωγή',icon:'⚒️',items:['farm','sawmill','quarry','mine','storage','windmill','forge']},
+  training:{label:'Εκπαιδευτήρια μονάδων',short:'Στρατός',icon:'⚔️',items:['barracks','tower','wall','gate']},
+  decoration:{label:'Διακοσμήσεις με μπόνους',short:'Διακόσμηση',icon:'✨',items:['torch_decor','statue_decor','crystal_decor','fountain_decor','banner_decor','garden_decor','oak_decor','treasure_decor','obelisk_decor','golden_statue_decor']},
+  offers:{label:'Προσφορές ημέρας',short:offerSlots()?'Προσφορές':'Προσφορές 🔒',icon:'🎁',items:[]},
+  boosts:{label:'Ενισχύσεις & Εργοτάξιο',short:level>=7?'Ενισχύσεις':'Ενισχύσεις 🔒',icon:'⚡',items:[]},
+  trade:{label:'Εμπόριο',short:level>=2?'Εμπόριο':'Εμπόριο 🔒',icon:'⚖️',items:[]}
+ };
+ if(!categories[section])section='homes';
+ const current=categories[section],special=V82_SPECIAL_SECTIONS[section];
+ const tabs=Object.entries(categories).map(([key,c])=>`<button type="button" class="market-tab ${section===key?'chosen':''}" data-market-tab="${key}" aria-pressed="${section===key}"><span class="pm-tab-icon">${c.icon}</span><span>${c.short}</span></button>`).join('');
+ const bal=Object.keys(RES_IC).map(k=>`<span class="${resources[k]>=resourceCap(k)?'full':''}">${RES_IC[k]} ${Math.floor(resources[k])}<small>/${resourceCap(k)}</small></span>`).join('');
+ const html=`<div class="premium-market"><div class="pm-balance v82-balance">${bal}</div>
+ <nav class="market-tabs" aria-label="Κατηγορίες αγοράς">${tabs}</nav><section class="market-section"><div class="pm-scroll-row"><div class="pm-section-line"><strong>${current.label}</strong>${special?'':`<span> · ${current.items.length}</span>`}</div><div class="pm-scroll-actions"><button type="button" data-market-scroll="-1" aria-label="Προηγούμενα κτίρια">‹</button><button type="button" data-market-scroll="1" aria-label="Επόμενα κτίρια">›</button></div></div>
+ ${special?`<div class="v82-special">${special()}</div>`:`<div class="market-grid" id="market-horizontal-list" aria-label="Κτίρια — σύρε δεξιά ή αριστερά">${current.items.map(marketCardMarkup).join('')}</div>`}</section><div class="pm-footer">${special?'Όλες οι αγορές σέβονται τα όρια της Αποθήκης':'Σύρε δεξιά / αριστερά για περισσότερα κτίρια'}</div></div>`;
+ const c=panel('🏪 Αγορά βασιλείου · Επ. '+level,html);
+ c.dataset.marketSection=section;
+ const nav=c.querySelector('.market-tabs'),chosen=c.querySelector('.market-tab.chosen');if(nav&&chosen){const want=chosen.offsetLeft-(nav.clientWidth-chosen.offsetWidth)/2;nav.scrollLeft=Math.max(0,want)}
+ const shelf=c.querySelector('#market-horizontal-list'),scrollArrows=[...c.querySelectorAll('[data-market-scroll]')];
+ if(special)scrollArrows.forEach(b=>b.hidden=true);
+ function refreshShelfArrows(){if(!shelf)return;const max=shelf.scrollWidth-shelf.clientWidth;scrollArrows[0].disabled=shelf.scrollLeft<8;scrollArrows[1].disabled=shelf.scrollLeft>=max-8||max<=8}
+ scrollArrows.forEach(button=>button.addEventListener('click',()=>{if(!shelf)return;const first=shelf.querySelector('.market-card');const span=first?first.getBoundingClientRect().width+10:shelf.clientWidth*.7;shelf.scrollBy({left:Number(button.dataset.marketScroll)*span,behavior:'smooth'})}));
+ shelf?.addEventListener('scroll',refreshShelfArrows,{passive:true});refreshShelfArrows();
+ c.querySelectorAll('[data-market-tab]').forEach(btn=>btn.onclick=()=>{if(TUTORIAL_ENABLED&&tutorialStep===8&&btn.dataset.marketTab==='production')advanceTutorial(8);showMarket(btn.dataset.marketTab)});
+ c.querySelectorAll('[data-item-info]').forEach(info=>{const toggle=()=>{const d=c.querySelector(`[data-item-details="${info.dataset.itemInfo}"]`);if(d)d.hidden=!d.hidden};info.onclick=toggle;info.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle()}}});
+ c.querySelectorAll('[data-build-item]').forEach(btn=>btn.onclick=()=>{
+  const type=btn.dataset.buildItem;
+  if(level<types[type].unlock){toast('Ξεκλειδώνει στο επίπεδο '+types[type].unlock);return}
+  if(resources.wood<types[type].cost){toast('Χρειάζεσαι '+types[type].cost+' ξύλο');return}
+  if(items.filter(b=>b.type===type).length>=buildingLimit(type)){const nl=nextLimitLevel(type);toast('Έφτασες το όριο: '+buildingLimit(type)+' '+types[type].label+(nl?' · +1 στο επίπεδο '+nl:''));return}
+  if(TUTORIAL_ENABLED&&tutorialStep===2&&type!=='house'){toast('Πρώτα επίλεξε το Σπίτι');return}
+  if(TUTORIAL_ENABLED&&tutorialStep===9&&type!=='farm'){toast('Πρώτα επίλεξε το Αγρόκτημα');return}
+  chooseBuild=type;if(TUTORIAL_ENABLED&&tutorialStep===2)advanceTutorial(2);if(TUTORIAL_ENABLED&&tutorialStep===9)advanceTutorial(9);startBuild(type)});
+ const again=()=>showMarket(section);
+ c.querySelectorAll('[data-v82-lot]').forEach(b=>b.onclick=()=>{v82Lot=+b.dataset.v82Lot;again()});
+ c.querySelectorAll('[data-v82-buy]').forEach(b=>b.onclick=()=>{marketBuy(b.dataset.v82Buy,v82Lot);again()});
+ c.querySelectorAll('[data-v82-sell]').forEach(b=>b.onclick=()=>{marketSell(b.dataset.v82Sell,v82Lot);again()});
+ c.querySelectorAll('[data-trade-give]').forEach(b=>b.onclick=()=>{tradeGive=b.dataset.tradeGive;again()});
+ c.querySelectorAll('[data-trade-get]').forEach(b=>b.onclick=()=>{tradeGet=b.dataset.tradeGet;again()});
+ const go=c.querySelector('[data-trade-go]');if(go)go.onclick=()=>{doExchange();again()};
+ c.querySelectorAll('[data-v82-offer]').forEach(b=>b.onclick=()=>{buyOffer(+b.dataset.v82Offer);again()});
+ const rr2=c.querySelector('[data-v82-reroll]');if(rr2)rr2.onclick=()=>{rerollOffers();again()};
+ c.querySelectorAll('[data-v82-donate]').forEach(b=>b.onclick=()=>{donate(b.dataset.v82Donate);again()});
+ c.querySelectorAll('[data-v82-boost]').forEach(b=>b.onclick=()=>{buyBoost(b.dataset.v82Boost);again()});
+ c.querySelectorAll('[data-v82-speed]').forEach(b=>b.onclick=()=>{const q=items.find(x=>x.id===+b.dataset.v82Speed);if(q)speedUpUpgrade(q);again()});
+}
+
+// ---------- Story chain (levels 1-20) ----------
+function cntT(t){return items.filter(b=>b.type===t).length}
+function maxLvT(t){return Math.max(0,...items.filter(b=>b.type===t).map(b=>b.level||1))}
+function lvCount(L){return items.filter(b=>!types[b.type]?.decor&&b.type!=='wall'&&b.type!=='gate'&&(b.level||1)>=L).length}
+function workersN(){return units.filter(u=>u.type==='worker').length}
+function soldiersN(){return units.filter(u=>u.type!=='worker').length}
+function assignedTo(t){return units.filter(u=>u.type==='worker'&&u.assignedBuildingId&&items.find(b=>b.id===u.assignedBuildingId)?.type===t).length}
+function life(k){return questCounts[k]||0}
+var STORY=[
+ ['s_house',1,'Η πρώτη κατοικία','Χτίσε 1 Σπίτι από την 🛒 Αγορά.',()=>[cntT('house'),1],'wood,food'],
+ ['s_worker',1,'Το πρώτο χέρι','Πάτησε το Δημαρχείο και προσέλαβε 1 εργάτη.',()=>[workersN(),1],'food'],
+ ['s_farm',1,'Ψωμί για όλους','Χτίσε 1 Αγρόκτημα (Αγορά → Παραγωγή).',()=>[cntT('farm'),1],'wood'],
+ ['s_assign',1,'Στα χωράφια!','Πάτησε το Αγρόκτημα και βάλε έναν εργάτη.',()=>[assignedTo('farm'),1],'food,gold'],
+ ['s_collect',1,'Πρώτη σοδειά','Κάνε 2 συλλογές παραγωγής (📥).',()=>[life('collect'),2],'wood,gold'],
+ ['s_saw',2,'Ο ήχος του πριονιού','Χτίσε Ξυλουργείο και βάλε εργάτη.',()=>[assignedTo('sawmill'),1],'food,stone'],
+ ['s_store',2,'Γεμάτα κελάρια','Χτίσε 1 Αποθήκη για μεγαλύτερα όρια.',()=>[cntT('storage'),1],'wood,stone'],
+ ['s_up2',2,'Καλύτερα σπίτια','Αναβάθμισε ένα Σπίτι στο Επ. 2.',()=>[maxLvT('house'),2],'wood,food'],
+ ['s_barracks',2,'Η φρουρά','Χτίσε Στρατώνα.',()=>[cntT('barracks'),1],'food,gold'],
+ ['s_quarry',3,'Πέτρα από τα βουνά','Χτίσε Λατομείο και βάλε εργάτη.',()=>[assignedTo('quarry'),1],'wood,food'],
+ ['s_tower',3,'Σκοπιά στα σύνορα','Χτίσε 1 Πύργο.',()=>[cntT('tower'),1],'stone,gold'],
+ ['s_train',3,'Πρώτοι στρατιώτες','Εκπαίδευσε 3 στρατιώτες στον Στρατώνα.',()=>[life('train'),3],'food,gold'],
+ ['s_nature',3,'Δώρα της γης','Μάζεψε 4 φυσικούς πόρους (δέντρα, πέτρες) με εργάτες.',()=>[life('nature'),4],'food,stone'],
+ ['s_mine',4,'Χρυσές φλέβες','Χτίσε Χρυσωρυχείο και βάλε εργάτη.',()=>[assignedTo('mine'),1],'wood,stone'],
+ ['s_town3',4,'Ισχυρό Δημαρχείο','Αναβάθμισε το Δημαρχείο στο Επ. 3.',()=>[maxLvT('town'),3],'wood,gold'],
+ ['s_trade1',4,'Στην Αγορά','Κάνε 1 αγορά ή πώληση στην Αγορά (⚖️ Εμπόριο).',()=>[life('trade'),1],'gold'],
+ ['s_wave1',4,'Πρώτη νίκη','Απόκρουσε 1 εχθρικό κύμα.',()=>[attacksWon,1],'stone,gold'],
+ ['s_wind',5,'Ο ανεμόμυλος','Χτίσε Ανεμόμυλο.',()=>[cntT('windmill'),1],'wood,stone'],
+ ['s_region1',5,'Νέα γη','Κατάκτησε μία νέα περιοχή από τους Orcs.',()=>[unlockedRegions.size-1,1],'wood,stone,gold'],
+ ['s_work8',5,'Πολυάσχολο χωριό','Απόκτησε 8 εργάτες.',()=>[workersN(),8],'food'],
+ ['s_lv4x3',6,'Μάστορες','Έχε 3 κτίρια στο Επ. 4 ή υψηλότερα.',()=>[lvCount(4),3],'wood,stone'],
+ ['s_banner',6,'Το λάβαρο','Τοποθέτησε ένα Λάβαρο Βασιλείου.',()=>[cntT('banner_decor'),1],'gold'],
+ ['s_offer',6,'Καλή συμφωνία','Αγόρασε 1 Προσφορά ημέρας στην Αγορά.',()=>[life('offer'),1],'wood,food'],
+ ['s_forge',7,'Το Σιδηρουργείο','Χτίσε Σιδηρουργείο.',()=>[cntT('forge'),1],'stone,gold'],
+ ['s_boost',7,'Γιορτή στο βασίλειο','Ενεργοποίησε μία ενίσχυση στην Αγορά.',()=>[life('boost'),1],'food,gold'],
+ ['s_town5',7,'Πέτρινο Δημαρχείο','Αναβάθμισε το Δημαρχείο στο Επ. 5.',()=>[maxLvT('town'),5],'wood,stone'],
+ ['s_store3',8,'Αποθήκες του στέμματος','Έχε 3 Αποθήκες.',()=>[cntT('storage'),3],'wood,stone'],
+ ['s_army6',8,'Λόχος','Έχε 6 στρατιώτες.',()=>[soldiersN(),6],'food,gold'],
+ ['s_farm6',8,'Εύφορη γη','Αναβάθμισε ένα Αγρόκτημα στο Επ. 6.',()=>[maxLvT('farm'),6],'food,wood'],
+ ['s_garden',9,'Βασιλικός κήπος','Φτιάξε έναν Κήπο με λουλούδια.',()=>[cntT('garden_decor'),1],'gold'],
+ ['s_waves5',9,'Ακλόνητα τείχη','Απόκρουσε συνολικά 5 κύματα.',()=>[attacksWon,5],'stone,gold'],
+ ['s_exchange',9,'Έμπορος','Κάνε 5 συναλλαγές στην Αγορά.',()=>[life('trade'),5],'wood,food'],
+ ['s_town7',10,'Βασιλικό Δημαρχείο','Αναβάθμισε το Δημαρχείο στο Επ. 7.',()=>[maxLvT('town'),7],'wood,stone,gold'],
+ ['s_region2',10,'Επέκταση','Κατέχε 3 περιοχές.',()=>[unlockedRegions.size,3],'wood,stone'],
+ ['s_work15',10,'Πόλη εργατών','Απόκτησε 15 εργάτες.',()=>[workersN(),15],'food,gold'],
+ ['s_collect150',11,'Συλλέκτης','Κάνε συνολικά 150 συλλογές.',()=>[life('collect'),150],'wood,gold'],
+ ['s_mine7',11,'Βαθιές στοές','Αναβάθμισε ένα Χρυσωρυχείο στο Επ. 7.',()=>[maxLvT('mine'),7],'stone,food'],
+ ['s_oak',12,'Ιερή Βελανιδιά','Φύτεψε την Ιερή Βελανιδιά.',()=>[cntT('oak_decor'),1],'gold'],
+ ['s_lv8x5',12,'Αρχιτέκτονες','Έχε 5 κτίρια στο Επ. 8 ή υψηλότερα.',()=>[lvCount(8),5],'wood,stone'],
+ ['s_town9',13,'Κάστρο','Αναβάθμισε το Δημαρχείο στο Επ. 9.',()=>[maxLvT('town'),9],'wood,stone,gold'],
+ ['s_region3',13,'Σύνορα','Κατέχε 4 περιοχές.',()=>[unlockedRegions.size,4],'stone,gold'],
+ ['s_towers4',14,'Δακτύλιος πύργων','Έχε 4 Πύργους.',()=>[cntT('tower'),4],'stone,gold'],
+ ['s_work22',14,'Μεγαλούπολη','Απόκτησε 22 εργάτες.',()=>[workersN(),22],'food'],
+ ['s_treasure',15,'Ο θησαυρός του βασιλιά','Τοποθέτησε τον Θησαυρό του Βασιλιά.',()=>[cntT('treasure_decor'),1],'wood,stone'],
+ ['s_town10',15,'Οχυρή πρωτεύουσα','Αναβάθμισε το Δημαρχείο στο Επ. 10.',()=>[maxLvT('town'),10],'wood,stone,gold'],
+ ['s_region4',16,'Ηγεμόνας','Κατέχε 5 περιοχές.',()=>[unlockedRegions.size,5],'wood,gold'],
+ ['s_army12',16,'Στρατός του στέμματος','Έχε 12 στρατιώτες.',()=>[soldiersN(),12],'food,gold'],
+ ['s_trade25',17,'Εμπορικός οίκος','Κάνε συνολικά 25 συναλλαγές.',()=>[life('trade'),25],'wood,stone'],
+ ['s_farm11',17,'Χρυσά στάχυα','Αναβάθμισε ένα Αγρόκτημα στο Επ. 11.',()=>[maxLvT('farm'),11],'food,gold'],
+ ['s_obelisk',18,'Μνημείο ηρώων','Στήσε τον Οβελίσκο Ηρώων.',()=>[cntT('obelisk_decor'),1],'gold'],
+ ['s_town12',18,'Αυτοκρατορικό Δημαρχείο','Αναβάθμισε το Δημαρχείο στο Επ. 12.',()=>[maxLvT('town'),12],'wood,stone,gold'],
+ ['s_region5',19,'Αυτοκρατορία','Κατέχε 6 περιοχές.',()=>[unlockedRegions.size,6],'wood,stone,gold'],
+ ['s_lv10x8',19,'Θρυλικοί μάστορες','Έχε 8 κτίρια στο Επ. 10 ή υψηλότερα.',()=>[lvCount(10),8],'wood,stone'],
+ ['s_golden',20,'Το Χρυσό Άγαλμα','Στήσε το Χρυσό Άγαλμα.',()=>[cntT('golden_statue_decor'),1],'gold'],
+ ['s_emperor',20,'Αυτοκράτορας','Έχε 12 κτίρια στο Επ. 12.',()=>[lvCount(12),12],'wood,stone,food,gold']
+].map(([id,lv,name,desc,check,keys])=>({id,lv,name,desc,check,keys:keys.split(',')}));
+function storyReward(q){const lv=q.lv,base={wood:50+18*lv,stone:30+12*lv,food:40+15*lv,gold:15+6*lv},res={};for(const k of q.keys)res[k]=base[k];return {res,xp:25+12*lv}}
+function storyProgress(q){let r;try{r=q.check()}catch(e){r=[0,1]}const [have,need]=r;return {have:Math.min(need,Math.max(0,Math.floor(have))),need,done:have>=need}}
+// Up to 3 open chapters; finished ones jump to the front so a stuck quest (e.g. combat) never blocks the chain.
+function storyActive(){const open=STORY.filter(q=>!v82.story[q.id]&&q.lv<=level);return open.map((q,i)=>({q,i,d:storyProgress(q).done?0:1})).sort((a,b)=>a.d-b.d||a.i-b.i).slice(0,3).map(x=>x.q)}
+function storyNextLevel(){const q=STORY.find(q=>!v82.story[q.id]);return q?q.lv:null}
+function claimStory(id){
+ const q=STORY.find(s=>s.id===id);if(!q||v82.story[id]||q.lv>level)return false;
+ if(!storyProgress(q).done)return false;
+ v82.story[id]=1;const rw=storyReward(q);const got=gainBundle(rw.res);sfx('coin');refresh();
+ toast('📖 '+q.name+' · '+rewardText(got));addXP(rw.xp,'Αποστολή ιστορίας');persist();return true;
+}
+
+// ---------- Achievements ----------
+var ACHV=[
+ ['builder','🏗️','Οικοδόμος','Κτίρια που έχτισες',()=>life('build'),[10,30,60]],
+ ['architect','⬆️','Αρχιτέκτονας','Αναβαθμίσεις',()=>life('upgrade'),[10,50,120]],
+ ['collector','📥','Συλλέκτης','Συλλογές παραγωγής',()=>life('collect'),[25,150,500]],
+ ['farmer','🌾','Αγρότης','Τροφή που μαζεύτηκε',()=>life('harvest'),[1000,10000,50000]],
+ ['lumber','🪓','Ξυλοκόπος & λιθοξόος','Ξύλο & πέτρα που μαζεύτηκαν',()=>life('gather'),[1000,10000,50000]],
+ ['general','⚔️','Στρατηγός','Στρατιώτες που εκπαιδεύτηκαν',()=>life('train'),[10,40,100]],
+ ['defender','🛡️','Υπερασπιστής','Κύματα που αποκρούστηκαν',()=>attacksWon,[3,10,25]],
+ ['conqueror','🏴','Κατακτητής','Περιοχές που κατέχεις',()=>unlockedRegions.size,[2,5,9]],
+ ['merchant','⚖️','Έμπορος','Συναλλαγές στην Αγορά',()=>life('trade'),[5,25,80]],
+ ['artist','✨','Καλλιτέχνης','Διακοσμήσεις στον χάρτη',()=>items.filter(b=>types[b.type]?.decor).length,[3,10,20]],
+ ['king','👑','Βασιλιάς','Επίπεδο παίκτη',()=>level,[5,10,20]],
+ ['loyal','📅','Πιστός','Ημέρες με καθημερινό δώρο',()=>v82.login.total,[3,7,30]]
+].map(([id,icon,name,desc,stat,tiers])=>({id,icon,name,desc,stat,tiers}));
+function achvReward(tier){return {gold:[25,60,120][tier],xp:[30,80,160][tier]}}
+function achvClaimable(a){const t=v82.achv[a.id]||0;return t<3&&a.stat()>=a.tiers[t]}
+function achvClaimableCount(){return ACHV.filter(achvClaimable).length}
+function claimAchv(id){const a=ACHV.find(x=>x.id===id);if(!a||!achvClaimable(a))return false;const t=v82.achv[a.id]||0;v82.achv[a.id]=t+1;const rw=achvReward(t);gainResource('gold',rw.gold);sfx('coin');refresh();toast('🏆 '+a.name+' '+'★'.repeat(t+1)+' · +'+rw.gold+' 🪙');addXP(rw.xp,'Επίτευγμα');persist();return true}
+function showAchievements(){
+ const rows=ACHV.map(a=>{const t=v82.achv[a.id]||0,goal=a.tiers[Math.min(2,t)],v=Math.floor(a.stat()),ready=achvClaimable(a);
+  return `<div class="building-meta v82-achv ${ready?'ready':''}"><strong>${a.icon} ${a.name} <span class="v82-stars">${'★'.repeat(t)}${'☆'.repeat(3-t)}</span></strong><br>${a.desc}: <b>${Math.min(v,goal).toLocaleString('el-GR')} / ${goal.toLocaleString('el-GR')}</b>${t>=3?' · ✅ Ολοκληρώθηκε':' · 🎁 '+achvReward(t).gold+' 🪙 · '+achvReward(t).xp+' XP'}<div class="quest-bar"><i style="width:${t>=3?100:Math.min(100,100*v/goal)}%"></i></div></div>`}).join('');
+ const btns=ACHV.filter(achvClaimable).map(a=>({label:'🏆 '+a.name,fn:()=>{claimAchv(a.id);showAchievements()}}));
+ btns.push({label:'📜 Αποστολές',fn:showQuests},{label:'✕ Κλείσιμο',fn:close});
+ card('🏆 Επιτεύγματα · '+ACHV.reduce((n,a)=>n+(v82.achv[a.id]||0),0)+'/'+ACHV.length*3+' ★',`<div class="quest-list">${rows}</div>`,btns);
+}
+
+// ---------- Daily login gift ----------
+function dayIndex(key){const [y,m,d]=key.split('-').map(Number);return Math.round(Date.UTC(y,m-1,d)/864e5)}
+function loginAvailable(){return v82.login.last!==todayKey()}
+function loginNextStreak(){const L=v82.login;if(!L.last)return 1;const diff=dayIndex(todayKey())-dayIndex(L.last);return diff===1?(L.streak%7)+1:1}
+function loginReward(day){const lv=Math.min(level,20);
+ return [{wood:60+15*lv},{food:60+15*lv},{stone:40+10*lv},{gold:20+5*lv},{wood:50+12*lv,stone:40+10*lv},{wood:40+8*lv,stone:30+6*lv,food:40+8*lv,gold:10+3*lv},{gold:40+8*lv,xp:50+10*lv,boost:'royal'}][day-1]}
+function claimLogin(){
+ if(!loginAvailable())return false;
+ const day=loginNextStreak(),rw=loginReward(day),res={...rw};delete res.xp;delete res.boost;
+ v82.login={last:todayKey(),streak:day,total:v82.login.total+1};
+ const got=gainBundle(res);if(rw.boost){v82.boosts.royal=Math.max(nowMs(),v82.boosts.royal||0)+15*60000}
+ sfx('levelup');refresh();toast('🎁 Δώρο ημέρας '+day+'/7 · '+rewardText(got)+(rw.boost?' · 👑 Διάταγμα 15′':''));
+ if(rw.xp)addXP(rw.xp,'Καθημερινό δώρο');persist();return true;
+}
+function rewardLabel(rw){const r={...rw};const extra=[];if(r.xp){extra.push('⭐ '+r.xp);delete r.xp}if(r.boost){extra.push('👑 15′');delete r.boost}return [costShort(r),...extra].filter(Boolean).join(' ')}
+function showLoginGift(after){
+ const next=loginNextStreak(),avail=loginAvailable(),cur=avail?next:v82.login.streak;
+ const days=[1,2,3,4,5,6,7].map(d=>`<div class="v82-day ${d<cur||(!avail&&d===cur)?'got':''} ${avail&&d===next?'today':''}"><b>Ημέρα ${d}</b><span>${d===7?'🎁':['🪵','🌾','🪨','🪙','🧱','📦'][d-1]}</span><small>${rewardLabel(loginReward(d))}</small></div>`).join('');
+ card('🎁 Καθημερινό δώρο · '+(avail?'Ημέρα '+next+'/7':'Πάρθηκε'),`<div class="v82-days">${days}</div><div class="building-meta">Μπες κάθε μέρα για να μεγαλώνει το σερί. Αν χάσεις μία μέρα, το σερί ξεκινά από την αρχή. Η 7η μέρα δίνει σεντούκι και 👑 Βασιλικό Διάταγμα.</div>`,
+ [...(avail?[{label:'🎁 Πάρε το δώρο',fn:()=>{claimLogin();if(after)after();else showLoginGift()}}]:[]),{label:avail?'Αργότερα':'✕ Κλείσιμο',secondary:true,fn:()=>{if(after)after();else close()}}]);
+}
+
+// ---------- Quests panel (story + daily + contract + achievements) ----------
+function showQuests(){ensureDaily();ensureContract();const buttons=[];
+ let body='';
+ if(loginAvailable())buttons.push({label:'🎁 Καθημερινό δώρο',fn:()=>showLoginGift(showQuests)});
+ const act=storyActive(),nextLv=storyNextLevel();
+ body+=`<div class="quest-section-title">📖 Ιστορία του βασιλείου · ${STORY.filter(q=>!storyIsEpilogue(q)&&v82.story[q.id]).length}/${STORY.filter(q=>!storyIsEpilogue(q)).length}${level>=maxPlayerLevel()?' · 👑 Επίλογος '+STORY.filter(q=>storyIsEpilogue(q)&&v82.story[q.id]).length+'/'+STORY.filter(storyIsEpilogue).length:' · 👑 Επίλογος στο 20'}</div><div class="quest-list">`;
+ if(!act.length)body+=`<div class="building-meta">${nextLv?'📜 Νέες αποστολές ιστορίας στο επίπεδο '+nextLv+'.':'👑 Ολοκλήρωσες όλη την ιστορία!'}</div>`;
+ for(const q of act){const p=storyProgress(q),rw=storyReward(q);
+  body+=`<div class="building-meta v82-story ${p.done?'ready':''}" data-story="${q.id}"><strong>${p.done?'🎁 ':'📜 '}${q.name}</strong> <small class="${storyIsEpilogue(q)?'v83-epilogue':''}">${storyIsEpilogue(q)?'👑 Επίλογος · μετά το 20':'Επ. '+q.lv}</small><br>${q.desc}<br><strong>${p.have} / ${p.need}</strong> · ⭐ ${rw.xp} XP · ${rewardText(rw.res)}<div class="quest-bar"><i style="width:${Math.min(100,100*p.have/p.need)}%"></i></div></div>`;
+  if(p.done)buttons.push({label:'🎁 Ιστορία: '+q.name,fn:()=>{claimStory(q.id);showQuests()}});}
+ body+='</div><div class="quest-section-title">☀️ Καθημερινές αποστολές · ανανέωση τα μεσάνυχτα</div><div class="quest-list">';
+ for(const q of dailyQuests.list){const def=DAILY_POOL.find(d=>d.key===q.key);if(!def)continue;const rw=dailyReward(dailyQuests.level),ready=!q.claimed&&q.progress>=q.goal;
+  body+=`<div class="building-meta" data-daily="${q.key}"><strong>${q.claimed?'✅ ':ready?'🎁 ':def.icon+' '}${def.name}</strong><br>${def.text(q.goal)}<br><strong>${Math.floor(q.progress)} / ${q.goal}</strong> · ⭐ ${rw.xp} XP · ${rewardText(rw.res)}<div class="quest-bar"><i style="width:${Math.min(100,100*q.progress/q.goal)}%"></i></div></div>`;
+  if(ready)buttons.push({label:'🎁 Ημερήσια: '+def.name,fn:()=>{claimDaily(q.key);showQuests()}});}
+ const cdef=DAILY_POOL.find(d=>d.key===contract.key),crw=contractReward(),cready=contract.progress>=contract.goal;
+ body+=`</div><div class="quest-section-title">🔁 Συμβόλαιο βασιλείου #${contract.n+1} · επαναλαμβανόμενο</div><div class="building-meta" data-contract="${contract.key}"><strong>${cready?'🎁 ':'📜 '}${cdef.name}</strong><br>${cdef.text(contract.goal)}<br><strong>${Math.floor(contract.progress)} / ${contract.goal}</strong> · ⭐ ${crw.xp} XP · ${rewardText(crw.res)}<div class="quest-bar"><i style="width:${Math.min(100,100*contract.progress/contract.goal)}%"></i></div></div>`;
+ if(cready)buttons.push({label:'🎁 Συμβόλαιο: '+cdef.name,fn:()=>{claimContract();showQuests()}});
+ const ac=achvClaimableCount();
+ buttons.push({label:'🏆 Επιτεύγματα'+(ac?' ('+ac+' έτοιμα)':''),fn:showAchievements});
+ buttons.push({label:'✕ Κλείσιμο',fn:close});card('📜 Αποστολές βασιλείου',body,buttons);
+}
+function claimDaily(key){const q=dailyQuests?.list.find(x=>x.key===key);if(!q||q.claimed||q.progress<q.goal)return false;q.claimed=true;const rw=dailyReward(dailyQuests.level);gainBundle(rw.res);sfx('coin');refresh();addXP(rw.xp,'Καθημερινή αποστολή');persist();return true}
+function claimContract(){if(!contract||contract.progress<contract.goal)return false;const crw=contractReward();gainBundle(crw.res);const n=contract.n+1;contract={n};ensureContract();sfx('coin');refresh();addXP(crw.xp,'Συμβόλαιο βασιλείου');persist();return true}
+DAILY_POOL.push({key:'trade',name:'Εμπορική μέρα',icon:'⚖️',text:n=>`Κάνε ${n} συναλλαγές στην Αγορά.`,base:2,step:.1,minLevel:3});
+
+// ---------- Workers helpers ----------
+function hireWorker(b){
+ b=b||items.find(q=>q.type==='town');if(!b)return false;
+ if(resources.food<30){toast('Χρειάζεσαι 30 τροφή');return false}
+ if(!canRecruit())return false;
+ resources.food-=30;units.push({id:nextId++,type:'worker',x:b.x+.5,y:b.y+.5,tx:b.x+.5,ty:b.y+.5,speed:1.05,phase:0});
+ markQuest('hire');refresh();if(TUTORIAL_ENABLED&&tutorialStep===6)advanceTutorial(6);addXP(5,'Πρόσληψη εργάτη');persist();return true;
+}
+function collectAllReady(quiet=false){
+ const got={wood:0,stone:0,food:0,gold:0};let n=0,xpSum=0,blocked=0;
+ for(const b of items){if(!collectReady(b))continue;const prod=productionTypes[b.type],amount=productionStored(b),room=Math.max(0,resourceCap(prod.resource)-resources[prod.resource]);
+  if(room<=0){blocked++;continue}
+  const taken=Math.min(room,amount);b.pendingCollect=amount-taken;resources[prod.resource]+=taken;got[prod.resource]+=taken;n++;
+  if(prod.resource==='food')markQuest('harvest',taken);if(prod.resource==='wood'||prod.resource==='stone')markQuest('gather',taken);markQuest('collect');
+  xpSum+=collectXp(taken);emitWorldFx(b.x,b.y,prod.resource,8)}
+ if(!n){if(!quiet)toast(blocked?'📦 Οι αποθήκες είναι γεμάτες':'Τίποτα έτοιμο για συλλογή ακόμα');return got}
+ sfx('collect');refresh();if(!quiet)toast('📥 Συλλογή από '+n+' κτίρια · '+rewardText(Object.fromEntries(Object.entries(got).filter(([,v])=>v>0))));
+ addXP(xpSum,'Συλλογή παραγωγής');persist();return got;
+}
+
+// ---------- Level-up card, unlock table, settings ----------
+function showLevelUp(gained){
+ gained=(gained&&gained.length?gained:[level]);
+ const lv=gained.at(-1),rw=levelReward(lv),un=gained.flatMap(unlocksAt);
+ const next=lv<maxPlayerLevel()?unlocksAt(lv+1):[];
+ card('🎉 Νέο επίπεδο · '+lv,`<div class="v82-levelup"><div class="v82-lv-badge"><span>ΕΠΙΠΕΔΟ</span><b>${lv}</b></div>
+ <div class="v82-lv-reward">🎁 Ανταμοιβή: ${rewardText(rw)}</div>
+ <div class="v82-sec-title">🔓 Ξεκλειδώθηκαν</div><ul class="v82-unlocks">${un.length?un.map(u=>'<li>'+u+'</li>').join(''):'<li>Περισσότεροι πόροι</li>'}</ul>
+ ${lv<maxPlayerLevel()?`<div class="v82-sec-title">⏭ Στο επίπεδο ${lv+1}</div><div class="v82-next">${next.join(' · ')||'—'}</div>`:'<div class="v82-next">👑 Έφτασες στην κορυφή! Κάθε 10.000 XP παίρνεις Βασιλικό σεντούκι.</div>'}</div>`,
+ [{label:'🛒 Στην Αγορά',fn:()=>{close();newMode('build')}},{label:'📋 Όλα τα ξεκλειδώματα',fn:showUnlockTable},{label:'✅ Συνέχεια',fn:close}]);
+}
+function showUnlockTable(){
+ const rows=[];for(let l=1;l<=maxPlayerLevel();l++){const u=l===1?['🏠 Σπίτι','🌾 Αγρόκτημα','🔥 Πυρσός','🔨 1 Οικοδόμος']:unlocksAt(l);
+  rows.push(`<div class="v82-ut-row ${l===level?'cur':l<level?'done':''}"><b>Επ. ${l}</b><span>${u.join(' · ')}</span></div>`)}
+ card('📋 Ξεκλειδώματα 1–20',`<div class="v82-ut">${rows.join('')}</div>`,[{label:'👑 Επίπεδο',fn:showLevelOverview},{label:'✕ Κλείσιμο',fn:close}]);
+}
+function toggleSound(){v82.sound=!v82.sound;persist();toast(v82.sound?'🔊 Ήχος: ενεργός':'🔇 Ήχος: σίγαση')}
+
+// ---------- Tiny WebAudio sound effects (only after a real user gesture) ----------
+var __audio=null;
+function sfx(kind){
+ try{
+  if(!v82||!v82.sound)return;
+  if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;
+  if(!__audio){const AC=window.AudioContext||window.webkitAudioContext;if(!AC)return;__audio=new AC()}
+  if(__audio.state==='suspended')__audio.resume();
+  const notes={collect:[660,880],coin:[880,1320],build:[330,440],levelup:[523,659,784,1047]}[kind]||[600];
+  const t0=__audio.currentTime;
+  notes.forEach((f,i)=>{const o=__audio.createOscillator(),g=__audio.createGain();o.type='triangle';o.frequency.value=f;
+   g.gain.setValueAtTime(0.0001,t0+i*.08);g.gain.exponentialRampToValueAtTime(.08,t0+i*.08+.02);g.gain.exponentialRampToValueAtTime(.0001,t0+i*.08+.18);
+   o.connect(g).connect(__audio.destination);o.start(t0+i*.08);o.stop(t0+i*.08+.2)});
+ }catch(e){}
+}
+
+// ---------- HUD: guide hint + active boosts ----------
+var __hintText='';
+function updateHint(){
+ const el=$('#v82-hint');if(!el)return;
+ let text='',ready=false;
+ const act=storyActive(),readyQ=act.find(q=>storyProgress(q).done);
+ if(readyQ){text='🎁 Ανταμοιβή έτοιμη: '+readyQ.name;ready=true}
+ else if(act.length){const q=act[0],p=storyProgress(q);text='📜 '+q.desc+' ('+p.have+'/'+p.need+')'}
+ else if(loginAvailable()){text='🎁 Το καθημερινό δώρο σε περιμένει';ready=true}
+ else{const nl=storyNextLevel();text=nl?'⭐ Νέες αποστολές στο επίπεδο '+nl:'👑 Ολοκλήρωσες την ιστορία!'}
+ const boosts=Object.entries(BOOSTS).filter(([k])=>boostActive(k)).map(([k,d])=>d.icon+' '+fmtDur(boostLeft(k)));
+ const ups=activeUpgrades().length;
+ const extra=[...boosts,...(ups?['🔨 '+ups+'/'+builderCount()]:[])].join(' · ');
+ const html=`<span class="v82-hint-text">${text}</span>${extra?`<span class="v82-hint-extra">${extra}</span>`:''}`;
+ if(html!==__hintText){el.innerHTML=html;__hintText=html}
+ el.classList.toggle('ready',ready);
+}
+
+// ---------- Per-second V82 tick (also covers offline: timers are wall-clock based) ----------
+var __lastDay='';
+function v82Tick(){
+ const now=nowMs();syncCitadel();
+ for(const b of items)if(b.upgradeEndsAt&&b.upgradeEndsAt<=now){const t=types[b.type];finishUpgrade(b);toast('✅ Ολοκληρώθηκε: '+t.label+' Επ. '+b.level)}
+ const day=todayKey();if(day!==__lastDay){__lastDay=day;ensureDaily();syncOffersDay()}
+ document.querySelectorAll('[data-upgrade-countdown]').forEach(el=>{const b=items.find(q=>String(q.id)===el.dataset.upgradeCountdown);if(b&&b.upgradeEndsAt){el.textContent=fmtDur(upgradeRemaining(b));const bar=el.closest('.v82-upbar')?.querySelector('.quest-bar i');if(bar)bar.style.width=(100*(1-upgradeRemaining(b)/Math.max(1,b.upgradeTotal||1)))+'%'}});
+ updateHint();
+}
+
+// ---------- Building card extras ----------
+function v82DecorateBuildingCard(b){
+ const body=$('#card .panel-body');if(!body||!types[b.type])return;
+ const t=types[b.type];let html='';
+ if(t.decor){html=DECOR_BONUS[b.type]?`<div class="v82-upnext">${decorBonusText(b.type)} <small>· μετράνε έως ${DECOR_MAX_COUNTED} ίδιες</small></div>`:''}
+ else if(b.upgradeEndsAt){html=`<div class="v82-upbar">🔨 Αναβάθμιση σε Επ. ${b.level+1} · <b data-upgrade-countdown="${b.id}">${fmtDur(upgradeRemaining(b))}</b><div class="quest-bar"><i style="width:${100*(1-upgradeRemaining(b)/Math.max(1,b.upgradeTotal||1))}%"></i></div><small>⚡ Άμεση ολοκλήρωση: ${speedUpCost(b)} 🪙</small></div>`}
+ else if((b.level||1)<maxBuildingLevel()){const c=upgradeCost(b),sec=upgradeSeconds(b),why=upgradeBlocker(b);
+  html=`<div class="v82-upnext">⬆️ Επ. ${b.level+1}: ${costLabel(c)}${sec?' · ⏱ '+fmtDur(sec*1000):' · άμεσα'} · 🔨 ${activeUpgrades().length}/${builderCount()}${why&&why.startsWith('storage:')?`<br>📦 Χρειάζεται μεγαλύτερη αποθήκη για ${resourceNames[why.slice(8)]}`:''}${why==='builders'?'<br>🔨 Όλοι οι οικοδόμοι δουλεύουν':''}</div>`}
+ else html=`<div class="v82-upnext">⭐ Μέγιστο επίπεδο ${maxBuildingLevel()}${nextCapLevel()&&(b.level||1)<HARD_MAX_BUILDING_LEVEL?' · περισσότερα στο Επ. παίκτη '+nextCapLevel():''}</div>`;
+ if(b.type==='barracks')html+=`<div class="v82-upnext">⚔️ Δύναμη στρατού: +${Math.round((armyPower()-1)*100)}% (κάθε επίπεδο Στρατώνα +6%)</div>`;
+ if(html)body.insertAdjacentHTML('beforeend',html);
+}
+
+// ---------- Offline report & first-run intro ----------
+function v82OfflineReport(elapsed,off,finished){
+ const total=off?.total||0;if(elapsed<5*60000||(!total&&!finished))return false;
+ const capped=elapsed>offlineCapMs();
+ const lines=Object.entries(off?.byRes||{}).filter(([,v])=>v>0).map(([k,v])=>RES_IC[k]+' +'+v).join(' · ');
+ card('🌙 Όσο έλειπες · '+fmtDur(Math.min(elapsed,offlineCapMs())),`<div class="building-meta">Τα κτίρια με εργάτες συνέχισαν να παράγουν${capped?' (έως '+Math.round(offlineCapMs()/3600e3)+' ώρες)':''}.<br><strong>${lines||'Οι αποθήκες των κτιρίων ήταν γεμάτες'}</strong>${finished?'<br>🔨 Ολοκληρώθηκαν '+finished+' αναβαθμίσεις':''}</div><div class="building-meta">Πάτησε «Συλλογή όλων» για να μεταφέρεις ό,τι χωράει στις αποθήκες.</div>`,
+ [{label:'📥 Συλλογή όλων',fn:()=>{collectAllReady();v82AfterWelcome()}},{label:'Συνέχεια',secondary:true,fn:v82AfterWelcome}]);return true;
+}
+function v82AfterWelcome(){if(loginAvailable())showLoginGift(close);else close()}
+function showIntro(){
+ card('🏰 Καλώς ήρθες, Άρχοντα!',`<div class="v82-intro">
+ <div>📜 <b>Ακολούθησε την Ιστορία:</b> η μπάρα πάνω αριστερά δείχνει τι να κάνεις μετά. Πάτα την για όλες τις αποστολές.</div>
+ <div>🛒 <b>Αγορά:</b> χτίζεις κτίρια, αγοράζεις προσφορές, ενισχύσεις και εμπορεύεσαι πόρους.</div>
+ <div>👷 <b>Εργάτες:</b> πρόσλαβε από το Δημαρχείο και βάλε τους σε Αγρόκτημα, Ξυλουργείο κ.ά. Μάζεψε με 📥.</div>
+ <div>📦 <b>Αποθήκες:</b> κάθε πόρος έχει όριο. Χτίσε και αναβάθμισε Αποθήκες.</div>
+ <div>⭐ <b>20 επίπεδα:</b> κάθε επίπεδο ξεκλειδώνει κάτι νέο: κτίρια, θέσεις, περιοχές, ενισχύσεις.</div></div>`,
+ [{label:'⚔️ Ας ξεκινήσουμε!',fn:()=>{v82.introSeen=true;persist();v82AfterWelcome()}}]);
+}
+function v82Startup(savedGame,elapsed,off,finished){
+ __lastDay=todayKey();
+ const hint=document.createElement('button');hint.id='v82-hint';hint.type='button';hint.setAttribute('aria-label','Επόμενη αποστολή');hint.onclick=()=>{const act=storyActive();if(!act.length&&loginAvailable())showLoginGift();else showQuests()};document.body.appendChild(hint);
+ updateHint();
+ if(window.__eoNoPopups)return;
+ setTimeout(()=>{if($('#card').classList.contains('visible'))return;
+  if(!savedGame&&!v82.introSeen){showIntro();return}
+  if(savedGame&&v82OfflineReport(elapsed,off,finished))return;
+  if(loginAvailable())showLoginGift(close);
+ },900);
+}
+
+// ---------- New decorations (procedural, reuse world art where it fits) ----------
+function drawDecorV82(b,wave){
+ const put=(key,h,dy=0)=>{const im=worldArtSprite(key);if(!im)return false;const P=worldArtPlaceUnit(key,h);ctx.drawImage(im,P.dx,P.dy+dy,P.dw,P.dh);return true};
+ if(b.type==='banner_decor'){
+  path([[-10,5],[0,10],[10,5],[0,0]],'#5b4c46','#2a1f1c',1);line(0,4,0,-58,'#6b4a2f',3.5);ellipse(0,-59,3,3,'#e8c066');
+  const w=wave*3;path([[1,-55],[24+w,-52],[22+w*.6,-38],[26+w,-26],[1,-29]],'#b3313b','#5e1720',1.5);
+  ellipse(13+w*.5,-41,5,5,'#f0c45c');
+ }else if(b.type==='garden_decor'){
+  path([[-26,3],[0,16],[26,3],[0,-10]],'#6b4a33','#3b281b',1.5);path([[-21,3],[0,13],[21,3],[0,-7]],'#4f7a3a',null);
+  if(!(put('flowers_pink',22,-2)&&(ctx.save(),ctx.translate(-11,4),put('flowers_blue',18),ctx.restore(),ctx.save(),ctx.translate(11,4),put('flowers_pink',18),ctx.restore(),true)))
+   for(let i=0;i<7;i++)ellipse(-14+i*4.5,(i%2?3:-1),3,3,i%2?'#e98ab6':'#8fb3f0');
+ }else if(b.type==='oak_decor'){
+  ellipse(0,4,20,7,'#3f3a33');
+  if(!put('tree_oak',78,4)){line(0,2,0,-30,'#6b4a2f',6);ellipse(0,-42,22,18,'#4f8a3c')}
+  ctx.shadowColor='#ffe58a';ctx.shadowBlur=10;ellipse(0,-6,2.5+Math.abs(wave),2.5+Math.abs(wave),'#fff2b0');ctx.shadowBlur=0;
+ }else if(b.type==='treasure_decor'){
+  if(!put('gold_pile',30,4))ellipse(0,0,16,8,'#e5b43c');
+  rr(-11,-20,22,15,3,'#7a4a22','#e8c066');rr(-11,-24,22,6,3,'#93592a','#e8c066');rr(-2,-17,4,5,1,'#f3d27a',null);
+  ctx.shadowColor='#ffd76a';ctx.shadowBlur=12+Math.abs(wave)*6;ellipse(0,-26,3,3,'#fff1b8');ctx.shadowBlur=0;
+ }else if(b.type==='obelisk_decor'){
+  path([[-18,4],[0,13],[18,4],[0,-5]],'#5c5868','#2b2833',1.5);
+  path([[-8,2],[-5,-56],[0,-64],[5,-56],[8,2]],'#7d7a8c','#3a3746',1.5);path([[0,-64],[5,-56],[8,2],[0,2]],'#615e70',null);
+  ctx.shadowColor='#7fd3ff';ctx.shadowBlur=8+Math.abs(wave)*6;for(let i=0;i<4;i++)rr(-2,-48+i*11,4,6,1,'#9fe3ff',null);ctx.shadowBlur=0;
+ }else if(b.type==='golden_statue_decor'){
+  ctx.shadowColor='#ffd76a';ctx.shadowBlur=10+Math.abs(wave)*6;
+  path([[-22,5],[0,15],[22,5],[0,-4]],'#8a6a2c','#f3d27a',1.5);path([[-15,-1],[0,7],[15,-1],[0,-9]],'#b88a2e','#5a4214',1);
+  rr(-10,-26,20,26,2,'#d4a63c','#ffe39a');path([[-12,-28],[0,-41],[12,-28],[0,-23]],'#c99a32','#ffe39a',1);
+  ellipse(0,-46,8,8,'#e8bd52');line(11,-35,15,-3,'#fff0b8',3);path([[-9,-53],[-5,-58],[0,-54],[5,-58],[9,-53]],'#ffe066','#8a6a2c',1);
+  ctx.shadowBlur=0;
+ }
+}
+// Market images and definitions for the new decorations.
+Object.assign(types,{
+ banner_decor:{label:'Λάβαρο Βασιλείου',cost:90,icon:'🚩',desc:'Κόκκινο λάβαρο με το χρυσό έμβλημα. Οι ξυλοκόποι δουλεύουν πιο γρήγορα: +3% ξύλο.',role:'Διακόσμηση με μπόνους',unlock:6,decor:true},
+ garden_decor:{label:'Κήπος με λουλούδια',cost:160,icon:'🌷',desc:'Ανθισμένος κήπος που χαροποιεί τους αγρότες: +4% τροφή.',role:'Διακόσμηση με μπόνους',unlock:9,decor:true},
+ oak_decor:{label:'Ιερή Βελανιδιά',cost:260,icon:'🌳',desc:'Αρχαία βελανιδιά με μαγικό φως: +4% ξύλο και +2% πέτρα.',role:'Διακόσμηση με μπόνους',unlock:12,decor:true},
+ treasure_decor:{label:'Θησαυρός του Βασιλιά',cost:400,icon:'💰',desc:'Σεντούκι γεμάτο χρυσάφι: +5% χρυσός.',role:'Διακόσμηση με μπόνους',unlock:15,decor:true},
+ obelisk_decor:{label:'Οβελίσκος Ηρώων',cost:520,icon:'🗼',desc:'Μνημείο με φωτεινούς ρούνους: +4% XP.',role:'Διακόσμηση με μπόνους',unlock:18,decor:true},
+ golden_statue_decor:{label:'Χρυσό Άγαλμα',cost:700,icon:'🏆',desc:'Το άγαλμα του Αυτοκράτορα: +5% σε όλη την παραγωγή.',role:'Διακόσμηση με μπόνους',unlock:20,decor:true}
+});
+Object.assign(MARKET_IMAGES,{
+ banner_decor:marketBadge('🚩','#5a2a33','#26131a','#d24b5a'),garden_decor:marketBadge('🌷','#34503a','#17261b','#e58ab6'),
+ oak_decor:marketBadge('🌳','#2f4a2c','#152313','#9bd36a'),treasure_decor:marketBadge('💰','#6a5323','#2e230d','#ffd35a'),
+ obelisk_decor:marketBadge('🗼','#3d4560','#191d2c','#7fd3ff'),golden_statue_decor:marketBadge('🏆','#7a6026','#33260b','#ffe066')
+});
+for(const [k,v] of Object.entries({torch_decor:'Διακοσμητικός πυρσός με ζωντανή φλόγα. +1% XP.',statue_decor:'Πέτρινο άγαλμα του υπερασπιστή του βασιλείου. +2% χρυσός.',crystal_decor:'Μωβ κρύσταλλος με απόκοσμη ενέργεια. +2% XP.',fountain_decor:'Πέτρινη κρήνη με φωτεινό νερό. +3% τροφή.'}))if(types[k])types[k].desc=v;
+
+// ===================== V83 — combat rebalance 1-20, toast placement, hidden dev tools, art preload, Town Hall perks =====================
+// Developer tools (Creator Mode) exist only with ?dev=1 in the URL.
+var DEV_MODE=(()=>{try{return /(?:^|[?&])dev=1(?:&|$)/.test(location.search)}catch(e){return false}})();
+function townLevel(){return Math.max(1,items.find(b=>b.type==='town')?.level||1)}
+function barracksLevel(){return Math.max(1,...items.filter(b=>b.type==='barracks').map(b=>b.level||1))}
+
+// ---------- Combat tuning (all numbers in one place) ----------
+// Enemy strength follows the PLAYER LEVEL (1-20), not the number of waves fought, so waves never become trivial
+// and never outgrow the army a player can have at that stage.
+var V83_COMBAT={
+ grunt:{hp:70,hpPerLv:.15,dmg:9,dmgPerLv:.07,rate:1.4,speed:.55,range:1.0},
+ archer:{hpK:.7,dmgK:.8,rate:1.7,range:2.6,speed:.55},
+ brute:{fromLv:8,hpK:2.1,dmgK:1.7,rate:1.8,speed:.45,range:1.05},
+ count:lv=>Math.min(14,3+Math.ceil(lv*.55)),
+ // Orc strongholds: tier = player level that the next conquest permit needs (4,7,10,13,16,19,20,20).
+ boss:{hp:260,hpPerLv:95,dmg:10,dmgPerLv:1.25,rate:1.25,cleave:.5,cleaveR:1.25,regen:.025},
+ camp:{hp:220,hpPerLv:60,arrowDmg:5,arrowPerLv:.75,arrowRate:1.5,range:4.2,regen:.02},
+ engage:4.2,rally:.2,
+ soldierHpPerBarracks:.05,soldierHpPerTown:.03,
+ tower:{dmg:11,perLv:5}
+};
+function waveLevel(){return Math.max(1,Math.min(maxPlayerLevel(),level))}
+function waveSpec(lv){
+ lv=Math.max(1,Math.min(20,lv||waveLevel()));const C=V83_COMBAT,g=C.grunt,n=C.count(lv);
+ const hp=g.hp*(1+g.hpPerLv*(lv-1)),dmg=g.dmg*(1+g.dmgPerLv*(lv-1));const list=[];
+ for(let i=0;i<n;i++){
+  let kind='grunt';if(lv>=C.brute.fromLv&&i%5===4)kind='brute';else if(i%3===2)kind='archer';
+  const k=kind==='brute'?C.brute:kind==='archer'?C.archer:null;
+  list.push({kind,hp:Math.round(hp*(k?.hpK||1)),dmg:+(dmg*(k?.dmgK||1)).toFixed(1),rate:k?.rate||g.rate,range:k?.range||g.range,speed:k?.speed||g.speed});
+ }
+ return list;
+}
+function waveRewardGold(lv){return 25+10*lv}
+function waveRewardXp(lv){return 12+3*lv}
+function soldierMaxHP(u){const base=u.type==='archer'?65:100,C=V83_COMBAT;return Math.round(base*(1+C.soldierHpPerBarracks*(barracksLevel()-1)+C.soldierHpPerTown*(townLevel()-1)))}
+function soldierDps(u){return (u.type==='archer'?19/1.35:18/.95)*armyPower()}
+// Army rating = sqrt(total DPS × total HP); recommended = the reference army for that stage (see DESIGN_V83.md).
+function armyRating(list){list=list||units.filter(u=>u.type!=='worker'&&soldierHP(u)>0);let d=0,h=0;for(const u of list){d+=soldierDps(u);h+=soldierHP(u)}return Math.round(Math.sqrt(d*h))}
+function referenceArmy(lv){const n=Math.min(16,3+Math.floor(lv/1.5)),arch=lv>=5?Math.round(n*.4):0,B=Math.max(1,Math.min(12,Math.round(.55*lv+.5))),T=B;return {n,arch,barracks:B,town:T}}
+function recommendedRating(lv){const r=referenceArmy(lv),pw=1+.06*(r.barracks-1),hpk=1+V83_COMBAT.soldierHpPerBarracks*(r.barracks-1)+V83_COMBAT.soldierHpPerTown*(r.town-1);
+ const d=((r.n-r.arch)*18/.95+r.arch*19/1.35)*pw,h=((r.n-r.arch)*100+r.arch*65)*hpk;return Math.round(Math.sqrt(d*h)*.85)}
+
+function spawnWave(){if(!items.some(b=>b.type==='barracks')){toast('Χτίσε πρώτα Στρατώνα για να αντιμετωπίσεις επιδρομές');return}if(enemies.length){toast('Ένα κύμα βρίσκεται ήδη στον χάρτη');return}
+ if(citadelHP<=0){toast('Επισκεύασε πρώτα το Δημαρχείο!');showCitadel();return}
+ battleOutcome='active';waveStartedAt=tick;wave++;
+ const lv=waveLevel(),spec=waveSpec(lv),town=items.find(b=>b.type==='town')||{x:CENTER_X,y:CENTER_Y};
+ currentWaveLevel=lv;
+ spec.forEach((s,i)=>enemies.push({id:'e'+wave+'-'+i,type:s.kind==='archer'?'archer':'knight',kind:s.kind,x:enemyCamp.x-(i%3)*.45,y:enemyCamp.y+Math.floor(i/3)*.55,tx:town.x,ty:town.y,hp:s.hp,maxHp:s.hp,dmg:s.dmg,rate:s.rate,range:s.range,attackAt:0,speed:s.speed}));
+ rallyArmy();
+ close();toast('⚠️ Εχθρικό κύμα '+wave+' · '+spec.length+' αντίπαλοι (δύναμη Επ. '+lv+')');updateBattleChip();persist()
+}
+var currentWaveLevel=1;
+// Soldiers line up between the Town Hall and the enemy camp, so placement of the Barracks never decides a battle.
+function rallyPoint(){const town=items.find(b=>b.type==='town')||{x:CENTER_X,y:CENTER_Y};return {x:town.x+(enemyCamp.x-town.x)*V83_COMBAT.rally,y:town.y+(enemyCamp.y-town.y)*V83_COMBAT.rally}}
+function rallyArmy(){const p=rallyPoint(),army=units.filter(u=>u.type!=='worker'&&soldierHP(u)>0);
+ army.forEach((u,i)=>{delete u.campTargetIdx;delete u.orcTargetId;const row=Math.floor(i/4),col=i%4;const ranged=u.type==='archer'?-1.1:0;u.tx=u.rx=p.x+(col-1.5)*.7+ranged*.7;u.ty=u.ry=p.y+(row-1)*.6-ranged*.7})}
+function endWave(victory){
+ if(battleOutcome!=='active')return;
+ battleOutcome=victory?'victory':'defeat';
+ enemies=[];const lv=currentWaveLevel||waveLevel();
+ if(victory){attacksWon++;markQuest('win');const gold=gainResource('gold',waveRewardGold(lv));addXP(waveRewardXp(lv),'Απόκρουση κύματος');toast('🏆 Νίκη! +'+gold+' χρυσός. Το κύμα '+wave+' αποκρούστηκε.')}
+ else {const loss=Math.min(Math.floor(resources.gold),20+lv*6);resources.gold-=loss;toast('💀 Το Δημαρχείο έπεσε · -'+loss+' χρυσός. Επισκεύασέ το!')}
+ refresh();persist();updateBattleChip();
+}
+function combatUpdate(dt){
+ for(let i=projectiles.length-1;i>=0;i--){projectiles[i].t+=dt*2.6;if(projectiles[i].t>=1)projectiles.splice(i,1)}
+ for(let i=battleEffects.length-1;i>=0;i--){battleEffects[i].t+=dt;if(battleEffects[i].t>.6)battleEffects.splice(i,1)}
+ if(!enemies.length)return;
+ const fighters=units.filter(u=>u.type!=='worker'&&soldierHP(u)>0);
+ const T=V83_COMBAT.tower;
+ for(const b of items.filter(b=>b.type==='tower')){
+  const enemy=enemies.filter(e=>e.hp>0).sort((a,b2)=>Math.hypot(a.x-b.x,a.y-b.y)-Math.hypot(b2.x-b.x,b2.y-b.y))[0];
+  if(enemy&&Math.hypot(enemy.x-b.x,enemy.y-b.y)<4.3+(b.level-1)*.3&&tick-(b.lastShot||0)>1.6){
+   enemy.hp-=T.dmg+T.perLv*b.level;b.lastShot=tick;
+   startProjectile(b.x,b.y,enemy.x,enemy.y,'#ff9c7c');battleFX(enemy.x,enemy.y,'#ffbb73');
+  }
+ }
+ for(const e of enemies){
+  if(e.hp<=0)continue;
+  const {kind,target,d}=enemyTarget(e,fighters);
+  const reach=kind==='soldier'?(e.range||1):kind==='fort'?.86:1.0;
+  if(d>reach+.02){const step=Math.min(d-reach+.01,dt*e.speed);e.x+=(target.x-e.x)/d*step;e.y+=(target.y-e.y)/d*step}
+  else if(tick-(e.attackAt||-99)>(e.rate||1.4)){
+   e.attackAt=tick;const dmg=e.dmg||11;
+   if(e.kind==='archer')startProjectile(e.x,e.y,target.x,target.y,'#e86a5d');
+   if(kind==='soldier'){target.hp=soldierHP(target)-dmg;battleFX(target.x,target.y,'#e56d77')}
+   else if(kind==='fort'){target.hp=(target.hp??maxFortHP(target))-dmg*1.5;battleFX(target.x,target.y,'#cfa6a8');if(target.hp<=0){toast('🧱 Καταστράφηκε '+types[target.type].label);items.splice(items.indexOf(target),1);persist()}}
+   else {citadelHP=Math.max(0,citadelHP-dmg*1.6);battleFX(target.x,target.y,'#ec465f');if(tick-defenseLastHit>3){defenseLastHit=tick;updateBattleChip()}}
+  }
+ }
+ const rp=rallyPoint();
+ for(const u of fighters){
+  if(soldierHP(u)<=0)continue;
+  // Hold the line near the Town Hall (tower cover): rallied soldiers only fight enemies that reach the rally zone.
+  const held=Number.isFinite(u.rx),pool=enemies.filter(e=>e.hp>0&&(!held||Math.hypot(e.x-rp.x,e.y-rp.y)<V83_COMBAT.engage));
+  const e=pool.sort((a,b)=>Math.hypot(a.x-u.x,a.y-u.y)-Math.hypot(b.x-u.x,b.y-u.y))[0];
+  if(!e){if(held){u.tx=u.rx;u.ty=u.ry}continue}
+  const d=Math.hypot(e.x-u.x,e.y-u.y),range=u.type==='archer'?3.0:1.0;
+  if(d<(held?9:6.5)){
+   if(d>range*.8){u.tx=e.x;u.ty=e.y}
+   if(d<=range&&tick-(u.attackAt||-99)>(u.type==='archer'?1.35:.95)){
+    e.hp-=(u.type==='archer'?19:18)*armyPower();u.attackAt=tick;
+    if(u.type==='archer')startProjectile(u.x,u.y,e.x,e.y,'#bedfa4');
+    battleFX(e.x,e.y,'#ef8476')
+   }
+  }
+ }
+ separateUnits(fighters,dt);separateUnits(enemies,dt);
+ const casualties=enemies.filter(e=>e.hp<=0);
+ if(casualties.length){for(const e of casualties)battleFX(e.x,e.y,'#ffbb80');enemies=enemies.filter(e=>e.hp>0);battleKills+=casualties.length;gainResource('gold',casualties.length*7);addXP(casualties.length*2,'Νίκη επί εχθρών')}
+ const fallen=units.filter(u=>u.type!=='worker'&&soldierHP(u)<=0);
+ if(fallen.length){for(const u of fallen){const i=units.indexOf(u);if(i>=0)units.splice(i,1)}toast('⚔️ Χάθηκαν '+fallen.length+' στρατιώτες');persist()}
+ if(citadelHP<=0){endWave(false);return}
+ if(enemies.length===0){endWave(true);return}
+ updateBattleChip();
+}
+// When the Barracks or Town Hall level up, every soldier gains the extra max HP at once.
+function syncSoldierHp(){for(const u of units){if(u.type==='worker')continue;const m=soldierMaxHP(u);if(!Number.isFinite(u.mhp))u.mhp=Number.isFinite(u.hp)?Math.max(u.hp,u.type==='archer'?65:100):m;if(m!==u.mhp){if(Number.isFinite(u.hp)&&m>u.mhp)u.hp+=m-u.mhp;u.mhp=m;if(Number.isFinite(u.hp))u.hp=Math.min(u.hp,m)}}}
+// Light separation so fighters spread out instead of stacking on one tile.
+function separateUnits(list,dt){const R=.42;for(let i=0;i<list.length;i++){const a=list[i];if(a.hp<=0)continue;for(let j=i+1;j<list.length;j++){const b=list[j];if(b.hp<=0)continue;let dx=b.x-a.x,dy=b.y-a.y,d=Math.hypot(dx,dy);if(d>=R)continue;if(d<1e-4){dx=((i*7+j*3)%5-2)*.1+.05;dy=((i*3+j*5)%5-2)*.1-.05;d=Math.hypot(dx,dy)}const push=Math.min((R-d)*.5,dt*1.2)/d;a.x-=dx*push;a.y-=dy*push;b.x+=dx*push;b.y+=dy*push}}}
+// Citadel strength grows with the Town Hall.
+function citadelMaxFor(tl){return 400+100*tl}
+function syncCitadel(){syncSoldierHp();const m=citadelMaxFor(townLevel());if(m!==citadelMaxHP){const d=m-citadelMaxHP;citadelMaxHP=m;citadelHP=Math.max(0,Math.min(m,citadelHP+(d>0?d:0)))}}
+
+// ---------- Orc strongholds (region conquests) ----------
+function strongholdTier(){return requiredRegionLevel()}
+function strongholdStats(tier){tier=tier||strongholdTier();const B=V83_COMBAT.boss,Cp=V83_COMBAT.camp;
+ return {tier,bossHp:Math.round(B.hp+B.hpPerLv*tier),bossDmg:+(B.dmg*(1+B.dmgPerLv*tier/10)).toFixed(1),campHp:Math.round(Cp.hp+Cp.hpPerLv*tier),arrow:+(Cp.arrowDmg*(1+Cp.arrowPerLv*tier/10)).toFixed(1),
+  reward:{gold:150+25*tier,wood:100+30*tier,stone:60+20*tier},xp:60+10*tier}}
+function synchronizeCampGuards(){
+ for(let idx=0;idx<9;idx++){
+  const site=activeCamp(idx);
+  if(!site||campaignCamp(idx).defeated)continue;
+  const st=strongholdStats(),slot=2,camp=campaignCamp(idx);
+  let guard=campaignGuards.find(g=>g.campIdx===idx&&g.slot===slot);
+  if(!guard){guard={campIdx:idx,slot,boss:true,id:1000+idx*3+slot,hp:st.bossHp,maxHp:st.bossHp,state:'idle',attackAt:-100,alertAt:-100,respawnAt:Infinity,wanderTarget:null,patrolAt:0};campaignGuards.push(guard)}
+  guard.boss=true;guard.damage=st.bossDmg;
+  // A fallen Chieftain returns 90 s later (real clock) unless his stronghold is under siege or taken.
+  if(guard.hp<=0){if(!guard.deadAt)guard.deadAt=nowMs();if(nowMs()-guard.deadAt>=90000&&!units.some(u=>u.campTargetIdx===idx)){guard.hp=st.bossHp;guard.x=site.x;guard.y=site.y-2.2;guard.state='idle';delete guard.deadAt}}else delete guard.deadAt;
+  if(guard.maxHp!==st.bossHp){const f=guard.maxHp>0?guard.hp/guard.maxHp:1;guard.maxHp=st.bossHp;if(guard.hp>0)guard.hp=Math.max(1,Math.round(st.bossHp*f))}
+  if(camp.maxHp!==st.campHp){const f=camp.maxHp>0?camp.hp/camp.maxHp:1;camp.maxHp=st.campHp;camp.hp=Math.max(1,Math.round(st.campHp*f))}
+  const hx=site.x,hy=site.y-2.2;
+  if(!Number.isFinite(guard.x)||guard.x===0){guard.x=hx;guard.y=hy}
+  guard.homeX=hx;guard.homeY=hy;
+ }
+}
+function campaignReward(idx){
+ const camp=campaignCamp(idx);if(camp.defeated)return;
+ const st=strongholdStats();
+ camp.defeated=true;camp.hp=0;
+ gainBundle(st.reward);
+ addXP(st.xp,'Κατάκτηση στρατοπέδου Orks');
+ const site=campSite(idx);if(site){regionCampReadyAt[site.parent]=nowMs()+CAMP_RESPAWN_MS;emitWorldFx(site.x,site.y,'gold',18)}
+ for(const u of units)if(u.campTargetIdx===idx)delete u.campTargetIdx;
+ persist();refresh();refreshRegionNav();
+ toast('🏆 Οχυρό κατακτήθηκε! Νέο οχυρό σε 30:00');
+ if(canUnlockRegion(idx)){unlockedRegions.add(idx);persist();refreshRegionNav();toast('🏆 Νέα περιοχή κατακτήθηκε: '+regionNames[idx])}
+}
+function showCampaignCamp(idx){
+ const site=activeCamp(idx),camp=campaignCamp(idx);
+ if(!site){showRegionInfo(idx);return}
+ synchronizeCampGuards();
+ const boss=campaignGuards.find(g=>g.campIdx===idx&&g.boss),st=strongholdStats(),mine=armyRating(),rec=recommendedRating(st.tier),ref=referenceArmy(st.tier);
+ const ratio=rec?mine/rec:0,verdict=ratio>=1.15?'🟢 Ο στρατός σου είναι έτοιμος':ratio>=.9?'🟡 Δύσκολη μάχη':'🔴 Ο στρατός σου είναι πολύ αδύναμος';
+ card('🏰 Οχυρό των Orc · '+regionNames[idx],
+ `<div class="building-meta">🏴 Περιοχή: ${regionNames[idx]} · Δύναμη οχυρού: Επ. ${st.tier} · ❤️ Οχυρό ${Math.ceil(camp.hp)}/${camp.maxHp}</div>
+ <p>👑 Αρχηγός Ork: <strong>${boss?.hp>0?Math.ceil(boss.hp)+'/'+boss.maxHp+' HP':'Νικήθηκε'}</strong> · ⚔️ ${st.bossDmg} ζημιά (χτυπά και διπλανούς) · 🏹 τα τείχη ρίχνουν βέλη ${st.arrow}.</p>
+ <div class="v83-power"><div>⚔️ Ο στρατός σου<br><strong>${mine}</strong></div><div>🎯 Προτεινόμενο<br><strong>${rec}</strong></div></div>
+ <p>${verdict}. Πρόταση: ${ref.n} στρατιώτες και Στρατώνας Επ. ${ref.barracks}. Αν υποχωρήσεις, ο αρχηγός και το οχυρό αναρρώνουν σιγά σιγά.</p>
+ <p>🎖️ Για κατάκτηση απαιτείται επίπεδο ${requiredRegionLevel()} και μία διαθέσιμη άδεια.</p>
+ <div class="building-meta">🏆 Λάφυρα: ${st.reward.gold} 🪙 · ${st.reward.wood} 🪵 · ${st.reward.stone} 🪨 · ${st.xp} XP</div>`,
+ [{label:camp.defeated?'🏆 Κατάκτηση περιοχής':'⚔️ Επίθεση στο στρατόπεδο',fn:()=>attackCampaignCamp(idx)},
+ {label:'✕ Κλείσιμο',fn:close}]);
+}
+function updateCampaignCamps(dt){
+ synchronizeCampGuards();
+ const Cp=V83_COMBAT.camp,B=V83_COMBAT.boss;
+ for(let idx=0;idx<9;idx++){
+  const site=activeCamp(idx),camp=campaignCamp(idx);if(!site||camp.defeated)continue;
+  const near=units.filter(u=>u.type!=='worker'&&soldierHP(u)>0&&Math.hypot(u.x-site.x,u.y-site.y)<Cp.range);
+  const boss=campaignGuards.find(g=>g.campIdx===idx&&g.boss);
+  if(near.length){
+   camp.arrowAt=camp.arrowAt??-100;
+   if(tick-camp.arrowAt>=Cp.arrowRate){camp.arrowAt=tick;const st=strongholdStats(),u=near[Math.floor(rand(idx,Math.floor(tick*10),91)*near.length)%near.length];
+    u.hp=soldierHP(u)-st.arrow;startProjectile(site.x,site.y-1,u.x,u.y,'#e7a158');battleFX(u.x,u.y,'#f38c68');
+    if(u.hp<=0){units.splice(units.indexOf(u),1);toast('⚔️ Έπεσε ένας στρατιώτης από τα βέλη του οχυρού');persist()}}
+  }else if(!units.some(u=>u.campTargetIdx===idx)){
+   // Nobody is sieging: boss and walls slowly recover, so throwing single soldiers at a stronghold does not work.
+   if(camp.hp>0&&camp.hp<camp.maxHp)camp.hp=Math.min(camp.maxHp,camp.hp+camp.maxHp*Cp.regen*dt);
+   if(boss&&boss.hp>0&&boss.hp<boss.maxHp)boss.hp=Math.min(boss.maxHp,boss.hp+boss.maxHp*B.regen*dt);
+  }
+ }
+ for(const u of units){
+  if(u.type==='worker'||u.campTargetIdx===undefined)continue;
+  const idx=u.campTargetIdx,site=activeCamp(idx),camp=campaignCamp(idx);
+  if(!site||camp.defeated){delete u.campTargetIdx;continue}
+  if(!availableRegionPermits()){delete u.campTargetIdx;continue}
+  const guards=campGuards(idx),nearest=guards.sort((a,b)=>Number(a.boss)-Number(b.boss)||Math.hypot(a.x-u.x,a.y-u.y)-Math.hypot(b.x-u.x,b.y-u.y))[0];
+  const target=nearest||site,dist=Math.hypot(target.x-u.x,target.y-u.y),range=u.type==='archer'?3.4:1.3;
+  if(dist>range*.8){u.tx=target.x;u.ty=target.y;if(dist>range)continue}
+  if(tick-(u.campAttackAt??-100)<(u.type==='archer'?1.35:.95))continue;
+  u.campAttackAt=tick;
+  const damage=(u.type==='archer'?19:18)*armyPower();
+  if(nearest){nearest.hp=Math.max(0,nearest.hp-damage);battleFX(nearest.x,nearest.y,'#e9d3a2');
+   if(nearest.hp<=0){gainResource('gold',nearest.boss?80:10);addXP(nearest.boss?35:8,nearest.boss?'Νίκη εναντίον Orc Chieftain':'Νίκη εναντίον φρουρού Ork');if(nearest.boss)toast('👑 Έπεσε ο Orc Chieftain!');persist()}}
+  else{camp.hp=Math.max(0,camp.hp-damage);battleFX(site.x,site.y,'#ffd36f');
+   if(camp.hp<=0){campaignReward(idx);break}}
+  if(u.type==='archer')startProjectile(u.x,u.y,target.x,target.y,'#e9d79e');
+ }
+}
+// Boss cleave: a Chieftain hit also wounds soldiers standing next to the target.
+function orcCleave(o,target){if(!o.boss)return;const B=V83_COMBAT.boss;
+ for(const u of units.filter(u=>u!==target&&u.type!=='worker'&&soldierHP(u)>0&&Math.hypot(u.x-target.x,u.y-target.y)<B.cleaveR)){u.hp=soldierHP(u)-(o.damage||11)*B.cleave;if(u.hp<=0){units.splice(units.indexOf(u),1);toast('⚔️ Έπεσε ένας στρατιώτης στη μάχη με ork')}}}
+
+// One shared world step (used by the game loop and by the headless battle simulation).
+function worldStep(dt){tick+=dt;combatUpdate(dt);updateOrcs(dt);updateCampaignCamps(dt);updateNaturalGathering(dt);updateWorldFx(dt);for(let u of units){if(u.type==='worker'&&u.assignedBuildingId){const b=items.find(b=>b.id===u.assignedBuildingId);if(b){const destination=buildingWorkPoint(b);u.tx=destination.x;u.ty=destination.y}}let dx=u.tx-u.x,dy=u.ty-u.y,d=Math.hypot(dx,dy);if(d>.015){let amt=Math.min(d,dt*u.speed);u.x+=dx/d*amt;u.y+=dy/d*amt}}}
+// Resolve a battle headlessly with the real combat code: kind 'wave' or 'camp'. Returns a summary.
+function simulateBattle(kind,opts={}){
+ const dt=opts.dt||.05,maxT=opts.maxT||300,army0=units.filter(u=>u.type!=='worker');const n0=army0.length,hp0=army0.reduce((a,u)=>a+soldierHP(u),0),cit0=citadelHP;
+ let t=0,idx=opts.idx;const won0=attacksWon;
+ if(kind==='wave'){spawnWave();if(battleOutcome!=='active')return {ok:false,reason:'no-wave'}}
+ else{attackCampaignCamp(idx)}
+ while(t<maxT){worldStep(dt);t+=dt;
+  if(kind==='wave'&&!enemies.length)break;
+  if(kind==='camp'&&(campaignCamp(idx).defeated||!units.some(u=>u.campTargetIdx===idx)))break;
+ }
+ const army1=units.filter(u=>u.type!=='worker');
+ const win=kind==='wave'?attacksWon>won0:campaignCamp(idx).defeated;
+ if(kind==='wave'&&enemies.length){enemies=[];battleOutcome='idle';updateBattleChip()}
+ for(const u of army1){delete u.campTargetIdx;delete u.orcTargetId}
+ return {win,sec:+t.toFixed(1),lost:n0-army1.length,n0,hpLostPct:Math.round(100*(1-army1.reduce((a,u)=>a+soldierHP(u),0)/Math.max(1,hp0))),citadelLostPct:Math.round(100*(cit0-citadelHP)/Math.max(1,citadelMaxHP))};
+}
+
+// ---------- Town Hall perks (reasons to keep upgrading it) ----------
+function townProdBonus(){return .02*(townLevel()-1)}
+function townPerksHtml(lv){return `+${Math.round(2*(lv-1))}% παραγωγή · 🏰 Άμυνα ${citadelMaxFor(lv)} · ❤️ +${Math.round(V83_COMBAT.soldierHpPerTown*100*(lv-1))}% ζωή στρατού`}
+function v83DecorateBuildingCard(b){
+ const body=$('#card .panel-body');if(!body)return;let html='';
+ if(b.type==='town'){const L=b.level||1;html=`<div class="v82-upnext v83-perks">👑 Μπόνους Δημαρχείου: ${townPerksHtml(L)}${L<HARD_MAX_BUILDING_LEVEL?`<br><small>Επ. ${L+1}: ${townPerksHtml(L+1)}</small>`:''}</div>`}
+ if(b.type==='barracks'){html=`<div class="v82-upnext v83-perks">🛡️ Ζωή στρατιωτών: +${Math.round(V83_COMBAT.soldierHpPerBarracks*100*(barracksLevel()-1))}% (κάθε επίπεδο +5%) · ⚔️ Δύναμη στρατού: ${armyRating()} / προτεινόμενη ${recommendedRating(waveLevel())}</div>`}
+ if(html)body.insertAdjacentHTML('beforeend',html);
+}
+
+// ---------- Story: chapters of level 20 are the epilogue (after reaching 20) ----------
+function storyIsEpilogue(q){return q.lv>=maxPlayerLevel()}
+function storyMainDone(){return STORY.filter(q=>!storyIsEpilogue(q)).every(q=>v82.story[q.id])}
+
+// ---------- Toast: never cover a panel header ----------
+function placeToast(){
+ const el=$('#toast');if(!el)return;const c=$('#card');
+ if(!c||!c.classList.contains('visible')){el.classList.remove('v83-over-panel');el.style.removeProperty('top');el.style.removeProperty('bottom');return}
+ el.classList.add('v83-over-panel');
+ const r=c.getBoundingClientRect(),head=(c.querySelector('.panel-head')||c).getBoundingClientRect(),h=el.offsetHeight||40;
+ const safeTop=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--sat'))||0;
+ let top;
+ if(r.top-safeTop>=h+12)top=Math.max(safeTop+6,r.top-h-6);
+ else if(innerHeight-r.bottom>=h+10)top=r.bottom+6;
+ else top=head.bottom+6;
+ el.style.setProperty('top',Math.round(top)+'px','important');el.style.setProperty('bottom','auto','important');
+}
+function toast(msg){let el=$('#toast');el.textContent=msg;el.classList.add('show');placeToast();clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.classList.remove('show'),2000)}
+
+// ---------- Art preload: never flash a lower tier after loading a save ----------
+function v83ArtNeeded(){const keys=new Set();for(const b of items)if(hasBuildingArt(b.type))keys.add(b.type+'_t'+visualTier(b.level));return [...keys]}
+function v83ArtPending(){return v83ArtNeeded().filter(k=>{const im=artCache[k];return !(im&&(artReady(im)||im._failed))})}
+function v83Preload(){
+ for(const k of v83ArtNeeded()){const [t,n]=k.split('_t');artImage(t,+n)}
+ for(const t of BUILDING_ART_TYPES)for(let n=1;n<=4;n++)artImage(t,n);
+ if(typeof WORLD_ART_KEYS!=='undefined')for(const k of WORLD_ART_KEYS)worldArtImage(k);
+}
+function v83Startup(){
+ if(!DEV_MODE){$('#creator-trigger')?.remove()}else document.body.classList.add('eo-dev');
+ syncCitadel();
+ const veil=document.createElement('div');veil.id='v83-veil';veil.innerHTML='<div>🏰 Φόρτωση βασιλείου…</div>';
+ v83Preload();
+ window.__eoVeilDone=null;
+ if(!v83ArtPending().length)window.__eoVeilDone={ms:0,exact:true};
+ else{document.body.appendChild(veil);const t0=performance.now();
+  const chk=()=>{if(!v83ArtPending().length||performance.now()-t0>4000){window.__eoVeilDone={ms:Math.round(performance.now()-t0),exact:items.every(b=>!hasBuildingArt(b.type)||spriteFor(b)?.tier===visualTier(b.level))};veil.classList.add('gone');setTimeout(()=>veil.remove(),260)}else setTimeout(chk,60)};chk()}
+ new MutationObserver(()=>{if($('#toast').classList.contains('show'))placeToast()}).observe($('#card'),{attributes:true,attributeFilter:['class'],childList:true});
+ addEventListener('resize',placeToast);
+}
+
+const savedGame=restore();ensureDaily();ensureContract();synchronizeCampGuards();updateBattleChip();let __off=null,__elapsed=0,__finished=0;if(savedGame){__elapsed=Date.now()-lastIncome;__finished=items.filter(b=>b.upgradeEndsAt&&b.upgradeEndsAt<=nowMs()).length;if(__elapsed>=10000)__off=passiveIncome(__elapsed,true)}v82Tick();v82Startup(savedGame,__elapsed,__off,__finished);v83Startup();normalizeJobs();refresh();renderTutorial();refreshRegionNav();$('#progress').addEventListener('click',showLevelOverview);$('#progress').addEventListener('keydown',e=>{if(e.key==='Enter')showLevelOverview()});setInterval(persist,12000);document.addEventListener('visibilitychange',()=>{if(document.hidden)persist()});window.addEventListener('pagehide',persist);requestAnimationFrame(frame);window.__eoTest={run:code=>eval(code)};toast(savedGame?'Καλώς επέστρεψες! Η παραγωγή συνεχίζεται.':'🏰 Ξεκινάς με Δημαρχείο επιπέδου 1. Ακολούθησε την Ιστορία πάνω αριστερά!');})();
 </script><script>
 (()=>{'use strict';
  const hud=document.getElementById('hud-toggle'),dock=document.getElementById('dock-toggle');
