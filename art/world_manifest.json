@@ -2,32 +2,38 @@
   "worker_idle": {
     "w": 278,
     "h": 512,
-    "footY": 510.0
+    "footY": 510.0,
+    "headY": 0
   },
   "worker_walk1": {
     "w": 352,
     "h": 512,
-    "footY": 510.0
+    "footY": 510.0,
+    "headY": 0
   },
   "worker_walk2": {
     "w": 343,
     "h": 512,
-    "footY": 510.0
+    "footY": 510.0,
+    "headY": 0
   },
   "orc_idle": {
     "w": 410,
     "h": 560,
-    "footY": 558.0
+    "footY": 558.0,
+    "headY": 0
   },
   "orc_walk1": {
     "w": 507,
     "h": 560,
-    "footY": 558.0
+    "footY": 558.0,
+    "headY": 0
   },
   "orc_boss": {
     "w": 637,
     "h": 640,
-    "footY": 638.0
+    "footY": 604,
+    "headY": 41
   },
   "orc_camp": {
     "w": 768,
@@ -89,5 +95,257 @@
     "w": 84,
     "h": 90,
     "footY": 87.0
+  },
+  "orc_archer_idle": {
+    "w": 386,
+    "h": 540,
+    "footY": 538.0,
+    "headY": 0
+  },
+  "orc_brute_idle": {
+    "w": 463,
+    "h": 600,
+    "footY": 598.0,
+    "headY": 90
+  },
+  "soldier_idle": {
+    "w": 328,
+    "h": 512,
+    "footY": 510.0,
+    "headY": 37
+  },
+  "archer_idle": {
+    "w": 307,
+    "h": 512,
+    "footY": 510.0,
+    "headY": 0
+  },
+  "citizen_a": {
+    "w": 241,
+    "h": 480,
+    "footY": 478.0,
+    "headY": 0
+  },
+  "citizen_b": {
+    "w": 245,
+    "h": 480,
+    "footY": 478.0,
+    "headY": 0
+  },
+  "worker_w0": {
+    "w": 302,
+    "h": 437,
+    "footY": 434.0,
+    "headY": -3.5
+  },
+  "worker_w1": {
+    "w": 287,
+    "h": 441,
+    "footY": 438.0,
+    "headY": 0.5
+  },
+  "worker_w2": {
+    "w": 291,
+    "h": 443,
+    "footY": 440.0,
+    "headY": 2.5
+  },
+  "worker_w3": {
+    "w": 280,
+    "h": 440,
+    "footY": 437.0,
+    "headY": -0.5
+  },
+  "citizen_a_w0": {
+    "w": 251,
+    "h": 525,
+    "footY": 522.0,
+    "headY": 0.0
+  },
+  "citizen_a_w1": {
+    "w": 252,
+    "h": 525,
+    "footY": 522.0,
+    "headY": 0.0
+  },
+  "citizen_a_w2": {
+    "w": 252,
+    "h": 525,
+    "footY": 522.0,
+    "headY": 0.0
+  },
+  "citizen_a_w3": {
+    "w": 252,
+    "h": 525,
+    "footY": 522.0,
+    "headY": 0.0
+  },
+  "citizen_b_w0": {
+    "w": 274,
+    "h": 513,
+    "footY": 510.0,
+    "headY": -1.5
+  },
+  "citizen_b_w1": {
+    "w": 266,
+    "h": 515,
+    "footY": 512.0,
+    "headY": 0.5
+  },
+  "citizen_b_w2": {
+    "w": 262,
+    "h": 514,
+    "footY": 511.0,
+    "headY": -0.5
+  },
+  "citizen_b_w3": {
+    "w": 255,
+    "h": 515,
+    "footY": 512.0,
+    "headY": 0.5
+  },
+  "soldier_w0": {
+    "w": 291,
+    "h": 457,
+    "footY": 454.0,
+    "headY": 31.5
+  },
+  "soldier_w1": {
+    "w": 287,
+    "h": 459,
+    "footY": 456.0,
+    "headY": 33.5
+  },
+  "soldier_w2": {
+    "w": 292,
+    "h": 458,
+    "footY": 455.0,
+    "headY": 32.5
+  },
+  "soldier_w3": {
+    "w": 281,
+    "h": 459,
+    "footY": 456.0,
+    "headY": 33.5
+  },
+  "archer_w0": {
+    "w": 293,
+    "h": 486,
+    "footY": 483.0,
+    "headY": -1.0
+  },
+  "archer_w1": {
+    "w": 287,
+    "h": 485,
+    "footY": 482.0,
+    "headY": -2.0
+  },
+  "archer_w2": {
+    "w": 290,
+    "h": 488,
+    "footY": 485.0,
+    "headY": 1.0
+  },
+  "archer_w3": {
+    "w": 291,
+    "h": 490,
+    "footY": 487.0,
+    "headY": 3.0
+  },
+  "orc_w0": {
+    "w": 321,
+    "h": 379,
+    "footY": 376.0,
+    "headY": 2.5
+  },
+  "orc_w1": {
+    "w": 299,
+    "h": 377,
+    "footY": 374.0,
+    "headY": 0.5
+  },
+  "orc_w2": {
+    "w": 304,
+    "h": 376,
+    "footY": 373.0,
+    "headY": -0.5
+  },
+  "orc_w3": {
+    "w": 304,
+    "h": 375,
+    "footY": 372.0,
+    "headY": -1.5
+  },
+  "orc_archer_w0": {
+    "w": 298,
+    "h": 413,
+    "footY": 410.0,
+    "headY": -2.0
+  },
+  "orc_archer_w1": {
+    "w": 275,
+    "h": 414,
+    "footY": 411.0,
+    "headY": -1.0
+  },
+  "orc_archer_w2": {
+    "w": 301,
+    "h": 416,
+    "footY": 413.0,
+    "headY": 1.0
+  },
+  "orc_archer_w3": {
+    "w": 267,
+    "h": 416,
+    "footY": 413.0,
+    "headY": 1.0
+  },
+  "orc_brute_w0": {
+    "w": 308,
+    "h": 433,
+    "footY": 430.0,
+    "headY": 58.3
+  },
+  "orc_brute_w1": {
+    "w": 306,
+    "h": 440,
+    "footY": 437.0,
+    "headY": 65.3
+  },
+  "orc_brute_w2": {
+    "w": 303,
+    "h": 441,
+    "footY": 438.0,
+    "headY": 66.3
+  },
+  "orc_brute_w3": {
+    "w": 313,
+    "h": 447,
+    "footY": 444.0,
+    "headY": 72.3
+  },
+  "orc_boss_w0": {
+    "w": 331,
+    "h": 365,
+    "footY": 362.0,
+    "headY": 17.1
+  },
+  "orc_boss_w1": {
+    "w": 314,
+    "h": 377,
+    "footY": 374.0,
+    "headY": 29.1
+  },
+  "orc_boss_w2": {
+    "w": 304,
+    "h": 374,
+    "footY": 371.0,
+    "headY": 26.1
+  },
+  "orc_boss_w3": {
+    "w": 306,
+    "h": 372,
+    "footY": 369.0,
+    "headY": 24.1
   }
 }

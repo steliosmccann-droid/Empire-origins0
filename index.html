@@ -1,4 +1,4 @@
-<!doctype html><html lang="el" class="ui-skin"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no,viewport-fit=cover"><meta name="theme-color" content="#2a8fe0"><link rel="icon" href="ui/icons/castle.webp" type="image/webp"><title>EMPIRE ORIGINS V85 — Νέο UI & νέο παιχνίδι</title><style>
+<!doctype html><html lang="el" class="ui-skin"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no,viewport-fit=cover"><meta name="theme-color" content="#2a8fe0"><link rel="icon" href="ui/icons/castle.webp" type="image/webp"><title>EMPIRE ORIGINS V86 — Orcs & σωστά μεγέθη</title><style>
 :root{color-scheme:dark;font-family:ui-rounded,-apple-system,system-ui,sans-serif}*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;overscroll-behavior:none;background:#152432;color:#fff;touch-action:none}canvas{display:block;width:100vw;height:100dvh;touch-action:none}button{font:inherit;color:#fff;cursor:pointer;touch-action:manipulation}#title{position:fixed;top:calc(env(safe-area-inset-top) + 10px);left:12px;z-index:4;pointer-events:none;font-size:12px;font-weight:950;letter-spacing:1.5px;text-shadow:0 2px 8px #000}#title b{color:#ffd889}#title small{display:block;font-size:9px;color:#b9cbdb;letter-spacing:1.3px;margin-top:3px}#stats{position:fixed;top:calc(env(safe-area-inset-top) + 49px);left:8px;right:8px;display:grid;grid-template-columns:repeat(4,1fr);gap:5px;z-index:4;pointer-events:none}.stat{border:1px solid #76818b66;background:#142535e8;backdrop-filter:blur(12px);border-radius:12px;padding:9px 3px;text-align:center;font-size:12px;font-weight:850;box-shadow:0 3px 15px #0004}#tools{position:fixed;bottom:calc(env(safe-area-inset-bottom) + 10px);left:8px;right:8px;z-index:5;padding:9px 6px;display:grid;grid-template-columns:repeat(5,1fr);gap:5px;border:1px solid #d9bd8066;border-radius:19px;background:#152433ef;box-shadow:0 8px 35px #06121bd9;backdrop-filter:blur(12px)}#tools button{border:1px solid #5d7183;background:linear-gradient(#344758,#263747);border-radius:12px;min-height:56px;font-size:10px;font-weight:850;line-height:1.6;padding:5px 1px}#tools button span{font-size:20px;display:block}#tools button.active{border-color:#f4d589;background:linear-gradient(#7b714b,#3b594f);box-shadow:0 0 15px #f4d58933}#info{position:fixed;top:calc(env(safe-area-inset-top) + 101px);left:10px;right:10px;text-align:center;z-index:3;pointer-events:none;color:#e7eff2;font-size:11px;text-shadow:0 2px 6px #000;font-weight:700}#card{position:fixed;left:12px;right:12px;bottom:calc(env(safe-area-inset-bottom) + 89px);z-index:6;background:linear-gradient(165deg,#283e4ced,#172936f5);border:1px solid #b6a77b;border-radius:16px;padding:13px 14px;box-shadow:0 8px 25px #0008;display:none;max-height:48dvh;overflow:auto;touch-action:pan-y}#card.visible{display:block}#card .building-meta{font-size:11px;color:#eecb83;margin:6px 0}#card .building-actions{display:flex;flex-wrap:wrap;gap:5px}#card .building-actions button{flex:1 1 125px;min-height:43px}#card .building-actions .secondary{background:#263d4f;border-color:#697f8e}#card h3{margin:0 0 5px;color:#ffde9c;font-size:17px}#card p{margin:5px 0 12px;color:#cad8da;font-size:12px;line-height:1.5}#card button{border:1px solid #8c9c86;border-radius:10px;padding:10px 13px;background:#42675b;margin:3px 4px 3px 0;font-weight:800;font-size:12px}#toast{position:fixed;top:calc(env(safe-area-inset-top) + 140px);left:15%;right:15%;text-align:center;border-radius:12px;background:#122936ee;border:1px solid #a9bb9d;padding:10px;font-size:12px;z-index:9;opacity:0;transition:opacity .2s;pointer-events:none}#toast.show{opacity:1}#hint{position:fixed;bottom:calc(env(safe-area-inset-bottom) + 83px);left:8px;right:8px;pointer-events:none;text-align:center;color:#fff;text-shadow:0 2px 5px #000;font-size:10px;z-index:3} 
 /* Classic colorful kingdom UI — original assets drawn by Canvas */
 :root{color-scheme:light;font-family:Trebuchet MS,ui-rounded,-apple-system,system-ui,sans-serif}
@@ -1618,24 +1618,47 @@ function combatUpdateV82(dt){
  updateBattleChip();
 }
 function drawEnemy(e){
- const p=pos(e.x,e.y);
- if(e.kind==='brute'){ctx.save();ctx.translate(p.x,p.y);ctx.scale(1.3,1.3);ctx.translate(-p.x,-p.y);figure(p.x,p.y,{...e,tx:e.x,ty:e.y,phase:0},tick);ctx.restore()}else figure(p.x,p.y,{...e,tx:e.x,ty:e.y,phase:0},tick);
- ctx.save();ctx.strokeStyle='#ff536e';ctx.lineWidth=Math.max(1,cam.z*2);
- ctx.beginPath();ctx.ellipse(p.x,p.y+3*cam.z,14*cam.z,6*cam.z,0,0,Math.PI*2);ctx.stroke();
- ctx.fillStyle='#25131be8';ctx.fillRect(p.x-16*cam.z,p.y-47*cam.z,32*cam.z,5*cam.z);
- ctx.fillStyle='#e95a68';ctx.fillRect(p.x-16*cam.z,p.y-47*cam.z,32*cam.z*Math.max(0,e.hp/e.maxHp),5*cam.z);ctx.restore()
+ const p=pos(e.x,e.y),z=cam.z;
+ const base=e.kind==='brute'?'orc_brute':e.kind==='archer'?'orc_archer':'orc';
+ const H=e.kind==='brute'?EO_SCALE.brute:e.kind==='archer'?EO_SCALE.orcArcher:EO_SCALE.orc;
+ const ph=(parseInt(String(e.id).split('-')[1])||0)*.29,g=eoGait(e,e.x,e.y,H),moving=g.moving;
+ const key=eoGaitKey(base,g)||eoGaitKey('orc',g);
+ const im=key&&worldArtSprite(key),facing=e.face||1;
+ ctx.save();ctx.translate(p.x,p.y);ctx.scale(z,z);
+ // Enemy marker: a soft warm-red ground glow (no hard ring), plus the normal contact shadow.
+ eoContactShadow(H*1.12,'rgba(170,38,30,.34)');eoContactShadow(H);
+ let top=-H;
+ if(im){
+  const bob=moving?eoGaitBob(g,H):Math.sin((tick+ph)*2)*.5;
+  const lunge=e.attackAt&&tick-e.attackAt<.2?4*facing:0;
+  ctx.save();ctx.translate(lunge,-bob);ctx.rotate(eoGaitLean(g,facing));if(facing<0)ctx.scale(-1,1);
+  const P=eoBodyPlace(key,H);ctx.drawImage(im,P.dx,P.dy,P.dw,P.dh);top=Math.min(P.dy,P.head);eoCount(key);ctx.restore();
+ }
+ // HP bar above the head (wider for brutes), outlined so it reads on grass and on roofs.
+ const bw=e.kind==='brute'?32:26,by=Math.max(top,-H-14)-6;
+ ctx.fillStyle='#1d1216e6';ctx.fillRect(-bw/2-1.2,by-1.2,bw+2.4,5.9);
+ ctx.fillStyle='#4a2328';ctx.fillRect(-bw/2,by,bw,3.5);
+ ctx.fillStyle=e.kind==='brute'?'#f08a3c':'#e8505c';ctx.fillRect(-bw/2,by,bw*Math.max(0,e.hp/e.maxHp),3.5);
+ ctx.restore()
 }
 function drawBattleFX(){
  ctx.save();
  for(const pr of projectiles){
   const a=pos(pr.x,pr.y),b=pos(pr.xx,pr.yy),t=pr.t;
   const x=a.x+(b.x-a.x)*t,y=a.y-23*cam.z+(b.y-a.y)*t-12*cam.z*Math.sin(Math.PI*t);
-  ctx.fillStyle=pr.color;ctx.shadowColor=pr.color;ctx.shadowBlur=8;
-  ctx.beginPath();ctx.arc(x,y,Math.max(2.5,3.1*cam.z),0,Math.PI*2);ctx.fill()
+  const t2=Math.min(1,t+.04),x2=a.x+(b.x-a.x)*t2,y2=a.y-23*cam.z+(b.y-a.y)*t2-12*cam.z*Math.sin(Math.PI*t2),ang=Math.atan2(y2-y,x2-x),L=8*cam.z;
+  ctx.save();ctx.translate(x,y);ctx.rotate(ang);ctx.lineCap='round';ctx.strokeStyle='rgba(60,40,25,.9)';ctx.lineWidth=1.4*cam.z;ctx.beginPath();ctx.moveTo(-L,0);ctx.lineTo(L*.5,0);ctx.stroke();
+  ctx.fillStyle='#d9d2c2';ctx.beginPath();ctx.moveTo(L*.95,0);ctx.lineTo(L*.4,-1.8*cam.z);ctx.lineTo(L*.4,1.8*cam.z);ctx.closePath();ctx.fill();ctx.restore()
  }
  for(const effect of battleEffects){
   const p=pos(effect.x,effect.y);const q=effect.t/.6;
-  ctx.strokeStyle=effect.color;ctx.globalAlpha=1-q;ctx.lineWidth=2.5*cam.z;ctx.beginPath();ctx.arc(p.x,p.y-20*cam.z,(5+18*q)*cam.z,0,Math.PI*2);ctx.stroke()
+  if(q>.55)continue;const k=q/.55,z=cam.z,cx=p.x,cy=p.y-24*z;
+  // impact: soft radial flash + 5 short sparks, gone in 0.33s — no ring outline
+  ctx.globalAlpha=(1-k)*.5;const fg=ctx.createRadialGradient(cx,cy,0,cx,cy,8*z);fg.addColorStop(0,'rgba(255,246,216,1)');fg.addColorStop(.45,'rgba(255,200,140,.55)');fg.addColorStop(1,'rgba(255,200,140,0)');
+  ctx.fillStyle=fg;ctx.fillRect(cx-8*z,cy-8*z,16*z,16*z);
+  ctx.globalAlpha=(1-k)*.85;ctx.strokeStyle='#fff0c8';ctx.lineWidth=1.3*z;ctx.lineCap='round';ctx.beginPath();
+  const sd=(effect.x*13.1+effect.y*7.7)%6.283;for(let i=0;i<5;i++){const a=sd+i*1.2566,r0=(2+5*k)*z,r1=r0+3.2*(1-k)*z;ctx.moveTo(cx+Math.cos(a)*r0,cy+Math.sin(a)*r0*.8);ctx.lineTo(cx+Math.cos(a)*r1,cy+Math.sin(a)*r1*.8)}
+  ctx.stroke();ctx.globalAlpha=1
  }
  ctx.restore();
 }
@@ -1901,7 +1924,7 @@ function tile(x,y,kind){
 function tree(x,y,seed){
   const name=seed>.75?'tree_autumn':seed>.55?'tree_blossom':seed>.3?'tree_oak':'tree_pine';
   const old=seed>.79?'blossom_purple':seed>.66?'blossom_pink':seed>.3?'pine_large':'pine_small';
-  const w=(name==='tree_pine'?68:name==='tree_blossom'?88:82)*cam.z;
+  const m0=WORLD_ART_MANIFEST[name];const w=(m0?(EO_SCALE.tree[name]+6)*m0.w/m0.footY:(name==='tree_pine'?68:82))*cam.z;
   const im=worldArtSprite(name)||natureImage(old);
   ctx.save();ctx.translate(x,y);
   ctx.rotate(Math.sin(tick*1.0+x*.019+y*.012)*.0065);
@@ -1917,7 +1940,7 @@ function rock(x,y,gold){
   const name=gold?'gold_pile':'rocks';
   const old=gold?'rock_cluster':'rock_small';
   const im=worldArtSprite(name)||natureImage(old);
-  const w=(gold?54:48)*cam.z;
+  const w=(gold?(EO_SCALE.gold_pile+6)*82/82:(EO_SCALE.rocks+6)*118/104)*cam.z;
   if(im){
     const m=WORLD_ART_MANIFEST[name],foot=(im===worldArtSprite(name)&&m)?m.footY/m.h:1;
     const h=w*im.naturalHeight/im.naturalWidth;
@@ -2099,8 +2122,8 @@ function artPlacement(type,key){
 function artSrcFor(b){return b&&hasBuildingArt(b.type)?artSrc(b.type,visualTier(b.level)):null}
 
 // ===== V81 — Painterly world art: workers, orcs, camps, trees (art/<name>.webp) =====
-const WORLD_ART_MANIFEST={"worker_idle":{"w":278,"h":512,"footY":510.0},"worker_walk1":{"w":352,"h":512,"footY":510.0},"worker_walk2":{"w":343,"h":512,"footY":510.0},"orc_idle":{"w":410,"h":560,"footY":558.0},"orc_walk1":{"w":507,"h":560,"footY":558.0},"orc_boss":{"w":637,"h":640,"footY":638.0},"orc_camp":{"w":768,"h":579,"footY":577.0,"lx":2.0,"rx":766.0,"cy":388.9},"enemy_camp":{"w":638,"h":568,"footY":566.0,"lx":1.0,"rx":636.0,"cy":409.7},"tree_oak":{"w":460,"h":512,"footY":510.0},"tree_pine":{"w":324,"h":560,"footY":558.0},"tree_blossom":{"w":414,"h":512,"footY":510.0},"tree_autumn":{"w":475,"h":512,"footY":510.0},"bush":{"w":384,"h":356,"footY":354.0},"rocks":{"w":118,"h":107,"footY":104.0},"gold_pile":{"w":82,"h":85,"footY":82.0},"flowers_pink":{"w":82,"h":73,"footY":72.0},"flowers_blue":{"w":84,"h":90,"footY":87.0}};
-const WORLD_ART_KEYS=["worker_idle", "worker_walk1", "worker_walk2", "orc_idle", "orc_walk1", "orc_boss", "orc_camp", "enemy_camp", "tree_oak", "tree_pine", "tree_blossom", "tree_autumn", "bush", "rocks", "gold_pile", "flowers_pink", "flowers_blue"];
+const WORLD_ART_MANIFEST={"worker_idle":{"w":278,"h":512,"footY":510.0,"headY":0},"worker_walk1":{"w":352,"h":512,"footY":510.0,"headY":0},"worker_walk2":{"w":343,"h":512,"footY":510.0,"headY":0},"orc_idle":{"w":410,"h":560,"footY":558.0,"headY":0},"orc_walk1":{"w":507,"h":560,"footY":558.0,"headY":0},"orc_boss":{"w":637,"h":640,"footY":604,"headY":41},"orc_camp":{"w":768,"h":579,"footY":577.0,"lx":2.0,"rx":766.0,"cy":388.9},"enemy_camp":{"w":638,"h":568,"footY":566.0,"lx":1.0,"rx":636.0,"cy":409.7},"tree_oak":{"w":460,"h":512,"footY":510.0},"tree_pine":{"w":324,"h":560,"footY":558.0},"tree_blossom":{"w":414,"h":512,"footY":510.0},"tree_autumn":{"w":475,"h":512,"footY":510.0},"bush":{"w":384,"h":356,"footY":354.0},"rocks":{"w":118,"h":107,"footY":104.0},"gold_pile":{"w":82,"h":85,"footY":82.0},"flowers_pink":{"w":82,"h":73,"footY":72.0},"flowers_blue":{"w":84,"h":90,"footY":87.0},"orc_archer_idle":{"w":386,"h":540,"footY":538.0,"headY":0},"orc_brute_idle":{"w":463,"h":600,"footY":598.0,"headY":90},"soldier_idle":{"w":328,"h":512,"footY":510.0,"headY":37},"archer_idle":{"w":307,"h":512,"footY":510.0,"headY":0},"citizen_a":{"w":241,"h":480,"footY":478.0,"headY":0},"citizen_b":{"w":245,"h":480,"footY":478.0,"headY":0},"worker_w0":{"w":302,"h":437,"footY":434.0,"headY":-3.5},"worker_w1":{"w":287,"h":441,"footY":438.0,"headY":0.5},"worker_w2":{"w":291,"h":443,"footY":440.0,"headY":2.5},"worker_w3":{"w":280,"h":440,"footY":437.0,"headY":-0.5},"citizen_a_w0":{"w":251,"h":525,"footY":522.0,"headY":0.0},"citizen_a_w1":{"w":252,"h":525,"footY":522.0,"headY":0.0},"citizen_a_w2":{"w":252,"h":525,"footY":522.0,"headY":0.0},"citizen_a_w3":{"w":252,"h":525,"footY":522.0,"headY":0.0},"citizen_b_w0":{"w":274,"h":513,"footY":510.0,"headY":-1.5},"citizen_b_w1":{"w":266,"h":515,"footY":512.0,"headY":0.5},"citizen_b_w2":{"w":262,"h":514,"footY":511.0,"headY":-0.5},"citizen_b_w3":{"w":255,"h":515,"footY":512.0,"headY":0.5},"soldier_w0":{"w":291,"h":457,"footY":454.0,"headY":31.5},"soldier_w1":{"w":287,"h":459,"footY":456.0,"headY":33.5},"soldier_w2":{"w":292,"h":458,"footY":455.0,"headY":32.5},"soldier_w3":{"w":281,"h":459,"footY":456.0,"headY":33.5},"archer_w0":{"w":293,"h":486,"footY":483.0,"headY":-1.0},"archer_w1":{"w":287,"h":485,"footY":482.0,"headY":-2.0},"archer_w2":{"w":290,"h":488,"footY":485.0,"headY":1.0},"archer_w3":{"w":291,"h":490,"footY":487.0,"headY":3.0},"orc_w0":{"w":321,"h":379,"footY":376.0,"headY":2.5},"orc_w1":{"w":299,"h":377,"footY":374.0,"headY":0.5},"orc_w2":{"w":304,"h":376,"footY":373.0,"headY":-0.5},"orc_w3":{"w":304,"h":375,"footY":372.0,"headY":-1.5},"orc_archer_w0":{"w":298,"h":413,"footY":410.0,"headY":-2.0},"orc_archer_w1":{"w":275,"h":414,"footY":411.0,"headY":-1.0},"orc_archer_w2":{"w":301,"h":416,"footY":413.0,"headY":1.0},"orc_archer_w3":{"w":267,"h":416,"footY":413.0,"headY":1.0},"orc_brute_w0":{"w":308,"h":433,"footY":430.0,"headY":58.3},"orc_brute_w1":{"w":306,"h":440,"footY":437.0,"headY":65.3},"orc_brute_w2":{"w":303,"h":441,"footY":438.0,"headY":66.3},"orc_brute_w3":{"w":313,"h":447,"footY":444.0,"headY":72.3},"orc_boss_w0":{"w":331,"h":365,"footY":362.0,"headY":17.1},"orc_boss_w1":{"w":314,"h":377,"footY":374.0,"headY":29.1},"orc_boss_w2":{"w":304,"h":374,"footY":371.0,"headY":26.1},"orc_boss_w3":{"w":306,"h":372,"footY":369.0,"headY":24.1}};
+const WORLD_ART_KEYS=["worker_idle", "worker_walk1", "worker_walk2", "orc_idle", "orc_walk1", "orc_boss", "orc_camp", "enemy_camp", "tree_oak", "tree_pine", "tree_blossom", "tree_autumn", "bush", "rocks", "gold_pile", "flowers_pink", "flowers_blue", "orc_archer_idle", "orc_brute_idle", "soldier_idle", "archer_idle", "citizen_a", "citizen_b", "worker_w0", "worker_w1", "worker_w2", "worker_w3", "citizen_a_w0", "citizen_a_w1", "citizen_a_w2", "citizen_a_w3", "citizen_b_w0", "citizen_b_w1", "citizen_b_w2", "citizen_b_w3", "soldier_w0", "soldier_w1", "soldier_w2", "soldier_w3", "archer_w0", "archer_w1", "archer_w2", "archer_w3", "orc_w0", "orc_w1", "orc_w2", "orc_w3", "orc_archer_w0", "orc_archer_w1", "orc_archer_w2", "orc_archer_w3", "orc_brute_w0", "orc_brute_w1", "orc_brute_w2", "orc_brute_w3", "orc_boss_w0", "orc_boss_w1", "orc_boss_w2", "orc_boss_w3"];
 const worldArtCache={};
 function worldArtSrc(key){if(!WORLD_ART_MANIFEST[key])return null;return 'art/'+key+'.webp'}
 function worldArtImage(key){
@@ -2122,6 +2145,48 @@ function worldArtPlacePlate(key,targetW){
  return {s,dx:-cx*s,dy:-m.cy*s,dw:m.w*s,dh:m.h*s,key};
 }
 function worldArtSprite(key){const im=worldArtImage(key);return worldArtReady(im)?im:null}
+// V86 — ONE scale table (world px at zoom 1, tile 65×32). Characters are measured head-top → feet
+// (plumes, horns and raised weapons are extra), trees/rocks by visible height above the tile centre.
+const EO_SCALE={
+ tile:{w:TW,h:TH},
+ human:50,            // worker, soldier, archer  (≈0.45 × a level-1 house, 112px above its footprint centre)
+ citizen:48,          // ambient villagers
+ orc:55,              // orc raider / wave grunt  = 1.10 × human
+ orcArcher:52.5,      // orc archer               = 1.05 × human
+ brute:65,            // orc brute                = 1.30 × human
+ chieftain:70,        // orc chieftain (boss)     = 1.40 × human
+ tree:{tree_oak:100,tree_autumn:100,tree_blossom:104,tree_pine:116}, // ≈ house height
+ rocks:44,gold_pile:38
+};
+// V86b — walk cycle: 4 painted frames per character (contact, passing, contact, passing) advanced by the DISTANCE walked,
+// so cadence follows speed; bob peaks on the passing frames; slight forward lean; idle sprite when stopped.
+const EO_IDLE={worker:'worker_idle',soldier:'soldier_idle',archer:'archer_idle',citizen_a:'citizen_a',citizen_b:'citizen_b',orc:'orc_idle',orc_archer:'orc_archer_idle',orc_brute:'orc_brute_idle',orc_boss:'orc_boss'};
+const EO_STRIDE=.85; // tiles walked per full 4-frame cycle for a 50px human (longer legs -> longer stride)
+const eoCitState={};
+function eoGait(o,x,y,bodyH){
+ if(o._gx===undefined||Math.hypot(x-o._gx,y-o._gy)>1.5){o._gx=x;o._gy=y;if(o._gd===undefined)o._gd=Math.random()*2;o._gs=0;o._gt=tick}
+ const dx=x-o._gx,dy=y-o._gy,d=Math.hypot(dx,dy),dt=tick-o._gt;
+ if(dt>0){o._gs=o._gs*.75+(d/dt)*.25;o._gt=tick}
+ if(d>1e-5){o._gd+=d;const f=Math.sign(dx-dy);if(f&&d>.004)o._gf=f}
+ o._gx=x;o._gy=y;
+ const moving=o._gs>.12,cyc=EO_STRIDE*bodyH/50,p=(o._gd/cyc)%1;
+ return {moving,p,frame:Math.floor(p*4)%4,dir:o._gf||0};
+}
+function eoGaitKey(base,g){if(g.moving){const k=base+'_w'+g.frame;if(worldArtSprite(k))return k}const i=EO_IDLE[base];return worldArtSprite(i)?i:null}
+function eoGaitBob(g,bodyH){return g.moving?(1+Math.sin(4*Math.PI*(g.p-.25)))*.5*bodyH*.035:0}
+function eoGaitLean(g,facing){return g.moving?.045*facing:0}
+function eoFrameKey(base,moving,t){const i=EO_IDLE[base]||base+'_idle';if(!moving)return worldArtSprite(i)?i:null;const k=base+'_w'+(Math.floor(t*6)%4);return worldArtSprite(k)?k:(worldArtSprite(i)?i:null)}
+function eoBodyPlace(key,bodyH){
+ const m=WORLD_ART_MANIFEST[key];if(!m)return null;const foot=m.footY??m.h,head=m.headY||0,s=bodyH/(foot-head);
+ return {s,dx:-m.w*s/2,dy:-foot*s,dw:m.w*s,dh:m.h*s,head:-(foot-head)*s,key};
+}
+function eoContactShadow(bodyH,tint){
+ const rx=bodyH*.36,ry=bodyH*.12;ctx.save();ctx.translate(0,2);ctx.scale(1,ry/rx);
+ const g=ctx.createRadialGradient(0,0,0,0,0,rx);g.addColorStop(0,tint||'rgba(12,16,24,.42)');g.addColorStop(.65,tint?tint.replace(/[\d.]+\)$/,'0.16)'):'rgba(12,16,24,.2)');g.addColorStop(1,'rgba(12,16,24,0)');
+ ctx.fillStyle=g;ctx.beginPath();ctx.arc(0,0,rx,0,Math.PI*2);ctx.fill();ctx.restore();
+}
+window.__eoV86={drawn:{},procedural:0,EO_SCALE,place:eoBodyPlace};
+function eoCount(k){__eoV86.drawn[k]=(__eoV86.drawn[k]||0)+1}
 for(const k of WORLD_ART_KEYS)worldArtImage(k);
 
 // Preload tier 1 of every building so the Market and new buildings show the new art at once.
@@ -2212,22 +2277,26 @@ function figure(x,y,u,seconds){
   const worker=u.type==='worker',archer=u.type==='archer',job=worker?gatheringTasks.find(j=>j.workerId===u.id&&j.phase==='working'):null,moving=Math.hypot(u.tx-u.x,u.ty-u.y)>.08;
   const stride=moving?Math.sin(seconds*10+(u.phase||0))*2.4:0;
   const bob=moving?Math.abs(Math.sin(seconds*10+(u.phase||0)))*1.2:job?Math.abs(Math.sin(seconds*11))*.9:Math.sin(seconds*2+(u.phase||0))*.35;
-  if(worker){
-    let key='worker_idle';
-    if(moving) key=((Math.floor(seconds*8+(u.phase||0))&1)?'worker_walk2':'worker_walk1');
-    const useKey=worldArtSprite(key)?key:(worldArtSprite('worker_idle')?'worker_idle':null);
+  {
+    const base=worker?'worker':archer?'archer':'soldier';
+    const g=eoGait(u,u.x,u.y,EO_SCALE.human),useKey=eoGaitKey(base,g);
     const im=useKey&&worldArtSprite(useKey);
     if(im){
-      ellipse(1,4,13,4,'#0b101ab0');
-      ctx.translate(0,bob);
-      const facing=Math.sign((u.tx-u.x)-(u.ty-u.y));
+      eoContactShadow(EO_SCALE.human);
+      if(g.moving&&g.dir)u._face=g.dir;
+      else if(!worker&&u.attackAt&&seconds-u.attackAt<1.5){const f=Math.sign((u.tx-u.x)-(u.ty-u.y));if(f)u._face=f}
+      const facing=u._face||1;
+      const lunge=!worker&&u.attackAt&&seconds-u.attackAt<.18?3*facing:0;
+      const wb=g.moving?eoGaitBob(g,EO_SCALE.human):(job?Math.abs(Math.sin(seconds*11))*.9:Math.sin(seconds*2+(u.phase||0))*.35);
+      ctx.translate(lunge,-wb);ctx.rotate(eoGaitLean(g,facing));
       if(facing<0)ctx.scale(-1,1);
-      const P=worldArtPlaceUnit(useKey,46);
-      ctx.drawImage(im,P.dx,P.dy,P.dw,P.dh);
+      const P=eoBodyPlace(useKey,EO_SCALE.human);
+      ctx.drawImage(im,P.dx,P.dy,P.dw,P.dh);eoCount(useKey);
       ctx.restore();
       return;
     }
   }
+  __eoV86.procedural++;
   // ambient shadow & subtle class-specific aura
   ellipse(1,4,13,4,'#0b101ab0');
   if(!worker){
@@ -2322,7 +2391,7 @@ function figure(x,y,u,seconds){
  }
   ctx.restore();
 }
-function marker(x,y){ctx.save();ctx.translate(x,y+6*cam.z);ctx.scale(cam.z,cam.z);ctx.beginPath();ctx.ellipse(0,0,17,6,0,0,7);ctx.lineWidth=2.8;ctx.strokeStyle='#ffe29b';ctx.shadowColor='#ffe29b';ctx.shadowBlur=13;ctx.stroke();ctx.restore()}
+function marker(x,y){ctx.save();ctx.translate(x,y+5*cam.z);ctx.scale(cam.z,cam.z*.36);const g=ctx.createRadialGradient(0,0,0,0,0,20);g.addColorStop(0,'rgba(255,230,160,.55)');g.addColorStop(.65,'rgba(255,226,150,.3)');g.addColorStop(1,'rgba(255,226,150,0)');ctx.fillStyle=g;ctx.beginPath();ctx.arc(0,0,20,0,Math.PI*2);ctx.fill();ctx.restore()}
 function drawRegionOverlay(){
  for(let idx=0;idx<9;idx++){
   const row=Math.floor(idx/3),col=idx%3,x0=col*REGION_SIZE-.5,y0=row*REGION_SIZE-.5,
@@ -2417,7 +2486,7 @@ const AMBIENT_ROUTES=[
 ];
 function ambientActors(t){
  const town=items.find(b=>b.type==='town');
- if(!town)return [];
+ if(!town||enemies.length)return [];
  // Ambient citizens appear progressively as the empire grows.
  const n=Math.min(4,Math.max(2,2+Math.floor(items.length/4)));
  const out=[];
@@ -2432,7 +2501,7 @@ function ambientActors(t){
   if(!isRegionUnlocked(regionAt(x,y)))continue;
   if(items.some(b=>footprintCells(b.type,b.x,b.y).some(c=>Math.abs(x-c.x)<.42&&Math.abs(y-c.y)<.42)))continue;
   const sp=pos(x,y);
-  out.push({depth:x+y+.32,x:sp.x,y:sp.y,kind:'citizen',cx:x,cy:y,index:i,phase:t+i*2.3});
+  out.push({depth:x+y+.32,x:sp.x,y:sp.y,kind:'citizen',cx:x,cy:y,index:i,phase:t+i*2.3,dir:Math.sign((q[0]-p[0])-(q[1]-p[1]))||1});
  }
  return out;
 }
@@ -2440,6 +2509,9 @@ function drawAmbientCitizen(o,t){
  const z=cam.z;
  ctx.save();ctx.translate(o.x,o.y);ctx.scale(z,z);
  const bob=Math.abs(Math.sin(o.phase*7))*.9;
+ {const base=o.index%2?'citizen_b':'citizen_a',st=eoCitState[o.index]||(eoCitState[o.index]={}),g=eoGait(st,o.cx,o.cy,EO_SCALE.citizen),key=eoGaitKey(base,g),im=key&&worldArtSprite(key);
+  if(im){eoContactShadow(EO_SCALE.citizen);const fc=g.dir||o.dir||1;ctx.translate(0,-eoGaitBob(g,EO_SCALE.citizen));ctx.rotate(eoGaitLean(g,fc));if(fc<0)ctx.scale(-1,1);
+   const P=eoBodyPlace(key,EO_SCALE.citizen);ctx.drawImage(im,P.dx,P.dy,P.dw,P.dh);eoCount(key);ctx.restore();return}}
  ctx.translate(0,-bob);
  ctx.globalAlpha=.78;
  // Restrained silhouette: two-tone tunic, head and tiny animated footsteps.
@@ -2488,6 +2560,7 @@ function drawLivingBuildingFX(b){
  }
 }
 function entityInOpenRegion(o){
+ if(o.kind==='citizen')return isRegionUnlocked(regionAt(o.cx,o.cy));
  if(o.kind==='conquestCamp')return true;
  if(o.kind==='orc')return isRegionUnlocked(regionAt(o.orc.x,o.orc.y));
  const source=o.kind==='building'?o.b:o.kind==='decor'||o.kind==='object'?o.o:
@@ -2506,7 +2579,7 @@ if(o.x< -90||o.x>innerWidth+90||o.y< -110||o.y>innerHeight+95)return;if(o.kind==
  const im=worldArtSprite(neu)||natureImage(old),w=(o.o.type==='bush'?32:26)*cam.z;
  if(im){const m=WORLD_ART_MANIFEST[neu],foot=(im===worldArtSprite(neu)&&m)?m.footY/m.h:1;const h=w*im.naturalHeight/im.naturalWidth;ctx.drawImage(im,o.x-w/2,o.y-h*foot+5*cam.z,w,h)}
  if(selected?.kind==='natural'&&selected.x===o.o.x&&selected.y===o.o.y)marker(o.x,o.y)
- }else if(o.kind==='object'){if(o.o.type==='tree')tree(o.x,o.y,rand(o.o.x,o.o.y));else rock(o.x,o.y,o.o.type==='gold');if(selected?.kind==='natural'&&selected.x===o.o.x&&selected.y===o.o.y)marker(o.x,o.y)}else if(o.kind==='building'){building(o.x,o.y,o.b);drawLivingBuildingFX(o.b);if(o.b.upgradeEndsAt)drawUpgradeBadge(o.x,o.y,o.b);if(collectReady(o.b))drawCollectBubble(o.x,o.y,o.b)}else if(o.kind==='enemy')drawEnemy(o.e);else figure(o.x,o.y,o.u,t);if(selected&&((o.kind==='unit'&&selected.kind==='unit'&&selected.id===o.u.id)||(o.kind==='building'&&selected.kind==='building'&&selected.id===o.b.id)))marker(o.x,o.y)
+ }else if(o.kind==='object'){if(o.o.type==='tree')tree(o.x,o.y,rand(o.o.x,o.o.y));else rock(o.x,o.y,o.o.type==='gold');if(selected?.kind==='natural'&&selected.x===o.o.x&&selected.y===o.o.y)marker(o.x,o.y)}else if(o.kind==='building'){building(o.x,o.y,o.b);drawLivingBuildingFX(o.b);if(o.b.upgradeEndsAt)drawUpgradeBadge(o.x,o.y,o.b);if(collectReady(o.b))drawCollectBubble(o.x,o.y,o.b)}else if(o.kind==='enemy')drawEnemy(o.e);else if(o.kind==='citizen')drawAmbientCitizen(o,t);else figure(o.x,o.y,o.u,t);if(selected&&((o.kind==='unit'&&selected.kind==='unit'&&selected.id===o.u.id)||(o.kind==='building'&&selected.kind==='building'&&selected.id===o.b.id)))marker(o.x,o.y)
 }
 
 
@@ -2773,18 +2846,19 @@ function drawOrcRaider(orc,t){
   const bossKey=worldArtSprite('orc_boss')?'orc_boss':null;
   const walkKey=worldArtSprite('orc_walk1')?'orc_walk1':null;
   const idleKey=worldArtSprite('orc_idle')?'orc_idle':null;
-  let key=orc.boss&&bossKey?bossKey:(moving&&walkKey?walkKey:idleKey);
+  const g=eoGait(orc,orc.x,orc.y,orc.boss?EO_SCALE.chieftain:EO_SCALE.orc);let key=eoGaitKey(orc.boss?'orc_boss':'orc',g)||(orc.boss&&bossKey?bossKey:idleKey);
   const im=key&&worldArtSprite(key);
   if(im){
     ctx.save();
     ctx.translate(p.x,p.y);
-    const scale=z*(orc.boss&&key!=='orc_boss'?1.33:1);
+    const scale=z;
     ctx.scale(scale,scale);
-    ctx.translate(0,-bob);
+    eoContactShadow(orc.boss?EO_SCALE.chieftain:EO_SCALE.orc);
+    ctx.translate(0,-(g.moving?eoGaitBob(g,orc.boss?EO_SCALE.chieftain:EO_SCALE.orc):bob*.4));
     const facing=orc.facing||1;
     if(facing<0)ctx.scale(-1,1);
-    const P=worldArtPlaceUnit(key, orc.boss&&key==='orc_boss'?64:50);
-    ctx.drawImage(im,P.dx,P.dy,P.dw,P.dh);
+    const P=eoBodyPlace(key, orc.boss?EO_SCALE.chieftain:EO_SCALE.orc);eoCount(key);
+    ctx.save();ctx.rotate(eoGaitLean(g,1));ctx.drawImage(im,P.dx,P.dy,P.dw,P.dh);ctx.restore();
     if(facing<0)ctx.scale(-1,1);
     ctx.fillStyle='#231b20e6';ctx.fillRect(-17,P.dy-8,34,5);
     ctx.fillStyle=orc.boss?'#f7bd56':'#e75e5d';ctx.fillRect(-16,P.dy-7,32*Math.max(0,orc.hp/orc.maxHp),3);
@@ -2852,7 +2926,7 @@ function showOrcRaider(orc){
   close();toast('⚔️ Ο στρατός επιτίθεται στο Orc');
  }},{label:'✕ Κλείσιμο',fn:close}]);
 }
-function draw(t){const grad=ctx.createLinearGradient(0,0,0,innerHeight);grad.addColorStop(0,'#28283a');grad.addColorStop(1,'#101521');ctx.fillStyle=grad;ctx.fillRect(0,0,innerWidth,innerHeight);let order=[];const vb=visibleTileBounds();for(let y=vb.y0;y<=vb.y1;y++)for(let x=vb.x0;x<=vb.x1;x++){const p=pos(x,y);if(p.x < -80||p.x>innerWidth+80||p.y< -110||p.y>innerHeight+90)continue;tile(x,y,terrain[y][x]);}for(let y=Math.max(4,vb.y0);y<=Math.min(H-5,vb.y1);y++)for(let x=Math.max(4,vb.x0);x<=Math.min(W-5,vb.x1);x++){const sp=pos(x,y);if(sp.x< -100||sp.x>innerWidth+100||sp.y< -140||sp.y>innerHeight+100)continue;let n=rand(x,y,59);if(n>.977&&!harvestedNodes.has(x+','+y)&&!items.some(b=>footprintCells(b.type,b.x,b.y).some(c=>c.x===x&&c.y===y))&&!obstacles.some(b=>Math.hypot(b.x-x,b.y-y)<.8)){let p=pos(x,y);order.push({depth:x+y,x:p.x,y:p.y,kind:'decor',o:{type:n>.991?'bush':'flower',x,y}})}}for(let o of obstacles){if(items.some(b=>footprintCells(b.type,b.x,b.y).some(c=>c.x===o.x&&c.y===o.y)))continue;let p=pos(o.x,o.y);if(p.x < -100||p.x>innerWidth+100||p.y < -130||p.y>innerHeight+105)continue;order.push({depth:o.x+o.y,x:p.x,y:p.y,kind:'object',o})}for(let b of items){let p=buildingScreenPoint(b),bp=buildingTilePoint(b);order.push({depth:bp.x+bp.y+.2,x:p.x,y:p.y,kind:'building',b})}if(level>=2||items.some(b=>b.type==='barracks')){let cp=pos(enemyCamp.x,enemyCamp.y);order.push({depth:enemyCamp.x+enemyCamp.y+.1,x:cp.x,y:cp.y,kind:'camp'})}for(let u of units){if(u.type==='worker'&&u.assignedBuildingId&&items.some(b=>b.id===u.assignedBuildingId&&workerInside(b)))continue;let p=pos(u.x,u.y);order.push({depth:u.x+u.y+.3,x:p.x,y:p.y,kind:'unit',u})}for(let e of enemies){let p=pos(e.x,e.y);order.push({depth:e.x+e.y+.31,x:p.x,y:p.y,kind:'enemy',e})}for(const orc of [...raiderOrcs,...campaignGuards]){if(orc.hp<=0||orc.campIdx!==undefined&&!activeCamp(orc.campIdx))continue;const p=pos(orc.x,orc.y);order.push({depth:orc.x+orc.y+.33,x:p.x,y:p.y,kind:'orc',orc});}
+function draw(t){const grad=ctx.createLinearGradient(0,0,0,innerHeight);grad.addColorStop(0,'#28283a');grad.addColorStop(1,'#101521');ctx.fillStyle=grad;ctx.fillRect(0,0,innerWidth,innerHeight);let order=[];const vb=visibleTileBounds();for(let y=vb.y0;y<=vb.y1;y++)for(let x=vb.x0;x<=vb.x1;x++){const p=pos(x,y);if(p.x < -80||p.x>innerWidth+80||p.y< -110||p.y>innerHeight+90)continue;tile(x,y,terrain[y][x]);}for(let y=Math.max(4,vb.y0);y<=Math.min(H-5,vb.y1);y++)for(let x=Math.max(4,vb.x0);x<=Math.min(W-5,vb.x1);x++){const sp=pos(x,y);if(sp.x< -100||sp.x>innerWidth+100||sp.y< -140||sp.y>innerHeight+100)continue;let n=rand(x,y,59);if(n>.977&&!harvestedNodes.has(x+','+y)&&!items.some(b=>footprintCells(b.type,b.x,b.y).some(c=>c.x===x&&c.y===y))&&!obstacles.some(b=>Math.hypot(b.x-x,b.y-y)<.8)){let p=pos(x,y);order.push({depth:x+y,x:p.x,y:p.y,kind:'decor',o:{type:n>.991?'bush':'flower',x,y}})}}for(let o of obstacles){if(items.some(b=>footprintCells(b.type,b.x,b.y).some(c=>c.x===o.x&&c.y===o.y)))continue;let p=pos(o.x,o.y);if(p.x < -100||p.x>innerWidth+100||p.y < -130||p.y>innerHeight+105)continue;order.push({depth:o.x+o.y,x:p.x,y:p.y,kind:'object',o})}for(let b of items){let p=buildingScreenPoint(b),bp=buildingTilePoint(b);order.push({depth:bp.x+bp.y+.2,x:p.x,y:p.y,kind:'building',b})}if(level>=2||items.some(b=>b.type==='barracks')){let cp=pos(enemyCamp.x,enemyCamp.y);order.push({depth:enemyCamp.x+enemyCamp.y+.1,x:cp.x,y:cp.y,kind:'camp'})}for(let u of units){if(u.type==='worker'&&u.assignedBuildingId&&items.some(b=>b.id===u.assignedBuildingId&&workerInside(b)))continue;let p=pos(u.x,u.y);order.push({depth:u.x+u.y+.3,x:p.x,y:p.y,kind:'unit',u})}for(let e of enemies){let p=pos(e.x,e.y);order.push({depth:e.x+e.y+.31,x:p.x,y:p.y,kind:'enemy',e})}for(const a of ambientActors(t))order.push(a);for(const orc of [...raiderOrcs,...campaignGuards]){if(orc.hp<=0||orc.campIdx!==undefined&&!activeCamp(orc.campIdx))continue;const p=pos(orc.x,orc.y);order.push({depth:orc.x+orc.y+.33,x:p.x,y:p.y,kind:'orc',orc});}
  for(let idx=0;idx<9;idx++){
  const site=activeCamp(idx);if(!site||campaignCamp(idx).defeated)continue;
  const p=pos(site.x,site.y);order.push({depth:site.x+site.y+.05,x:p.x,y:p.y,kind:'conquestCamp',campIdx:idx,site});
@@ -4188,7 +4262,7 @@ function drawDecorV82(b,wave){
    for(let i=0;i<7;i++)ellipse(-14+i*4.5,(i%2?3:-1),3,3,i%2?'#e98ab6':'#8fb3f0');
  }else if(b.type==='oak_decor'){
   ellipse(0,4,20,7,'#3f3a33');
-  if(!put('tree_oak',78,4)){line(0,2,0,-30,'#6b4a2f',6);ellipse(0,-42,22,18,'#4f8a3c')}
+  if(!put('tree_oak',EO_SCALE.tree.tree_oak*.9,4)){line(0,2,0,-30,'#6b4a2f',6);ellipse(0,-42,22,18,'#4f8a3c')}
   ctx.shadowColor='#ffe58a';ctx.shadowBlur=10;ellipse(0,-6,2.5+Math.abs(wave),2.5+Math.abs(wave),'#fff2b0');ctx.shadowBlur=0;
  }else if(b.type==='treasure_decor'){
   if(!put('gold_pile',30,4))ellipse(0,0,16,8,'#e5b43c');
@@ -4303,7 +4377,8 @@ function combatUpdate(dt){
   if(e.hp<=0)continue;
   const {kind,target,d}=enemyTarget(e,fighters);
   const reach=kind==='soldier'?(e.range||1):kind==='fort'?.86:1.0;
-  if(d>reach+.02){const step=Math.min(d-reach+.01,dt*e.speed);e.x+=(target.x-e.x)/d*step;e.y+=(target.y-e.y)/d*step}
+  {const f=Math.sign((target.x-e.x)-(target.y-e.y));if(f)e.face=f}
+  if(d>reach+.02){e.mvAt=tick;const step=Math.min(d-reach+.01,dt*e.speed);e.x+=(target.x-e.x)/d*step;e.y+=(target.y-e.y)/d*step}
   else if(tick-(e.attackAt||-99)>(e.rate||1.4)){
    e.attackAt=tick;const dmg=e.dmg||11;
    if(e.kind==='archer')startProjectile(e.x,e.y,target.x,target.y,'#e86a5d');
@@ -4312,6 +4387,7 @@ function combatUpdate(dt){
    else {citadelHP=Math.max(0,citadelHP-dmg*1.6);battleFX(target.x,target.y,'#ec465f');if(tick-defenseLastHit>3){defenseLastHit=tick;updateBattleChip()}}
   }
  }
+ for(let i=0;i<enemies.length;i++)for(let j=i+1;j<enemies.length;j++){const a=enemies[i],c=enemies[j];if(a.hp<=0||c.hp<=0)continue;const dx=c.x-a.x,dy=c.y-a.y,d=Math.hypot(dx,dy);if(d>0.001&&d<.42){const k=(.42-d)*.5*Math.min(1,dt*6)/d;a.x-=dx*k;a.y-=dy*k;c.x+=dx*k;c.y+=dy*k}}
  const rp=rallyPoint();
  for(const u of fighters){
   if(soldierHP(u)<=0)continue;
