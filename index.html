@@ -1,4 +1,4 @@
-<!doctype html><html lang="el" class="ui-skin"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no,viewport-fit=cover"><meta name="theme-color" content="#2a8fe0"><link rel="icon" href="ui/icons/castle.webp" type="image/webp"><title>EMPIRE ORIGINS V84 — Νέο UI</title><style>
+<!doctype html><html lang="el" class="ui-skin"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no,viewport-fit=cover"><meta name="theme-color" content="#2a8fe0"><link rel="icon" href="ui/icons/castle.webp" type="image/webp"><title>EMPIRE ORIGINS V85 — Νέο UI & νέο παιχνίδι</title><style>
 :root{color-scheme:dark;font-family:ui-rounded,-apple-system,system-ui,sans-serif}*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;overscroll-behavior:none;background:#152432;color:#fff;touch-action:none}canvas{display:block;width:100vw;height:100dvh;touch-action:none}button{font:inherit;color:#fff;cursor:pointer;touch-action:manipulation}#title{position:fixed;top:calc(env(safe-area-inset-top) + 10px);left:12px;z-index:4;pointer-events:none;font-size:12px;font-weight:950;letter-spacing:1.5px;text-shadow:0 2px 8px #000}#title b{color:#ffd889}#title small{display:block;font-size:9px;color:#b9cbdb;letter-spacing:1.3px;margin-top:3px}#stats{position:fixed;top:calc(env(safe-area-inset-top) + 49px);left:8px;right:8px;display:grid;grid-template-columns:repeat(4,1fr);gap:5px;z-index:4;pointer-events:none}.stat{border:1px solid #76818b66;background:#142535e8;backdrop-filter:blur(12px);border-radius:12px;padding:9px 3px;text-align:center;font-size:12px;font-weight:850;box-shadow:0 3px 15px #0004}#tools{position:fixed;bottom:calc(env(safe-area-inset-bottom) + 10px);left:8px;right:8px;z-index:5;padding:9px 6px;display:grid;grid-template-columns:repeat(5,1fr);gap:5px;border:1px solid #d9bd8066;border-radius:19px;background:#152433ef;box-shadow:0 8px 35px #06121bd9;backdrop-filter:blur(12px)}#tools button{border:1px solid #5d7183;background:linear-gradient(#344758,#263747);border-radius:12px;min-height:56px;font-size:10px;font-weight:850;line-height:1.6;padding:5px 1px}#tools button span{font-size:20px;display:block}#tools button.active{border-color:#f4d589;background:linear-gradient(#7b714b,#3b594f);box-shadow:0 0 15px #f4d58933}#info{position:fixed;top:calc(env(safe-area-inset-top) + 101px);left:10px;right:10px;text-align:center;z-index:3;pointer-events:none;color:#e7eff2;font-size:11px;text-shadow:0 2px 6px #000;font-weight:700}#card{position:fixed;left:12px;right:12px;bottom:calc(env(safe-area-inset-bottom) + 89px);z-index:6;background:linear-gradient(165deg,#283e4ced,#172936f5);border:1px solid #b6a77b;border-radius:16px;padding:13px 14px;box-shadow:0 8px 25px #0008;display:none;max-height:48dvh;overflow:auto;touch-action:pan-y}#card.visible{display:block}#card .building-meta{font-size:11px;color:#eecb83;margin:6px 0}#card .building-actions{display:flex;flex-wrap:wrap;gap:5px}#card .building-actions button{flex:1 1 125px;min-height:43px}#card .building-actions .secondary{background:#263d4f;border-color:#697f8e}#card h3{margin:0 0 5px;color:#ffde9c;font-size:17px}#card p{margin:5px 0 12px;color:#cad8da;font-size:12px;line-height:1.5}#card button{border:1px solid #8c9c86;border-radius:10px;padding:10px 13px;background:#42675b;margin:3px 4px 3px 0;font-weight:800;font-size:12px}#toast{position:fixed;top:calc(env(safe-area-inset-top) + 140px);left:15%;right:15%;text-align:center;border-radius:12px;background:#122936ee;border:1px solid #a9bb9d;padding:10px;font-size:12px;z-index:9;opacity:0;transition:opacity .2s;pointer-events:none}#toast.show{opacity:1}#hint{position:fixed;bottom:calc(env(safe-area-inset-bottom) + 83px);left:8px;right:8px;pointer-events:none;text-align:center;color:#fff;text-shadow:0 2px 5px #000;font-size:10px;z-index:3} 
 /* Classic colorful kingdom UI — original assets drawn by Canvas */
 :root{color-scheme:light;font-family:Trebuchet MS,ui-rounded,-apple-system,system-ui,sans-serif}
@@ -946,6 +946,46 @@ html.ui-skin #orc-timer .v84-orc-state.ready{color:#2a8a1a;font-family:'UIC Head
 html.ui-skin #card .panel-actions>button:is(.ui-b-sound-on,.ui-b-sound-off){flex-direction:row!important}
 @media(min-width:760px){html.ui-skin #card.market-panel{left:0!important;right:0!important;margin-inline:auto!important;transform:none!important;width:auto!important;max-width:640px!important}}
 
+/* ===== V85: settings + restart ===== */
+html.ui-skin body #eo-settings{position:fixed;top:calc(env(safe-area-inset-top) + 8px);right:62px;width:48px;height:48px;padding:0;display:grid;place-items:center;z-index:6;background:linear-gradient(180deg,#fff,#dfe8f7);border:3px solid var(--ol);border-radius:16px;box-shadow:0 4px 0 var(--ol);cursor:pointer}
+html.ui-skin #eo-settings img{width:32px;height:32px;filter:drop-shadow(0 2px 0 #1d274766)}
+html.ui-skin body #progress{right:118px!important}
+body.hud-hidden #eo-settings{display:none!important}
+@media(min-width:760px){html.ui-skin body #progress{right:auto!important}}
+html.ui-skin #card .v85-set{display:flex;flex-direction:column;gap:9px}
+html.ui-skin #card .v85-row,html.ui-skin #card .v85-danger-head{display:flex;align-items:center;gap:10px;background:#fff;border:3px solid var(--ol);border-radius:14px;box-shadow:0 3px 0 var(--ol);padding:8px 10px}
+html.ui-skin #card .v85-row img,html.ui-skin #card .v85-danger-head img{width:36px;height:36px;object-fit:contain;flex:0 0 36px}
+html.ui-skin #card .v85-row span,html.ui-skin #card .v85-danger-head span{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.25}
+html.ui-skin #card .v85-row b,html.ui-skin #card .v85-danger-head b{font-family:'UIC Head';font-weight:400;font-size:14px}
+html.ui-skin #card .v85-row small,html.ui-skin #card .v85-danger-head small{font-size:11px}
+html.ui-skin #card .v85-switch{flex:0 0 58px;width:58px;height:32px;padding:0!important;border-radius:18px!important;border:3px solid var(--ol)!important;background:#c9d3e6!important;box-shadow:inset 0 3px 0 #0002,0 2px 0 var(--ol)!important;position:relative;min-height:0!important}
+html.ui-skin #card .v85-switch i{position:absolute;top:2px;left:3px;width:22px;height:22px;border-radius:50%;background:#fff;border:2.5px solid var(--ol);box-sizing:border-box;transition:left .15s}
+html.ui-skin #card .v85-switch.on{background:linear-gradient(180deg,var(--green1),var(--green2))!important}
+html.ui-skin #card .v85-switch.on i{left:28px}
+html.ui-skin #card .v85-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+html.ui-skin #card .v85-links button{display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 2px!important;min-height:0!important;background:linear-gradient(180deg,#fff,#d6e6fb)!important;border:3px solid var(--ol)!important;border-radius:14px!important;box-shadow:inset 0 -3px 0 #a9c1e4,0 3px 0 var(--ol)!important;color:var(--ink)!important;font-family:'UIC Head'!important;font-weight:400!important;font-size:10.5px!important}
+html.ui-skin #card .v85-links img{width:30px;height:30px;object-fit:contain}
+html.ui-skin #card .v85-danger{margin-top:4px;padding:9px;border:3px dashed #e2362a;border-radius:16px;background:#ffece8;display:flex;flex-direction:column;gap:9px}
+html.ui-skin #card .v85-danger-head{background:transparent;border:0;box-shadow:none;padding:0 2px}
+html.ui-skin #card .v85-danger-head b{color:#b3261b!important}
+html.ui-skin #card .v85-danger-btn{min-height:46px!important;border-radius:15px!important;border:3px solid var(--ol)!important;background:linear-gradient(180deg,#ff8a75,#e2362a)!important;box-shadow:inset 0 -4px 0 #a81f17,inset 0 3px 0 #fff6,0 3px 0 var(--ol)!important;color:#fff!important;font-family:'UIC Head'!important;font-weight:400!important;font-size:14px!important;-webkit-text-stroke:3.5px var(--ol);paint-order:stroke fill}
+html.ui-skin #card .v85-danger-panel .panel-head{background:linear-gradient(180deg,#ff9a7a,#e2362a)!important}
+html.ui-skin #card .v85-warn{background:#ffece8!important;border:3px solid #e2362a;border-radius:14px;padding:9px 11px;font-size:13px;line-height:1.45;box-shadow:0 3px 0 var(--ol)}
+html.ui-skin #card .v85-warn b{font-family:'UIC Head';font-weight:400;color:#b3261b!important}
+html.ui-skin #card .v85-warn.big{font-size:14px}
+html.ui-skin #card .v85-lost{list-style:none;margin:10px 0 4px;padding:0;display:flex;flex-direction:column;gap:6px}
+html.ui-skin #card .v85-lost li{display:flex;align-items:center;gap:8px;background:#fff;border:2.5px solid var(--ol);border-radius:12px;padding:5px 9px;font-size:12.5px;text-decoration:line-through;text-decoration-color:#e2362a99}
+html.ui-skin #card .v85-lost img{width:24px;height:24px;object-fit:contain}
+html.ui-skin #card .v85-step{text-align:center;font-family:'UIC Head';font-size:11px;color:var(--sub)!important;margin-top:8px}
+#v85-restarting{position:fixed;inset:0;z-index:80;display:grid;place-items:center;background:radial-gradient(circle at 50% 40%,#9fe3ff,#2a8fe0 60%,#1b5fb0)}
+html.ui-skin #v85-restarting .v84-load{display:flex;flex-direction:column;align-items:center;gap:10px}
+html.ui-skin #v85-restarting .v84-load img{width:150px;height:150px;object-fit:contain}
+html.ui-skin #v85-restarting .v84-load b{font-family:'UIC Head';font-weight:400;font-size:30px;color:#fff;-webkit-text-stroke:7px var(--ol);paint-order:stroke fill}
+html.ui-skin #v85-restarting .v84-load span{font-weight:700;font-size:14px;color:#fff;text-shadow:0 2px 0 var(--ol)}
+html.ui-skin #v85-restarting .v84-load i{display:block;width:220px;height:18px;border:3px solid var(--ol);border-radius:10px;background:#c9d3e6;overflow:hidden}
+html.ui-skin #v85-restarting .v84-load u{display:block;height:100%;width:60%;background:linear-gradient(180deg,#c6f58f,#5cc435 55%,#3c9d22)}
+@media(min-width:760px){html.ui-skin body #eo-settings{right:8px;top:calc(env(safe-area-inset-top) + 64px)}html.ui-skin body #region-nav,html.ui-skin body #regions-open{top:calc(env(safe-area-inset-top) + 124px)!important}}
+
 </style></head><body>
 <canvas id="world"></canvas><div id="progress" role="button" tabindex="0" aria-label="Επίπεδο και εμπειρία"><div class="progress-head"><span id="lvLabel">👑 Επίπεδο 1</span><span id="xpLabel">0 / 260 XP</span></div><div class="progress-track"><div id="xpFill"></div></div></div><div id="capacity-bar"><button class="capacity-chip" id="capacity-pop" type="button" aria-label="Πληθυσμός"><span>👥</span><b id="capacity-pop-value">0/5</b></button><button class="capacity-chip" id="capacity-work" type="button" aria-label="Θέσεις εργατών"><span>👷</span><b id="capacity-work-value">0/0</b></button><button class="capacity-chip" id="capacity-stock" type="button" aria-label="Αποθήκες παραγωγής"><span>📦</span><b id="capacity-stock-value">0/0</b></button></div><div id="stats"><div class="stat" id="wood">🪵 420</div><div class="stat" id="stone">🪨 260</div><div class="stat" id="food">🌾 350</div><div class="stat" id="gold">🪙 140</div></div><div id="region-nav" aria-label="Περιοχές αυτοκρατορίας">
  <div class="region-nav-title"><span>ΠΕΡΙΟΧΕΣ <span id="regions-count">1/9</span></span><button id="regions-close" type="button" title="Κλείσιμο περιοχών" aria-label="Κλείσιμο μενού περιοχών">✕</button></div>
@@ -954,7 +994,7 @@ html.ui-skin #card .panel-actions>button:is(.ui-b-sound-on,.ui-b-sound-off){flex
  <button data-zone="3">🔒</button><button data-zone="4">🏰</button><button data-zone="5">🔒</button>
  <button data-zone="6">🔒</button><button data-zone="7">🔒</button><button data-zone="8">🔒</button>
  </div><div id="orc-timer" aria-live="off" style="font-size:12px;text-align:center;color:#f5dc9a;margin:8px 0;padding:7px;border:1px solid #9c795b;border-radius:9px;background:#211a24e8">⚔️ Οχυρό Orc: Έτοιμο</div><button id="return-capital" type="button">⌖ Δημαρχείο</button>
-</div><button id="regions-open" type="button" aria-label="Άνοιγμα περιοχών" title="Άνοιγμα περιοχών">🗺️</button><div id="tools"><button data-mode="inspect" class="active"><span>👆</span>Επιλογή</button><button data-mode="worker"><span>👷</span>Εργάτες</button><button data-mode="army"><span>⚔️</span>Στρατός</button><button data-mode="build"><span>🛒</span>Αγορά</button><button data-mode="quests"><span>📜</span>Αποστολές</button></div><button id="creator-trigger" type="button" aria-label="Creator Mode" title="Creator Mode">👑</button><button id="hud-toggle" aria-label="Απόκρυψη διεπαφής" title="Απόκρυψη διεπαφής">◉</button><button id="dock-toggle" aria-label="Σύμπτυξη εργαλείων" title="Εμφάνιση ή απόκρυψη εργαλείων">⌄</button><div id="build-tip" hidden>Άγγιξε τον χάρτη για προεπισκόπηση</div><div id="build-controls" hidden>
+</div><button id="regions-open" type="button" aria-label="Άνοιγμα περιοχών" title="Άνοιγμα περιοχών">🗺️</button><div id="tools"><button data-mode="inspect" class="active"><span>👆</span>Επιλογή</button><button data-mode="worker"><span>👷</span>Εργάτες</button><button data-mode="army"><span>⚔️</span>Στρατός</button><button data-mode="build"><span>🛒</span>Αγορά</button><button data-mode="quests"><span>📜</span>Αποστολές</button></div><button id="creator-trigger" type="button" aria-label="Creator Mode" title="Creator Mode">👑</button><button id="eo-settings" type="button" aria-label="Ρυθμίσεις" title="Ρυθμίσεις"><img src="ui/icons/gear.webp" alt="" class="ui-ic"></button><button id="hud-toggle" aria-label="Απόκρυψη διεπαφής" title="Απόκρυψη διεπαφής">◉</button><button id="dock-toggle" aria-label="Σύμπτυξη εργαλείων" title="Εμφάνιση ή απόκρυψη εργαλείων">⌄</button><div id="build-tip" hidden>Άγγιξε τον χάρτη για προεπισκόπηση</div><div id="build-controls" hidden>
 <button id="build-rotate-0" type="button">⌂ Αρχική 0°</button><button id="build-rotate-180" type="button">↻ Αντίθετη 180°</button><span class="rotation-angle" id="rotation-angle">0°</span>
 <button id="build-confirm" type="button">✓ Χτίσιμο</button><button id="build-cancel" type="button">✕</button>
 </div><div id="panel-backdrop" aria-hidden="true"></div><div id="card"></div><div id="tutorial-guide" hidden role="status" aria-live="polite"></div><div id="tutorial-spotlight" hidden></div><div id="tutorial-pointer" hidden><div class="tp-arrow">➜</div><div class="tp-ring"></div><div class="tp-label">Εδώ</div></div><div id="toast"></div><div id="battle-chip" hidden></div>
@@ -1751,20 +1791,11 @@ function showLevelOverview(){const n=xpNeeded(level),next=Object.values(types).f
  {label:'🏆 Επιτεύγματα',fn:showAchievements},
  {label:'🎁 Καθημερινό δώρο',fn:()=>showLoginGift()},
  {label:(v82&&v82.sound?'🔊 Ήχος: ενεργός':'🔇 Ήχος: σίγαση'),fn:()=>{toggleSound();showLevelOverview()}},
- {label:'🏰 Νέα αυτοκρατορία',fn:()=>{
-  if(!confirm('Νέα αυτοκρατορία; Η τωρινή πρόοδος θα αντικατασταθεί.'))return;
-  items.length=0;units.length=0;enemies.length=0;projectiles.length=0;battleEffects.length=0;
-  nextId=1;level=1;xp=0;achievements=0;tutorialStep=0;unlockedRegions=new Set([4]);regionCampReadyAt.fill(0);resources={wood:220,stone:90,food:150,gold:55};
-  questCounts={};questClaimed={};dailyQuests=null;contract=null;v82=v82Default();workerJobs={wood:0,stone:0,food:0,gold:0};harvestedNodes.clear();gatheringTasks=[];
-  wave=0;attacksWon=0;citadelHP=citadelMaxHP;lastIncome=Date.now();
-  defenseMode='guard';battleOutcome='idle';selected=null;repositionId=null;mode='inspect';
-  place('town',CENTER_X,CENTER_Y);persist();refresh();refreshRegionNav();updateBattleChip();close();renderTutorial();focusWorld(CENTER_X,CENTER_Y);
-  document.querySelectorAll('#tools button').forEach(b=>b.classList.toggle('active',b.dataset.mode==='inspect'));
-  toast('🏰 Νέα αρχή! Χτίσε το πρώτο σου Σπίτι από την Αγορά.');
- }},
+ {label:'⚙️ Ρυθμίσεις',fn:()=>showSettings()},
 
  ])}
 function persist(){
+ if(window.__eoWiping)return;
  try{
   localStorage.setItem(SAVE_KEY,JSON.stringify({
    version:52,v82,level,xp,dailyQuests,contract,achievements,resources,items,units,nextId,
@@ -4474,7 +4505,49 @@ function v83Startup(){
  addEventListener('resize',placeToast);
 }
 
-const savedGame=restore();ensureDaily();ensureContract();synchronizeCampGuards();updateBattleChip();let __off=null,__elapsed=0,__finished=0;if(savedGame){__elapsed=Date.now()-lastIncome;__finished=items.filter(b=>b.upgradeEndsAt&&b.upgradeEndsAt<=nowMs()).length;if(__elapsed>=10000)__off=passiveIncome(__elapsed,true)}v82Tick();v82Startup(savedGame,__elapsed,__off,__finished);v83Startup();normalizeJobs();refresh();renderTutorial();refreshRegionNav();$('#progress').addEventListener('click',showLevelOverview);$('#progress').addEventListener('keydown',e=>{if(e.key==='Enter')showLevelOverview()});setInterval(persist,12000);document.addEventListener('visibilitychange',()=>{if(document.hidden)persist()});window.addEventListener('pagehide',persist);requestAnimationFrame(frame);// ===== V84 UI layer (style C · Bright Cartoon) — painted icons, el-GR number formatting, HUD markup, panel button roles =====
+const savedGame=restore();ensureDaily();ensureContract();synchronizeCampGuards();updateBattleChip();let __off=null,__elapsed=0,__finished=0;if(savedGame){__elapsed=Date.now()-lastIncome;__finished=items.filter(b=>b.upgradeEndsAt&&b.upgradeEndsAt<=nowMs()).length;if(__elapsed>=10000)__off=passiveIncome(__elapsed,true)}v82Tick();v82Startup(savedGame,__elapsed,__off,__finished);v83Startup();normalizeJobs();refresh();renderTutorial();refreshRegionNav();$('#progress').addEventListener('click',showLevelOverview);$('#progress').addEventListener('keydown',e=>{if(e.key==='Enter')showLevelOverview()});setInterval(persist,12000);document.addEventListener('visibilitychange',()=>{if(document.hidden)persist()});window.addEventListener('pagehide',persist);requestAnimationFrame(frame);// ===== V85: Settings + «Νέο παιχνίδι» (full wipe of this game's saves, 2-step confirmation) =====
+const EO_KEY_RX=/^empire[-_ ]?origins/i;   // only this game's keys — other github.io projects share the origin's storage
+function eoGameKeys(store){const out=[];try{for(let i=0;i<store.length;i++){const k=store.key(i);if(k&&EO_KEY_RX.test(k))out.push(k)}}catch(e){}return out}
+function eoWipeAllSaves(){
+ window.__eoWiping=true;const gone=[];
+ for(const st of [localStorage,sessionStorage]){for(const k of eoGameKeys(st)){try{st.removeItem(k);gone.push(k)}catch(e){}}}
+ return gone;
+}
+function eoRestartGame(){
+ const gone=eoWipeAllSaves();window.__eoWiped=gone;
+ const msg=document.createElement('div');msg.id='v85-restarting';msg.innerHTML='<div class="v84-load"><img src="ui/icons/castle.webp" alt=""><b>EMPIRE ORIGINS</b><span>Νέο παιχνίδι…</span><i><u></u></i></div>';document.body.appendChild(msg);
+ setTimeout(()=>location.reload(),350);
+}
+function showSettings(){
+ const saved=(()=>{try{const raw=localStorage.getItem(SAVE_KEY);return raw?Math.round(raw.length/1024)+' KB':'—'}catch(e){return '—'}})();
+ card('⚙️ Ρυθμίσεις',`<div class="v85-set">
+ <div class="v85-row"><img src="ui/icons/sound.webp" alt=""><span><b>Ήχος</b><small>Ήχοι συλλογής, κατασκευής και επιπέδου</small></span>
+  <button type="button" class="v85-switch ${v82.sound?'on':''}" data-v85-sound role="switch" aria-checked="${!!v82.sound}" aria-label="Ήχος"><i></i></button></div>
+ <div class="v85-row"><img src="ui/icons/storage.webp" alt=""><span><b>Αποθήκευση</b><small>Αυτόματα σε αυτή τη συσκευή · Επ. ${level} · ${items.length} κτίρια · ${saved}</small></span></div>
+ <div class="v85-links"><button type="button" data-v85-go="unlocks"><img src="ui/icons/list.webp" alt="">Ξεκλειδώματα</button><button type="button" data-v85-go="achv"><img src="ui/icons/trophy.webp" alt="">Επιτεύγματα</button><button type="button" data-v85-go="gift"><img src="ui/icons/gift.webp" alt="">Δώρο ημέρας</button></div>
+ <div class="v85-danger"><div class="v85-danger-head"><img src="ui/icons/refresh.webp" alt=""><span><b>Νέο παιχνίδι</b><small>Ξεκίνα από την αρχή, από το επίπεδο 1</small></span></div>
+  <button type="button" class="v85-danger-btn" data-v85-restart>Ξεκίνα από την αρχή</button></div>
+ </div>`,[{label:'✕ Κλείσιμο',fn:close}]);
+ const c=document.getElementById('card');
+ c.querySelector('[data-v85-sound]').onclick=()=>{toggleSound();showSettings()};
+ c.querySelector('[data-v85-go="unlocks"]').onclick=showUnlockTable;
+ c.querySelector('[data-v85-go="achv"]').onclick=showAchievements;
+ c.querySelector('[data-v85-go="gift"]').onclick=()=>showLoginGift();
+ c.querySelector('[data-v85-restart]').onclick=()=>showRestartConfirm(1);
+}
+function showRestartConfirm(step){
+ const n=items.filter(b=>!String(b.type).endsWith('_decor')).length,soldiers=units.filter(u=>u.type!=='worker').length,workers=units.filter(u=>u.type==='worker').length;
+ const lost=`<ul class="v85-lost"><li><img src="ui/icons/xp.webp" alt="">Επίπεδο ${level} και ${Math.floor(xp)} XP</li><li><img src="ui/icons/castle.webp" alt="">${n} κτίρια · ${workers} εργάτες · ${soldiers} στρατιώτες</li><li><img src="ui/icons/chest.webp" alt="">Όλοι οι πόροι, οι περιοχές και τα οχυρά</li><li><img src="ui/icons/trophy.webp" alt="">Αποστολές, επιτεύγματα και σερί δώρων</li></ul>`;
+ if(step===1)card('⚠️ Νέο παιχνίδι;',`<div class="v85-warn"><b>Θα χαθεί όλη η πρόοδός σου</b> σε αυτή τη συσκευή. Δεν γίνεται αναίρεση.</div>${lost}<div class="v85-step">Βήμα 1 από 2</div>`,
+  [{label:'Ναι, συνέχεια',fn:()=>showRestartConfirm(2)},{label:'Άκυρο',fn:showSettings}]);
+ else card('⚠️ Τελική επιβεβαίωση',`<div class="v85-warn big"><b>Σίγουρα;</b> Το βασίλειο θα διαγραφεί οριστικά και το παιχνίδι θα ξεκινήσει από το επίπεδο 1 με την εισαγωγή.</div><div class="v85-step">Βήμα 2 από 2</div>`,
+  [{label:'Διαγραφή & νέο παιχνίδι',fn:eoRestartGame},{label:'Άκυρο',fn:showSettings}]);
+ document.querySelector('#card .game-panel')?.classList.add('v85-danger-panel');
+}
+window.showSettings=showSettings;window.eoRestartGame=eoRestartGame;
+document.getElementById('eo-settings')?.addEventListener('click',()=>showSettings());
+
+// ===== V84 UI layer (style C · Bright Cartoon) — painted icons, el-GR number formatting, HUD markup, panel button roles =====
 (function(){
 const IC='ui/icons/';
 const src=n=>n.includes('/')?n:IC+n+'.webp';
@@ -4482,7 +4555,7 @@ const icon=(n,c='')=>`<img class="ui-ic ${c}" src="${src(n)}" alt="" draggable="
 const nf=new Intl.NumberFormat('el-GR');
 const fmt=v=>nf.format(Math.floor(v));
 window.uiIcon=icon;window.uiFmt=fmt;
-const EMO=[['🪵','wood'],['🪨','stone'],['🌾','food'],['🪙','gold'],['👥','pop'],['👷','worker'],['📦','storage'],['👑','crown'],['👆','select'],['⚔','army'],['🛒','market'],['🏪','market'],['📜','quests'],['📖','quests'],['🗺','map'],['⭐','xp'],['🎁','gift'],['⏱','time'],['⏳','time'],['⌛','time'],['🏠','homes'],['⚒','production'],['🔨','production'],['✨','decor'],['⚡','boost'],['⚖','trade'],['🏛','temple'],['🏆','trophy'],['🔒','lock'],['🏰','castle'],['🛡','shield'],['🔊','sound'],['✅','check'],['🏕','orc'],['💰','chest'],['⬆','up'],['↔','move'],['ℹ','info'],['✕','close'],['❤','heart'],['🧱','bricks'],['🏴','flag'],['🚩','flag'],['📥','collect'],['🔧','production'],['📋','list'],['➕','plus'],['🌙','moon'],['☀','sun'],['🏗','production'],['🚶','worker'],['⛏','production'],['🏹','army'],['🎯','target'],['🎖','trophy'],['🎉','party'],['🔓','unlock'],['⏭','next'],['🔄','refresh'],['🔁','refresh'],['📅','time'],['👹','orc'],['📍','map'],['🪓','wood'],['🔥','art/forge_t1.webp'],['🗿','decor'],['🚪','castle'],['💎','boost'],['⛲','decor'],['🌬','art/windmill_t1.webp'],['🌷','art/flowers_pink.webp'],['🌳','art/tree_oak.webp'],['🗼','temple'],['🔨','production'],['🪖','army'],['🗡','army'],['🐎','army'],['🌲','art/tree_pine.webp'],['🏞','map'],['🧭','map'],['🍞','food'],['🥇','trophy'],['🔔','sound'],['🔇','sound'],['🔈','sound'],['⚙','gear'],['🏘','homes'],['🏡','homes'],['🏚','homes'],['🧑','pop'],['👤','pop'],['🪚','production'],['🧙','pop'],['💪','army'],['🛠','production'],];
+const EMO=[['🪵','wood'],['🪨','stone'],['🌾','food'],['🪙','gold'],['👥','pop'],['👷','worker'],['📦','storage'],['👑','crown'],['👆','select'],['⚔','army'],['🛒','market'],['🏪','market'],['📜','quests'],['📖','quests'],['🗺','map'],['⭐','xp'],['🎁','gift'],['⏱','time'],['⏳','time'],['⌛','time'],['🏠','homes'],['⚒','production'],['🔨','production'],['✨','decor'],['⚡','boost'],['⚖','trade'],['🏛','temple'],['🏆','trophy'],['🔒','lock'],['🏰','castle'],['🛡','shield'],['🔊','sound'],['✅','check'],['🏕','orc'],['💰','chest'],['⬆','up'],['↔','move'],['ℹ','info'],['✕','close'],['❤','heart'],['🧱','bricks'],['🏴','flag'],['🚩','flag'],['📥','collect'],['🔧','production'],['📋','list'],['➕','plus'],['🌙','moon'],['☀','sun'],['🏗','production'],['🚶','worker'],['⛏','production'],['🏹','army'],['🎯','target'],['🎖','trophy'],['🎉','party'],['🔓','unlock'],['⏭','next'],['🔄','refresh'],['🔁','refresh'],['📅','time'],['👹','orc'],['📍','map'],['🪓','wood'],['🔥','art/forge_t1.webp'],['🗿','decor'],['🚪','castle'],['💎','boost'],['⛲','decor'],['🌬','art/windmill_t1.webp'],['🌷','art/flowers_pink.webp'],['🌳','art/tree_oak.webp'],['🗼','temple'],['🔨','production'],['🪖','army'],['🗡','army'],['🐎','army'],['🌲','art/tree_pine.webp'],['🏞','map'],['🧭','map'],['🍞','food'],['🥇','trophy'],['🔔','sound'],['🔇','sound'],['🔈','sound'],['⚙','gear'],['⚠','close'],['🏘','homes'],['🏡','homes'],['🏚','homes'],['🧑','pop'],['👤','pop'],['🪚','production'],['🧙','pop'],['💪','army'],['🛠','production'],];
 const TREND={'📈':'<i class="ui-trend up">▲</i>','📉':'<i class="ui-trend down">▼</i>','➖':'<i class="ui-trend flat">–</i>'};
 const MAP=new Map(EMO);
 const RX=new RegExp('('+[...EMO.map(e=>e[0]),...Object.keys(TREND)].join('|')+')\\uFE0F?|\\d{4,}','gu');
@@ -4529,7 +4602,7 @@ const ro=document.getElementById('regions-open');if(ro)ro.innerHTML=icon('map');
 const ht=document.getElementById('hud-toggle');if(ht)ht.innerHTML='<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>';
 const dt=document.getElementById('dock-toggle');if(dt)dt.innerHTML='<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>';
 // --- panel buttons get a role (green = main action, blue = other, white = close/later, red = destructive)
-const CLOSE_RX=/Κλείσιμο|Αργότερα|Άκυρο|Πίσω|Όχι τώρα/,DANGER_RX=/Νέα αυτοκρατορία|Διαγραφή|Επαναφορά/;
+const CLOSE_RX=/Κλείσιμο|Αργότερα|Άκυρο|Πίσω|Όχι τώρα/,DANGER_RX=/Νέα αυτοκρατορία|Νέο παιχνίδι|Διαγραφή|Επαναφορά|Ναι, συνέχεια/;
 function tagButtons(root){
  for(const box of root.querySelectorAll('.panel-actions:not(.visual-actions)')){let i=0;
   for(const b of box.querySelectorAll(':scope>button')){const t=b.textContent;b.classList.remove('ui-b-go','ui-b-alt','ui-b-close','ui-b-danger','ui-b-sound-on','ui-b-sound-off');if(/Ήχος/.test(t)){b.classList.add(/σίγαση/.test(t)?'ui-b-sound-off':'ui-b-sound-on');i++;continue}
