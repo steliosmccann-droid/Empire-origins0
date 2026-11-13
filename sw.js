@@ -1,5 +1,5 @@
-/* EMPIRE ORIGINS V89 service worker. Generated at build time. */
-const CACHE = 'eo-v89';
+/* EMPIRE ORIGINS V90 service worker. Generated at build time. */
+const CACHE = 'eo-v90';
 const PRECACHE = [
   "./",
   "./index.html",
